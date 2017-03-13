@@ -1,0 +1,126 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Hemgatan
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret lat
+  longitude: !secret long
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 3
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Stockholm
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+# introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+#### INCLUDES ########
+automation: !include automation.yaml
+zone: !include zones.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+device_tracker: !include device_tracker.yaml
+group: !include groups.yaml
+light: !include lights.yaml
+
+# Discover some devices automatically
+discovery:
+
+#Presence based lights
+device_sun_light_trigger:
+  light_group: group.coming_home_lights
+  #light_profile: relax
+  device_group: group.maindevices
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Amazon Echo config
+emulated_hue:
+  host_ip: 192.168.31.68
+
+# Use MySQL database
+recorder:
+  db_url: !secret mysql_connection
+# Enables tellstick
+tellstick:
+  signal_repetitions: 10
+
+digital_ocean:
+  access_token: !secret digital_ocean_api
+
+binary_sensor:
+  - platform: digital_ocean
+    droplets:
+      - 'Andreasahrensnew'
+
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Enables configuration
+config:
+
+
+
+
+# Verisure setup
+verisure:
+  username: !secret verisure_username
+  password: !secret verisure_password
+
+#MQTT setup, Mosquito
+mqtt:
+  broker: 192.168.31.68
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+  # username: USERNAME
+  # password: PASSWORD
+
+
+# Text to speech
+tts:
+  platform: google
+
+
+
+
+
+
+#media_player:
+  #- platform: apple_tv
+  #  host: 192.168.31.200
+  #  login_id: 00000000-3e02-9426-0806-51253502431a
+ # - platform: apple_tv
+  #  host: 192.168.31.20
+   # login_id: 00000000-3e02-9426-0806-51253502431a
+
+#hdmi_cec:
+ # devices:
+  #  TV: 0.0.0.0
+    #Pi Zero: 1.0.0.0
+    #Fire TV Stick: 2.1.0.0
+    # Chromecast: 3.0.0.0
+   # Soundbar: 1.0.0.0
+    #BlueRay player: 3.0.0.0
+

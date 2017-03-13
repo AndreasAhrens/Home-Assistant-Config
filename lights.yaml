@@ -1,0 +1,12 @@
+  - 
+    host: "192.168.31.73"
+    platform: hue
+  - 
+    platform: flux_led
+    devices:
+      192.168.31.135:
+        name: "TV Bench"
+        mode: rgb
+      192.168.31.109:
+        name: "Kitchen Top"
+        mode: rgb

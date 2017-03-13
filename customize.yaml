@@ -1,0 +1,40 @@
+#  device_tracker.amazon8e8db42dd:
+#    hidden: true
+#  light.bedroom:
+#    homebridge_hidden: true
+#  light.bedside:
+#    homebridge_hidden: true
+#  light.dining_room:
+#    homebridge_hidden: true
+#  light.hue_color_lamp_1:
+#    homebridge_hidden: true
+#  light.living_room:
+#    homebridge_hidden: true
+#  light.living_room_window_light:
+#    homebridge_hidden: true
+  switch.livingroom_ceiling:
+    icon: mdi:spotlight-beam
+  switch.living_room_fan:
+    icon: mdi:fan
+  switch.hallway_stairs:
+    icon: mdi:stairs
+  switch.garden_driveway:
+    icon: mdi:car
+  light.tv_bench:
+    icon: mdi:monitor
+  switch.dining_room_aquarium:
+    icon: mdi:fish
+  sensor.ovanvaning_humidity:
+    icon: mdi:water-percent
+  sensor.vardagsrum_humidity:
+    icon: mdi:water-percent
+  switch.dining_room_table:
+    icon: mdi:seat-recline-normal
+  alarm_control_panel.alarm_1:
+    icon: mdi:security-home
+  switch.amanda_ceiling:
+    icon: mdi:spotlight-beam
+  switch.bedroom_fan:
+    icon: mdi:fan
+  switch.garden_front_door:
+    icon: mdi:stairs

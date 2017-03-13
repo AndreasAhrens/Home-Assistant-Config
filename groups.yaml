@@ -1,0 +1,168 @@
+##### GROUPS ########
+
+  Livingroom:
+    entities:
+      - switch.livingroom_ceiling
+      - light.living_room_window_light
+      - switch.living_room_fan
+      - light.tv_bench
+      - sensor.vardagsrum_humidity
+      - sensor.vardagsrum_temperature
+    icon: mdi:gamepad-variant
+  Diningroom:
+    entities:
+      - switch.dining_room_table
+      - switch.dining_room_cabinet
+      - switch.dining_room_aquarium
+      - media_player.living_room
+    icon: mdi:seat-recline-normal
+  Garden:
+    entities:
+      - switch.garden_front_door
+      - switch.garden_driveway
+      - sensor.dark_sky_temperature
+    icon: mdi:pine-tree
+  Hallway:
+    entities:
+      - switch.hallway_stairs
+      - alarm_control_panel.alarm_1
+    icon: mdi:stairs
+  Bedroom:
+    entities:
+      - switch.bedroom_reading_light
+      - switch.bedroom_fan
+      - light.bedside
+    icon: mdi:hotel
+  Amanda:
+    entities:
+      - switch.amanda_ceiling
+    icon: mdi:human-female
+  Kitchen:
+    entities:
+      - light.kitchen_top
+      - sensor.kok_temperature
+  Upper_Hallway:
+    name: Upper Hallway
+    entities:
+      - sensor.ovanvaning_humidity
+      - sensor.ovanvaning_temperature
+  Devices:
+    entities:
+      - device_tracker.5855ca43658d
+      - device_tracker.allyourongtous2
+      - device_tracker.amanda_iphone
+      - device_tracker.amazon8e8db42dd
+      - device_tracker.andreas_iphone_owntracks
+      - device_tracker.andreassimac
+      - device_tracker.andreassmbp
+      - device_tracker.appletvisovrum2
+      - device_tracker.appletvrdagsrum
+      - device_tracker.chromecastultra
+      - device_tracker.esp_299722
+      - device_tracker.esp_917b5c
+      - device_tracker.hassbian
+      - device_tracker.judith_iphone
+      - device_tracker.judithsiphone3
+      - device_tracker.philipshue
+      - device_tracker.unknown
+      - device_tracker.amandasiphone
+      - device_tracker.404d7f2d5c52
+      - device_tracker.d023dbcae2b7
+      - device_tracker.andreasiphone
+      - device_tracker.andreassimac
+      - device_tracker.andreas
+    icon: mdi:cellphone-iphone
+    #hidden: true
+  MainDevices:
+    entities:
+      - device_tracker.amandasiphone
+      - device_tracker.judithsiphone3
+ #     - device_tracker.judith_iphone
+      - device_tracker.AndreasiPhone
+    icon: mdi:cellphone-iphone
+  Coming_Home_Lights:
+    entities:
+      - light.living_room_window_light
+      - switch.garden_driveway
+      - switch.garden_front_door
+      - switch.hallway_stairs
+  Servers:
+    entities:
+      - binary_sensor.andreasahrensnew
+      - switch.andreasahrensnew
+  Environment:
+    entities:
+      - sensor.dark_sky_temperature
+      - sensor.kok_temperature
+      - sensor.ovanvaning_humidity
+      - sensor.ovanvaning_temperature
+      - sensor.vardagsrum_humidity
+      - sensor.vardagsrum_temperature
+      - sensor.mold_indicator
+    icon: mdi:thermometer
+  Weather:
+    entities:
+      - sensor.dark_sky_icon
+      - sensor.dark_sky_nearest_storm_distance
+      - sensor.dark_sky_summary
+      - sensor.dark_sky_temperature
+      - sun.sun
+      - sensor.moon
+    icon: mdi:weather-cloudy
+  System:
+    entities:
+      - sensor.date
+      - sensor.time
+      - sensor.ipv4_address
+      - sensor.fastcom_download
+      - sensor.cpu_speed
+      - sensor.since_last_boot
+      - sensor.ram_use
+      - sensor.ram_free
+      - sensor.disk_use_
+      - sensor.cpu_use
+    icon: mdi:raspberrypi
+
+
+###### VIEWS #######
+  Upstairs_view:
+    name: Upstairs
+    view: yes
+    entities:
+      - group.Amanda
+      - group.Bedroom
+      - group.Upper_Hallway
+  Downstairs_view:
+    name: Downstairs
+    view: yes
+    entities:
+      - group.Livingroom
+      - group.Diningroom
+      - group.Hallway
+      - group.Kitchen
+      - sensor.kok_temperature
+      - sensor.vardagsrum_humidity
+      - sensor.vardagsrum_temperature
+      - media_player.living_room
+  #Basement:
+  Outside_view:
+    name: Outside
+    view: yes
+    entities:
+      - group.Garden
+  Environment_view:
+    name: Environment
+    view: yes
+    entities:
+      - group.Environment
+      - group.Weather
+  System_view:
+    name: System
+    view: yes
+    entities:
+      - group.System
+  Automation_view:
+    name: Automation
+    view: yes
+    entities:
+      - group.all_automations

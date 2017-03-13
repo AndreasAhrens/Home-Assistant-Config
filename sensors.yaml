@@ -1,0 +1,52 @@
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+  #- 
+    #platform: yr
+    #monitored_conditions:
+    #  - temperature
+    #  - symbol
+    #  - windSpeed
+  - platform: darksky
+    api_key: !secret darksky_api
+    monitored_conditions:
+      - summary
+      - icon
+      - nearest_storm_distance
+      - temperature
+    units: si
+  - platform: cpuspeed
+  - platform: fastdotcom
+  - platform: mold_indicator
+    indoor_temp_sensor: sensor.vardagsrum_temperature
+    indoor_humidity_sensor: sensor.vardagsrum_humidity
+    outdoor_temp_sensor: sensor.dark_sky_temperature
+    calibration_factor: 1.36
+  - platform: moon
+  #- platform: waqi
+  #  locations:
+  #    - Copenhagen
+  #  stations:
+  #    - H.C.Andersens Boulevard
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: memory_free
+      - type: memory_use_percent
+      - type: processor_use
+      - type: since_last_boot
+      - type: ipv4_address
+ # - 
+ #   name: "Office Temperature"
+ #   platform: mqtt
+ #   state_topic: office/sensor1
+ #   unit_of_measurement: °C
+ #   value_template: "{{ value_json.temperature }}"
+ # - 
+ #   name: "Office Humidity"
+ #   platform: mqtt
+ #   state_topic: office/sensor1
+ #   unit_of_measurement: "%"
+ #   value_template: "{{ value_json.humidity }}"

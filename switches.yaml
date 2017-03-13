@@ -1,0 +1,3 @@
+  - platform: digital_ocean
+    droplets:
+        - 'Andreasahrensnew'

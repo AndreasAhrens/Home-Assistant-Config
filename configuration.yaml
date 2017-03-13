@@ -19,7 +19,6 @@ homeassistant:
 frontend:
 
 http:
-  # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
@@ -94,6 +93,7 @@ mqtt:
   port: 1883
   client_id: home-assistant-1
   keepalive: 60
+  #TODO - get it working with Username and Password and then add to secrets.yaml
   # username: USERNAME
   # password: PASSWORD
 

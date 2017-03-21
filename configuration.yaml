@@ -26,6 +26,15 @@ http:
 # Checks for available updates
 updater:
 
+# Add support for ffmpeg in order to use video streams
+ffmpeg:
+  ffmpeg_bin: /usr/bin/avconv
+# Now add the cameras
+camera:
+  - platform: ffmpeg
+    input: !secret front_door_camera
+    name: Front-door
+
 #### INCLUDES ########
 automation: !include automation.yaml
 zone: !include zones.yaml

@@ -38,6 +38,15 @@
       - type: processor_use
       - type: since_last_boot
       - type: ipv4_address
+  - platform: mqtt
+    state_topic: '/outside/mailbox/hatch/'
+    name: 'Mailbox Hatch'
+  - platform: mqtt
+    state_topic: '/outside/mailbox/door/'
+    name: 'Mailbox Door'
+  - platform: mqtt
+    state_topic: '/outside/mailbox/deposits/'
+    name: 'Mailbox Deposits'
  # - 
  #   name: "Office Temperature"
  #   platform: mqtt

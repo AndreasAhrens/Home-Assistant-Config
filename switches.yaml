@@ -1,3 +1,21 @@
   - platform: digital_ocean
     droplets:
         - 'Andreasahrensnew'
+  - platform: mqtt
+    name: "Mailbox Outside Light"
+    state_topic: "/outside/mailbox/outside/"
+    command_topic: "/outside/mailbox/outside/set"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: true
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "Mailbox Inside Light"
+    state_topic: "/outside/mailbox/inside/"
+    command_topic: "/outside/mailbox/inside/set"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: true
+    qos: 0
+    retain: true

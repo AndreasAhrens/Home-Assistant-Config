@@ -275,3 +275,42 @@
       - service: homeassistant.turn_off
         entity_id:
           - light.bedside
+
+
+  ######## Mailbox automations #######
+  - alias: Turn on mailbox inside light when hatch open
+    trigger:
+      - platform: state
+        entity_id: sensor.mailbox_hatch
+        state: 'open'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.mailbox_inside_light
+  - alias: Turn off mailbox inside light when hatch closed
+    trigger:
+      - platform: state
+        entity_id: sensor.mailbox_hatch
+        state: 'closed'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.mailbox_inside_light
+  - alias: Turn on mailbox inside light when door open
+    trigger:
+      - platform: state
+        entity_id: sensor.mailbox_door
+        state: 'open'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.mailbox_inside_light
+  - alias: Turn off mailbox inside light when door closed
+    trigger:
+      - platform: state
+        entity_id: sensor.mailbox_door
+        state: 'closed'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.mailbox_inside_light

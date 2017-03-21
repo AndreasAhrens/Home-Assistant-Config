@@ -8,6 +8,7 @@
       - light.tv_bench
       - sensor.vardagsrum_humidity
       - sensor.vardagsrum_temperature
+      - media_player.apple_tv_i_vardagsrum
     icon: mdi:gamepad-variant
   Diningroom:
     entities:
@@ -32,6 +33,7 @@
       - switch.bedroom_reading_light
       - switch.bedroom_fan
       - light.bedside
+      - media_player.apple_tv_i_sovrum
     icon: mdi:hotel
   Amanda:
     entities:
@@ -71,6 +73,9 @@
       - device_tracker.andreasiphone
       - device_tracker.andreassimac
       - device_tracker.andreas
+      - device_tracker.286c07b21f07
+      - device_tracker.5ccf7f8bcba9
+      - device_tracker.andreas_iphone  
     icon: mdi:cellphone-iphone
     #hidden: true
   MainDevices:
@@ -122,6 +127,14 @@
       - sensor.disk_use_
       - sensor.cpu_use
     icon: mdi:raspberrypi
+  Mailbox:
+    entities:
+      - switch.mailbox_inside_light
+      - switch.mailbox_outside_light
+      - sensor.mailbox_hatch
+      - sensor.mailbox_door
+      - sensor.mailbox_deposits
+    icon: mdi:pine-tree
 
 
 ###### VIEWS #######
@@ -150,6 +163,8 @@
     view: yes
     entities:
       - group.Garden
+      - group.mailbox
+      - camera.frontdoor
   Environment_view:
     name: Environment
     view: yes

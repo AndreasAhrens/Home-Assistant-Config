@@ -48,6 +48,7 @@
     entities:
       - sensor.ovanvaning_humidity
       - sensor.ovanvaning_temperature
+      - light.upstairs_hallway
   Devices:
     entities:
       - device_tracker.5855ca43658d
@@ -75,7 +76,8 @@
       - device_tracker.andreas
       - device_tracker.286c07b21f07
       - device_tracker.5ccf7f8bcba9
-      - device_tracker.andreas_iphone  
+      - device_tracker.andreas_iphone
+      - device_tracker.e0b94d91bcb5
     icon: mdi:cellphone-iphone
     #hidden: true
   MainDevices:

@@ -68,3 +68,5 @@
     emulated_hue: false
   light.outside_room_wall:
     emulated_hue: false
+  ## Note - add any new auto created groups and 
+  ## especilly hue lights to avoid double entries.

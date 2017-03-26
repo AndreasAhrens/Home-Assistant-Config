@@ -59,6 +59,10 @@ conversation:
 # Amazon Echo config
 emulated_hue:
   host_ip: 192.168.31.68
+  exposed_domains:
+    - light
+    - switch
+    - fan
 
 # Use MySQL database
 recorder:
@@ -102,7 +106,8 @@ mqtt:
   port: 1883
   client_id: home-assistant-1
   keepalive: 60
-  #TODO - get it working with Username and Password and then add to secrets.yaml
+  # TODO - get it working with Username and Password and then 
+  # add to secrets.yaml
   # username: USERNAME
   # password: PASSWORD
 

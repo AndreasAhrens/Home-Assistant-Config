@@ -38,3 +38,33 @@
     icon: mdi:fan
   switch.garden_front_door:
     icon: mdi:stairs
+  light.hue_color_lamp_1:
+    emulated_hue: false
+  light.bedside:
+    emulated_hue: false
+  light.living_room_window_light: 
+    emulated_hue: false
+  light.living_room:
+    emulated_hue: false
+  light.upstairs:
+    emulated_hue: false
+  light.outside:
+    emulated_hue: false
+  light.amandas_room:
+    emulated_hue: false
+  light.bedroom:
+    emulated_hue: false
+  light.dining_room:
+    emulated_hue: false
+  light.hallway:
+    emulated_hue: false
+  light.outside_room:
+    emulated_hue: false
+  light.upstairs_hallway:
+    emulated_hue: false
+  switch.andreasahrensnew:
+    emulated_hue: false
+  light.kitchen:
+    emulated_hue: false
+  light.outside_room_wall:
+    emulated_hue: false

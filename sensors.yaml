@@ -47,15 +47,4 @@
   - platform: mqtt
     state_topic: '/outside/mailbox/deposits/'
     name: 'Mailbox Deposits'
- # - 
- #   name: "Office Temperature"
- #   platform: mqtt
- #   state_topic: office/sensor1
- #   unit_of_measurement: °C
- #   value_template: "{{ value_json.temperature }}"
- # - 
- #   name: "Office Humidity"
- #   platform: mqtt
- #   state_topic: office/sensor1
- #   unit_of_measurement: "%"
- #   value_template: "{{ value_json.humidity }}"
+ 

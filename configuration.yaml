@@ -117,18 +117,6 @@ tts:
   platform: google
 
 
-
-
-
-
-#media_player:
-  #- platform: apple_tv
-  #  host: 192.168.31.200
-  #  login_id: 00000000-3e02-9426-0806-51253502431a
- # - platform: apple_tv
-  #  host: 192.168.31.20
-   # login_id: 00000000-3e02-9426-0806-51253502431a
-
 #hdmi_cec:
  # devices:
   #  TV: 0.0.0.0

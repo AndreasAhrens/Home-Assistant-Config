@@ -295,7 +295,22 @@
           - light.upstairs_hallway
         data:
           brightness: 25
-          rgb_color: [243, 179, 80]
+
+  - alias: Upstairs hallway 30% at 21:00
+    trigger:
+      - platform: time
+        after: '21:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.upstairs_hallway
+        value_template: '{% if states.light.upstairs_hallway.state == "on"  %}{{ states.light.upstairs_hallway.attributes.brightness }}{% else %}0{% endif %}'
+        above: 50
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 50
 
   - alias: Turn off upper hallway light at sunrise
     trigger:
@@ -359,4 +374,26 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.mailbox_inside_light
-  ##### TODO : Add automations for outside light for mailbox ####
+
+  - alias: Turn off mailbox outside light at sunrise
+    trigger:
+      - platform: sun
+    # Possible values: sunset, sunrise
+        event: sunrise
+    # Optional time offset. This example is 45 minutes.
+        offset: '+00:30:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.mailbox_inside_light
+
+  - alias: Turn on mailbox outside light at sunset
+    trigger:
+      - platform: sun
+        event: sunset
+        offset: '-00:10:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.mailbox_inside_light
+  

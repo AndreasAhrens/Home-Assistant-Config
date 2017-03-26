@@ -20,3 +20,4 @@ phue.conf
 pyozw.sqlite
 .*
 !/.gitignore
+emulated_hue_ids.json

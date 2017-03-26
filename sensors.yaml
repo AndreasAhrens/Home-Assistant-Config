@@ -15,9 +15,17 @@
       - icon
       - nearest_storm_distance
       - temperature
+      - precip_type
+      - precip_intensity
+      - precip_probability
     units: si
   - platform: cpuspeed
   - platform: fastdotcom
+  - platform: speedtest
+    monitored_conditions:
+      - ping
+      - download
+      - upload
   - platform: mold_indicator
     indoor_temp_sensor: sensor.vardagsrum_temperature
     indoor_humidity_sensor: sensor.vardagsrum_humidity

@@ -1,12 +1,12 @@
+#  - 
+#    platform: owntracks
+#    max_gps_accuracy: 100
+ # - 
+ #   platform: xiaomi
+ #   host: 192.168.32.1
+ #   password: !secret xiaomi_password
   - 
-    platform: owntracks
-    max_gps_accuracy: 100
-  - 
-    platform: xiaomi
-    host: 192.168.32.1
-    password: !secret xiaomi_password
-  #- 
-  #  platform: icloud
-  #  username: !secret icloud_username
-  #  password: !secret icloud_password
-  #  account_name: icloud
+    platform: icloud
+    username: !secret icloud_username
+    password: !secret icloud_password
+    account_name: icloud

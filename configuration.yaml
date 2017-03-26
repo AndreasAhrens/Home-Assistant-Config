@@ -37,12 +37,25 @@ camera:
 
 #### INCLUDES ########
 automation: !include automation.yaml
-zone: !include zones.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 device_tracker: !include device_tracker.yaml
 group: !include groups.yaml
 light: !include lights.yaml
+
+zone:
+  name: Home
+  latitude: !secret lat
+  longitude: !secret long
+  radius: 50
+  icon: mdi:home
+
+zone 2:
+  name: Devv
+  latitude: !secret work_lat
+  longitude: !secret work_long
+  radius: 100
+  icon: mdi:briefcase
 
 # Discover some devices automatically
 discovery:

@@ -12,8 +12,18 @@
     icon: mdi:fish
   sensor.ovanvaning_humidity:
     icon: mdi:water-percent
+    friendly_name: Upstairs Humidity
   sensor.vardagsrum_humidity:
     icon: mdi:water-percent
+    friendly_name: Living Room Humidity
+  sensor.kok_temperature:
+    friendly_name: Kitchen Temp
+  sensor.ovanvaning_temperature:
+    friendly_name: Upstairs Temp
+  sensor.vardagsrum_temperature:
+    friendly_name: Living Room Temp
+  sensor.dark_sky_temperature:
+    friendly_name: Outside Temperature
   switch.dining_room_table:
     icon: mdi:seat-recline-normal
   alarm_control_panel.alarm_1:

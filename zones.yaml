@@ -1,6 +1,14 @@
-#zone:
-#  name: Home
-#  latitude: 56.13249654651926
-#  longitude: 12.94041155717445
-#  radius: 150
-#  icon: mdi:account-multiple
+- zone 1:
+  name: Home
+  latitude: 56.13249654651926
+  longitude: 12.94041155717445
+  radius: 50
+  icon: mdi:home
+
+- zone 2:
+  name: Devv
+  latitude: 56.031490
+  longitude: 12.713748
+  radius: 100
+  icon: mdi:work
+

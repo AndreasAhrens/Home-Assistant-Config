@@ -49,43 +49,54 @@
       - sensor.ovanvaning_humidity
       - sensor.ovanvaning_temperature
       - light.upstairs_hallway
-  Devices:
-    entities:
-      - device_tracker.5855ca43658d
-      - device_tracker.allyourongtous2
-      - device_tracker.amanda_iphone
-      - device_tracker.amazon8e8db42dd
-      - device_tracker.andreas_iphone_owntracks
-      - device_tracker.andreassimac
-      - device_tracker.andreassmbp
-      - device_tracker.appletvisovrum2
-      - device_tracker.appletvrdagsrum
-      - device_tracker.chromecastultra
-      - device_tracker.esp_299722
-      - device_tracker.esp_917b5c
-      - device_tracker.hassbian
-      - device_tracker.judith_iphone
-      - device_tracker.judithsiphone3
-      - device_tracker.philipshue
-      - device_tracker.unknown
-      - device_tracker.amandasiphone
-      - device_tracker.404d7f2d5c52
-      - device_tracker.d023dbcae2b7
-      - device_tracker.andreasiphone
-      - device_tracker.andreassimac
-      - device_tracker.andreas
-      - device_tracker.286c07b21f07
-      - device_tracker.5ccf7f8bcba9
-      - device_tracker.andreas_iphone
-      - device_tracker.e0b94d91bcb5
-    icon: mdi:cellphone-iphone
+  #Devices:
+  #  entities:
+  #    - device_tracker.5855ca43658d
+  #    - device_tracker.allyourongtous2
+  #    - device_tracker.amanda_iphone
+  #    - device_tracker.amazon8e8db42dd
+  #    - device_tracker.andreas_iphone_owntracks
+  #    - device_tracker.andreassimac
+  #    - device_tracker.andreassmbp
+  #    - device_tracker.appletvisovrum2
+  #    - device_tracker.appletvrdagsrum
+  #    - device_tracker.chromecastultra
+  #    - device_tracker.esp_299722
+  #    - device_tracker.esp_917b5c
+  #    - device_tracker.hassbian
+  #    - device_tracker.judith_iphone
+  #    - device_tracker.judithsiphone3
+  #    - device_tracker.philipshue
+  #    - device_tracker.unknown
+  #    - device_tracker.amandasiphone
+  #    - device_tracker.404d7f2d5c52
+  #    - device_tracker.d023dbcae2b7
+  #    - device_tracker.andreasiphone
+  #    - device_tracker.andreassimac
+  #    - device_tracker.andreas
+  #    - device_tracker.286c07b21f07
+  #    - device_tracker.5ccf7f8bcba9
+  #    - device_tracker.andreas_iphone
+  #    - device_tracker.e0b94d91bcb5
+  #  icon: mdi:cellphone-iphone
     #hidden: true
+  icloud_devices:
+    entities:
+      - device_tracker.allyourbasearebelongtous2
+      - device_tracker.judithsiphone
+      - device_tracker.amandasiphone
+      - device_tracker.andreassapple_watch
+      - device_tracker.andreassimac
+      - device_tracker.andreassmacbookpro
+      - device_tracker.anitasiphone
+      - device_tracker.tompasiphone
+    icon: mdi:cellphone-iphone
   MainDevices:
     entities:
       - device_tracker.amandasiphone
-      - device_tracker.judithsiphone3
+      - device_tracker.judithsiphone
  #     - device_tracker.judith_iphone
-      - device_tracker.AndreasiPhone
+      - device_tracker.allyourbasearebelongtous2
     icon: mdi:cellphone-iphone
   Coming_Home_Lights:
     entities:
@@ -113,6 +124,9 @@
       - sensor.dark_sky_nearest_storm_distance
       - sensor.dark_sky_summary
       - sensor.dark_sky_temperature
+      - sensor.dark_sky_precip
+      - sensor.dark_sky_precip_intensity
+      - sensor.dark_sky_precip_probability
       - sun.sun
       - sensor.moon
     icon: mdi:weather-cloudy
@@ -122,6 +136,9 @@
       - sensor.time
       - sensor.ipv4_address
       - sensor.fastcom_download
+      - sensor.speedtest_ping
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
       - sensor.cpu_speed
       - sensor.since_last_boot
       - sensor.ram_use
@@ -129,6 +146,11 @@
       - sensor.disk_use_
       - sensor.cpu_use
     icon: mdi:raspberrypi
+  Status:
+    entities:
+      - sensor.fastcom_download
+      - sensor.speedtest_ping
+      - sensor.since_last_boot
   Mailbox:
     entities:
       - switch.mailbox_inside_light
@@ -140,6 +162,20 @@
 
 
 ###### VIEWS #######
+  default_view:
+    view: yes
+    entities:
+      - group.maindevices
+      - group.livingroom
+      - group.diningroom
+      - group.hallway
+      - group.kitchen
+      - group.garden
+      - group.mailbox
+      - group.bedroom
+      - group.amanda
+      - group.upper_hallway
+      - group.status
   Upstairs_view:
     name: Upstairs
     view: yes
@@ -178,6 +214,12 @@
     view: yes
     entities:
       - group.System
+  Devices_view:
+    name: Devices
+    view: yes
+    entities:
+      - group.icloud_devices
+      #- group.devices
   Automation_view:
     name: Automation
     view: yes

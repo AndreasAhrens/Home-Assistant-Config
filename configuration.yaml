@@ -144,7 +144,7 @@ shell_command:
 notify:
   - name: Facebook_Notify
     platform: facebook
-    page_access_token: EAAR0bHWTZABcBAMdPD3cuARdrugvOLMR6fLQ4q3T9VjcYZCpfo4iTLjYh8CeTrpGnJvt2gArMMldjvmZBZCus5D2TFqjmID5KtslZCw8rRp4HZBRiLQbuALRqyfLbqqm02EaPftX0kZCmgJte9R9vYKBd7mZAiKVUCYRS1SDyXCzmgZDZD
+    page_access_token: !secret facebook_token
   - name: Mailgun_Notifier
     platform: mailgun
     domain: andreasahrens.se

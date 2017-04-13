@@ -55,4 +55,9 @@
   - platform: mqtt
     state_topic: '/outside/mailbox/deposits/'
     name: 'Mailbox Deposits'
+  - platform: command_line
+    name: SSL cert expiry
+    unit_of_measurement: days
+    scan_interval: 10800
+    command: "ssl-cert-check -b -c /etc/letsencrypt/live/eiolos.duckdns.org/cert.pem | awk '{ print $NF }'"
  

@@ -90,6 +90,8 @@
       - device_tracker.andreassmacbookpro
       - device_tracker.anitasiphone
       - device_tracker.tompasiphone
+      - device_tracker.devvsimac12  
+      - device_tracker.linneasiphone
     icon: mdi:cellphone-iphone
   MainDevices:
     entities:
@@ -145,12 +147,14 @@
       - sensor.ram_free
       - sensor.disk_use_
       - sensor.cpu_use
+      - sensor.ssl_cert_expiry
     icon: mdi:raspberrypi
   Status:
     entities:
       - sensor.fastcom_download
       - sensor.speedtest_ping
       - sensor.since_last_boot
+      - sensor.ssl_cert_expiry
   Mailbox:
     entities:
       - switch.mailbox_inside_light

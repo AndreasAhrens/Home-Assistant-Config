@@ -20,6 +20,15 @@ frontend:
 
 http:
   api_password: !secret http_password
+  ssl_certificate: !secret ssl_cert
+  ssl_key: !secret ssl_key
+  base_url: !secret base_url
+  cors_allowed_origins:
+    - https://google.com
+    - https://home-assistant.io
+  ip_ban_enabled: True
+  login_attempts_threshold: 10
+
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
 
@@ -47,7 +56,7 @@ zone:
   name: Home
   latitude: !secret lat
   longitude: !secret long
-  radius: 50
+  radius: 60
   icon: mdi:home
 
 zone 2:
@@ -129,6 +138,18 @@ mqtt:
 tts:
   platform: google
 
+shell_command: 
+  renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
+
+notify:
+  - name: Facebook_Notify
+    platform: facebook
+    page_access_token: EAAR0bHWTZABcBAMdPD3cuARdrugvOLMR6fLQ4q3T9VjcYZCpfo4iTLjYh8CeTrpGnJvt2gArMMldjvmZBZCus5D2TFqjmID5KtslZCw8rRp4HZBRiLQbuALRqyfLbqqm02EaPftX0kZCmgJte9R9vYKBd7mZAiKVUCYRS1SDyXCzmgZDZD
+  - name: Mailgun_Notifier
+    platform: mailgun
+    domain: andreasahrens.se
+    token: !secret mailgun_token
+    recipient: andreas@ahrensit.se
 
 #hdmi_cec:
  # devices:

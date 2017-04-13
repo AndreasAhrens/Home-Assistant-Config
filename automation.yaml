@@ -1,6 +1,5 @@
 ####### AUTOMATION #######
 # Verisure automation
-
   - alias: Alarm status changed
     trigger:
       - platform: state
@@ -396,4 +395,33 @@
       - service: homeassistant.turn_on
         entity_id:
           - switch.mailbox_inside_light
-  
+
+  - alias: Notify via email when hatch open
+    trigger:
+      - platform: state
+        entity_id: sensor.mailbox_hatch
+        state: 'open'
+    action:
+      - service: notify.Mailgun_Notifier
+        data:
+          title: 'Mailbox Hatch has been opened'
+          message: 'Mailbox Hatch has been opened'
+
+  #### Renew SSL Cert ####
+  - alias: 'Auto Renew SSL Cert'
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.ssl_cert_expiry
+      below: 29
+    action:
+      service: shell_command.renew_ssl
+  - alias: 'SSL expiry notification'
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.ssl_cert_expiry
+      below: 21
+    action:
+      service: notify.Mailgun_Notifier
+      data:
+        title: 'SSL Cert warning'
+        message: 'Warning - SSL certificate expires in 21 days and has not been automatically renewed'

@@ -49,12 +49,15 @@
   - platform: mqtt
     state_topic: '/outside/mailbox/hatch/'
     name: 'Mailbox Hatch'
+    expire_after: 0
   - platform: mqtt
     state_topic: '/outside/mailbox/door/'
     name: 'Mailbox Door'
+    expire_after: 0
   - platform: mqtt
     state_topic: '/outside/mailbox/deposits/'
     name: 'Mailbox Deposits'
+    expire_after: 0
   - platform: command_line
     name: SSL cert expiry
     unit_of_measurement: days

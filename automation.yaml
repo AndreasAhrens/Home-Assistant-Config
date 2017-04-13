@@ -384,7 +384,7 @@
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - switch.mailbox_inside_light
+          - switch.mailbox_outside_light
 
   - alias: Turn on mailbox outside light at sunset
     trigger:
@@ -394,7 +394,7 @@
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - switch.mailbox_inside_light
+          - switch.mailbox_outside_light
 
   - alias: Notify via email when hatch open
     trigger:
@@ -406,6 +406,29 @@
         data:
           title: 'Mailbox Hatch has been opened'
           message: 'Mailbox Hatch has been opened'
+
+  - alias: Repeat Mailbox statuses every hour
+    trigger:
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 27
+        seconds: 00
+    action:
+      - service: mqtt.publish
+        data:
+         topic: "/outside/mailbox/deposits/"
+         payload_template:  "{{ states('sensor.mailbox_deposits') }}"
+      - service: mqtt.publish
+        data:
+         topic: "/outside/mailbox/hatch/"
+         payload_template:  "{{ states('sensor.mailbox_hatch') }}"
+      - service: mqtt.publish
+        data:
+         topic: "/outside/mailbox/door/"
+         payload_template:  "{{ states('sensor.mailbox_door') }}"
+
+
+
 
   #### Renew SSL Cert ####
   - alias: 'Auto Renew SSL Cert'

@@ -526,6 +526,10 @@
         # Matches every hour at 27 minutes past whole
         minutes: 27
         seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 57
+        seconds: 00
     action:
       - service: mqtt.publish
         data:

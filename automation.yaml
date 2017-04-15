@@ -196,7 +196,7 @@
           - switch.hallway_stairs
 
   ### Dim the Bedroom bedside lights when getting closer to bed - but never higher than it's already set
-  - alias: Bedside 50% at 22:00
+  - alias: His Bedside 50% at 22:00
     trigger:
       - platform: time
         after: '22:00:00'
@@ -213,7 +213,24 @@
           brightness: 144
           rgb_color: [243, 179, 80]
 
-  - alias: Bedside 25% at 22:30
+  - alias: Her Bedside 50% at 22:00
+    trigger:
+      - platform: time
+        after: '22:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.hue_white_lamp_1
+        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 144
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.hue_white_lamp_1
+        data:
+          brightness: 144
+          
+
+  - alias: His Bedside 25% at 22:30
     trigger:
       - platform: time
         after: '22:30:00'
@@ -230,7 +247,24 @@
           brightness: 64
           rgb_color: [243, 179, 80]
 
-  - alias: Bedside 10% at 22:45
+  - alias: Her Bedside 25% at 22:30
+    trigger:
+      - platform: time
+        after: '22:30:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.hue_white_lamp_1
+        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 64
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.hue_white_lamp_1
+        data:
+          brightness: 64
+          
+
+  - alias: His Bedside 10% at 22:45
     trigger:
       - platform: time
         after: '22:45:00'
@@ -247,7 +281,24 @@
           brightness: 25
           rgb_color: [243, 179, 80]
 
-  - alias: Bedside 5% at 23:00
+  - alias: Her Bedside 10% at 22:45
+    trigger:
+      - platform: time
+        after: '22:45:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.hue_white_lamp_1
+        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 25
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.hue_white_lamp_1
+        data:
+          brightness: 25
+          
+
+  - alias: His Bedside 5% at 23:00
     trigger:
       - platform: time
         after: '23:00:00'
@@ -264,7 +315,24 @@
           brightness: 12
           rgb_color: [243, 179, 80]
 
-  - alias: Bedside off at 23:15
+  - alias: Her Bedside 5% at 23:00
+    trigger:
+      - platform: time
+        after: '23:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.hue_white_lamp_1
+        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 12
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.hue_white_lamp_1
+        data:
+          brightness: 12
+          
+
+  - alias: His Bedside off at 23:15
     trigger:
       - platform: time
         after: '23:15:00'
@@ -277,6 +345,49 @@
       - service: homeassistant.turn_off
         entity_id:
           - light.bedside
+
+  - alias: Her Bedside off at 23:15
+    trigger:
+      - platform: time
+        after: '23:15:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.hue_white_lamp_1
+        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 0
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.hue_white_lamp_1
+
+
+  - alias: His Bedside off at 08:00
+    trigger:
+      - platform: time
+        after: '08:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.bedside
+        value_template: '{% if states.light.bedside.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 0
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.bedside
+
+  - alias: Her Bedside off at 08:00
+    trigger:
+      - platform: time
+        after: '08:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.hue_white_lamp_1
+        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 0
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.hue_white_lamp_1
 
 #### Upper Hallway ##
   - alias: Upstairs hallway 10% at 23:00
@@ -408,6 +519,8 @@
           message: 'Mailbox Hatch has been opened'
 
   - alias: Repeat Mailbox statuses every hour
+  # This is needed since the MQTT messages seem to time out and then 
+  # I'm stuck with unknown statuses. We can't have that! Workaround.
     trigger:
       - platform: time
         # Matches every hour at 27 minutes past whole

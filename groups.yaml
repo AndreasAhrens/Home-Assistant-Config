@@ -33,6 +33,7 @@
       - switch.bedroom_reading_light
       - switch.bedroom_fan
       - light.bedside
+      - light.hue_white_lamp_1
       - media_player.apple_tv_i_sovrum
     icon: mdi:hotel
   Amanda:

@@ -75,13 +75,15 @@
         entity_id:
           - switch.garden_front_door
 
-  - alias: Turn off front door light at sunrise
+  - alias: Turn off front door light at sunrise OR 8:30 if not off
     trigger:
       - platform: sun
     # Possible values: sunset, sunrise
         event: sunrise
     # Optional time offset. This example is 45 minutes.
         offset: '+00:20:00'
+      - platform: time
+        after: '08:30:00'
     action:
       - service: homeassistant.turn_off
         entity_id:

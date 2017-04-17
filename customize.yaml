@@ -24,6 +24,14 @@
     friendly_name: Living Room Temp
   sensor.dark_sky_temperature:
     friendly_name: Outside Temperature
+  sensor.kallare_mouse:
+    friendly_name: Basement Mouse
+  sensor.kallare_temperature:
+    friendly_name: Basement Temperature
+  sensor.uterum_mouse:
+    friendly_name: Outside Room Mouse
+  sensor.uterum_temperature:
+    friendly_name: Outside Room Temperature
   switch.dining_room_table:
     icon: mdi:seat-recline-normal
   alarm_control_panel.alarm_1:
@@ -38,7 +46,7 @@
     emulated_hue: false
   light.bedside:
     emulated_hue: false
-  light.living_room_window_light: 
+  light.living_room_wall: 
     emulated_hue: false
   light.living_room:
     emulated_hue: false

@@ -3,7 +3,7 @@
   Livingroom:
     entities:
       - switch.livingroom_ceiling
-      - light.living_room_window_light
+      - light.living_room_wall
       - switch.living_room_fan
       - light.tv_bench
       - sensor.vardagsrum_humidity
@@ -32,8 +32,8 @@
     entities:
       - switch.bedroom_reading_light
       - switch.bedroom_fan
-      - light.bedside
-      - light.hue_white_lamp_1
+      - light.her_bedside
+      - light.his_bedside
       - media_player.apple_tv_i_sovrum
     icon: mdi:hotel
   Amanda:
@@ -50,6 +50,23 @@
       - sensor.ovanvaning_humidity
       - sensor.ovanvaning_temperature
       - light.upstairs_hallway
+  Basement:
+    name: Basement
+    entities:
+      - sensor.kallare_mouse
+      - sensor.kallare_temperature
+  Outside_room:
+    name: Outside room
+    entities:
+      - sensor.uterum_temperature
+      - sensor.uterum_mouse
+      - light.outside_room_wall
+  Mouse_status:
+    name: Mouse status
+    entities:
+      - sensor.kallare_mouse
+      - sensor.uterum_mouse
+
   #Devices:
   #  entities:
   #    - device_tracker.5855ca43658d
@@ -103,7 +120,7 @@
     icon: mdi:cellphone-iphone
   Coming_Home_Lights:
     entities:
-      - light.living_room_window_light
+      - light.living_room_wall
       - switch.garden_driveway
       - switch.garden_front_door
       - switch.hallway_stairs
@@ -120,6 +137,8 @@
       - sensor.vardagsrum_humidity
       - sensor.vardagsrum_temperature
       - sensor.mold_indicator
+      - sensor.kallare_temperature
+      - sensor.uterum_temperature
     icon: mdi:thermometer
   Weather:
     entities:
@@ -164,7 +183,11 @@
       - sensor.mailbox_door
       - sensor.mailbox_deposits
     icon: mdi:pine-tree
-
+  Mailbox_short:
+    name: Mailbox
+    entities:
+      - switch.mailbox_outside_light
+      - sensor.mailbox_deposits
 
 ###### VIEWS #######
   default_view:
@@ -176,11 +199,12 @@
       - group.hallway
       - group.kitchen
       - group.garden
-      - group.mailbox
+      - group.Mailbox_short
       - group.bedroom
       - group.amanda
       - group.upper_hallway
       - group.status
+      - group.Mouse_status
   Upstairs_view:
     name: Upstairs
     view: yes
@@ -208,6 +232,12 @@
       - group.Garden
       - group.mailbox
       - camera.frontdoor
+      - group.Outside_room
+  Basement_view:
+    name: Basement
+    view: yes
+    entities:
+      - group.basement
   Environment_view:
     name: Environment
     view: yes
@@ -224,6 +254,7 @@
     view: yes
     entities:
       - group.icloud_devices
+      - device_tracker.all_your_base_are_belong_to_us_2
       #- group.devices
   Automation_view:
     name: Automation

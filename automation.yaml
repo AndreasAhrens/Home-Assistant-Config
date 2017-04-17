@@ -35,7 +35,7 @@
           - switch.hallway_stairs
       - service: homeassistant.turn_off
         entity_id:
-          - light.living_room_window_light
+          - light.living_room_wall
       - service: homeassistant.turn_off
         entity_id:
           - switch.hallway_stairs
@@ -204,13 +204,13 @@
         after: '22:00:00'
     condition:
       - condition: numeric_state
-        entity_id: light.bedside
-        value_template: '{% if states.light.bedside.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 144
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - light.bedside
+          - light.his_bedside
         data:
           brightness: 144
           rgb_color: [243, 179, 80]
@@ -221,13 +221,13 @@
         after: '22:00:00'
     condition:
       - condition: numeric_state
-        entity_id: light.hue_white_lamp_1
-        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 144
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - light.hue_white_lamp_1
+          - light.her_bedside
         data:
           brightness: 144
           
@@ -238,13 +238,13 @@
         after: '22:30:00'
     condition:
       - condition: numeric_state
-        entity_id: light.bedside
-        value_template: '{% if states.light.bedside.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 64
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - light.bedside
+          - light.his_bedside
         data:
           brightness: 64
           rgb_color: [243, 179, 80]
@@ -255,13 +255,13 @@
         after: '22:30:00'
     condition:
       - condition: numeric_state
-        entity_id: light.hue_white_lamp_1
-        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 64
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - light.hue_white_lamp_1
+          - light.her_bedside
         data:
           brightness: 64
           
@@ -272,13 +272,13 @@
         after: '22:45:00'
     condition:
       - condition: numeric_state
-        entity_id: light.bedside
-        value_template: '{% if states.light.bedside.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 25
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - light.bedside
+          - light.his_bedside
         data:
           brightness: 25
           rgb_color: [243, 179, 80]
@@ -289,13 +289,13 @@
         after: '22:45:00'
     condition:
       - condition: numeric_state
-        entity_id: light.hue_white_lamp_1
-        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 25
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - light.hue_white_lamp_1
+          - light.her_bedside
         data:
           brightness: 25
           
@@ -306,13 +306,13 @@
         after: '23:00:00'
     condition:
       - condition: numeric_state
-        entity_id: light.bedside
-        value_template: '{% if states.light.bedside.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 12
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - light.bedside
+          - light.his_bedside
         data:
           brightness: 12
           rgb_color: [243, 179, 80]
@@ -323,13 +323,13 @@
         after: '23:00:00'
     condition:
       - condition: numeric_state
-        entity_id: light.hue_white_lamp_1
-        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 12
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - light.hue_white_lamp_1
+          - light.her_bedside
         data:
           brightness: 12
           
@@ -340,13 +340,13 @@
         after: '23:15:00'
     condition:
       - condition: numeric_state
-        entity_id: light.bedside
-        value_template: '{% if states.light.bedside.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 0
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - light.bedside
+          - light.his_bedside
 
   - alias: Her Bedside off at 23:15
     trigger:
@@ -354,13 +354,13 @@
         after: '23:15:00'
     condition:
       - condition: numeric_state
-        entity_id: light.hue_white_lamp_1
-        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 0
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - light.hue_white_lamp_1
+          - light.her_bedside
 
 
   - alias: His Bedside off at 08:00
@@ -369,13 +369,13 @@
         after: '08:00:00'
     condition:
       - condition: numeric_state
-        entity_id: light.bedside
-        value_template: '{% if states.light.bedside.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 0
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - light.bedside
+          - light.his_bedside
 
   - alias: Her Bedside off at 08:00
     trigger:
@@ -383,13 +383,13 @@
         after: '08:00:00'
     condition:
       - condition: numeric_state
-        entity_id: light.hue_white_lamp_1
-        value_template: '{% if states.light.hue_white_lamp_1.state == "on"  %}{{ states.light.bedside.attributes.brightness }}{% else %}0{% endif %}'
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 0
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - light.hue_white_lamp_1
+          - light.her_bedside
 
 #### Upper Hallway ##
   - alias: Upstairs hallway 10% at 23:00

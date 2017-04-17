@@ -133,7 +133,8 @@ mqtt:
   # username: USERNAME
   # password: PASSWORD
 
-
+ios:
+  # Use the iOS app
 # Text to speech
 tts:
   platform: google

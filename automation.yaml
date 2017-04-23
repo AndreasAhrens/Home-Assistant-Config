@@ -17,20 +17,20 @@
       #    data:
       #      subtitle: 'Alarm changed from {{ trigger.from_state.state }} to {{ trigger.to_state.state }} by {{ trigger.to_state.attributes.changed_by }}'
 
-  - alias: Alarm status from armed to disarmed
-    trigger:
-      - platform: state
-        entity_id: alarm_control_panel.alarm_1
-        from: 'armed_away'
-        to: 'disarmed'
-        state: 'Welcome home'
-    action:
-      - service: notify.ios_all_your_base_are_belong_to_us_2
-        data:
-          message: "Alarm disarmed"
-          data:
-            push:
-              sound: "US-EN-Morgan-Freeman-Welcome-Home.wav"
+  #- alias: Alarm status from armed to disarmed
+  #  trigger:
+  #    - platform: state
+  #      entity_id: alarm_control_panel.alarm_1
+  #      from: 'armed_away'
+  #      to: 'disarmed'
+  #      state: 'Welcome home'
+  #  action:
+  #    - service: notify.ios_all_your_base_are_belong_to_us_2
+  #      data:
+  #        message: "Alarm disarmed"
+  #        data:
+  #          push:
+  #            sound: "US-EN-Morgan-Freeman-Welcome-Home.wav"
 
 
 # Turn off lights when alarm is in home mode
@@ -51,26 +51,19 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.garden_front_door
-      - service: homeassistant.turn_off
-        entity_id:
           - switch.dining_room_aquarium
-      - service: homeassistant.turn_off
-        entity_id:
           - switch.garden_driveway
-      - service: homeassistant.turn_off
-        entity_id:
           - switch.hallway_stairs
-      - service: homeassistant.turn_off
-        entity_id:
           - light.living_room_wall
-      - service: homeassistant.turn_off
-        entity_id:
-          - switch.hallway_stairs
-      - service: homeassistant.turn_off
-        entity_id:
           - light.tv_bench
-      
-
+          - light.kitchen_top
+          - switch.living_room_fan 
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.her_bedside
+          - light.his_bedside 
+        data:
+          brightness: 144
 
   ####### FRONT DOOR ######
   - alias: Turn on front door light at sunset
@@ -451,6 +444,33 @@
           - light.upstairs_hallway
         data:
           brightness: 180
+
+  ###### State based rules #####
+
+  - alias: Set TV to movie mode
+    trigger:
+      - platform: state
+        entity_id: media_player.apple_tv_i_vardagsrum
+        state: 'playing'
+    condition:
+      - condition: template
+        value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - light.living_room_wall
+        data: 
+          brightness: 50
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.livingroom_ceiling
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.tv_bench
+        data:
+          brightness: 77
+          rgb_color: [45, 37, 77]
+
 
 
   ######## Mailbox automations #######

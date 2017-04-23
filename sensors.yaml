@@ -63,4 +63,24 @@
     unit_of_measurement: days
     scan_interval: 10800
     command: "ssl-cert-check -b -c /etc/letsencrypt/live/eiolos.duckdns.org/cert.pem | awk '{ print $NF }'"
+  - platform: miflora
+    mac: "C4:7C:8D:60:D5:36"
+    name: Heart plant
+    # median: 3
+    monitored_conditions:
+      - temperature
+      - moisture
+      - light
+      - conductivity
+      - battery
+  - platform: miflora
+    mac: "C4:7C:8D:61:B5:C1"
+    name: Cypress
+    # median: 3
+    monitored_conditions:
+      - temperature
+      - moisture
+      - light
+      - conductivity
+      - battery
  

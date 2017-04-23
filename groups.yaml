@@ -195,6 +195,22 @@
       - media_player.apple_tv_i_vardagsrum
       - media_player.apple_tv_i_sovrum
       - media_player.living_room
+  Plants:
+    name: Plants
+    entities:
+      - sensor.heart_plant_conductivity
+      - sensor.heart_plant_light_intensity
+      - sensor.heart_plant_moisture
+      - sensor.heart_plant_temperature
+      - sensor.cypress_conductivity
+      - sensor.cypress_light_intensity
+      - sensor.cypress_moisture
+      - sensor.cypress_temperature
+  Plant_batteries:
+    name: Plan Batteries
+    entities:
+      - sensor.heart_plant_battery
+      - sensor.cypress_battery
 
 ###### VIEWS #######
   default_view:
@@ -266,4 +282,9 @@
       - group.icloud_devices
       - device_tracker.all_your_base_are_belong_to_us_2
       #- group.devices
-
+  Plants_view:
+    name: Plants
+    view: yes
+    entities:
+      - group.Plants
+      - group.Plant_batteries

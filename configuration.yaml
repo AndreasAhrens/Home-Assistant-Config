@@ -114,7 +114,10 @@ sun:
 # Enables configuration
 config:
 
-
+media_player:
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
 
 
 # Verisure setup
@@ -151,6 +154,9 @@ notify:
     domain: andreasahrens.se
     token: !secret mailgun_token
     recipient: andreas@ahrensit.se
+  - name: iOSApp
+    platform: ios
+    token: !secret ios_token
 
 #hdmi_cec:
  # devices:

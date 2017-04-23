@@ -8,14 +8,12 @@
       - light.tv_bench
       - sensor.vardagsrum_humidity
       - sensor.vardagsrum_temperature
-      - media_player.apple_tv_i_vardagsrum
     icon: mdi:gamepad-variant
   Diningroom:
     entities:
       - switch.dining_room_table
       - switch.dining_room_cabinet
       - switch.dining_room_aquarium
-      - media_player.living_room
     icon: mdi:seat-recline-normal
   Garden:
     entities:
@@ -34,7 +32,6 @@
       - switch.bedroom_fan
       - light.her_bedside
       - light.his_bedside
-      - media_player.apple_tv_i_sovrum
     icon: mdi:hotel
   Amanda:
     entities:
@@ -154,6 +151,8 @@
     icon: mdi:weather-cloudy
   System:
     entities:
+      - updater.updater
+      - media_player.spotify
       - sensor.date
       - sensor.time
       - sensor.ipv4_address
@@ -171,6 +170,7 @@
     icon: mdi:raspberrypi
   Status:
     entities:
+      - updater.updater
       - sensor.fastcom_download
       - sensor.speedtest_ping
       - sensor.since_last_boot
@@ -188,6 +188,13 @@
     entities:
       - switch.mailbox_outside_light
       - sensor.mailbox_deposits
+  Mediaplayers:
+    name: Media Players
+    entities:
+      - media_player.spotify
+      - media_player.apple_tv_i_vardagsrum
+      - media_player.apple_tv_i_sovrum
+      - media_player.living_room
 
 ###### VIEWS #######
   default_view:
@@ -205,12 +212,14 @@
       - group.upper_hallway
       - group.status
       - group.Mouse_status
+      - group.mediaplayers
   Upstairs_view:
     name: Upstairs
     view: yes
     entities:
       - group.Amanda
       - group.Bedroom
+      - media_player.apple_tv_i_sovrum
       - group.Upper_Hallway
   Downstairs_view:
     name: Downstairs
@@ -223,6 +232,7 @@
       - sensor.kok_temperature
       - sensor.vardagsrum_humidity
       - sensor.vardagsrum_temperature
+      - media_player.apple_tv_i_vardagsrum
       - media_player.living_room
   #Basement:
   Outside_view:
@@ -256,8 +266,4 @@
       - group.icloud_devices
       - device_tracker.all_your_base_are_belong_to_us_2
       #- group.devices
-  Automation_view:
-    name: Automation
-    view: yes
-    entities:
-      - group.all_automations
+

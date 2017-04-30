@@ -41,6 +41,7 @@
     entities:
       - light.kitchen_top
       - sensor.kok_temperature
+      - switch.kitchen_speaker
   Upper_Hallway:
     name: Upper Hallway
     entities:
@@ -121,6 +122,7 @@
       - switch.garden_driveway
       - switch.garden_front_door
       - switch.hallway_stairs
+      - switch.dummy_switch
   Servers:
     entities:
       - binary_sensor.andreasahrensnew
@@ -167,6 +169,7 @@
       - sensor.disk_use_
       - sensor.cpu_use
       - sensor.ssl_cert_expiry
+      - switch.dummy_switch
     icon: mdi:raspberrypi
   Status:
     entities:

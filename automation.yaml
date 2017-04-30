@@ -420,6 +420,13 @@
           - light.upstairs_hallway
         data:
           brightness: 50
+      - delay: 0:10
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 45
+
 
   - alias: Turn off upper hallway light at sunrise
     trigger:
@@ -570,6 +577,23 @@
          topic: "/outside/mailbox/door/"
          payload_template:  "{{ states('sensor.mailbox_door') }}"
 
+
+###### Text to speech automations #########
+
+  - alias: 'Test dummy switch'
+    trigger:
+      - platform: state
+        entity_id: switch.dummy_switch
+        state: 'on'
+    action:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.spotify
+          message: 'Dummy switch is on'
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.apple_tv_i_vardagsrum
+          message: 'Dummy switch is on'
 
 
 

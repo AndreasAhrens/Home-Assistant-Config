@@ -553,6 +553,11 @@
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
           message: "Alarm set to home mode"
+            data:
+            push:
+              sound: "US-EN-Alexa-Mail-Has-Arrived.wav"
+
+
 
   - alias: Repeat Mailbox statuses every hour
   # This is needed since the MQTT messages seem to time out and then 

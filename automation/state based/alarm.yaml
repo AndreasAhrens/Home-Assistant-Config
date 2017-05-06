@@ -1,0 +1,91 @@
+  # Turn off lights when alarm is in home mode 
+  - alias: Alarm status home mode
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'disarmed'
+        to: 'armed_home'
+        state: 'Night mode'
+    action:
+      - service: notify.ios_all_your_base_are_belong_to_us_2
+        data:
+          message: "Alarm set to home mode"
+          data:
+            push:
+              sound: "US-EN-Morgan-Freeman-Good-Night.wav"
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.garden_front_door
+          - switch.dining_room_aquarium
+          - switch.garden_driveway
+          - switch.hallway_stairs
+          - light.living_room_wall
+          - light.tv_bench
+          - light.kitchen_top
+          - switch.living_room_fan 
+      
+
+  # Turn on bedroom lights bright when alarm is in home mode and it's before 22:30
+  - alias: Alarm status home mode bright bedroom
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'disarmed'
+        to: 'armed_home'
+        state: 'Night mode'
+        condition:
+    condition:
+      - condition: time
+        before: '22:30:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 50
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.her_bedside
+          - light.his_bedside 
+        data:
+          brightness: 144
+
+ # Turn on bedroom lights LOW when alarm is in home mode and it's after 22:30
+  - alias: Alarm status home mode low bedroom
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'disarmed'
+        to: 'armed_home'
+        state: 'Night mode'
+        condition:
+    condition:
+      - condition: time
+        after: '22:30:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.her_bedside
+          - light.his_bedside 
+        data:
+          brightness: 12
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 25
+
+  # Verisure automation
+  - alias: Alarm status changed
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+    action:
+      - service: notify.notify
+        data_template:
+          message: >
+            Alarm changed from {{ trigger.from_state.state }}
+            to {{ trigger.to_state.state }}
+            by {{ trigger.to_state.attributes.changed_by }}
+
+

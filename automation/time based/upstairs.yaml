@@ -1,0 +1,212 @@
+  ####### Bedroom #######
+
+  ### Dim the Bedroom bedside lights when getting closer to bed - but never higher than it's already set
+  - alias: His Bedside 50% at 22:00
+    trigger:
+      - platform: time
+        after: '22:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 144
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.his_bedside
+        data:
+          brightness: 144
+          rgb_color: [243, 179, 80]
+
+  - alias: Her Bedside 50% at 22:00
+    trigger:
+      - platform: time
+        after: '22:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 144
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.her_bedside
+        data:
+          brightness: 144
+          
+
+  - alias: His Bedside 25% at 22:30
+    trigger:
+      - platform: time
+        after: '22:30:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 64
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.his_bedside
+        data:
+          brightness: 64
+          rgb_color: [243, 179, 80]
+
+  - alias: Her Bedside 25% at 22:30
+    trigger:
+      - platform: time
+        after: '22:30:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 64
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.her_bedside
+        data:
+          brightness: 64
+          
+
+  - alias: His Bedside 10% at 22:45
+    trigger:
+      - platform: time
+        after: '22:45:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 25
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.his_bedside
+        data:
+          brightness: 25
+          rgb_color: [243, 179, 80]
+
+  - alias: Her Bedside 10% at 22:45
+    trigger:
+      - platform: time
+        after: '22:45:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 25
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.her_bedside
+        data:
+          brightness: 25
+          
+
+  - alias: His Bedside 5% at 23:00
+    trigger:
+      - platform: time
+        after: '23:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 12
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.his_bedside
+        data:
+          brightness: 12
+          rgb_color: [243, 179, 80]
+
+  - alias: Her Bedside 5% at 23:00
+    trigger:
+      - platform: time
+        after: '23:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 12
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.her_bedside
+        data:
+          brightness: 12
+          
+
+  - alias: His Bedside off at 23:15
+    trigger:
+      - platform: time
+        after: '23:15:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.his_bedside
+        value_template: '{% if states.light.his_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 0
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.his_bedside
+
+  - alias: Her Bedside off at 23:15
+    trigger:
+      - platform: time
+        after: '23:15:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.her_bedside
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        above: 0
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.her_bedside
+
+  - alias: Both Bedsides off at 08:00
+    trigger:
+      - platform: time
+        after: '08:00:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.his_bedside
+          - light.her_bedside
+
+
+
+  ####### Upper Hallway #######
+  - alias: Upstairs hallway 10% at 23:00
+    trigger:
+      - platform: time
+        after: '23:00:00'
+    condition:
+      - condition: numeric_state
+        entity_id: light.upstairs_hallway
+        value_template: '{% if states.light.upstairs_hallway.state == "on"  %}{{ states.light.upstairs_hallway.attributes.brightness }}{% else %}0{% endif %}'
+        above: 25
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 25
+
+  - alias: Upstairs hallway 30% at 20:30
+    trigger:
+      - platform: time
+        after: '20:30:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 50
+      - delay: 0:10
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 45

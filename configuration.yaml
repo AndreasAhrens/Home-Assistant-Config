@@ -45,7 +45,7 @@ camera:
     name: Front-door
 
 #### INCLUDES ########
-automation: !include automation.yaml
+automation: !include_dir_merge_list automation/
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 device_tracker: !include device_tracker.yaml

@@ -1,0 +1,42 @@
+  ####### Stairs #######
+
+  - alias: Turn off Stairs light at 23:00
+    trigger:
+      - platform: time
+        after: '23:00:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.hallway_stairs
+
+  - alias: Turn on Stairs light at 06:30
+    trigger:
+      - platform: time
+        after: '06:30:00'
+    condition:
+      - condition: template
+        value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.hallway_stairs
+
+          
+  ####### AQUARIUM #######
+  - alias: Turn on aquarium at 07:00
+    trigger:
+      - platform: time
+        after: '07:00:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.dining_room_aquarium
+
+  - alias: Turn off aquarium at 21:30
+    trigger:
+      - platform: time
+        after: '21:30:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.dining_room_aquarium

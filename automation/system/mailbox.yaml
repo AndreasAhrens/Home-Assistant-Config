@@ -1,0 +1,25 @@
+  - alias: Repeat Mailbox statuses every hour
+  # This is needed since the MQTT messages seem to time out and then 
+  # I'm stuck with unknown statuses. We can't have that! Workaround.
+    trigger:
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 27
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 57
+        seconds: 00
+    action:
+      - service: mqtt.publish
+        data:
+         topic: "/outside/mailbox/deposits/"
+         payload_template:  "{{ states('sensor.mailbox_deposits') }}"
+      - service: mqtt.publish
+        data:
+         topic: "/outside/mailbox/hatch/"
+         payload_template:  "{{ states('sensor.mailbox_hatch') }}"
+      - service: mqtt.publish
+        data:
+         topic: "/outside/mailbox/door/"
+         payload_template:  "{{ states('sensor.mailbox_door') }}"

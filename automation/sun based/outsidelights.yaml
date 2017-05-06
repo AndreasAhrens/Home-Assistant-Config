@@ -1,0 +1,78 @@
+  ####### FRONT DOOR #######
+  - alias: Turn on front door light at sunset
+    trigger:
+      - platform: sun
+    # Possible values: sunset, sunrise
+        event: sunset
+    # Optional time offset. This example is 45 minutes.
+        offset: '-00:20:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.garden_front_door
+
+
+
+  - alias: Turn off front door light at sunrise OR 8:30 if not off
+    trigger:
+      - platform: sun
+    # Possible values: sunset, sunrise
+        event: sunrise
+    # Optional time offset. This example is 45 minutes.
+        offset: '+00:20:00'
+      - platform: time
+        after: '08:30:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.garden_front_door
+
+
+  ####### DRIVEWAY #######
+  - alias: Turn on DRIVEWAY light at sunset
+    trigger:
+      - platform: sun
+    # Possible values: sunset, sunrise
+        event: sunset
+    # Optional time offset. This example is 45 minutes.
+        offset: '+00:40:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.garden_driveway
+
+
+  - alias: Turn off DRIVEWAY light at sunrise
+    trigger:
+      - platform: sun
+    # Possible values: sunset, sunrise
+        event: sunrise
+    # Optional time offset. This example is 45 minutes.
+        offset: '+00:00:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.garden_driveway
+
+##### Mailbox ####
+  - alias: Turn on mailbox outside light at sunset
+    trigger:
+      - platform: sun
+        event: sunset
+        offset: '-00:10:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.mailbox_outside_light
+
+  - alias: Turn off mailbox outside light at sunrise
+    trigger:
+      - platform: sun
+    # Possible values: sunset, sunrise
+        event: sunrise
+    # Optional time offset. This example is 45 minutes.
+        offset: '+00:30:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.mailbox_outside_light

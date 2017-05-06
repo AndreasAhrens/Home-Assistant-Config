@@ -1,0 +1,24 @@
+  ####### Upper Hallway #######
+  - alias: Turn off upper hallway light at sunrise
+    trigger:
+      - platform: sun
+    # Possible values: sunset, sunrise
+        event: sunrise
+    # Optional time offset. This example is 45 minutes.
+        offset: '+00:30:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.upstairs_hallway
+
+  - alias: Turn on upper hallway light at sunset
+    trigger:
+      - platform: sun
+        event: sunset
+        offset: '-00:10:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 180

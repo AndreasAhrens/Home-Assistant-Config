@@ -24,6 +24,42 @@
           brightness: 77
           rgb_color: [45, 37, 77]
 
+  ####### Spotify status #######
+  - alias: Turn on kitchen speaker when playing Spotify for breakfast
+    trigger:
+      - platform: state
+        entity_id: media_player.spotify
+        to: 'playing'
+    condition:
+      condition: and
+      conditions:
+        - condition: time
+          after: '06:30:00'
+          before: '10:00:00'
+        - condition: state
+          entity_id: device_tracker.allyourbasearebelongtous2
+          state: 'home'
+        - condition: template
+          #value_template: "{{ media_player.spotify.attributes.source == 'All your base are belong to us 2' }}"
+          #value_template: '{{ media_player.spotify.attributes.source == "All your base are belong to us 2" }}'
+          value_template: '{{ is_state_attr("media_player.spotify", "source", "All your base are belong to us 2") }}'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+
+  - alias: Turn off kitchen speaker when pausing Spotify after breakfast
+    trigger:
+      - platform: state
+        entity_id: media_player.spotify
+        #from: 'playing'
+        to: 'paused'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: switch.kitchen_speaker
+
+# is_state_attr('device_tracker.paulus', 'battery', 40)
+
+
   ####### Text to speech automations #######
 
   - alias: 'Test dummy switch'

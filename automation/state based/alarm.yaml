@@ -72,6 +72,24 @@
           - light.upstairs_hallway
         data:
           brightness: 25
+
+
+  # When Amanda sets Alamr to off, turn off her light
+  - alias: Amanda turned off alarm
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'armed_home'
+        to: 'disarmed'
+    condition:
+      - condition: template
+        value_template: '{{ is_state_attr("alarm_control_panel.alarm_1", "changed_by", "Amanda Ahrens") }}'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.amanda_ceiling
+
+  
  # Verisure automation
   - alias: Alarm status changed
     trigger:

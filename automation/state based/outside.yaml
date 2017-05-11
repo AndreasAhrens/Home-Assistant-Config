@@ -52,7 +52,7 @@
           message: 'Mailbox Hatch has been opened'
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
-          message: "Alarm set to home mode"
+          message: "Mailbox Hatch opened"
           data:
             push:
               sound: "US-EN-Alexa-Mail-Has-Arrived.wav"

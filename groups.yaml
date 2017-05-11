@@ -174,7 +174,7 @@
   Status:
     entities:
       - updater.updater
-      - sensor.fastcom_download
+      - sensor.speedtest_download
       - sensor.speedtest_ping
       - sensor.since_last_boot
       - sensor.ssl_cert_expiry

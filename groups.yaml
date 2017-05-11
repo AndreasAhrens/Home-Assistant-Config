@@ -198,7 +198,7 @@
       - media_player.apple_tv_i_vardagsrum
       - media_player.apple_tv_i_sovrum
       - media_player.living_room
-  Plants:
+  Plants_full:
     name: Plants
     entities:
       - sensor.heart_plant_conductivity
@@ -214,6 +214,11 @@
     entities:
       - sensor.heart_plant_battery
       - sensor.cypress_battery
+  Plants:
+    name: Plants
+    entities:
+      - plant.heartplant
+      - plant.cypress
 
 ###### VIEWS #######
   default_view:
@@ -232,6 +237,7 @@
       - group.status
       - group.Mouse_status
       - group.mediaplayers
+      - group.plants
   Upstairs_view:
     name: Upstairs
     view: yes
@@ -290,4 +296,5 @@
     view: yes
     entities:
       - group.Plants
+      - group.Plants_full
       - group.Plant_batteries

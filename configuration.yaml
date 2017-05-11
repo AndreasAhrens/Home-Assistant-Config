@@ -51,6 +51,7 @@ switch: !include switches.yaml
 device_tracker: !include device_tracker.yaml
 group: !include groups.yaml
 light: !include lights.yaml
+plant: !include plant.yaml
 
 zone:
   name: Home

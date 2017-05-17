@@ -52,6 +52,8 @@ device_tracker: !include device_tracker.yaml
 group: !include groups.yaml
 light: !include lights.yaml
 plant: !include plant.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
 
 zone:
   name: Home
@@ -119,6 +121,9 @@ media_player:
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret
+  - platform: mpd
+    host: 192.168.31.68
+    port: 6666
 
 
 # Verisure setup

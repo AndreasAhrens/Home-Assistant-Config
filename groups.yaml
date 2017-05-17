@@ -198,8 +198,9 @@
       - media_player.apple_tv_i_vardagsrum
       - media_player.apple_tv_i_sovrum
       - media_player.living_room
+      - media_player.mpd
   Plants_full:
-    name: Plants
+    name: Plants Pelargonia
     entities:
       - sensor.heart_plant_conductivity
       - sensor.heart_plant_light_intensity
@@ -209,16 +210,22 @@
       - sensor.cypress_light_intensity
       - sensor.cypress_moisture
       - sensor.cypress_temperature
+      - sensor.Pelargonia_conductivity
+      - sensor.Pelargonia_light_intensity
+      - sensor.Pelargonia_moisture
+      - sensor.Pelargonia_temperature
   Plant_batteries:
     name: Plan Batteries
     entities:
       - sensor.heart_plant_battery
       - sensor.cypress_battery
+      - sensor.Pelargonia_battery
   Plants:
     name: Plants
     entities:
       - plant.heartplant
       - plant.cypress
+      - plant.Pelargonia
 
 ###### VIEWS #######
   default_view:

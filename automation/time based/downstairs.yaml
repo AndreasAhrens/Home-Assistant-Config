@@ -40,3 +40,12 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.dining_room_aquarium
+
+  - alias: Turn off kitchen top on at 21:00
+    trigger:
+      - platform: time
+        after: '21:00:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.kitchen_top

@@ -12,3 +12,18 @@
   radius: 100
   icon: mdi:work
 
+- zone 3:
+  name: Close to home
+  latitude: 56.13249654651926
+  longitude: 12.94041155717445
+  radius: 200
+  icon: mdi:home-outline
+  passive: yes
+
+- zone 4:
+  name: Internationella Engelska Skolan
+  latitude: 56.039031
+  longitude: 12.709047
+  radius: 100
+  icon: mdi:school
+

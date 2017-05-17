@@ -1,0 +1,19 @@
+  bedroom_late:
+    sequence:
+      # This is written using the Script Syntax
+      - service: scene.turn_on
+        entity_id: scene.bedroom_dim
+      - delay: '00:01'
+      - service: scene.turn_on
+        entity_id: scene.bedroom_very_dim
+      - delay: '00:15'
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.his_bedside
+          - light.her_bedside
+
+  night_mode:
+    sequence:
+      # This is written using the Script Syntax
+      - service: scene.turn_on
+        entity_id: scene.night_mode

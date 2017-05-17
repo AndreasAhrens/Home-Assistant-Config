@@ -13,16 +13,22 @@
           data:
             push:
               sound: "US-EN-Morgan-Freeman-Good-Night.wav"
-      - service: homeassistant.turn_off
-        entity_id:
-          - switch.garden_front_door
-          - switch.dining_room_aquarium
-          - switch.garden_driveway
-          - switch.hallway_stairs
-          - light.living_room_wall
-          - light.tv_bench
-          - light.kitchen_top
-          - switch.living_room_fan 
+      - service: script.turn_on
+        entity_id: script.night_mode
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'Good night'
+      #- service: homeassistant.turn_off
+      #  entity_id:
+      #    - switch.garden_front_door
+      #    - switch.dining_room_aquarium
+      #    - switch.garden_driveway
+      #    - switch.hallway_stairs
+      #    - light.living_room_wall
+      #    - light.tv_bench
+      #    - light.kitchen_top
+      #    - switch.living_room_fan 
       
 
   # Turn on bedroom lights bright when alarm is in home mode and it's before 22:30
@@ -61,12 +67,10 @@
       - condition: time
         after: '22:30:00'
     action:
-      - service: homeassistant.turn_on
-        entity_id:
-          - light.her_bedside
-          - light.his_bedside 
-        data:
-          brightness: 12
+      #- service: scene.turn_on
+      #  entity_id: scene.bedroom_dim
+      - service: script.turn_on
+        entity_id: script.bedroom_late
       - service: homeassistant.turn_on
         entity_id:
           - light.upstairs_hallway

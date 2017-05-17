@@ -210,3 +210,13 @@
           - light.upstairs_hallway
         data:
           brightness: 45
+
+  ####### Amandas room #######
+  - alias: Turn off Amandas room at 8:00
+    trigger:
+      - platform: time
+        after: '08:00:00'
+    action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - switch.amanda_ceiling

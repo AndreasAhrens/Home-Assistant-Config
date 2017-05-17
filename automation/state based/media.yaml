@@ -6,8 +6,11 @@
         entity_id: media_player.apple_tv_i_vardagsrum
         state: 'playing'
     condition:
-      - condition: template
-        value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
+      #- condition: template
+      #  value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
     action:
       - service: homeassistant.turn_on
         entity_id: 
@@ -70,7 +73,7 @@
     action:
       - service: tts.google_say
         data_template:
-          entity_id: media_player.spotify
+          entity_id: media_player.mpd
           message: 'Dummy switch is on'
       - service: tts.google_say
         data_template:

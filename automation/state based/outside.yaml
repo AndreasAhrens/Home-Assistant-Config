@@ -56,3 +56,7 @@
           data:
             push:
               sound: "US-EN-Alexa-Mail-Has-Arrived.wav"
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'The mail has arrived'

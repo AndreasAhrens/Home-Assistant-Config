@@ -1,0 +1,54 @@
+  - name: Livingroom dim
+    entities:
+      light.living_room_wall:
+          state: on
+          transition: 3
+          brightness: 50
+          rgb_color: [45, 37, 77]
+      light.tv_bench:
+          state: on
+          transition: 3
+          brightness: 77
+          rgb_color: [45, 37, 77]
+
+
+  - name: bedroom_dim
+    entities:
+      light.her_bedside:
+        state: on
+        transition: 10
+        brightness: 24
+      light.his_bedside:
+        state: on
+        transition: 10
+        brightness: 24
+
+  - name: bedroom_very_dim
+    entities:
+      light.her_bedside:
+        state: on
+        transition: 900
+        brightness: 5
+      light.his_bedside:
+        state: on
+        transition: 900
+        brightness: 5
+
+  - name: night_mode
+    entities:
+          switch.garden_front_door:
+            state: off
+          switch.dining_room_aquarium:
+            state: off
+          switch.garden_driveway:
+            state: off
+          switch.hallway_stairs:
+            state: off
+          light.living_room_wall:
+            state: off
+          light.tv_bench:
+            state: off
+          light.kitchen_top:
+            state: off
+          switch.living_room_fan:
+            state: off

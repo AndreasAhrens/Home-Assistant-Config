@@ -1,0 +1,68 @@
+  - alias: 'Andreas Leave Work notification'
+    trigger:
+      - platform: zone
+        event: leave
+        zone: zone.devv
+        entity_id: device_tracker.allyourbasearebelongtous2
+    condition:
+      - condition: time
+        after: '16:00'
+    action:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'Andreas has left Devv and is on his way home'
+
+  - alias: 'Andreas Close to home notification'
+    trigger:
+      - platform: zone
+        event: enter
+        zone: zone.close_to_home
+        entity_id: device_tracker.allyourbasearebelongtous2
+    action:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'Andreas is almost home'
+
+  - alias: 'Andreas Home notification'
+    trigger:
+      - platform: zone
+        event: enter
+        zone: zone.home
+        entity_id: device_tracker.allyourbasearebelongtous2
+    action:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'Andreas is home'
+
+  - alias: 'Amanda leaving school'
+    trigger:
+      - platform: zone
+        event: leave
+        zone: zone.Internationella_Engelska_Skolan
+        entity_id: device_tracker.amandasiphone
+    action:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'Amanda is leaving school'
+      - service: notify.ios_all_your_base_are_belong_to_us_2
+        data:
+          message: "Amanda has left school"
+
+  - alias: 'Amanda arriving at school'
+    trigger:
+      - platform: zone
+        event: enter
+        zone: zone.Internationella_Engelska_Skolan
+        entity_id: device_tracker.amandasiphone
+    action:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'Amanda arriving at school'
+      - service: notify.ios_all_your_base_are_belong_to_us_2
+        data:
+          message: "Amanda has arrived to school"

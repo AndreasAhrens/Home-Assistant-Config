@@ -19,3 +19,15 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.hallway_stairs
+
+  - alias: Turn on kitchen top on sun down
+    trigger:
+      - platform: sun
+        event: sunset
+    condition:
+      - condition: time
+        before: '21:00:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.kitchen_top

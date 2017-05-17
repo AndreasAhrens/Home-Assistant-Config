@@ -107,4 +107,16 @@
             to {{ trigger.to_state.state }}
             by {{ trigger.to_state.attributes.changed_by }}
 
+  - alias: Welcome home
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'armed_away'
+        to: 'disarmed'
+    action:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'Welcome home! I hope your day has been good'
+
 

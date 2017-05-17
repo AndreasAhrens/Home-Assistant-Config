@@ -1,6 +1,7 @@
   bedroom_late:
     sequence:
-      # This is written using the Script Syntax
+      # First turn on the scene Bedroom Dim. This sets brightness to 24 (so about 10%). 
+      # Then wait one minute, move to very dim, brightness 2, in 15 minutes and then turn off both.
       - service: scene.turn_on
         entity_id: scene.bedroom_dim
       - delay: '00:01'

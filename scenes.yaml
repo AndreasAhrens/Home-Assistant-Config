@@ -28,11 +28,11 @@
       light.her_bedside:
         state: on
         transition: 900
-        brightness: 5
+        brightness: 2
       light.his_bedside:
         state: on
         transition: 900
-        brightness: 5
+        brightness: 2
 
   - name: night_mode
     entities:

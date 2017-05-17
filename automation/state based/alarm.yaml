@@ -19,6 +19,7 @@
         data_template:
           entity_id: media_player.mpd
           message: 'Good night'
+      #### This has been replaced by a scene
       #- service: homeassistant.turn_off
       #  entity_id:
       #    - switch.garden_front_door
@@ -78,7 +79,7 @@
           brightness: 25
 
 
-  # When Amanda sets Alamr to off, turn off her light
+  # When Amanda sets Alarm to off, turn off her light
   - alias: Amanda turned off alarm
     trigger:
       - platform: state
@@ -107,6 +108,7 @@
             to {{ trigger.to_state.state }}
             by {{ trigger.to_state.attributes.changed_by }}
 
+  # A welcome home is always nice. 
   - alias: Welcome home
     trigger:
       - platform: state

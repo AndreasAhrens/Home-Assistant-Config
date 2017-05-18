@@ -88,7 +88,8 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.amanda_ceiling
-
+  
+  # In the morning, when alarm is turned off, play some nice music. 
   - alias: Alarm off, play music
     trigger:
       - platform: state
@@ -99,28 +100,35 @@
       - condition: time
         before: '08:00'
     action:
+      # Set the volume to 40%
       - service: media_player.volume_set
         data:
           entity_id: media_player.kitchen_audio
           volume_level: 0.40
+      # Set shuffle to true
       - service: media_player.shuffle_set
         data: 
           entity_id: media_player.spotify
           shuffle: true
+      # Set the source for spotify to the kitchen Chromecast
       - service: media_player.select_source 
         data:
           entity_id: media_player.spotify
           source: "Kitchen Audio"
+      # Play the Women of Jazz playlist
       - service: media_player.play_media
         data:
           entity_id: media_player.kitchen_audio
           media_content_type: PLAYLIST
           media_content_id: spotify:user:spotify:playlist:37i9dQZF1DX5OepaGriAIm
+      # Leave it on for one hour
       - delay: '01:00:00'
+      # The pause
       - service: media_player.media_pause
         data:
           entity_id: media_player.spotify
-  
+
+  # If we leave in less than one hour, stop it anyway. We usually do.
   - alias: Alarm away mode, stop music
     trigger:
       - platform: state

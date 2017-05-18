@@ -20,18 +20,6 @@
       - service: script.turn_on
         entity_id: script.night_mode
       
-      #### This has been replaced by a scene
-      #- service: homeassistant.turn_off
-      #  entity_id:
-      #    - switch.garden_front_door
-      #    - switch.dining_room_aquarium
-      #    - switch.garden_driveway
-      #    - switch.hallway_stairs
-      #    - light.living_room_wall
-      #    - light.tv_bench
-      #    - light.kitchen_top
-      #    - switch.living_room_fan 
-      
 
   # Turn on bedroom lights bright when alarm is in home mode and it's before 22:30
   - alias: Alarm status home mode bright bedroom
@@ -114,7 +102,11 @@
       - service: media_player.volume_set
         data:
           entity_id: media_player.kitchen_audio
-          volume_level: 0.50
+          volume_level: 0.40
+      - service: media_player.shuffle_set
+        data: 
+          entity_id: media_player.spotify
+          shuffle: true
       - service: media_player.select_source 
         data:
           entity_id: media_player.spotify

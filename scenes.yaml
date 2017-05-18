@@ -36,19 +36,23 @@
 
   - name: night_mode
     entities:
-          switch.garden_front_door:
-            state: off
-          switch.dining_room_aquarium:
-            state: off
-          switch.garden_driveway:
-            state: off
-          switch.hallway_stairs:
-            state: off
-          light.living_room_wall:
-            state: off
-          light.tv_bench:
-            state: off
-          light.kitchen_top:
-            state: off
-          switch.living_room_fan:
-            state: off
+      switch.garden_front_door:
+        state: off
+      switch.dining_room_aquarium:
+        state: off
+      switch.garden_driveway:
+        state: off
+      switch.hallway_stairs:
+        state: off
+      light.living_room_wall:
+        state: off
+      light.tv_bench:
+        state: off
+      light.kitchen_top:
+        state: off
+      switch.living_room_fan:
+        state: off
+      #light.upstairs_hallway:
+      #  state: on
+      #  transition: 60
+      #  brightness: 25

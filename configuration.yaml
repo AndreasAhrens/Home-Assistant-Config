@@ -73,10 +73,10 @@ zone 2:
 discovery:
 
 #Presence based lights
-device_sun_light_trigger:
-  light_group: group.coming_home_lights
-  #light_profile: relax
-  device_group: group.maindevices
+#device_sun_light_trigger:
+#  light_group: group.coming_home_lights
+#  #light_profile: relax
+#  device_group: group.maindevices
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:

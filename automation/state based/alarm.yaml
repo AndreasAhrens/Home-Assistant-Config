@@ -56,6 +56,12 @@
           - light.his_bedside 
         data:
           brightness: 144
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 25
+          transition: 120
 
  # Turn on bedroom lights LOW when alarm is in home mode and it's after 22:30
   - alias: Alarm status home mode low bedroom

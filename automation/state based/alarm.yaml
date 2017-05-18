@@ -95,7 +95,45 @@
         entity_id:
           - switch.amanda_ceiling
 
+  - alias: Alarm off, play music
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'armed_home'
+        to: 'disarmed'
+    condition:
+      - condition: time
+        before: '08:00'
+    action:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.50
+      - service: media_player.select_source 
+        data:
+          entity_id: media_player.spotify
+          source: "Kitchen Audio"
+      - service: media_player.play_media
+        data:
+          entity_id: media_player.kitchen_audio
+          media_content_type: PLAYLIST
+          media_content_id: spotify:user:spotify:playlist:37i9dQZF1DX5OepaGriAIm
+      - delay: '01:00:00'
+      - service: media_player.media_pause
+        data:
+          entity_id: media_player.spotify
   
+  - alias: Alarm away mode, stop music
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'disarmed'
+        to: 'armed_away'
+    action:
+      - service: media_player.media_pause
+        data:
+          entity_id: media_player.spotify
+
  # Verisure automation
   - alias: Alarm status changed
     trigger:

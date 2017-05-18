@@ -15,11 +15,19 @@
       - service: homeassistant.turn_on
         entity_id: switch.kitchen_speaker
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.75
       - service: tts.google_say
         data_template:
           entity_id: media_player.kitchen_audio
           message: 'Andreas has left work and is on his way home'
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.25
       - service: homeassistant.turn_off
         entity_id: switch.kitchen_speaker
 
@@ -37,11 +45,19 @@
       - service: homeassistant.turn_on
         entity_id: switch.kitchen_speaker
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.75
       - service: tts.google_say
         data_template:
           entity_id: media_player.kitchen_audio
           message: 'Andreas is almost home'
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.25
       - service: homeassistant.turn_off
         entity_id: switch.kitchen_speaker
 
@@ -59,11 +75,19 @@
       - service: homeassistant.turn_on
         entity_id: switch.kitchen_speaker
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.75
       - service: tts.google_say
         data_template:
           entity_id: media_player.kitchen_audio
           message: 'Andreas is home'
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.25
       - service: homeassistant.turn_off
         entity_id: switch.kitchen_speaker
 
@@ -81,6 +105,24 @@
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
           message: "Amanda has left school"
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+      - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.75
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_audio
+          message: 'Amanda has left school'
+      - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.25
+      - service: homeassistant.turn_off
+        entity_id: switch.kitchen_speaker
 
   - alias: 'Amanda arriving at school'
     trigger:
@@ -96,11 +138,19 @@
       - service: homeassistant.turn_on
         entity_id: switch.kitchen_speaker
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.75
       - service: tts.google_say
         data_template:
           entity_id: media_player.kitchen_audio
           message: 'Amanda arriving at school'
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.25
       - service: homeassistant.turn_off
         entity_id: switch.kitchen_speaker
       - service: notify.ios_all_your_base_are_belong_to_us_2

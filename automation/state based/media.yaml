@@ -94,15 +94,28 @@
     trigger:
       - platform: state
         entity_id: switch.dummy_switch
-        state: 'on'
+        to: 'on'
+        from: 'off'
     action:
       - service: homeassistant.turn_on
         entity_id: switch.kitchen_speaker
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.75
       - service: tts.google_say
         data_template:
           entity_id: media_player.kitchen_audio
-          message: 'Andreas has left work and is on his way home'
+          message: 'The dummy switch is on, this is just a test'
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'The dummy switch is on, this is just a test'
       - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.25
       - service: homeassistant.turn_off
         entity_id: switch.kitchen_speaker

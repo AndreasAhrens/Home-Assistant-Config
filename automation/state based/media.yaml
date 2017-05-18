@@ -27,38 +27,63 @@
           brightness: 77
           rgb_color: [45, 37, 77]
 
-  ####### Spotify status #######
-  - alias: Turn on kitchen speaker when playing Spotify for breakfast
+  - alias: Turn on kitchen speaker when kitchen audio is playing
     trigger:
       - platform: state
-        entity_id: media_player.spotify
-        to: 'playing'
-    condition:
-      condition: and
-      conditions:
-        - condition: time
-          after: '06:30:00'
-          before: '10:00:00'
-        - condition: state
-          entity_id: device_tracker.allyourbasearebelongtous2
-          state: 'home'
-        - condition: template
-          #value_template: "{{ media_player.spotify.attributes.source == 'All your base are belong to us 2' }}"
-          #value_template: '{{ media_player.spotify.attributes.source == "All your base are belong to us 2" }}'
-          value_template: '{{ is_state_attr("media_player.spotify", "source", "All your base are belong to us 2") }}'
+        entity_id: media_player.kitchen_audio
+        state: 'playing'
     action:
       - service: homeassistant.turn_on
         entity_id: switch.kitchen_speaker
 
-  - alias: Turn off kitchen speaker when pausing Spotify after breakfast
+  - alias: Turn off kitchen speaker when kitchen audio stops playing
     trigger:
       - platform: state
-        entity_id: media_player.spotify
-        #from: 'playing'
-        to: 'paused'
+        entity_id: media_player.kitchen_audio
+        state: 'paused'
+        for:
+          minutes: 5
+      - platform: state
+        entity_id: media_player.kitchen_audio
+        state: 'idle'
+        for:
+          minutes: 5
     action:
       - service: homeassistant.turn_off
         entity_id: switch.kitchen_speaker
+
+  ####### Spotify status #######
+  #- alias: Turn on kitchen speaker when playing Spotify for breakfast
+  #  trigger:
+  #    - platform: state
+  #      entity_id: media_player.spotify
+  #      to: 'playing'
+  #  condition:
+  #    condition: and
+  #    conditions:
+  #      - condition: time
+  #        after: '06:30:00'
+  #        before: '10:00:00'
+  #      - condition: state
+  #        entity_id: device_tracker.allyourbasearebelongtous2
+  #        state: 'home'
+  #      - condition: template
+  #        #value_template: "{{ media_player.spotify.attributes.source == 'All your base are belong to us 2' }}"
+  #        #value_template: '{{ media_player.spotify.attributes.source == "All your base are belong to us 2" }}'
+  #        value_template: '{{ is_state_attr("media_player.spotify", "source", "All your base are belong to us 2") }}'
+  #  action:
+  #    - service: homeassistant.turn_on
+  #      entity_id: switch.kitchen_speaker
+
+  #- alias: Turn off kitchen speaker when pausing Spotify after breakfast
+  #  trigger:
+  #    - platform: state
+  #      entity_id: media_player.spotify
+  #      #from: 'playing'
+  #      to: 'paused'
+  #  action:
+  #    - service: homeassistant.turn_off
+  #      entity_id: switch.kitchen_speaker
 
 # is_state_attr('device_tracker.paulus', 'battery', 40)
 
@@ -71,11 +96,13 @@
         entity_id: switch.dummy_switch
         state: 'on'
     action:
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+      - delay: '00:00:05'
       - service: tts.google_say
         data_template:
-          entity_id: media_player.mpd
-          message: 'Dummy switch is on'
-      - service: tts.google_say
-        data_template:
-          entity_id: media_player.apple_tv_i_vardagsrum
-          message: 'Dummy switch is on'
+          entity_id: media_player.kitchen_audio
+          message: 'Andreas has left work and is on his way home'
+      - delay: '00:00:05'
+      - service: homeassistant.turn_off
+        entity_id: switch.kitchen_speaker

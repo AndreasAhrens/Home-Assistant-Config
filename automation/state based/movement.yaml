@@ -11,7 +11,17 @@
       - service: tts.google_say
         data_template:
           entity_id: media_player.mpd
-          message: 'Andreas has left Devv and is on his way home'
+          message: 'Andreas has left work and is on his way home'
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+      - delay: '00:00:05'
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_audio
+          message: 'Andreas has left work and is on his way home'
+      - delay: '00:00:05'
+      - service: homeassistant.turn_off
+        entity_id: switch.kitchen_speaker
 
   - alias: 'Andreas Close to home notification'
     trigger:
@@ -24,6 +34,16 @@
         data_template:
           entity_id: media_player.mpd
           message: 'Andreas is almost home'
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+      - delay: '00:00:05'
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_audio
+          message: 'Andreas is almost home'
+      - delay: '00:00:05'
+      - service: homeassistant.turn_off
+        entity_id: switch.kitchen_speaker
 
   - alias: 'Andreas Home notification'
     trigger:
@@ -36,6 +56,16 @@
         data_template:
           entity_id: media_player.mpd
           message: 'Andreas is home'
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+      - delay: '00:00:05'
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_audio
+          message: 'Andreas is home'
+      - delay: '00:00:05'
+      - service: homeassistant.turn_off
+        entity_id: switch.kitchen_speaker
 
   - alias: 'Amanda leaving school'
     trigger:
@@ -63,6 +93,16 @@
         data_template:
           entity_id: media_player.mpd
           message: 'Amanda arriving at school'
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+      - delay: '00:00:05'
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_audio
+          message: 'Amanda arriving at school'
+      - delay: '00:00:05'
+      - service: homeassistant.turn_off
+        entity_id: switch.kitchen_speaker
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
           message: "Amanda has arrived to school"

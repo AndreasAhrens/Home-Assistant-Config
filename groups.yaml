@@ -199,6 +199,7 @@
       - media_player.apple_tv_i_sovrum
       - media_player.living_room
       - media_player.mpd
+      - media_player.kitchen_audio
   Plants_full:
     name: Plants Pelargonia
     entities:
@@ -266,6 +267,7 @@
       - sensor.vardagsrum_temperature
       - media_player.apple_tv_i_vardagsrum
       - media_player.living_room
+      - media_player.kitchen_audio
   #Basement:
   Outside_view:
     name: Outside

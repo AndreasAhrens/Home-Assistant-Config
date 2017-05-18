@@ -7,6 +7,10 @@
         to: 'armed_home'
         state: 'Night mode'
     action:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'Good night'
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
           message: "Alarm set to home mode"
@@ -15,10 +19,7 @@
               sound: "US-EN-Morgan-Freeman-Good-Night.wav"
       - service: script.turn_on
         entity_id: script.night_mode
-      - service: tts.google_say
-        data_template:
-          entity_id: media_player.mpd
-          message: 'Good night'
+      
       #### This has been replaced by a scene
       #- service: homeassistant.turn_off
       #  entity_id:
@@ -121,4 +122,18 @@
           entity_id: media_player.mpd
           message: 'Welcome home! I hope your day has been good'
 
+  - alias: Turn on bedroom fan upon alarm home mode if too warm upstairs
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'disarmed'
+        to: 'armed_home'
+        state: 'Night mode'
+    condition:
+      - condition: numeric_state
+        entity_id: sensor.ovanvaning_temperature
+        above: 22
+    action:
+      - service: homeassistant.turn_on
+        entity_id: switch.bedroom_fan 
 

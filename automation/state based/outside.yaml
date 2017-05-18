@@ -17,6 +17,8 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.mailbox_inside_light
+
+          
   - alias: Turn on mailbox inside light when door open
     trigger:
       - platform: state

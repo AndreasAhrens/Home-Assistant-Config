@@ -1,0 +1,48 @@
+  - alias: Turn on livingroom fan when temperature in livingroom above 23
+    trigger: 
+      - platform: numeric_state
+        entity_id: sensor.vardagsrum_temperature
+        above: 22
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: alarm_control_panel.alarm_1
+          state: 'disarmed'
+        - condition: time
+          after: '06:30:00'
+          before: '23:00:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: switch.living_room_fan
+
+  - alias: Turn off livingroom fan when temperature in livingroom below 20
+    trigger: 
+      - platform: numeric_state
+        entity_id: sensor.vardagsrum_temperature
+        below: 20
+    action:
+      - service: homeassistant.turn_off
+        entity_id: switch.living_room_fan
+
+  - alias: Turn on bedroom fan when temperature upstairs is above 22
+    trigger: 
+      - platform: numeric_state
+        entity_id: sensor.ovanvaning_temperature
+        above: 22
+    condition:
+      - condition: state
+        entity_id: alarm_control_panel.alarm_1
+        state: 'armed_home'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: switch.bedroom_fan 
+
+  - alias: Turn off bedroom fan when temperature upstairs is below 20
+    trigger: 
+      - platform: numeric_state
+        entity_id: sensor.ovanvaning_temperature
+        below: 20
+    action:
+      - service: homeassistant.turn_off
+        entity_id: switch.bedroom_fan 

@@ -32,6 +32,7 @@
     condition:
       - condition: time
         before: '22:30:00'
+        after: '06:00:00'
     action:
       - service: homeassistant.turn_on
         entity_id:
@@ -62,6 +63,7 @@
     condition:
       - condition: time
         after: '22:30:00'
+        before: '06:00:00'
     action:
       #- service: scene.turn_on
       #  entity_id: scene.bedroom_dim

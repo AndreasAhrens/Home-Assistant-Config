@@ -100,7 +100,7 @@
         to: 'disarmed'
     condition:
       - condition: time
-        before: '08:00'
+        before: '08:00:00'
     action:
       # Set the volume to 40%
       - service: media_player.volume_set
@@ -182,4 +182,34 @@
     action:
       - service: homeassistant.turn_on
         entity_id: switch.bedroom_fan 
+
+  - alias: Alarm off turn on fan in livingroom if too warm
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'armed_home'
+        to: 'disarmed'
+    condition:
+      - condition: numeric_state
+        entity_id: sensor.vardagsrum_temperature
+        above: 23
+      action:
+        - service: homeassistant.turn_on
+          entity_id: switch.living_room_fan
+
+  - alias: Alarm on, turn off all fans
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'disarmed'
+        to: 'armed_away'
+      - platform: state
+        entity_id: alarm_control_panel.alarm_1
+        from: 'disarmed'
+        to: 'armed_home'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: switch.living_room_fan
+      - service: homeassistant.turn_off
+        entity_id: switch.bedroom_fan
 

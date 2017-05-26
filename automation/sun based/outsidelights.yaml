@@ -29,17 +29,20 @@
 
 
   ####### DRIVEWAY #######
-  - alias: Turn on DRIVEWAY light at sunset
-    trigger:
-      - platform: sun
-    # Possible values: sunset, sunrise
-        event: sunset
-    # Optional time offset. This example is 45 minutes.
-        offset: '+00:40:00'
-    action:
-      - service: homeassistant.turn_on
-        entity_id:
-          - switch.garden_driveway
+  #- alias: Turn on DRIVEWAY light at sunset
+  #  trigger:
+  #    - platform: sun
+  #  # Possible values: sunset, sunrise
+  #      event: sunset
+  #  # Optional time offset. This example is 45 minutes.
+  #      offset: '+00:40:00'
+  #  condition:
+  #    condition: time
+  #      before: '22:00:00'
+  #  action:
+  #    - service: homeassistant.turn_on
+  #      entity_id:
+  #        - switch.garden_driveway
 
 
   - alias: Turn off DRIVEWAY light at sunrise

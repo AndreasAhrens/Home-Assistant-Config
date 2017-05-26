@@ -33,6 +33,10 @@
       - light.her_bedside
       - light.his_bedside
     icon: mdi:hotel
+  Bedside lights:
+    entities:
+      - light.her_bedside
+      - light.his_bedside
   Amanda:
     entities:
       - switch.amanda_ceiling
@@ -108,7 +112,12 @@
       - device_tracker.tompasiphone
       - device_tracker.devvsimac12  
       - device_tracker.linneasiphone
+      - device_tracker.all_your_base_are_belong_to_us_2
     icon: mdi:cellphone-iphone
+  travel_times:
+    entities:
+      - sensor.andreas_to_home
+      - sensor.devv_to_home
   MainDevices:
     entities:
       - device_tracker.amandasiphone
@@ -178,6 +187,7 @@
       - sensor.speedtest_ping
       - sensor.since_last_boot
       - sensor.ssl_cert_expiry
+      - sensor.devv_to_home
   Mailbox:
     entities:
       - switch.mailbox_inside_light
@@ -201,7 +211,7 @@
       - media_player.mpd
       - media_player.kitchen_audio
   Plants_full:
-    name: Plants Pelargonia
+    name: Plants
     entities:
       - sensor.heart_plant_conductivity
       - sensor.heart_plant_light_intensity
@@ -216,7 +226,7 @@
       - sensor.Pelargonia_moisture
       - sensor.Pelargonia_temperature
   Plant_batteries:
-    name: Plan Batteries
+    name: Plant Batteries
     entities:
       - sensor.heart_plant_battery
       - sensor.cypress_battery
@@ -246,6 +256,7 @@
       - group.Mouse_status
       - group.mediaplayers
       - group.plants
+      
   Upstairs_view:
     name: Upstairs
     view: yes
@@ -298,7 +309,9 @@
     view: yes
     entities:
       - group.icloud_devices
-      - device_tracker.all_your_base_are_belong_to_us_2
+      - group.travel_times
+      
+
       #- group.devices
   Plants_view:
     name: Plants

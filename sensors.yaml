@@ -93,5 +93,18 @@
       - light
       - conductivity
       - battery
+  - platform: google_travel_time
+    name: Devv to Home
+    api_key: !secret google_api_key
+    origin: Kvarnstensgatan 19, Helsingborg, Sweden
+    destination: Hemgatan 3, Åstorp, Sweden
+    options:
+      departure_time: now
+      mode: driving
+  - platform: google_travel_time
+    name: Andreas to home
+    api_key: !secret google_api_key
+    origin: device_tracker.allyourbasearebelongtous2
+    destination: zone.home
  
  

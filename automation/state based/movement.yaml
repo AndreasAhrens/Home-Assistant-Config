@@ -11,7 +11,7 @@
       - service: tts.google_say
         data_template:
           entity_id: media_player.mpd
-          message: 'Andreas has left work and is on his way home'
+          message: 'Andreas has left work and is on his way home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
       - service: homeassistant.turn_on
         entity_id: switch.kitchen_speaker
       - delay: '00:00:05'
@@ -22,7 +22,7 @@
       - service: tts.google_say
         data_template:
           entity_id: media_player.kitchen_audio
-          message: 'Andreas has left work and is on his way home'
+          message: 'Andreas has left work and is on his way home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
       - delay: '00:00:05'
       - service: media_player.volume_set
         data:
@@ -38,10 +38,13 @@
         zone: zone.close_to_home
         entity_id: device_tracker.allyourbasearebelongtous2
     action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.garden_driveway
       - service: tts.google_say
         data_template:
           entity_id: media_player.mpd
-          message: 'Andreas is almost home'
+          message: 'Andreas is almost home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
       - service: homeassistant.turn_on
         entity_id: switch.kitchen_speaker
       - delay: '00:00:05'
@@ -52,7 +55,7 @@
       - service: tts.google_say
         data_template:
           entity_id: media_player.kitchen_audio
-          message: 'Andreas is almost home'
+          message: 'Andreas is almost home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
       - delay: '00:00:05'
       - service: media_player.volume_set
         data:
@@ -90,6 +93,10 @@
           volume_level: 0.25
       - service: homeassistant.turn_off
         entity_id: switch.kitchen_speaker
+      - delay: '00:05:00'
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.garden_driveway
 
   - alias: 'Amanda leaving school'
     trigger:

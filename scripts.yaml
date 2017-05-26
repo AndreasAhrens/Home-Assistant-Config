@@ -18,3 +18,7 @@
       # This is written using the Script Syntax
       - service: scene.turn_on
         entity_id: scene.night_mode
+
+  update_config:
+    sequence:
+      - service: shell_command.get_latest_config

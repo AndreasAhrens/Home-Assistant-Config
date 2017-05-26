@@ -179,6 +179,7 @@
       - sensor.cpu_use
       - sensor.ssl_cert_expiry
       - switch.dummy_switch
+      - script.update_config
     icon: mdi:raspberrypi
   Status:
     entities:

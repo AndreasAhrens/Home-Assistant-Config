@@ -106,5 +106,13 @@
     api_key: !secret google_api_key
     origin: device_tracker.allyourbasearebelongtous2
     destination: zone.home
+  - platform: mqtt
+    name: Livingroom Temperature 2
+    unit_of_measurement: "°C"
+    state_topic: "/inside/livingroom/temperature/"
+  - platform: mqtt
+    name: Livingroom Humidity 2
+    unit_of_measurement: "°C"
+    state_topic: "/inside/livingroom/humidity/"
  
  

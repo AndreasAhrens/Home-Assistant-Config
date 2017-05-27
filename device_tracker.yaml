@@ -9,5 +9,6 @@
     username: !secret icloud_username
     password: !secret icloud_password
     account_name: icloud
-  - platform: bluetooth_le_tracker
+  # - platform: bluetooth_le_tracker #disabled because it sucks the lifeblood out of the pi. God damn it. 
+  # To be fair, there is a warning at https://home-assistant.io/components/device_tracker.bluetooth_le_tracker/
   - platform: bluetooth_tracker

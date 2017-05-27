@@ -10,3 +10,4 @@
     password: !secret icloud_password
     account_name: icloud
   - platform: bluetooth_le_tracker
+  - platform: bluetooth_tracker

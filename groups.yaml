@@ -117,7 +117,7 @@
       - device_tracker.all_your_base_are_belong_to_us_2
     icon: mdi:cellphone-iphone
   travel_times:
-    names: Travel times
+    name: Travel times
     entities:
       - sensor.andreas_to_home
       - sensor.devv_to_home

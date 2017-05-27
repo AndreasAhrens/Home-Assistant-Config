@@ -104,6 +104,9 @@ binary_sensor:
   - platform: digital_ocean
     droplets:
       - 'Andreasahrensnew'
+  - platform: ffmpeg_motion
+    input: !secret front_door_camera
+    name: Front door motion
 
 
 # Enables support for tracking state changes over time.

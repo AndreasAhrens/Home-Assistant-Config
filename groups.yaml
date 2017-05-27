@@ -33,7 +33,8 @@
       - light.her_bedside
       - light.his_bedside
     icon: mdi:hotel
-  Bedside lights:
+  Bedside_lights:
+    name: Bedside lights
     entities:
       - light.her_bedside
       - light.his_bedside
@@ -101,6 +102,7 @@
   #  icon: mdi:cellphone-iphone
     #hidden: true
   icloud_devices:
+    name: iCloud devices
     entities:
       - device_tracker.allyourbasearebelongtous2
       - device_tracker.judithsiphone
@@ -115,10 +117,12 @@
       - device_tracker.all_your_base_are_belong_to_us_2
     icon: mdi:cellphone-iphone
   travel_times:
+    names: Travel times
     entities:
       - sensor.andreas_to_home
       - sensor.devv_to_home
   MainDevices:
+    name: Main Devices
     entities:
       - device_tracker.amandasiphone
       - device_tracker.judithsiphone
@@ -304,6 +308,13 @@
     view: yes
     entities:
       - group.System
+  Plants_view:
+    name: Plants
+    view: yes
+    entities:
+      - group.Plants
+      - group.Plants_full
+      - group.Plant_batteries
   Devices_view:
     name: Devices
     view: yes
@@ -313,10 +324,3 @@
       
 
       #- group.devices
-  Plants_view:
-    name: Plants
-    view: yes
-    entities:
-      - group.Plants
-      - group.Plants_full
-      - group.Plant_batteries

@@ -13,6 +13,8 @@
   sensor.ovanvaning_humidity:
     icon: mdi:water-percent
     friendly_name: Upstairs Humidity
+  sensor.livingroom_humidity_2:
+    icon: mdi:water-percent
   sensor.vardagsrum_humidity:
     icon: mdi:water-percent
     friendly_name: Living Room Humidity

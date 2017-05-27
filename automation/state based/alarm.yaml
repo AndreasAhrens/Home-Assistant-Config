@@ -193,9 +193,9 @@
       - condition: numeric_state
         entity_id: sensor.vardagsrum_temperature
         above: 23
-      action:
-        - service: homeassistant.turn_on
-          entity_id: switch.living_room_fan
+    action:
+      - service: homeassistant.turn_on
+        entity_id: switch.living_room_fan
 
   - alias: Alarm on, turn off all fans
     trigger:

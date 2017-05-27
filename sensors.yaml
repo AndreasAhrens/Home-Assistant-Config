@@ -112,7 +112,7 @@
     state_topic: "/inside/livingroom/temperature/"
   - platform: mqtt
     name: Livingroom Humidity 2
-    unit_of_measurement: "°C"
+    unit_of_measurement: "%"
     state_topic: "/inside/livingroom/humidity/"
  
  

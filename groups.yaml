@@ -151,6 +151,8 @@
       - sensor.mold_indicator
       - sensor.kallare_temperature
       - sensor.uterum_temperature
+      - sensor.livingroom_humidity_2
+      - sensor.livingroom_temperature_2
     icon: mdi:thermometer
   Weather:
     entities:

@@ -1,7 +1,7 @@
   - alias: Turn on livingroom fan when temperature in livingroom above 23
     trigger: 
       - platform: numeric_state
-        entity_id: sensor.vardagsrum_temperature
+        entity_id: sensor.livingroom_temperature_2
         above: 22
     condition:
       condition: and
@@ -19,7 +19,7 @@
   - alias: Turn off livingroom fan when temperature in livingroom below 20
     trigger: 
       - platform: numeric_state
-        entity_id: sensor.vardagsrum_temperature
+        entity_id: sensor.livingroom_temperature_2
         below: 20
     action:
       - service: homeassistant.turn_off

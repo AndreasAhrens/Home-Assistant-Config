@@ -191,7 +191,7 @@
         to: 'disarmed'
     condition:
       - condition: numeric_state
-        entity_id: sensor.vardagsrum_temperature
+        entity_id: sensor.livingroom_temperature_2
         above: 23
     action:
       - service: homeassistant.turn_on

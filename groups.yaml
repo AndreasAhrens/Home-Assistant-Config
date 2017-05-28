@@ -8,6 +8,7 @@
       - light.tv_bench
       - sensor.vardagsrum_humidity
       - sensor.vardagsrum_temperature
+      - sensor.livingroom_temperature_2
     icon: mdi:gamepad-variant
   Diningroom:
     entities:

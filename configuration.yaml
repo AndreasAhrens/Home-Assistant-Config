@@ -37,7 +37,7 @@ updater:
 
 # Add support for ffmpeg in order to use video streams
 ffmpeg:
-  ffmpeg_bin: /usr/bin/avconv
+#  ffmpeg_bin: /usr/bin/avconv
 # Now add the cameras
 camera:
   - platform: ffmpeg

@@ -74,6 +74,13 @@
       - service: tts.google_say
         data_template:
           entity_id: 'Someone is at the front door'
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+      - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.75
       - service: tts.google_say
         data_template:
           entity_id: media_player.kitchen_audio
@@ -84,4 +91,4 @@
           data:
             push:
               category: camera
-              entity_id: camera.frontdoor
+            entity_id: camera.frontdoor

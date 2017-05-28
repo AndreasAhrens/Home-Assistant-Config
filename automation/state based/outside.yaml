@@ -62,3 +62,19 @@
         data_template:
           entity_id: media_player.mpd
           message: 'The mail has arrived'
+
+
+
+  - alias: Notify when person at the door
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.front_door_motion
+        state: 'on'
+    action:
+      - service: notify.ios_all_your_base_are_belong_to_us_2
+        data:
+          message: Someone is at the door
+          data:
+            push:
+              category: camera
+              entity_id: camera.frontdoor

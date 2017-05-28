@@ -107,6 +107,7 @@ binary_sensor:
   - platform: ffmpeg_motion
     input: !secret front_door_camera
     name: Front door motion
+    changes: 20
 
 
 # Enables support for tracking state changes over time.

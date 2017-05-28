@@ -295,6 +295,7 @@
       - group.mailbox
       - camera.frontdoor
       - group.Outside_room
+      - binary_sensor.front_door_motion
   Basement_view:
     name: Basement
     view: yes

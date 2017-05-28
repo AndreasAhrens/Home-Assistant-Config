@@ -71,6 +71,13 @@
         entity_id: binary_sensor.front_door_motion
         state: 'on'
     action:
+      - service: tts.google_say
+        data_template:
+          entity_id: 'Someone is at the front door'
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_audio
+          message: 'Someone is at the front door'
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
           message: Someone is at the door

@@ -34,7 +34,7 @@
       - light.her_bedside
       - light.his_bedside
       - cover.bedroom_rollers
-      - 
+      - binary_sensor.bedroom_movement
     icon: mdi:hotel
   Bedside_lights:
     name: Bedside lights

@@ -33,6 +33,8 @@
       - switch.bedroom_fan
       - light.her_bedside
       - light.his_bedside
+      - cover.bedroom_rollers
+      - 
     icon: mdi:hotel
   Bedside_lights:
     name: Bedside lights

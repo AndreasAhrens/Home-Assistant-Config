@@ -105,10 +105,27 @@ binary_sensor:
   - platform: digital_ocean
     droplets:
       - 'Andreasahrensnew'
+  - platform: mqtt
+    state_topic: "/inside/bedroom/movement/"
   #- platform: ffmpeg_motion
   #  input: !secret front_door_camera
   #  name: Front door motion
   #  changes: 25
+
+cover:
+  - platform: mqtt
+    state_topic: "/inside/bedroom/cover/"
+    command_topic: "/inside/bedroom/cover/set"
+    name: "Bedroom Rollers"
+    qos: 0
+    retain: true
+    payload_open: "0"
+    payload_close: "1"
+    payload_stop: "STOP"
+    state_open: "OPEN"
+    state_closed: "CLOSED"
+    optimistic: false
+    #value_template: '{{ value.x }}'
 
 
 # Enables support for tracking state changes over time.

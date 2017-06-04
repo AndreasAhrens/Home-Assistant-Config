@@ -106,6 +106,7 @@ binary_sensor:
     droplets:
       - 'Andreasahrensnew'
   - platform: mqtt
+    name: "Bedroom Movement"
     state_topic: "/inside/bedroom/movement/"
   #- platform: ffmpeg_motion
   #  input: !secret front_door_camera

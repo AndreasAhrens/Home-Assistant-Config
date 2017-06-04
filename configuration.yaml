@@ -108,8 +108,8 @@ binary_sensor:
   - platform: mqtt
     name: "Bedroom Movement"
     state_topic: "/inside/bedroom/movement/"
-    payload_on: 1
-    payload_off: 0
+    payload_on: "1"
+    payload_off: "0"
     device_class: motion
   #- platform: ffmpeg_motion
   #  input: !secret front_door_camera

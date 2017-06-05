@@ -122,7 +122,7 @@ cover:
     command_topic: "/inside/bedroom/cover/set"
     name: "Bedroom Rollers"
     qos: 0
-    retain: true
+    #retain: true
     payload_open: "0"
     payload_close: "1"
     payload_stop: "STOP"

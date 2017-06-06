@@ -150,7 +150,7 @@ history:
 
 # View all events in a logbook
 logbook:
-  #exclude:
+  exclude:
   #  domains:
   #    - automation
   #    - device_tracker

@@ -2,7 +2,7 @@
   - alias: Turn off front door light at 23:00
     trigger:
       - platform: time
-        after: '23:00:00'
+        at: '23:00:00'
     action:
       - service: homeassistant.turn_off
         entity_id:
@@ -11,7 +11,7 @@
   - alias: Turn on front door light at 06:30
     trigger:
       - platform: time
-        after: '06:30:00'
+        at: '06:30:00'
     action:
       - service: homeassistant.turn_on
         entity_id:
@@ -22,7 +22,7 @@
   - alias: Turn off DRIVEWAY light at 22:00
     trigger:
       - platform: time
-        after: '22:00:00'
+        at: '22:00:00'
     action:
       - service: homeassistant.turn_off
         entity_id:
@@ -31,7 +31,7 @@
   - alias: Turn on DRIVEWAY light at 07:00
     trigger:
       - platform: time
-        after: '07:00:00'
+        at: '07:00:00'
     condition:
       - condition: template
         value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down

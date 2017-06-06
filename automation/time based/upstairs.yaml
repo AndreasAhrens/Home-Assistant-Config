@@ -4,7 +4,7 @@
   - alias: His Bedside 50% at 22:00
     trigger:
       - platform: time
-        after: '22:00:00'
+        at: '22:00:00'
     condition:
       - condition: numeric_state
         entity_id: light.his_bedside
@@ -21,7 +21,7 @@
   - alias: Her Bedside 50% at 22:00
     trigger:
       - platform: time
-        after: '22:00:00'
+        at: '22:00:00'
     condition:
       - condition: numeric_state
         entity_id: light.her_bedside
@@ -38,7 +38,7 @@
   - alias: His Bedside 25% at 22:30
     trigger:
       - platform: time
-        after: '22:30:00'
+        at: '22:30:00'
     condition:
       - condition: numeric_state
         entity_id: light.his_bedside
@@ -55,7 +55,7 @@
   - alias: Her Bedside 25% at 22:30
     trigger:
       - platform: time
-        after: '22:30:00'
+        at: '22:30:00'
     condition:
       - condition: numeric_state
         entity_id: light.her_bedside
@@ -72,7 +72,7 @@
   - alias: His Bedside 10% at 22:45
     trigger:
       - platform: time
-        after: '22:45:00'
+        at: '22:45:00'
     condition:
       - condition: numeric_state
         entity_id: light.his_bedside
@@ -89,7 +89,7 @@
   - alias: Her Bedside 10% at 22:45
     trigger:
       - platform: time
-        after: '22:45:00'
+        at: '22:45:00'
     condition:
       - condition: numeric_state
         entity_id: light.her_bedside
@@ -106,7 +106,7 @@
   - alias: His Bedside 5% at 23:00
     trigger:
       - platform: time
-        after: '23:00:00'
+        at: '23:00:00'
     condition:
       - condition: numeric_state
         entity_id: light.his_bedside
@@ -123,7 +123,7 @@
   - alias: Her Bedside 5% at 23:00
     trigger:
       - platform: time
-        after: '23:00:00'
+        at: '23:00:00'
     condition:
       - condition: numeric_state
         entity_id: light.her_bedside
@@ -140,7 +140,7 @@
   - alias: His Bedside off at 23:15
     trigger:
       - platform: time
-        after: '23:15:00'
+        at: '23:15:00'
     condition:
       - condition: numeric_state
         entity_id: light.his_bedside
@@ -154,7 +154,7 @@
   - alias: Her Bedside off at 23:15
     trigger:
       - platform: time
-        after: '23:15:00'
+        at: '23:15:00'
     condition:
       - condition: numeric_state
         entity_id: light.her_bedside
@@ -168,7 +168,7 @@
   - alias: Both Bedsides off at 08:00
     trigger:
       - platform: time
-        after: '08:00:00'
+        at: '08:00:00'
     action:
       - service: homeassistant.turn_off
         entity_id:
@@ -181,7 +181,7 @@
   - alias: Upstairs hallway 10% at 23:00
     trigger:
       - platform: time
-        after: '23:00:00'
+        at: '23:00:00'
     condition:
       - condition: numeric_state
         entity_id: light.upstairs_hallway
@@ -197,7 +197,7 @@
   - alias: Upstairs hallway 30% at 20:30
     trigger:
       - platform: time
-        after: '20:30:00'
+        at: '20:30:00'
     action:
       - service: homeassistant.turn_on
         entity_id:
@@ -215,7 +215,7 @@
   - alias: Turn off Amandas room at 8:00
     trigger:
       - platform: time
-        after: '08:00:00'
+        at: '08:00:00'
     action:
     - service: homeassistant.turn_off
       entity_id:

@@ -137,6 +137,11 @@ history:
 
 # View all events in a logbook
 logbook:
+  exclude:
+    domains:
+      - automation
+      - device_tracker
+      - sun
 
 # Track the sun
 sun:

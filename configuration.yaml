@@ -94,6 +94,19 @@ emulated_hue:
 # Use MySQL database
 recorder:
   db_url: !secret mysql_connection
+  exclude:
+    #domains:
+    #  - device_tracker
+    entities:
+      - sensor.andreas_to_home
+      - sensor.devv_to_home
+      - sensor.disk_use_
+      - sensor.ram_free
+      - sensor.ram_use
+      - sensor.since_last_boot
+      - sensor.ssl_cert_expiry
+      - sensor.time
+
 # Enables tellstick
 tellstick:
   signal_repetitions: 10
@@ -137,16 +150,17 @@ history:
 
 # View all events in a logbook
 logbook:
-  exclude:
-    domains:
-      - automation
-      - device_tracker
-      - sun
-      - group
+  #exclude:
+  #  domains:
+  #    - automation
+  #    - device_tracker
+  #    - sun
+  #    - group
+  #    - media_player
     entities:
-      - sun.sun   # Don't record sun data
+  #    - sun.sun   # Don't record sun data
       - sensor.last_boot
-      - sensor.date
+  #    - sensor.date
       - sensor.all_your_base_are_belong_to_us_2_battery_level
       - sensor.all_your_base_are_belong_to_us_2_battery_state
       - sensor.andreas_to_home

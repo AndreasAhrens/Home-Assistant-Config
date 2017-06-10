@@ -1,0 +1,15 @@
+  # Turn off bedroom when no movement for 30 minutes
+  - alias: Turn off Bedroom 30 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.bedroom_movement
+      to: 'off'
+      for:
+        minutes: 30
+    action:
+      service: homeassistant.turn_off
+      entity_id: 
+        - switch.bedroom_reading_light
+        - switch.bedroom_fan
+        - light.her_bedside
+        - light.his_bedside

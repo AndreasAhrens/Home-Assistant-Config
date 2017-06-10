@@ -4,7 +4,7 @@
     trigger:
       - platform: state
         entity_id: media_player.apple_tv_i_vardagsrum
-        state: 'playing'
+        to: 'playing'
     condition:
       #- condition: template
       #  value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
@@ -31,7 +31,7 @@
     trigger:
       - platform: state
         entity_id: media_player.kitchen_audio
-        state: 'playing'
+        to: 'playing'
     action:
       - service: homeassistant.turn_on
         entity_id: switch.kitchen_speaker
@@ -40,7 +40,7 @@
     trigger:
       - platform: state
         entity_id: media_player.kitchen_audio
-        state: 'paused'
+        to: 'paused'
         for:
           minutes: 5
       - platform: state

@@ -21,7 +21,7 @@
     # Optional time offset. This example is 45 minutes.
         offset: '+00:20:00'
       - platform: time
-        after: '08:30:00'
+        at: '08:30:00'
     action:
       - service: homeassistant.turn_off
         entity_id:

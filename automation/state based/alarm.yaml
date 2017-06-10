@@ -5,7 +5,6 @@
         entity_id: alarm_control_panel.alarm_1
         from: 'disarmed'
         to: 'armed_home'
-        state: 'Night mode'
     action:
       - service: tts.google_say
         data_template:
@@ -28,7 +27,6 @@
         entity_id: alarm_control_panel.alarm_1
         from: 'disarmed'
         to: 'armed_home'
-        state: 'Night mode'
     condition:
       - condition: time
         before: '22:30:00'
@@ -59,7 +57,6 @@
         entity_id: alarm_control_panel.alarm_1
         from: 'disarmed'
         to: 'armed_home'
-        state: 'Night mode'
     condition:
       - condition: time
         after: '22:30:00'
@@ -174,7 +171,6 @@
         entity_id: alarm_control_panel.alarm_1
         from: 'disarmed'
         to: 'armed_home'
-        state: 'Night mode'
     condition:
       - condition: numeric_state
         entity_id: sensor.ovanvaning_temperature

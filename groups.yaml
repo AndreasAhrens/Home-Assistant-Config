@@ -1,5 +1,5 @@
 ##### GROUPS ########
-#test
+#test again!
   Livingroom:
     entities:
       - switch.livingroom_ceiling
@@ -188,6 +188,7 @@
       - sensor.cpu_use
       - sensor.ssl_cert_expiry
       - switch.dummy_switch
+      - script.update_config
     icon: mdi:raspberrypi
   Status:
     entities:

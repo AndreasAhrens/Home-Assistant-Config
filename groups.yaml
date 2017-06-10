@@ -1,5 +1,5 @@
 ##### GROUPS ########
-#test again!
+#test removed!
   Livingroom:
     entities:
       - switch.livingroom_ceiling

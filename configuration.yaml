@@ -129,7 +129,7 @@ binary_sensor:
   - platform: ffmpeg_motion
     input: !secret front_door_camera
     # tool: motion
-    extra_arguments: -filter:v "crop=200:200:12:400"
+    extra_arguments: -filter:v "crop=in_w/2:in_h/2:0:in_h/2"
     # extra_arguments: -q:v 2
     name: Front door motion
     changes: 25

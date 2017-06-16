@@ -5,7 +5,8 @@ homeassistant:
   latitude: !secret lat
   longitude: !secret long
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 3
+  elevation: 41 
+  # it seems we're 41 meters over sea level. Checked through https://www.daftlogic.com/sandbox-google-maps-find-altitude.htm
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -37,8 +38,8 @@ updater:
 
 # Add support for ffmpeg in order to use video streams
 ffmpeg:
-# ffmpeg_bin: /usr/bin/avconv
-  ffmpeg_bin: /usr/local/bin/ffmpeg
+  ffmpeg_bin: /usr/bin/avconv
+  #ffmpeg_bin: /usr/local/bin/ffmpeg
 # Now add the cameras
 camera:
   - platform: ffmpeg

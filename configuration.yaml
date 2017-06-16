@@ -126,10 +126,10 @@ binary_sensor:
     payload_on: "1"
     payload_off: "0"
     device_class: motion
-  #- platform: ffmpeg_motion
-  #  input: !secret front_door_camera
-  #  name: Front door motion
-  #  changes: 25
+  - platform: ffmpeg_motion
+    input: !secret front_door_camera
+    name: Front door motion
+    changes: 25
 
 cover:
   - platform: mqtt

@@ -6,8 +6,8 @@
         offset: '-00:10:00'
     condition:
       - condition: state
-          entity_id: alarm_control_panel.alarm_1
-          state: 'disarmed'
+        entity_id: alarm_control_panel.alarm_1
+        state: 'disarmed'
     action:
       - service: homeassistant.turn_on
         entity_id:

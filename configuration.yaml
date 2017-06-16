@@ -128,14 +128,14 @@ binary_sensor:
     device_class: motion
   - platform: ffmpeg_motion
     input: !secret front_door_camera
-    tool: motion
+    # tool: motion
     extra_arguments: -q:v 2
     name: Front door motion
     changes: 25
     repeat: 2
     reset: 20
     repeat_time: 0
-    ffmpeg_bin: /usr/bin/ffmpeg
+    # ffmpeg_bin: /usr/bin/ffmpeg
 
 cover:
   - platform: mqtt

@@ -1,13 +1,13 @@
   ####### Stairs #######
 
-  - alias: Turn off Stairs light at 23:00
-    trigger:
-      - platform: time
-        at: '23:00:00'
-    action:
-      - service: homeassistant.turn_off
-        entity_id:
-          - switch.hallway_stairs
+  # - alias: Turn off Stairs light at 23:00
+  #   trigger:
+  #     - platform: time
+  #       at: '23:00:00'
+  #   action:
+  #     - service: homeassistant.turn_off
+  #       entity_id:
+  #         - switch.hallway_stairs
 
   - alias: Turn on Stairs light at 06:30
     trigger:

@@ -132,9 +132,9 @@ binary_sensor:
     extra_arguments: -filter:v "crop=in_w/2:in_h/2:0:in_h/2"
     # extra_arguments: -q:v 2
     name: Front door motion
-    changes: 25
+    changes: 10
     # repeat: 2
-    reset: 20
+    reset: 10
     # repeat_time: 0
     # ffmpeg_bin: /usr/bin/ffmpeg
   - platform: ffmpeg_noise

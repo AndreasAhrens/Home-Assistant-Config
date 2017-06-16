@@ -134,7 +134,7 @@ binary_sensor:
     changes: 25
     repeat: 2
     reset: 20
-    repeat_time: 0
+    # repeat_time: 0
     # ffmpeg_bin: /usr/bin/ffmpeg
 
 cover:

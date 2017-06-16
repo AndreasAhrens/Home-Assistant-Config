@@ -44,6 +44,8 @@
     icon: mdi:fan
   switch.garden_front_door:
     icon: mdi:stairs
+  cover.bedroom_rollers:
+    homebridge_cover_type: rollershutter
   light.hue_color_lamp_1:
     emulated_hue: false
   light.bedside:

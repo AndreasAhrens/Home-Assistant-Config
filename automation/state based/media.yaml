@@ -5,6 +5,9 @@
       - platform: state
         entity_id: media_player.apple_tv_i_vardagsrum
         to: 'playing'
+      - platform: state
+        entity_id: media_player.living_room
+        to: playing
     condition:
       #- condition: template
       #  value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down

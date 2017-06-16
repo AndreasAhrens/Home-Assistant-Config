@@ -6,6 +6,9 @@
         event: sunset
     # Optional time offset. This example is 45 minutes.
         offset: '-00:20:00'
+    condition:
+      - condition: time
+        before: '21:00:00'
     action:
       - service: homeassistant.turn_on
         entity_id:

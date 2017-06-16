@@ -193,6 +193,7 @@
       - sensor.disk_use_
       - sensor.cpu_use
       - sensor.ssl_cert_expiry
+      - sensor.hassbian_cert_expiry
       - switch.dummy_switch
       - script.update_config
     icon: mdi:raspberrypi
@@ -203,6 +204,7 @@
       - sensor.speedtest_ping
       - sensor.since_last_boot
       - sensor.ssl_cert_expiry
+      - sensor.hassbian_cert_expiry
       - sensor.devv_to_home
   Mailbox:
     entities:

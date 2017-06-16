@@ -140,6 +140,7 @@ binary_sensor:
     input: !secret front_door_camera
     duration: 3
     name: Front door noise
+    peak: -50
 
 cover:
   - platform: mqtt

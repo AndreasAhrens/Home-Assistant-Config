@@ -129,7 +129,7 @@ binary_sensor:
   - platform: ffmpeg_motion
     input: !secret front_door_camera
     # tool: motion
-    extra_arguments: -filter:v "crop=100:100:12:34"
+    extra_arguments: -filter:v "crop=200:200:12:400"
     # extra_arguments: -q:v 2
     name: Front door motion
     changes: 25
@@ -141,7 +141,7 @@ binary_sensor:
     input: !secret front_door_camera
     duration: 3
     name: Front door noise
-    peak: -50
+    peak: -10
 
 cover:
   - platform: mqtt

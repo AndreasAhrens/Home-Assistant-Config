@@ -299,6 +299,7 @@
       - camera.frontdoor
       - group.Outside_room
       - binary_sensor.front_door_motion
+      - binary_sensor.front_door_noise
   Basement_view:
     name: Basement
     view: yes

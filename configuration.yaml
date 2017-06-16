@@ -136,6 +136,10 @@ binary_sensor:
     reset: 20
     # repeat_time: 0
     # ffmpeg_bin: /usr/bin/ffmpeg
+  - platform: ffmpeg_noise
+    input: !secret front_door_camera
+    duration: 3
+    name: Front door noise
 
 cover:
   - platform: mqtt

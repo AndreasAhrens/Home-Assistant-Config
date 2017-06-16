@@ -1,14 +1,14 @@
 # Home Assistant Config
 My Home Assistant configuration, feel free to copy any config files you want. 
 ## Installation
-Fork repo
-If you want to replace all current files (you might need to remove all existing files):
-git init
-git remote add origin PATH/TO/REPO
-git fetch
-git checkout -t origin/master
+Fork repo  
+If you want to replace all current files (you might need to remove all existing files):  
+1. git init
+2. git remote add origin PATH/TO/REPO
+3. git fetch
+4. git checkout -t origin/master
 ## Usage
-Use with Home Assistant
+Use with [Home Assistant](https://home-assistant.io)
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`

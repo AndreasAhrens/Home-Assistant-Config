@@ -114,5 +114,8 @@
     name: Livingroom Humidity 2
     unit_of_measurement: "%"
     state_topic: "/inside/livingroom/humidity/"
+  - platform: cert_expiry
+    name: Hassbian cert expiry
+    host: eiolos.duckdns.org
  
  

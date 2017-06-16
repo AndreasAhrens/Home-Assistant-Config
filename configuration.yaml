@@ -126,22 +126,22 @@ binary_sensor:
     payload_on: "1"
     payload_off: "0"
     device_class: motion
-  - platform: ffmpeg_motion
-    input: !secret front_door_camera
-    # tool: motion
-    extra_arguments: -filter:v "crop=in_w/2:in_h/2:0:in_h/2"
-    # extra_arguments: -q:v 2
-    name: Front door motion
-    changes: 10
-    # repeat: 2
-    reset: 10
-    # repeat_time: 0
-    # ffmpeg_bin: /usr/bin/ffmpeg
-  - platform: ffmpeg_noise
-    input: !secret front_door_camera
-    duration: 3
-    name: Front door noise
-    peak: -10
+  #- platform: ffmpeg_motion
+  #  input: !secret front_door_camera
+  #  # tool: motion
+  #  extra_arguments: -filter:v "crop=in_w/2:in_h/2:0:in_h/2"
+  #  # extra_arguments: -q:v 2
+  #  name: Front door motion
+  #  changes: 10
+  #  # repeat: 2
+  #  reset: 10
+  #  # repeat_time: 0
+  #  # ffmpeg_bin: /usr/bin/ffmpeg
+  #- platform: ffmpeg_noise
+  #  input: !secret front_door_camera
+  #  duration: 3
+  #  name: Front door noise
+  #  peak: -10
 
 cover:
   - platform: mqtt

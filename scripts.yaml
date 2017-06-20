@@ -41,13 +41,8 @@
           source: "Kitchen Audio"
       # Play the Women of Jazz playlist
       - service: media_player.play_media
-        data:
+        data_template:
           entity_id: media_player.kitchen_audio
           media_content_type: PLAYLIST
-          media_content_id: spotify:user:spotify:playlist:37i9dQZF1DX5OepaGriAIm
-      # Leave it on for one hour
-      - delay: '01:00:00'
-      # The pause
-      - service: media_player.media_pause
-        data:
-          entity_id: media_player.spotify
+          media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DX5OepaGriAIm'
+     

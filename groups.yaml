@@ -196,6 +196,7 @@
       - sensor.hassbian_cert_expiry
       - switch.dummy_switch
       - script.update_config
+      - test_script
     icon: mdi:raspberrypi
   Status:
     entities:

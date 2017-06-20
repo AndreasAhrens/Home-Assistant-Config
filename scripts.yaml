@@ -22,3 +22,32 @@
   update_config:
     sequence:
       - service: shell_command.get_latest_config
+
+  test_script:
+    sequence:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.40
+      # Set shuffle to true
+      - service: media_player.shuffle_set
+        data: 
+          entity_id: media_player.spotify
+          shuffle: true
+      # Set the source for spotify to the kitchen Chromecast
+      - service: media_player.select_source 
+        data:
+          entity_id: media_player.spotify
+          source: "Kitchen Audio"
+      # Play the Women of Jazz playlist
+      - service: media_player.play_media
+        data:
+          entity_id: media_player.kitchen_audio
+          media_content_type: PLAYLIST
+          media_content_id: spotify:user:spotify:playlist:37i9dQZF1DX5OepaGriAIm
+      # Leave it on for one hour
+      - delay: '01:00:00'
+      # The pause
+      - service: media_player.media_pause
+        data:
+          entity_id: media_player.spotify

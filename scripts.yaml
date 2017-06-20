@@ -39,7 +39,7 @@
           shuffle: 'true'
       - service: media_player.play_media
         data:
-          entity_id: media_player.spotify
+          entity_id: media_player.kitchen_audio
           media_content_type: playlist
         data_template:
           media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DX5OepaGriAIm'

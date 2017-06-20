@@ -42,7 +42,7 @@
       # Play the Women of Jazz playlist
       - service: media_player.play_media
         data_template:
-          entity_id: media_player.kitchen_audio
+          entity_id: media_player.spotify
           media_content_type: PLAYLIST
           media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DX5OepaGriAIm'
      

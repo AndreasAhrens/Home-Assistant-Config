@@ -25,20 +25,20 @@
 
   test_script:
     sequence:
-      - service: media_player.select_source
-      data:
-        entity_id: media_player.spotify
-        source: Kitchen Audio
-    - service: media_player.shuffle_set
-      data: 
-        entity_id: media_player.spotify
-        shuffle: 'true'
-    - service: media_player.play_media
-      data:
-        entity_id: media_player.spotify
-        media_content_type: playlist
-      data_template:
-        media_content_id: 'spotify:user:trisk3lion:playlist:1KH7pw5kxsppOdINedp8Ub'
+      #- service: media_player.select_source
+      #  data:
+      #    entity_id: media_player.spotify
+      #    source: Kitchen Audio
+      - service: media_player.shuffle_set
+        data: 
+          entity_id: media_player.spotify
+          shuffle: 'true'
+      - service: media_player.play_media
+        data:
+          entity_id: media_player.spotify
+          media_content_type: playlist
+        data_template:
+          media_content_id: 'spotify:user:trisk3lion:playlist:1KH7pw5kxsppOdINedp8Ub'
 
       #- service: media_player.volume_set
       #  data:

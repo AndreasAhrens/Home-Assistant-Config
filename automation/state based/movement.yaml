@@ -4,6 +4,10 @@
         event: leave
         zone: zone.devv
         entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: leave
+        zone: zone.devv
+        entity_id: device_tracker.all_your_base_are_belong_to_us_2
     condition:
       - condition: time
         after: '16:00'
@@ -37,6 +41,10 @@
         event: enter
         zone: zone.close_to_home
         entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: leave
+        zone: zone.devv
+        entity_id: device_tracker.all_your_base_are_belong_to_us_2
     action:
       - service: homeassistant.turn_on
         entity_id:
@@ -70,6 +78,10 @@
         event: enter
         zone: zone.home
         entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: leave
+        zone: zone.devv
+        entity_id: device_tracker.all_your_base_are_belong_to_us_2
     action:
       - service: tts.google_say
         data_template:

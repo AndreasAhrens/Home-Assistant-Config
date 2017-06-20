@@ -25,24 +25,39 @@
 
   test_script:
     sequence:
-      - service: media_player.volume_set
-        data:
-          entity_id: media_player.kitchen_audio
-          volume_level: 0.40
-      # Set shuffle to true
-      - service: media_player.shuffle_set
-        data: 
-          entity_id: media_player.spotify
-          shuffle: true
-      # Set the source for spotify to the kitchen Chromecast
-      - service: media_player.select_source 
-        data:
-          entity_id: media_player.spotify
-          source: "Kitchen Audio"
-      # Play the Women of Jazz playlist
-      - service: media_player.play_media
-        data:
-          entity_id: media_player.spotify
-          media_content_type: "PLAYLIST"
-          media_content_id: "spotify:user:spotify:playlist:37i9dQZF1DX5OepaGriAIm"
+      - service: media_player.select_source
+      data:
+        entity_id: media_player.spotify
+        source: Kitchen Audio
+    - service: media_player.shuffle_set
+      data: 
+        entity_id: media_player.spotify
+        shuffle: 'true'
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.spotify
+        media_content_type: playlist
+      data_template:
+        media_content_id: 'spotify:user:eiolos:playlist:37i9dQZF1DX5OepaGriAIm'
+
+      #- service: media_player.volume_set
+      #  data:
+      #    entity_id: media_player.kitchen_audio
+      #    volume_level: 0.40
+      ## Set shuffle to true
+      #- service: media_player.shuffle_set
+      #  data: 
+      #    entity_id: media_player.spotify
+      #    shuffle: true
+      ## Set the source for spotify to the kitchen Chromecast
+      #- service: media_player.select_source 
+      #  data:
+      #    entity_id: media_player.spotify
+      #    source: "Kitchen Audio"
+      ## Play the Women of Jazz playlist
+      #- service: media_player.play_media
+      #  data:
+      #    entity_id: media_player.spotify
+      #    media_content_type: "PLAYLIST"
+      #    media_content_id: "spotify:user:spotify:playlist:37i9dQZF1DX5OepaGriAIm"
      

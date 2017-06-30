@@ -46,12 +46,12 @@ camera:
   - platform: ffmpeg
     input: !secret front_door_camera
     name: Front-door
-  - platform: onvif
-    name: Front door 2
-    host: !secret front_door_ip
-    username: !secret front_door_username
-    password: !secret front_door_password
-    port: !secret front_door_port
+  #- platform: onvif
+  #  name: Front door 2
+  #  host: !secret front_door_ip
+  #  username: !secret front_door_username
+  #  password: !secret front_door_password
+  #  port: !secret front_door_port
 
 #### INCLUDES ########
 automation old: !include_dir_merge_list automation/
@@ -102,18 +102,18 @@ emulated_hue:
 # Use MySQL database
 recorder:
   db_url: !secret mysql_connection
-  #exclude:
-  #  #domains:
-  #  #  - device_tracker
-  #  entities:
-  #    - sensor.andreas_to_home
-  #    - sensor.devv_to_home
-  #    - sensor.disk_use_
-  #    - sensor.ram_free
-  #    - sensor.ram_use
-  #    - sensor.since_last_boot
-  #    - sensor.ssl_cert_expiry
-  #    - sensor.time
+  exclude:
+    #domains:
+    #  - device_tracker
+    entities:
+      - sensor.andreas_to_home
+      - sensor.devv_to_home
+      - sensor.disk_use_
+      - sensor.ram_free
+      - sensor.ram_use
+      - sensor.since_last_boot
+      - sensor.ssl_cert_expiry
+      - sensor.time
 
 # Enables tellstick
 tellstick:

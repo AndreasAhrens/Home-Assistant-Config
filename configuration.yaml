@@ -47,6 +47,7 @@ camera:
     input: !secret front_door_camera
     name: Front-door
   - platform: onvif
+    name: Front door 2
     host: !secret front_door_ip
     username: !secret front_door_username
     password: !secret front_door_password

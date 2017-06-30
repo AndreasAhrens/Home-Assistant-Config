@@ -46,6 +46,11 @@ camera:
   - platform: ffmpeg
     input: !secret front_door_camera
     name: Front-door
+  - platform: onvif
+    host: !secret front_door_ip
+    username: !secret front_door_username
+    password: !secret front_door_password
+    port: !secret front_door_port
 
 #### INCLUDES ########
 automation old: !include_dir_merge_list automation/

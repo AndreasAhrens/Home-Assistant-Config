@@ -101,18 +101,18 @@ emulated_hue:
 # Use MySQL database
 recorder:
   db_url: !secret mysql_connection
-  exclude:
-    #domains:
-    #  - device_tracker
-    entities:
-      - sensor.andreas_to_home
-      - sensor.devv_to_home
-      - sensor.disk_use_
-      - sensor.ram_free
-      - sensor.ram_use
-      - sensor.since_last_boot
-      - sensor.ssl_cert_expiry
-      - sensor.time
+  #exclude:
+  #  #domains:
+  #  #  - device_tracker
+  #  entities:
+  #    - sensor.andreas_to_home
+  #    - sensor.devv_to_home
+  #    - sensor.disk_use_
+  #    - sensor.ram_free
+  #    - sensor.ram_use
+  #    - sensor.since_last_boot
+  #    - sensor.ssl_cert_expiry
+  #    - sensor.time
 
 # Enables tellstick
 tellstick:
@@ -228,6 +228,11 @@ ios:
 tts:
   platform: google
 
+mailgun:
+  domain: andreasahrens.se
+  api_key: !secret mailgun_token
+  sandbox: False
+
 shell_command: 
   renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
   get_latest_config: bash /home/homeassistant/.homeassistant/bin/update_config_from_github.sh
@@ -237,8 +242,6 @@ notify:
     page_access_token: !secret facebook_token
   - name: Mailgun_Notifier
     platform: mailgun
-    domain: andreasahrens.se
-    token: !secret mailgun_token
     recipient: andreas@ahrensit.se
   - name: iOSApp
     platform: ios

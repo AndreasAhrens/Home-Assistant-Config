@@ -78,38 +78,6 @@
     entities:
       - sensor.kallare_mouse
       - sensor.uterum_mouse
-
-  #Devices:
-  #  entities:
-  #    - device_tracker.5855ca43658d
-  #    - device_tracker.allyourongtous2
-  #    - device_tracker.amanda_iphone
-  #    - device_tracker.amazon8e8db42dd
-  #    - device_tracker.andreas_iphone_owntracks
-  #    - device_tracker.andreassimac
-  #    - device_tracker.andreassmbp
-  #    - device_tracker.appletvisovrum2
-  #    - device_tracker.appletvrdagsrum
-  #    - device_tracker.chromecastultra
-  #    - device_tracker.esp_299722
-  #    - device_tracker.esp_917b5c
-  #    - device_tracker.hassbian
-  #    - device_tracker.judith_iphone
-  #    - device_tracker.judithsiphone3
-  #    - device_tracker.philipshue
-  #    - device_tracker.unknown
-  #    - device_tracker.amandasiphone
-  #    - device_tracker.404d7f2d5c52
-  #    - device_tracker.d023dbcae2b7
-  #    - device_tracker.andreasiphone
-  #    - device_tracker.andreassimac
-  #    - device_tracker.andreas
-  #    - device_tracker.286c07b21f07
-  #    - device_tracker.5ccf7f8bcba9
-  #    - device_tracker.andreas_iphone
-  #    - device_tracker.e0b94d91bcb5
-  #  icon: mdi:cellphone-iphone
-    #hidden: true
   icloud_devices:
     name: iCloud devices
     entities:
@@ -121,7 +89,7 @@
       - device_tracker.andreassmacbookpro
       - device_tracker.anitasiphone
       - device_tracker.tompasiphone
-      - device_tracker.devvsimac12  
+      - device_tracker.devvsimac12
       - device_tracker.linneasiphone
       - device_tracker.all_your_base_are_belong_to_us_2
     icon: mdi:cellphone-iphone
@@ -204,9 +172,9 @@
       - sensor.speedtest_download
       - sensor.speedtest_ping
       - sensor.since_last_boot
-      - sensor.ssl_cert_expiry
       - sensor.hassbian_cert_expiry
       - sensor.devv_to_home
+      - input_boolean.vacation_mode
   Mailbox:
     entities:
       - switch.mailbox_inside_light
@@ -275,7 +243,7 @@
       - group.Mouse_status
       - group.mediaplayers
       - group.plants
-      
+
   Upstairs_view:
     name: Upstairs
     view: yes
@@ -339,6 +307,6 @@
     entities:
       - group.icloud_devices
       - group.travel_times
-      
+
 
       #- group.devices

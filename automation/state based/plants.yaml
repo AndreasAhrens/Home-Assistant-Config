@@ -4,7 +4,7 @@
     trigger:
       - platform: state
         entity_id: sensor.heart_plant_moisture
-        below: '20'
+        below: '50'
     condition:
       - condition: template
         value_template: '{{ as_timestamp(now()) - sensor.plant_watering_last_time > 10 }}' # One hour, 3600 seconds

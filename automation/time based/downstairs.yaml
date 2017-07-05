@@ -14,8 +14,13 @@
       - platform: time
         at: '06:30:00'
     condition:
-      - condition: template
-        value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
+      condition: and
+      conditions: 
+        - condition: template
+          value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
+        - condition: state
+          entity_id: input_boolean.vacation_mode
+          state: 'on'
     action:
       - service: homeassistant.turn_on
         entity_id:

@@ -5,9 +5,14 @@
         event: sunset
         offset: '-00:10:00'
     condition:
-      - condition: state
-        entity_id: alarm_control_panel.alarm_1
-        state: 'disarmed'
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: alarm_control_panel.alarm_1
+          state: 'disarmed'
+        - condition: state
+          entity_id: input_boolean.vacation_mode
+          state: 'off'
     action:
       - service: homeassistant.turn_on
         entity_id:

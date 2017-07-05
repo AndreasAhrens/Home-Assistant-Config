@@ -8,6 +8,8 @@
       - service: homeassistant.turn_on
         entity_id:
           - switch.mailbox_inside_light
+
+          
   - alias: Turn off mailbox inside light when hatch closed
     trigger:
       - platform: state

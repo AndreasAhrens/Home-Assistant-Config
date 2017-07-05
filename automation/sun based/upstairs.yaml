@@ -11,14 +11,34 @@
         entity_id:
           - light.upstairs_hallway
 
-  - alias: Turn on upper hallway light at sunset
+  - alias: Turn on upper hallway light at sunset not vacation mode
     trigger:
       - platform: sun
         event: sunset
         offset: '-00:10:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'off'
     action:
       - service: homeassistant.turn_on
         entity_id:
           - light.upstairs_hallway
         data:
           brightness: 180
+
+  - alias: Turn on upper hallway light at sunset vacation mode
+    trigger:
+      - platform: sun
+        event: sunset
+        offset: '-00:10:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'on'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.upstairs_hallway
+        data:
+          brightness: 70

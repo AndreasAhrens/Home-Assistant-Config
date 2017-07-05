@@ -12,6 +12,9 @@
         - condition: time
           after: '06:30:00'
           before: '23:00:00'
+        - condition: state
+          entity_id: input_boolean.vacation_mode
+          state: 'off'
     action:
       - service: homeassistant.turn_on
         entity_id: switch.living_room_fan

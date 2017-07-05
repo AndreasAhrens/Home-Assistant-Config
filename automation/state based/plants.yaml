@@ -2,7 +2,7 @@
 
   - alias: Water if Heart plant humidity is too low
     trigger:
-      - platform: state
+      - platform: numeric_state
         entity_id: sensor.heart_plant_moisture
         below: '50'
     condition:

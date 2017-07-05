@@ -233,6 +233,7 @@
     entities:
       - switch.plant_watering_system
       - script.plant_watering_script
+      - sensor.plant_watering_last_time
 
 ###### VIEWS #######
   default_view:

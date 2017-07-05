@@ -1,0 +1,13 @@
+  ## Plant based automations ##
+
+  - alias: Water if Heart plant humidity is too low
+    trigger:
+      - platform: state
+        entity_id: sensor.heart_plant_moisture
+        below: '20'
+    condition:
+      - condition: template
+        value_template: '{{ as_timestamp(now()) - sensor.plant_watering_last_time > 10 }}' # One hour, 3600 seconds
+    action:
+      - service: script.turn_on
+        entity_id: script.plant_watering_script

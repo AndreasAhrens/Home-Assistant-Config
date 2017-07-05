@@ -3,27 +3,21 @@
   - alias: Water if Heart plant humidity is too low
     trigger:
       - platform: time
-        # Matches every hour at 27 minutes past whole
         minutes: 00
         seconds: 00
       - platform: time
-        # Matches every hour at 27 minutes past whole
         minutes: 10
         seconds: 00
       - platform: time
-        # Matches every hour at 27 minutes past whole
         minutes: 20
         seconds: 00
       - platform: time
-        # Matches every hour at 27 minutes past whole
         minutes: 30
         seconds: 00
       - platform: time
-        # Matches every hour at 27 minutes past whole
         minutes: 40
         seconds: 00
       - platform: time
-        # Matches every hour at 27 minutes past whole
         minutes: 50
         seconds: 00
     condition:

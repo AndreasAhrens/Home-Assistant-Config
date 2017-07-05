@@ -61,6 +61,9 @@
   - platform: mqtt
     state_topic: '/inside/livingroom/plantwatering/time'
     name: 'Plant watering last time'
+  - platform: mqtt
+    state_topic: '/inside/livingroom/plantwatering/sincelasttime'
+    name: 'Plant watering since last time'
   - platform: command_line
     name: SSL cert expiry
     unit_of_measurement: days

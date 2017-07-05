@@ -1,0 +1,31 @@
+ - alias: calculate time since last watering
+  # This is needed since the MQTT messages seem to time out and then 
+  # I'm stuck with unknown statuses. We can't have that! Workaround.
+    trigger:
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 00
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 10
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 20
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 30
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 40
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 50
+        seconds: 00
+    action:
+      - service: script.turn_on
+        entity_id: script.calculate_time_since_last_watering

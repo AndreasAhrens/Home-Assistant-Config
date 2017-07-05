@@ -2,13 +2,41 @@
 
   - alias: Water if Heart plant humidity is too low
     trigger:
-      - platform: numeric_state
-        entity_id: sensor.heart_plant_moisture
-        below: '36'
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 00
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 10
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 20
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 30
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 40
+        seconds: 00
+      - platform: time
+        # Matches every hour at 27 minutes past whole
+        minutes: 50
+        seconds: 00
     condition:
-      - condition: numeric_state
-        entity_id: sensor.plant_watering_since_last_time
-        above: '10' # 3600 seconds == 1 hour.
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.plant_watering_since_last_time
+          above: '10' # 3600 seconds == 1 hour.
+        - condition: numeric_state
+          entity_id: sensor.heart_plant_moisture
+          below: '36'
     action:
       - service: script.turn_on
         entity_id: script.plant_watering_script
+
+  - alias: 

@@ -1,22 +1,6 @@
   - alias: calculate time since last watering
     trigger:
       - platform: time
-        minutes: 19
-        seconds: 00
-      - platform: time
-        minutes: 19
-        seconds: 00
-      - platform: time
-        minutes: 29
-        seconds: 00
-      - platform: time
-        minutes: 39
-        seconds: 00
-      - platform: time
-        minutes: 49
-        seconds: 00
-      - platform: time
-        minutes: 59
         seconds: 00
     action:
       - service: script.turn_on

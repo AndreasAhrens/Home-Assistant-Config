@@ -35,7 +35,7 @@
       - service: mqtt.publish
         data:
          topic: "/inside/livingroom/plantwatering/time"
-         payload_template:  as_timestamp(now() #'{{now().strftime("%Y%m%d-%H%M%S")}}'
+         payload_template:  '{as_timestamp(now()}' #'{{now().strftime("%Y%m%d-%H%M%S")}}'
 
   #       {% if states.calendar.nathan_tech_shop %}
   #    {% if is_state("calendar.nathan_tech_shop", "on") and as_timestamp(states.calendar.nathan_tech_shop.attributes.end_time) - as_timestamp(now()) < 900  %}on{% else %}off{% endif %}

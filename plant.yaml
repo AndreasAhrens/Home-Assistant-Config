@@ -17,20 +17,20 @@
 
   Cypress:
     sensors:
-      moisture: sensor.cypress_moisture
-      battery: sensor.cypress_battery
-      temperature: sensor.cypress_temperature
-      conductivity: sensor.cypress_conductivity
-      brightness: sensor.cypress_light_intensity
+      moisture: sensor.Phalaenopsis_moisture
+      battery: sensor.Phalaenopsis_battery
+      temperature: sensor.Phalaenopsis_temperature
+      conductivity: sensor.Phalaenopsis_conductivity
+      brightness: sensor.Phalaenopsis_light_intensity
     min_moisture: 15
-    max_moisture: 60
+    max_moisture: 65
     min_battery: 20
     min_conductivity: 350
     max_conductivity: 2000
     min_temperature: 5
     max_temperature: 35
-    min_brightness: 3000
-    max_brightness: 6500
+    min_brightness: 2000
+    max_brightness: 4000
 
   Pelargonia:
     sensors:

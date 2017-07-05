@@ -232,6 +232,7 @@
     name: Plant watering systems
     entities:
       - switch.plant_watering_system
+      - script.plant_watering_script
 
 ###### VIEWS #######
   default_view:

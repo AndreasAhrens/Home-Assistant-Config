@@ -23,6 +23,16 @@
     sequence:
       - service: shell_command.get_latest_config
 
+  plant_watering_script:
+    sequence:
+      - service: homeassistant.turn_on
+        entity_id:  
+          - switch.plant_watering_system
+      - delay: '00:00:02'
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.plant_watering_system
+
   test_script:
     sequence:
       - service: tts.google_say

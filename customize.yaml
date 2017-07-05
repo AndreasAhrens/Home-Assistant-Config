@@ -18,6 +18,8 @@
   sensor.vardagsrum_humidity:
     icon: mdi:water-percent
     friendly_name: Living Room Humidity
+  switch.plant_watering_system:
+    friendly_name: Livingroom Plant Watering System
   sensor.kok_temperature:
     friendly_name: Kitchen Temp
   sensor.ovanvaning_temperature:

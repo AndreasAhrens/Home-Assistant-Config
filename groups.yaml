@@ -228,6 +228,10 @@
       - plant.heartplant
       - plant.cypress
       - plant.Pelargonia
+  Plant_Watering:
+    name: Plant watering systems
+    entities:
+      - switch.plant_watering_system
 
 ###### VIEWS #######
   default_view:
@@ -307,6 +311,7 @@
       - group.Plants
       - group.Plants_full
       - group.Plant_batteries
+      - group.Plant_watering
   Devices_view:
     name: Devices
     view: yes

@@ -51,6 +51,10 @@
     entities:
       - switch.amanda_ceiling
     icon: mdi:human-female
+  Linnea:
+    entities:
+      - light.linnea_ceiling
+    icon: mdi:human-female
   Kitchen:
     entities:
       - light.kitchen_top
@@ -238,6 +242,7 @@
       - group.Mailbox_short
       - group.bedroom
       - group.amanda
+      - group.linnea
       - group.upper_hallway
       - group.status
       - group.Mouse_status
@@ -249,6 +254,7 @@
     view: yes
     entities:
       - group.Amanda
+      - group.amanda
       - group.Bedroom
       - media_player.apple_tv_i_sovrum
       - group.Upper_Hallway

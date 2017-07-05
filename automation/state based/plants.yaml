@@ -32,5 +32,3 @@
     action:
       - service: script.turn_on
         entity_id: script.plant_watering_script
-
-  - alias: 

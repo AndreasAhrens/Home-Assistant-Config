@@ -28,7 +28,7 @@
           above: '10' # 3600 seconds == 1 hour.
         - condition: numeric_state
           entity_id: sensor.heart_plant_moisture
-          below: '36'
+          below: '40'
     action:
       - service: script.turn_on
         entity_id: script.plant_watering_script

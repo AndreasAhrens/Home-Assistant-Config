@@ -15,7 +15,7 @@
     min_brightness: 1400
     max_brightness: 3500
 
-  Cypress:
+  Phalaenopsis:
     sensors:
       moisture: sensor.Phalaenopsis_moisture
       battery: sensor.Phalaenopsis_battery

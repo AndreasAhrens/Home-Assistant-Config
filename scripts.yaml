@@ -45,7 +45,7 @@
           # payload_template:  '{{ as_timestamp(now()) - as_timestamp(states.script.plant_watering_script.last_triggered)  }}'
           # payload_template:  '{{ as_timestamp(states.script.plant_watering_script.last_triggered)  }}'
           # script.plant_watering_script
-          payload_template:  '{{ as_timestamp(now()) - states.sensor.plant_watering_last_time.state  }}'
+          payload_template:  '{{ as_timestamp(now()) | int - states.sensor.plant_watering_last_time.state | int  }}'
 
 
   #       {% if states.calendar.nathan_tech_shop %}

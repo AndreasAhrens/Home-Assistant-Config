@@ -48,7 +48,7 @@
           minutes: 5
       - platform: state
         entity_id: media_player.kitchen_audio
-        state: 'idle'
+        to: 'idle'
         for:
           minutes: 5
     action:

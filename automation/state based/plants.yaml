@@ -4,7 +4,7 @@
     trigger:
       - platform: numeric_state
         entity_id: sensor.heart_plant_moisture
-        below: '50'
+        below: '40'
     condition:
       - condition: numeric_state
         entity_id: sensor.plant_watering_since_last_time

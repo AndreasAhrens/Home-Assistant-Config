@@ -50,7 +50,7 @@
     emulated_hue: false
   light.bedside:
     emulated_hue: false
-  light.living_room_wall: 
+  light.living_room_wall:
     emulated_hue: false
   light.living_room:
     emulated_hue: false
@@ -76,5 +76,9 @@
     emulated_hue: false
   light.outside_room_wall:
     emulated_hue: false
-  ## Note - add any new auto created groups and 
+  input_boolean.vacation_mode:
+    friendly_name: 'Vacation Mode'
+    hidden: false
+    icon: 'mdi:beach'
+  ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

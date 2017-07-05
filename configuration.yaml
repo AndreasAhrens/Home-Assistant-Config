@@ -5,7 +5,7 @@ homeassistant:
   latitude: !secret lat
   longitude: !secret long
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 41 
+  elevation: 41
   # it seems we're 41 meters over sea level. Checked through https://www.daftlogic.com/sandbox-google-maps-find-altitude.htm
   # metric for Metric, imperial for Imperial
   unit_system: metric
@@ -52,6 +52,11 @@ camera:
   #  username: !secret front_door_username
   #  password: !secret front_door_password
   #  port: !secret front_door_port
+
+input_boolean:
+  vacation_mode:
+    initial: off
+
 
 #### INCLUDES ########
 automation old: !include_dir_merge_list automation/
@@ -218,7 +223,7 @@ mqtt:
   port: 1883
   client_id: home-assistant-1
   keepalive: 60
-  # TODO - get it working with Username and Password and then 
+  # TODO - get it working with Username and Password and then
   # add to secrets.yaml
   # username: USERNAME
   # password: PASSWORD
@@ -234,7 +239,7 @@ mailgun:
   api_key: !secret mailgun_token
   sandbox: False
 
-shell_command: 
+shell_command:
   renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
   get_latest_config: bash /home/homeassistant/.homeassistant/bin/update_config_from_github.sh
 notify:

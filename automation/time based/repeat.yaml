@@ -2,28 +2,28 @@
     trigger:
       - platform: time
         # Matches every hour at 27 minutes past whole
-        minutes: '09'
-        seconds: '00'
+        minutes: 09
+        seconds: 00
       - platform: time
         # Matches every hour at 27 minutes past whole
-        minutes: '19'
-        seconds: '00'
+        minutes: 19
+        seconds: 00
       - platform: time
         # Matches every hour at 27 minutes past whole
-        minutes: '29'
-        seconds: '00'
+        minutes: 29
+        seconds: 00
       - platform: time
         # Matches every hour at 27 minutes past whole
-        minutes: '39'
-        seconds: '00'
+        minutes: 39
+        seconds: 00
       - platform: time
         # Matches every hour at 27 minutes past whole
-        minutes: '49'
-        seconds: '00'
+        minutes: 49
+        seconds: 00
       - platform: time
         # Matches every hour at 27 minutes past whole
-        minutes: '59'
-        seconds: '00'
+        minutes: 59
+        seconds: 00
     action:
       - service: script.turn_on
         entity_id: script.calculate_time_since_last_watering

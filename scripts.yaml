@@ -32,6 +32,10 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.plant_watering_system
+      - service: mqtt.publish
+        data:
+         topic: "/inside/livingroom/plantwatering/time"
+         payload_template:  '{{now.now().strftime("%Y%m%d-%H%M%S")}}'
 
   test_script:
     sequence:

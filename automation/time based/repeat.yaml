@@ -1,6 +1,4 @@
- - alias: calculate time since last watering
-  # This is needed since the MQTT messages seem to time out and then 
-  # I'm stuck with unknown statuses. We can't have that! Workaround.
+  - alias: calculate time since last watering
     trigger:
       - platform: time
         # Matches every hour at 27 minutes past whole

@@ -2,7 +2,7 @@
   - alias: Alarm status home mode
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'disarmed'
         to: 'armed_home'
     action:
@@ -24,7 +24,7 @@
   - alias: Alarm status home mode bright bedroom
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'disarmed'
         to: 'armed_home'
     condition:
@@ -54,7 +54,7 @@
   - alias: Alarm status home mode low bedroom
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'disarmed'
         to: 'armed_home'
     condition:
@@ -77,12 +77,12 @@
   - alias: Amanda turned off alarm
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'armed_home'
         to: 'disarmed'
     condition:
       - condition: template
-        value_template: '{{ is_state_attr("alarm_control_panel.alarm_1", "changed_by", "Amanda Ahrens") }}'
+        value_template: '{{ is_state_attr("alarm_control_panel.hemgatan_alarm", "changed_by", "Amanda Ahrens") }}'
     action:
       - service: homeassistant.turn_off
         entity_id:
@@ -92,7 +92,7 @@
   - alias: Alarm off, play music
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'armed_home'
         to: 'disarmed'
     condition:
@@ -131,7 +131,7 @@
   - alias: Alarm away mode, stop music
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'disarmed'
         to: 'armed_away'
     action:
@@ -143,7 +143,7 @@
   - alias: Alarm status changed
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
     action:
       - service: notify.notify
         data_template:
@@ -156,7 +156,7 @@
   - alias: Welcome home
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'armed_away'
         to: 'disarmed'
     action:
@@ -168,7 +168,7 @@
   - alias: Turn on bedroom fan upon alarm home mode if too warm upstairs
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'disarmed'
         to: 'armed_home'
     condition:
@@ -182,7 +182,7 @@
   - alias: Alarm off turn on fan in livingroom if too warm
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'armed_home'
         to: 'disarmed'
     condition:
@@ -196,11 +196,11 @@
   - alias: Alarm on, turn off all fans
     trigger:
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'disarmed'
         to: 'armed_away'
       - platform: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         from: 'disarmed'
         to: 'armed_home'
     action:

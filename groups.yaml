@@ -472,9 +472,11 @@
     view: yes
     entities:
       - group.Amanda
-      - group.amanda
+      - group.linnea
       - group.Bedroom
       - media_player.apple_tv_i_sovrum
+      - media_player.bedroom_speaker
+      - media_player.amanda
       - group.Upper_Hallway
   Downstairs_view:
     name: Downstairs

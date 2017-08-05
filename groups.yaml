@@ -21,6 +21,7 @@
       - switch.dining_room_table
       - switch.dining_room_cabinet
       - switch.dining_room_aquarium
+      - binary_sensor.altandorr
     icon: mdi:seat-recline-normal
   Garden:
     entities:
@@ -31,7 +32,9 @@
   Hallway:
     entities:
       - switch.hallway_stairs
-      - alarm_control_panel.alarm_1
+      - alarm_control_panel.hemgatan_alarm
+      - binary_sensor.entre
+      - binary_sensor.kallardorr
     icon: mdi:stairs
   Bedroom:
     entities:

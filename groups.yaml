@@ -172,6 +172,7 @@
     icon: mdi:raspberrypi
   Status:
     entities:
+      - alarm_control_panel.hemgatan_alarm
       - updater.updater
       - sensor.speedtest_download
       - sensor.speedtest_ping
@@ -201,6 +202,10 @@
       - media_player.living_room
       - media_player.mpd
       - media_player.kitchen_audio
+      - media_player.bedroom_speaker
+      - media_player.amanda
+      - media_player.hemgatan
+      - media_player.upstairs
   Plants_full:
     name: Plants
     entities:
@@ -216,18 +221,24 @@
       - sensor.Pelargonia_light_intensity
       - sensor.Pelargonia_moisture
       - sensor.Pelargonia_temperature
+      - sensor.phalaenopsis_conductivity
+      - sensor.phalaenopsis_light_intensity
+      - sensor.phalaenopsis_moisture
+      - sensor.phalaenopsis_temperature
   Plant_batteries:
     name: Plant Batteries
     entities:
       - sensor.heart_plant_battery
       - sensor.cypress_battery
       - sensor.Pelargonia_battery
+      - sensor.phalaenopsis_battery
   Plants:
     name: Plants
     entities:
       - plant.heartplant
       - plant.cypress
       - plant.Pelargonia
+      - plant.phalaenopsis
   Plant_Watering:
     name: Plant watering systems
     entities:
@@ -236,10 +247,92 @@
       - script.calculate_time_since_last_watering
       - sensor.plant_watering_last_time
       - sensor.plant_watering_since_last_time
+  Doors:
+    name: Doors
+    entities:
+      - binary_sensor.altandorr
+      - binary_sensor.entre
+      - binary_sensor.kallardorr
+
+  Automations:
+    name: Automations
+    entities:
+      - automation.alarm_away_mode_stop_music
+      - automation.alarm_off_turn_on_fan_in_livingroom_if_too_warm
+      - automation.alarm_off_play_music
+      - automation.alarm_on_turn_off_all_fans
+      - automation.alarm_status_changed
+      - automation.alarm_status_home_mode
+      - automation.alarm_status_home_mode_bright_bedroom
+      - automation.alarm_status_home_mode_low_bedroom
+      - automation.amanda_arriving_at_school
+      - automation.amanda_leaving_school
+      - automation.amanda_turned_off_alarm
+      - automation.andreas_close_to_home_notification
+      - automation.andreas_home_notification
+      - automation.andreas_leave_work_notification
+      - automation.auto_renew_ssl_cert
+      - automation.both_bedsides_off_at_0800
+      - automation.her_bedside_10_at_2245
+      - automation.her_bedside_25_at_2230
+      - automation.her_bedside_5_at_2300
+      - automation.her_bedside_50_at_2200
+      - automation.her_bedside_off_at_2315
+      - automation.his_bedside_10_at_2245
+      - automation.his_bedside_25_at_2230
+      - automation.his_bedside_5_at_2300
+      - automation.his_bedside_50_at_2200
+      - automation.his_bedside_off_at_2315
+      - automation.notify_via_email_and_app_when_hatch_open
+      - automation.notify_when_person_at_the_door
+      - automation.repeat_mailbox_statuses_every_hour
+      - automation.ssl_expiry_notification
+      - automation.set_tv_to_movie_mode
+      - automation.test_dummy_switch
+      - automation.turn_off_amandas_room_at_800
+      - automation.turn_off_bedroom_30_minutes_after_last_movement
+      - automation.turn_off_driveway_light_at_2200
+      - automation.turn_off_driveway_light_at_sunrise
+      - automation.turn_off_stairs_light_at_sunrise
+      - automation.turn_off_aquarium_at_2130
+      - automation.turn_off_bedroom_fan_when_temperature_upstairs_is_below_20
+      - automation.turn_off_front_door_light_at_2300
+      - automation.turn_off_front_door_light_at_sunrise_or_830_if_not_off
+      - automation.turn_off_kitchen_speaker_when_kitchen_audio_stops_playing
+      - automation.turn_off_kitchen_top_on_at_2100
+      - automation.turn_off_livingroom_fan_when_temperature_in_livingroom_below_20
+      - automation.turn_off_mailbox_inside_light_when_door_closed
+      - automation.turn_off_mailbox_inside_light_when_hatch_closed
+      - automation.turn_off_mailbox_outside_light_at_sunrise
+      - automation.turn_off_upper_hallway_light_at_sunrise
+      - automation.turn_on_driveway_light_at_0700
+      - automation.turn_on_stairs_light_at_0630
+      - automation.turn_on_stairs_light_at_sunset
+      - automation.turn_on_aquarium_at_0700
+      - automation.turn_on_bedroom_fan_upon_alarm_home_mode_if_too_warm_upstairs
+      - automation.turn_on_bedroom_fan_when_temperature_upstairs_is_above_22
+      - automation.turn_on_front_door_light_at_0630
+      - automation.turn_on_front_door_light_at_sunset
+      - automation.turn_on_kitchen_speaker_when_kitchen_audio_is_playing
+      - automation.turn_on_kitchen_top_on_sun_down
+      - automation.turn_on_livingroom_fan_when_temperature_in_livingroom_above_23
+      - automation.turn_on_mailbox_inside_light_when_door_open
+      - automation.turn_on_mailbox_inside_light_when_hatch_open
+      - automation.turn_on_mailbox_outside_light_at_sunset
+      - automation.turn_on_upper_hallway_light_at_sunset_not_vacation_mode
+      - automation.turn_on_upper_hallway_light_at_sunset_vacation_mode
+      - automation.update_notifications
+      - automation.upstairs_hallway_10_at_2300
+      - automation.upstairs_hallway_30_at_2030
+      - automation.water_if_heart_plant_humidity_is_too_low
+      - automation.welcome_home
+      - automation.calculate_time_since_last_watering
+
+
 
 ###### VIEWS #######
   default_view:
-    view: no    ## Change to "no" to see the default view and be able to detect new devices and lights
+    view: yes    ## Change to "no" to see the default view and be able to detect new devices and lights
     entities:
       - group.maindevices
       - group.livingroom
@@ -256,6 +349,7 @@
       - group.Mouse_status
       - group.mediaplayers
       - group.plants
+      - group.doors
 
   Upstairs_view:
     name: Upstairs
@@ -322,6 +416,12 @@
     entities:
       - group.icloud_devices
       - group.travel_times
+
+  Automations_view:
+    name: Automations
+    view: yes
+    entities:
+      - group.Automations
 
 
       #- group.devices

@@ -8,7 +8,7 @@
       condition: and
       conditions:
         - condition: state
-          entity_id: alarm_control_panel.alarm_1
+          entity_id: alarm_control_panel.hemgatan_alarm
           state: 'disarmed'
         - condition: state
           entity_id: input_boolean.vacation_mode

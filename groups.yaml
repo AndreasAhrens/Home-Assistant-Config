@@ -327,6 +327,112 @@
       - automation.water_if_heart_plant_humidity_is_too_low
       - automation.welcome_home
       - automation.calculate_time_since_last_watering
+  
+  Automation_movement:
+    name: Movement
+    entities:
+      - automation.amanda_arriving_at_school
+      - automation.amanda_leaving_school
+      - automation.amanda_turned_off_alarm
+      - automation.andreas_close_to_home_notification
+      - automation.andreas_home_notification
+      - automation.andreas_leave_work_notification
+
+  Automation_alarm:
+    name: Alarm
+    entities:
+      - automation.alarm_away_mode_stop_music
+      - automation.alarm_off_turn_on_fan_in_livingroom_if_too_warm
+      - automation.alarm_off_play_music
+      - automation.alarm_on_turn_off_all_fans
+      - automation.alarm_status_changed
+      - automation.alarm_status_home_mode
+      - automation.alarm_status_home_mode_bright_bedroom
+      - automation.alarm_status_home_mode_low_bedroom
+      - automation.welcome_home
+
+  Automation_bedroom:
+    name: Bedroom
+    entities:
+      - automation.both_bedsides_off_at_0800
+      - automation.her_bedside_10_at_2245
+      - automation.her_bedside_25_at_2230
+      - automation.her_bedside_5_at_2300
+      - automation.her_bedside_50_at_2200
+      - automation.her_bedside_off_at_2315
+      - automation.his_bedside_10_at_2245
+      - automation.his_bedside_25_at_2230
+      - automation.his_bedside_5_at_2300
+      - automation.his_bedside_50_at_2200
+      - automation.his_bedside_off_at_2315
+      - automation.turn_off_bedroom_30_minutes_after_last_movement
+
+  Automation_outside:
+    name: Outside
+    entities:
+      - automation.notify_via_email_and_app_when_hatch_open
+      - automation.notify_when_person_at_the_door
+      - automation.repeat_mailbox_statuses_every_hour
+      - automation.turn_off_driveway_light_at_2200
+      - automation.turn_off_driveway_light_at_sunrise
+      - automation.turn_off_mailbox_inside_light_when_door_closed
+      - automation.turn_off_mailbox_inside_light_when_hatch_closed
+      - automation.turn_off_mailbox_outside_light_at_sunrise
+      - automation.turn_on_front_door_light_at_0630
+      - automation.turn_on_front_door_light_at_sunset
+      - automation.turn_on_driveway_light_at_0700
+      - automation.turn_on_mailbox_inside_light_when_door_open
+      - automation.turn_on_mailbox_inside_light_when_hatch_open
+      - automation.turn_on_mailbox_outside_light_at_sunset
+
+  Automation_downstairs:
+    name: Downstairs
+    entities:
+      - automation.turn_off_stairs_light_at_sunrise
+      - automation.turn_off_aquarium_at_2130
+      - automation.turn_off_kitchen_speaker_when_kitchen_audio_stops_playing
+      - automation.turn_off_kitchen_top_on_at_2100
+      - automation.turn_on_stairs_light_at_0630
+      - automation.turn_on_stairs_light_at_sunset
+      - automation.turn_on_aquarium_at_0700
+      - automation.turn_on_kitchen_speaker_when_kitchen_audio_is_playing
+      - automation.turn_on_kitchen_top_on_sun_down
+
+  Automation_Upstairs:
+    name: Upstairs
+    entities:
+      - automation.turn_off_amandas_room_at_800
+      - automation.turn_off_upper_hallway_light_at_sunrise
+      - automation.turn_on_upper_hallway_light_at_sunset_not_vacation_mode
+      - automation.turn_on_upper_hallway_light_at_sunset_vacation_mode
+      - automation.upstairs_hallway_10_at_2300
+      - automation.upstairs_hallway_30_at_2030
+
+  Automation_Other:
+    name: Other
+    entities:
+      - automation.auto_renew_ssl_cert
+      - automation.ssl_expiry_notification
+      - automation.set_tv_to_movie_mode
+      - automation.test_dummy_switch
+      - automation.update_notifications
+      - automation.water_if_heart_plant_humidity_is_too_low
+      - automation.welcome_home
+      - automation.calculate_time_since_last_watering
+
+  Automation_Temperature:
+    name: Temperature based
+    entities:
+      - automation.alarm_off_turn_on_fan_in_livingroom_if_too_warm
+      - automation.alarm_on_turn_off_all_fans
+      - automation.turn_off_bedroom_fan_when_temperature_upstairs_is_below_20
+      - automation.turn_off_livingroom_fan_when_temperature_in_livingroom_below_20
+      - automation.turn_on_bedroom_fan_upon_alarm_home_mode_if_too_warm_upstairs
+      - automation.turn_on_bedroom_fan_when_temperature_upstairs_is_above_22
+      - automation.turn_on_livingroom_fan_when_temperature_in_livingroom_above_23
+
+
+
 
 
 
@@ -421,6 +527,14 @@
     name: Automations
     view: yes
     entities:
+      - group.Automation_bedroom
+      - group.Automation_downstairs
+      - group.Automation_Upstairs
+      - group.Automation_outside
+      - group.Automation_alarm
+      - group.Automation_movement
+      - group.Automation_Temperature
+      - group.Automation_Other
       - group.Automations
 
 

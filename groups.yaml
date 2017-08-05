@@ -180,6 +180,9 @@
       - sensor.hassbian_cert_expiry
       - sensor.devv_to_home
       - input_boolean.vacation_mode
+      - weblink.router
+      - weblink.home_assistant
+      - weblink.home_assistant_forum
   Mailbox:
     entities:
       - switch.mailbox_inside_light

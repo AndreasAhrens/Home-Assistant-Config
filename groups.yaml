@@ -239,7 +239,7 @@
 
 ###### VIEWS #######
   default_view:
-    view: yes    ## Change to "no" to see the default view and be able to detect new devices and lights
+    view: no    ## Change to "no" to see the default view and be able to detect new devices and lights
     entities:
       - group.maindevices
       - group.livingroom

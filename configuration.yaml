@@ -253,6 +253,15 @@ notify:
     platform: ios
     token: !secret ios_token
 
+weblink:
+  entities:
+    - name: Router
+      url: http://192.168.32.1
+    - name: Home Assistant
+      url: https://home-assistant.io
+    - name: Home Assistant Forum
+      url: https://community.home-assistant.io/
+
 #hdmi_cec:
  # devices:
   #  TV: 0.0.0.0

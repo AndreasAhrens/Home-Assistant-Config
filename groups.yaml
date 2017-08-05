@@ -206,6 +206,13 @@
       - media_player.amanda
       - media_player.hemgatan
       - media_player.upstairs
+  Mediaplayers_short:
+    name: Media Players
+    entities:
+      - media_player.spotify
+      - media_player.apple_tv_i_vardagsrum
+      - media_player.apple_tv_i_sovrum
+      - media_player.living_room
   Plants_full:
     name: Plants
     entities:
@@ -453,7 +460,7 @@
       - group.upper_hallway
       - group.status
       - group.Mouse_status
-      - group.mediaplayers
+      - group.Mediaplayers_short
       - group.plants
       - group.doors
 

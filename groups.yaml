@@ -15,6 +15,7 @@
       - sensor.vardagsrum_humidity
       - sensor.vardagsrum_temperature
       - sensor.livingroom_temperature_2
+      - switch.Disco_Light
     icon: mdi:gamepad-variant
   Diningroom:
     entities:

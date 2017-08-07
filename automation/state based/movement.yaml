@@ -79,8 +79,8 @@
         zone: zone.home
         entity_id: device_tracker.allyourbasearebelongtous2
       - platform: zone
-        event: leave
-        zone: zone.devv
+        event: enter
+        zone: zone.home
         entity_id: device_tracker.all_your_base_are_belong_to_us_2
     action:
       - service: tts.google_say
@@ -109,6 +109,26 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.garden_driveway
+
+  - alias: 'Andreas Home MQTT'
+    trigger:
+      - platform: zone
+        event: enter
+        zone: zone.home
+        entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: enter
+        zone: zone.home
+        entity_id: device_tracker.all_your_base_are_belong_to_us_2
+    condition:
+      - condition: state
+        entity_id: switch.andreas_home
+        state: 'off'
+    action:
+      - service: mqtt.publish
+        data:
+        topic: "/people/andreas/home/set"
+        payload_template: 1
 
   - alias: 'Amanda leaving school'
     trigger:

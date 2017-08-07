@@ -100,6 +100,7 @@
       - device_tracker.devvsimac12
       - device_tracker.linneasiphone
       - device_tracker.all_your_base_are_belong_to_us_2
+      - switch.andreas_home
     icon: mdi:cellphone-iphone
   travel_times:
     name: Travel times
@@ -341,7 +342,7 @@
       - automation.water_if_heart_plant_humidity_is_too_low
       - automation.welcome_home
       - automation.calculate_time_since_last_watering
-  
+
   Automation_movement:
     name: Movement
     entities:

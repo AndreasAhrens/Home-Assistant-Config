@@ -19,7 +19,7 @@
     optimistic: true
     qos: 0
     retain: true
-    
+
   - platform: mqtt
     name: "Plant watering system"
     state_topic: "/inside/livingroom/plantwatering/status"
@@ -34,6 +34,16 @@
     name: "Disco Light"
     state_topic: "/inside/livingroom/discolight/status"
     command_topic: "/inside/livingroom/discolight/set"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: true
+    qos: 0
+    retain: true
+
+  - platform: mqtt
+    name: "Andreas Home"
+    state_topic: "/people/andreas/home/status"
+    command_topic: "/people/andreas/home/set"
     payload_on: "1"
     payload_off: "0"
     optimistic: true

@@ -128,7 +128,7 @@
       - service: mqtt.publish
         data:
         topic: "/people/andreas/home/set"
-        payload_template: 1
+        payload_template: '1'
 
   - alias: 'Amanda leaving school'
     trigger:

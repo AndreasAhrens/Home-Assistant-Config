@@ -128,6 +128,24 @@
       - service: switch.turn_on
         entity_id: switch.andreas_home
 
+  - alias: 'Andreas Leave Home MQTT'
+    trigger:
+      - platform: zone
+        event: leave
+        zone: zone.home
+        entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: leave
+        zone: zone.home
+        entity_id: device_tracker.all_your_base_are_belong_to_us_2
+    condition:
+      - condition: state
+        entity_id: switch.andreas_home
+        state: 'on'
+    action:
+      - service: switch.turn_off
+        entity_id: switch.andreas_home
+
   - alias: 'Amanda leaving school'
     trigger:
       - platform: zone

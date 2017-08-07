@@ -125,10 +125,8 @@
         entity_id: switch.andreas_home
         state: 'off'
     action:
-      - service: mqtt.publish
-        data:
-        topic: "/people/andreas/home/set"
-        payload_template: '1'
+      - service: switch.turn_on
+        entity_id: switch.andreas_home
 
   - alias: 'Amanda leaving school'
     trigger:

@@ -78,6 +78,8 @@
     emulated_hue: false
   light.outside_room_wall:
     emulated_hue: false
+  switch.andreas_home:
+    icon: mdi:cellphone_iphone
   input_boolean.vacation_mode:
     friendly_name: 'Vacation Mode'
     hidden: false

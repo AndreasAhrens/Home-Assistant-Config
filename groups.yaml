@@ -100,8 +100,12 @@
       - device_tracker.devvsimac12
       - device_tracker.linneasiphone
       - device_tracker.all_your_base_are_belong_to_us_2
-      - switch.andreas_home
     icon: mdi:cellphone-iphone
+  presence_detection:
+    name: Presence detection
+    entities:
+      - switch.andreas_home
+
   travel_times:
     name: Travel times
     entities:
@@ -539,6 +543,7 @@
     entities:
       - group.icloud_devices
       - group.travel_times
+      - group.presence_detection
 
   Automations_view:
     name: Automations

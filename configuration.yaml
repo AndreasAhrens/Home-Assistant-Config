@@ -106,6 +106,7 @@ emulated_hue:
 
 # Use MySQL database
 recorder:
+  # Added mysql connection again to try it out
   db_url: !secret mysql_connection
   exclude:
     #domains:

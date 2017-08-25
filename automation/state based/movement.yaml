@@ -12,6 +12,10 @@
       - condition: time
         after: '16:00'
     action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.andreas_location
+          option: Not Home
       - service: tts.google_say
         data_template:
           entity_id: media_player.mpd

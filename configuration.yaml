@@ -62,6 +62,7 @@ input_select:
     name: Andreas
     options:
       - Home
+      - Not Home
       - Devv
       - Lidl
       - Hyllinge

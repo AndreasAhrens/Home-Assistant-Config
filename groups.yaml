@@ -529,6 +529,7 @@
     view: yes
     entities:
       - group.System
+      - group.Mediaplayers
   Plants_view:
     name: Plants
     view: yes

@@ -58,7 +58,7 @@ input_boolean:
     initial: off
 
 input_select:
-  Andreas_Location:
+  andreas_location:
     name: Andreas
     options:
       - Home
@@ -68,7 +68,6 @@ input_select:
       - Vala
     initial: Home
     icon: mdi:human-male
-
 
 #### INCLUDES ########
 automation old: !include_dir_merge_list automation/

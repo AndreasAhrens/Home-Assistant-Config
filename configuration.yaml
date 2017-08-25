@@ -107,7 +107,7 @@ zone 4:
   name: Hyllinge
   latitude: 56.099945
   longitude: 12.859999
-  radius: 200
+  radius: 250
   icon: mdi:shopping
 
 zone 5:

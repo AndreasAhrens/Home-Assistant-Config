@@ -61,11 +61,11 @@ input_select:
   Andreas_Location:
     name: Andreas
     options:
-     - Home
-     - Devv
-     - Lidl
-     - Hyllinge
-     - Vala
+      - Home
+      - Devv
+      - Lidl
+      - Hyllinge
+      - Vala
     initial: Home
     icon: mdi:human-male
 

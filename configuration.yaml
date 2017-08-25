@@ -100,7 +100,7 @@ zone 3:
   name: Lidl
   latitude: 56.139298
   longitude: 12.940771
-  radius: 100
+  radius: 50
   icon: mdi:store
 
 zone 4:

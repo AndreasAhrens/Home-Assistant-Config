@@ -89,7 +89,7 @@
     action:
       - service: input_select.select_option
         data:
-          entity_id: input_select.Andreas_Location
+          entity_id: input_select.andreas_location
           option: Home
       - service: tts.google_say
         data_template:

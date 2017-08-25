@@ -1,4 +1,4 @@
-- alias: 'Andreas Not Home'
+  - alias: 'Andreas Not Home'
     trigger:
       - platform: zone
         event: leave
@@ -25,7 +25,6 @@
         data:
           entity_id: input_select.andreas_location
           option: Not Home
-
 
   - alias: 'Andreas Leave Work notification'
     trigger:

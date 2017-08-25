@@ -24,9 +24,7 @@
       - service: input_select.select_option
         data:
           entity_id: input_select.andreas_location
-          option: On the way home
-
-
+          option: Not Home
 
 
   - alias: 'Andreas Leave Work notification'

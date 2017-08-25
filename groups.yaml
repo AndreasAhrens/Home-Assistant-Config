@@ -110,6 +110,7 @@
     name: Presence detection
     entities:
       - switch.andreas_home
+      - input_select.select_option
 
   travel_times:
     name: Travel times

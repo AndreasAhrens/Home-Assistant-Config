@@ -96,6 +96,27 @@ zone 2:
   radius: 100
   icon: mdi:briefcase
 
+zone 3:
+  name: Lidl
+  latitude: 56.139298
+  longitude: 12.940771
+  radius: 100
+  icon: mdi:store
+
+zone 4:
+  name: Hyllinge
+  latitude: 56.099945
+  longitude: 12.859999
+  radius: 200
+  icon: mdi:shopping
+
+zone 5:
+  name: Väla
+  latitude: 56.091244
+  longitude: 12.757213
+  radius: 300
+  icon: mdi:shopping
+
 # Discover some devices automatically
 discovery:
 

@@ -107,8 +107,8 @@ emulated_hue:
 # Use MySQL database
 recorder:
   # Added mysql connection again to try it out
-  # db_url: !secret mysql_connection
-  db_url: !secret mysql_connection2
+  db_url: !secret mysql_connection
+  # db_url: !secret mysql_connection2
   exclude:
     #domains:
     #  - device_tracker

@@ -1,3 +1,34 @@
+- alias: 'Andreas Not Home'
+    trigger:
+      - platform: zone
+        event: leave
+        zone: zone.home
+        entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: leave
+        zone: zone.devv
+        entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: leave
+        zone: zone.hyllinge
+        entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: leave
+        zone: zone.lidl
+        entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: leave
+        zone: zone.vala
+        entity_id: device_tracker.allyourbasearebelongtous2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.andreas_location
+          option: On the way home
+
+
+
+
   - alias: 'Andreas Leave Work notification'
     trigger:
       - platform: zone
@@ -12,10 +43,6 @@
       - condition: time
         after: '16:00'
     action:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.andreas_location
-          option: Not Home
       - service: tts.google_say
         data_template:
           entity_id: media_player.mpd
@@ -45,10 +72,6 @@
         event: enter
         zone: zone.close_to_home
         entity_id: device_tracker.allyourbasearebelongtous2
-      - platform: zone
-        event: leave
-        zone: zone.devv
-        entity_id: device_tracker.all_your_base_are_belong_to_us_2
     action:
       - service: homeassistant.turn_on
         entity_id:
@@ -121,6 +144,53 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.garden_driveway
+
+  - alias: 'Andreas Lidl position'
+    trigger:
+      - platform: zone
+        event: enter
+        zone: zone.lidl
+        entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: enter
+        zone: zone.lidl
+        entity_id: device_tracker.all_your_base_are_belong_to_us_2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.andreas_location
+          option: Lidl
+
+  - alias: 'Andreas Lidl input select'
+    trigger:
+      - platform: state
+        entity_id: input_select.andreas_location
+        state: Lidl
+    action:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: 'Andreas at Lidl, should he buy something?'
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+      - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.75
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_audio
+          message: 'Andreas at Lidl, should he buy something?'
+      - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.25
+      - service: homeassistant.turn_off
+        entity_id: switch.kitchen_speaker
+      - delay: '00:05:00'
+
 
   - alias: 'Andreas Home MQTT'
     trigger:

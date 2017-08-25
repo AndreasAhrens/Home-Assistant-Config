@@ -62,6 +62,7 @@ input_select:
     name: Andreas
     options:
       - Home
+      - On the way home
       - Not Home
       - Devv
       - Lidl

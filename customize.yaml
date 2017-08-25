@@ -50,36 +50,66 @@
     homebridge_cover_type: rollershutter
   light.hue_color_lamp_1:
     emulated_hue: false
+    homebridge_hidden: true
   light.bedside:
     emulated_hue: false
+    homebridge_hidden: true
   light.living_room_wall:
     emulated_hue: false
+    homebridge_hidden: true
   light.living_room:
     emulated_hue: false
+    homebridge_hidden: true
   light.upstairs:
     emulated_hue: false
+    homebridge_hidden: true
   light.outside:
     emulated_hue: false
+    homebridge_hidden: true
   light.amandas_room:
     emulated_hue: false
+    homebridge_hidden: true
   light.bedroom:
     emulated_hue: false
+    homebridge_hidden: true
   light.dining_room:
     emulated_hue: false
+    homebridge_hidden: true
   light.hallway:
     emulated_hue: false
+    homebridge_hidden: true
   light.outside_room:
     emulated_hue: false
+    homebridge_hidden: true
   light.upstairs_hallway:
     emulated_hue: false
+    homebridge_hidden: true
   switch.andreasahrensnew:
     emulated_hue: false
+    homebridge_hidden: true
   light.kitchen:
     emulated_hue: false
+    homebridge_hidden: true
+  light.kitchen_top:
+    emulated_hue: false
+    homebridge_hidden: true
   light.outside_room_wall:
     emulated_hue: false
+    homebridge_hidden: true
+  light.blin:
+    emulated_hue: false
+    homebridge_hidden: true
+  switch.dummy_switch:
+    emulated_hue: false
+    homebridge_hidden: true
+  light.plants:
+    emulated_hue: false
+    homebridge_hidden: true
   switch.andreas_home:
     icon: mdi:cellphone_iphone
+  switch.andreas_home:
+    emulated_hue: false
+    homebridge_hidden: true
   input_boolean.vacation_mode:
     friendly_name: 'Vacation Mode'
     hidden: false

@@ -8,8 +8,86 @@ cd /home/homeassistant/.homeassistant/
 Git:
 sudo apt-get update && upgrade
 sudo apt install git
+sudo ssh-keygen -t rsa -b 4096 -C "aa@devv.it"
+sudo nano /root/.ssh/id_rsa.pub
+sudo tail /root/.ssh/id_rsa.pub
+
+eval "$(ssh-agent -s)"
+
+sudo systemctl stop home-assistant@homeassistant.service 
+cd /home/homeassistant/.homeassistant
+sudo rm -rf /home/homeassistant/.homeassistant/*
+sudo git init
+sudo git remote add origin git@github.com:DevvAndreas/Home-Assistant-Config.git
+sudo git fetch
+sudo git checkout -t origin/master
+
+
+
+sudo hassbian-config install mosquitto
+sudo hassbian-config install hue
+sudo hassbian-config install samba
+sudo hassbian-config install libcec
+
+sudo apt install htop wavemon
 
 Tellstick:
+sudo hassbian-config install tellstick
+sudo systemctl enable telldusd.service
+sudo nano /etc/tellstick.conf
+sudo reboot now
+
+Install duckdns and letsencrypt:
+https://community.home-assistant.io/t/guide-how-to-set-up-duckdns-ssl-and-chrome-push-notifications/9722
+
+Homebridge:
+sudo apt-get install nodejs npm
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install libavahi-compat-libdnssd-dev
+sudo npm install -g --unsafe-perm homebridge
+sudo nano ~/.homebridge/config.json
+sudo npm install -g homebridge-homeassistant
+sudo npm install -g homebridge-magichome
+homebridge
+https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
+
+Run homebridge on boot
+https://gist.github.com/johannrichard/0ad0de1feb6adb9eb61a/
+sudo nano /etc/default/homebridge
+sudo nano /etc/systemd/system/homebridge.service
+
+sudo nano /var/lib/homebridge/config.json
+journalctl -u homebridge
+
+Homebridge server:
+https://www.npmjs.com/package/homebridge-server
+
+
+
+sudo systemctl daemon-reload
+sudo systemctl enable homebridge
+sudo systemctl start homebridge
+
+MySQL:
+sudo apt-get install mysql-server
+
+mysql -u root -p
+CREATE USER 'hassbian'@'localhost' IDENTIFIED BY 'password';
+CREATE DATABASE hassbian;
+GRANT ALL PRIVILEGES ON hassbian . * TO 'hassbian'@'localhost';
+FLUSH PRIVILEGES;
+exit;
+
+sudo chown -R homeassistant /usr/local/lib/python3.4
+sudo apt-get install libmysqlclient-dev
+sudo -i
+su homeassistant
+cd /srv/homeassistant/homeassistant_venv/
+source bin/activate
+pip3 install mysqlclient
+
+OR 
 
 cd /home/pi/Downloads/
 wget http://download.telldus.se/TellStick/Software/telldus-core/telldus-core-2.1.2.tar.gz

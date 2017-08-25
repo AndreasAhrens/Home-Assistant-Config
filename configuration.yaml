@@ -57,6 +57,18 @@ input_boolean:
   vacation_mode:
     initial: off
 
+input_select:
+  Andreas_Location:
+    name: Andreas
+    options:
+     - Home
+     - Devv
+     - Lidl
+     - Hyllinge
+     - Vala
+    initial: Home
+    icon: mdi:human-male
+
 
 #### INCLUDES ########
 automation old: !include_dir_merge_list automation/

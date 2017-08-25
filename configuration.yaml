@@ -211,7 +211,7 @@ media_player:
     client_secret: !secret spotify_client_secret
   - platform: mpd
     host: 192.168.31.68
-    port: 6666
+    port: 6600
 
 
 # Verisure setup

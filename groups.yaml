@@ -548,6 +548,7 @@
     view: yes
     entities:
       - group.icloud_devices
+      - group.Xiaomi_devices
       - group.travel_times
       - group.presence_detection
 

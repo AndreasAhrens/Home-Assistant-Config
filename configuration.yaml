@@ -263,6 +263,8 @@ weblink:
       url: https://home-assistant.io
     - name: Home Assistant Forum
       url: https://community.home-assistant.io/
+    - name: Homebridge server
+      url: http://192.168.31.68:9998/
 
 #hdmi_cec:
  # devices:

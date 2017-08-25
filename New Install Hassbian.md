@@ -81,6 +81,16 @@ exit;
 
 sudo chown -R homeassistant /usr/local/lib/python3.4
 sudo apt-get install libmysqlclient-dev
+
+Seems to work:
+sudo systemctl stop home-assistant@homeassistant.service
+sudo su -s /bin/bash homeassistant
+source /srv/homeassistant/bin/activate
+pip3 install mysqlclient
+exit
+sudo systemctl start home-assistant@homeassistant.service
+
+Doesn't seem to work:
 sudo -i
 su homeassistant
 cd /srv/homeassistant/homeassistant_venv/

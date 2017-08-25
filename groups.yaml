@@ -198,6 +198,7 @@
       - weblink.router
       - weblink.home_assistant
       - weblink.home_assistant_forum
+      - weblink.homebridge_server
   Mailbox:
     entities:
       - switch.mailbox_inside_light

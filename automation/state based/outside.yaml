@@ -70,22 +70,11 @@
   - alias: Notify when person at the door
     trigger:
       - platform: state
-        entity_id: binary_sensor.front_door_motion
+        entity_id: switch.dummy_switch  
         to: 'on'
     action:
-      - service: tts.google_say
-        data_template:
-          entity_id: 'Someone is at the front door'
-      - service: homeassistant.turn_on
-        entity_id: switch.kitchen_speaker
-      - delay: '00:00:05'
-      - service: media_player.volume_set
+      - service: script.speak_message
         data:
-          entity_id: media_player.kitchen_audio
-          volume_level: 0.75
-      - service: tts.google_say
-        data_template:
-          entity_id: media_player.kitchen_audio
           message: 'Someone is at the front door'
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:

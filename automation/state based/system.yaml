@@ -3,10 +3,9 @@
       - platform: state
         entity_id: updater.updater
     action:
-      - service: tts.google_say
-        data_template:
-          entity_id: media_player.mpd
-          message: 'Version {{ states.updater.updater.state }} of Home Asssistant is available'
+      - service: script.speak_message
+        data:
+          message: "Version {{ states.updater.updater.state }} of Home Asssistant is available"
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data_template:
           message: "Version {{ states.updater.updater.state }} of Home Asssistant is available"

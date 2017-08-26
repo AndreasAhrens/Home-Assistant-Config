@@ -194,6 +194,7 @@
       - sensor.since_last_boot
       - sensor.hassbian_cert_expiry
       - sensor.devv_to_home
+      - sensor.home_to_devv
       - input_boolean.vacation_mode
       - weblink.router
       - weblink.home_assistant

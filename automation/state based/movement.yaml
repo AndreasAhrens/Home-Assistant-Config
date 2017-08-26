@@ -106,7 +106,7 @@
     trigger:
       - platform: state
         entity_id: input_select.andreas_location
-        to: 'Lidl'
+        to: "Lidl"
     action:
       - service: script.speak_message
         data:

@@ -102,15 +102,15 @@
           entity_id: input_select.andreas_location
           option: Lidl
 
-  #- alias: 'Andreas Lidl input select'
-  #  trigger:
-  #    - platform: state
-  #      entity_id: input_select.andreas_location
-  #      state: Lidl
-  #  action:
-  #    - service: script.speak_message
-  #      data:
-  #        message: 'Andreas is at Lidl, shold he buy something?'
+  - alias: 'Andreas Lidl input select'
+    trigger:
+      - platform: state
+        entity_id: input_select.andreas_location
+        state: Lidl
+    action:
+      - service: script.speak_message
+        data:
+          message: 'Andreas is at Lidl, shold he buy something?'
 
 
   - alias: 'Andreas Home MQTT'

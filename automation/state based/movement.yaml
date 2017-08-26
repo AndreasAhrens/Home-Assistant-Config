@@ -86,6 +86,58 @@
         entity_id:
           - switch.garden_driveway
 
+  - alias: 'Andreas Hyllinge position'
+    trigger:
+      - platform: zone
+        event: enter
+        zone: zone.hyllinge
+        entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: enter
+        zone: zone.hyllinge
+        entity_id: device_tracker.all_your_base_are_belong_to_us_2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.andreas_location
+          option: Hyllinge
+
+  - alias: 'Andreas Hyllinge input select'
+    trigger:
+      - platform: state
+        entity_id: input_select.andreas_location
+        to: "Hyllinge"
+    action:
+      - service: script.speak_message
+        data:
+          message: 'Andreas is at Hyllinge, shold he buy something?'
+
+  - alias: 'Andreas Väla position'
+    trigger:
+      - platform: zone
+        event: enter
+        zone: zone.vala
+        entity_id: device_tracker.allyourbasearebelongtous2
+      - platform: zone
+        event: enter
+        zone: zone.vala
+        entity_id: device_tracker.all_your_base_are_belong_to_us_2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.andreas_location
+          option: Vala
+
+  - alias: 'Andreas Väla input select'
+    trigger:
+      - platform: state
+        entity_id: input_select.andreas_location
+        to: "Vala"
+    action:
+      - service: script.speak_message
+        data:
+          message: 'Andreas is at Väla, shold he buy something?'
+
   - alias: 'Andreas Lidl position'
     trigger:
       - platform: zone

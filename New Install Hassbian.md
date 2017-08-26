@@ -17,10 +17,10 @@ eval "$(ssh-agent -s)"
 sudo systemctl stop home-assistant@homeassistant.service 
 cd /home/homeassistant/.homeassistant
 sudo rm -rf /home/homeassistant/.homeassistant/*
-sudo git init
-sudo git remote add origin git@github.com:DevvAndreas/Home-Assistant-Config.git
-sudo git fetch
-sudo git checkout -t origin/master
+git init
+git remote add origin git@github.com:DevvAndreas/Home-Assistant-Config.git
+git fetch
+git checkout -t origin/master
 
 
 
@@ -63,11 +63,29 @@ journalctl -u homebridge
 Homebridge server:
 https://www.npmjs.com/package/homebridge-server
 
+Fix homebridge problem:
+sudo systemctl stop homebridge.service
+sudo systemctl restart avahi-daemon
+sudo systemctl start homebridge.service 
+
 
 
 sudo systemctl daemon-reload
 sudo systemctl enable homebridge
 sudo systemctl start homebridge
+
+Install MPD
+sudo apt-get install mpd mpc
+sudo nano /etc/mpd.conf
+audio_output {
+        type            "alsa"
+        name            "My ALSA Device"
+        device          "hw:0,0"        # optional
+        mixer_type      "software"      # optional
+#       mixer_device    "default"       # optional
+#       mixer_control   "PCM"           # optional
+#       mixer_index     "0"             # optional
+}
 
 MySQL:
 sudo apt-get install mysql-server

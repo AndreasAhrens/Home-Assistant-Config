@@ -118,6 +118,13 @@ zone 5:
   radius: 300
   icon: mdi:shopping
 
+zone 6:
+  name: Internationella Engelska Skolan
+  latitude: 56.039186
+  longitude: 12.709115
+    radius: 100
+    icon: mdi:school
+
 # Discover some devices automatically
 discovery:
 

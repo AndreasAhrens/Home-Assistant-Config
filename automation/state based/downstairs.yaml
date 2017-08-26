@@ -7,7 +7,7 @@
       condition: and
       conditions:
         - condition: state
-          entity_id: alarm_control_panel.alarm_1
+          entity_id: alarm_control_panel.hemgatan_alarm
           state: 'disarmed'
         - condition: time
           after: '06:30:00'
@@ -35,7 +35,7 @@
         above: 22
     condition:
       - condition: state
-        entity_id: alarm_control_panel.alarm_1
+        entity_id: alarm_control_panel.hemgatan_alarm
         state: 'armed_home'
     action:
       - service: homeassistant.turn_on

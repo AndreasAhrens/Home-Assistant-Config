@@ -58,6 +58,7 @@
   Linnea:
     entities:
       - light.linnea_ceiling
+      - light.linnea_heart
     icon: mdi:human-female
   Kitchen:
     entities:

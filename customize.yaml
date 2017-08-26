@@ -107,7 +107,6 @@
     homebridge_hidden: true
   switch.andreas_home:
     icon: mdi:cellphone_iphone
-  switch.andreas_home:
     emulated_hue: false
     homebridge_hidden: true
   input_boolean.vacation_mode:

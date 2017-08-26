@@ -76,6 +76,7 @@
       - service: script.speak_message
         data:
           message: 'Someone is at the front door'
+      - service: shell_command.makegif
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
           message: Someone is at the door

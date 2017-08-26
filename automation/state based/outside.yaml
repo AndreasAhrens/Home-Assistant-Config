@@ -79,7 +79,12 @@
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
           message: Someone is at the door
+          #data:
+          #  push:
+          #    category: camera
+          #  entity_id: camera.frontdoor
           data:
-            push:
-              category: camera
-            entity_id: camera.frontdoor
+            attachment:
+              url: http://andreasahrens.se/content/images/uploads/a.gif
+              content-type: gif
+              hide-thumbnail: false

@@ -128,6 +128,12 @@ zone 6:
 # Discover some devices automatically
 discovery:
 
+#Xiaomi gateway
+xiaomi:
+  gateways:
+    - mac: 34:CE:00:8C:1B:B1
+      key: 11e485a2892e2382ca83252e47a71bf8
+
 #Presence based lights
 #device_sun_light_trigger:
 #  light_group: group.coming_home_lights

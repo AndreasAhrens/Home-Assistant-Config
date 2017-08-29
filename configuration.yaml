@@ -131,7 +131,7 @@ discovery:
 #Xiaomi gateway
 xiaomi:
   gateways:
-    - mac: 34:CE:00:8C:1B:B1
+    - mac: #34:CE:00:8C:1B:B1
       key: 68715608DB0F47B1
       #11e485a2892e2382 #ca83252e47a71bf8
 

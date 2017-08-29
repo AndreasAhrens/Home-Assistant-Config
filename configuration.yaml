@@ -57,6 +57,19 @@ input_boolean:
   vacation_mode:
     initial: off
 
+input_select:
+  andreas_location:
+    name: Andreas
+    options:
+      - Home
+      - On the way home
+      - Not Home
+      - Devv
+      - Lidl
+      - Hyllinge
+      - Vala
+    initial: Home
+    icon: mdi:human-male
 
 #### INCLUDES ########
 automation old: !include_dir_merge_list automation/
@@ -84,6 +97,34 @@ zone 2:
   radius: 100
   icon: mdi:briefcase
 
+zone 3:
+  name: Lidl
+  latitude: 56.139298
+  longitude: 12.940771
+  radius: 50
+  icon: mdi:store
+
+zone 4:
+  name: Hyllinge
+  latitude: 56.099945
+  longitude: 12.859999
+  radius: 250
+  icon: mdi:shopping
+
+zone 5:
+  name: Väla
+  latitude: 56.091244
+  longitude: 12.757213
+  radius: 300
+  icon: mdi:shopping
+
+zone 6:
+  name: Internationella Engelska Skolan
+  latitude: 56.039186
+  longitude: 12.709115
+  radius: 100
+  icon: mdi:school
+
 # Discover some devices automatically
 discovery:
 
@@ -106,7 +147,9 @@ emulated_hue:
 
 # Use MySQL database
 recorder:
-  # db_url: !secret mysql_connection
+  # Added mysql connection again to try it out
+  db_url: !secret mysql_connection
+  # db_url: !secret mysql_connection2
   exclude:
     #domains:
     #  - device_tracker
@@ -209,7 +252,7 @@ media_player:
     client_secret: !secret spotify_client_secret
   - platform: mpd
     host: 192.168.31.68
-    port: 6666
+    port: 6600
 
 
 # Verisure setup
@@ -242,6 +285,7 @@ mailgun:
 shell_command:
   renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
   get_latest_config: bash /home/homeassistant/.homeassistant/bin/update_config_from_github.sh
+  makegif: ./home/homeassistant/.homeassistant/bin/makegif.sh
 notify:
   - name: Facebook_Notify
     platform: facebook
@@ -253,6 +297,7 @@ notify:
     platform: ios
     token: !secret ios_token
 
+
 weblink:
   entities:
     - name: Router
@@ -261,6 +306,8 @@ weblink:
       url: https://home-assistant.io
     - name: Home Assistant Forum
       url: https://community.home-assistant.io/
+    - name: Homebridge server
+      url: http://192.168.31.68:9998/
 
 #hdmi_cec:
  # devices:

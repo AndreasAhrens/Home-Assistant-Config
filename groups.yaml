@@ -58,6 +58,7 @@
   Linnea:
     entities:
       - light.linnea_ceiling
+      - light.linnea_heart
     icon: mdi:human-female
   Kitchen:
     entities:
@@ -101,10 +102,16 @@
       - device_tracker.linneasiphone
       - device_tracker.all_your_base_are_belong_to_us_2
     icon: mdi:cellphone-iphone
+  Xiaomi_devices:
+    name: Xiaomi Devices
+    entities:
+      - device_tracker.allyourongtous2
+      - device_tracker.andreassmbp
   presence_detection:
     name: Presence detection
     entities:
       - switch.andreas_home
+      - input_select.andreas_location
 
   travel_times:
     name: Travel times
@@ -188,10 +195,12 @@
       - sensor.since_last_boot
       - sensor.hassbian_cert_expiry
       - sensor.devv_to_home
+      - sensor.home_to_devv
       - input_boolean.vacation_mode
       - weblink.router
       - weblink.home_assistant
       - weblink.home_assistant_forum
+      - weblink.homebridge_server
   Mailbox:
     entities:
       - switch.mailbox_inside_light
@@ -529,6 +538,7 @@
     view: yes
     entities:
       - group.System
+      - group.Mediaplayers
   Plants_view:
     name: Plants
     view: yes
@@ -542,6 +552,7 @@
     view: yes
     entities:
       - group.icloud_devices
+      - group.Xiaomi_devices
       - group.travel_times
       - group.presence_detection
 

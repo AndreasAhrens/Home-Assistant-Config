@@ -47,6 +47,32 @@
           # script.plant_watering_script
           payload_template:  '{{ as_timestamp(now()) | int - states.sensor.plant_watering_last_time.state | int  }}'
 
+  speak_message:
+    sequence:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.mpd
+          message: "{{ message }}"
+      - service: homeassistant.turn_on
+        entity_id: switch.kitchen_speaker
+      - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.75
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_audio
+          message: "{{ message }}"
+      - delay: '00:00:05'
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.kitchen_audio
+          volume_level: 0.25
+      - service: homeassistant.turn_off
+        entity_id: switch.kitchen_speaker
+
+
 
   #       {% if states.calendar.nathan_tech_shop %}
   #    {% if is_state("calendar.nathan_tech_shop", "on") and as_timestamp(states.calendar.nathan_tech_shop.attributes.end_time) - as_timestamp(now()) < 900  %}on{% else %}off{% endif %}

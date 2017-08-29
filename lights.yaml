@@ -10,3 +10,6 @@
       192.168.31.109:
         name: "Kitchen Top"
         mode: rgb
+      192.168.31.174:
+        name: "Linnea Heart"
+        mode: rgb

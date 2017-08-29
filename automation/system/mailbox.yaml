@@ -23,3 +23,4 @@
         data:
          topic: "/outside/mailbox/door/"
          payload_template:  "{{ states('sensor.mailbox_door') }}"
+         retain: 1

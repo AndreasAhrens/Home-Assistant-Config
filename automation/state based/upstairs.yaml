@@ -16,9 +16,11 @@
 
   - alias: Turn on Bedroom fan when button pressed, if off
     trigger:
-      platform: state
-      entity_id: binary_sensor.switch_158d0001a65312
-      to: 'on'
+      platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001a65312
+        click_type: single
     condition:
       - condition: state
         entity_id: switch.bedroom_fan
@@ -29,9 +31,11 @@
 
   - alias: Turn off Bedroom fan when button pressed, if on
     trigger:
-      platform: state
-      entity_id: binary_sensor.switch_158d0001a65312
-      to: 'on'
+      platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001a65312
+        click_type: single
     condition:
       - condition: state
         entity_id: switch.bedroom_fan

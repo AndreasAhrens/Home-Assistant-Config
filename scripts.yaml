@@ -72,6 +72,14 @@
       - service: homeassistant.turn_off
         entity_id: switch.kitchen_speaker
 
+  morning_sequence:
+    sequence:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.kitchen_audio
+          ## entity_id: media_player.bedroom_speaker
+          message: "Good morning Andreas and Judith. The time is {{ states.sensor.time.state }} and the date is {{ states.sensor.date.state}}. Today the weater is {{ states.sensor.dark_sky_summary.state }}. There is a {{states.sensor.dark_sky_precip_probability.state }} percent chance of {{states.sensor.dark_sky_precip.state}} today. The Temperature is {{ states.sensor.dark_sky_temperature.state }} degrees. Driving time to work is {{ states.sensor.home_to_devv.state }}. "
+
 
 
   #       {% if states.calendar.nathan_tech_shop %}

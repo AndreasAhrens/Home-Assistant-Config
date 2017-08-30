@@ -28,24 +28,19 @@
       - service: homeassistant.turn_off
         entity_id: switch.living_room_fan
 
-  - alias: Turn on bedroom fan when temperature upstairs is above 22
-    trigger: 
-      - platform: numeric_state
-        entity_id: sensor.ovanvaning_temperature
-        above: 22
+  - alias: Turn on stairs when movement in hallway and sun is down
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_sensor_158d0001655fde
+        from: 'off'
+        to: 'on'
     condition:
-      - condition: state
-        entity_id: alarm_control_panel.hemgatan_alarm
-        state: 'armed_home'
+      condition: state
+      entity_id: sun.sun
+      state: below_horizon
     action:
       - service: homeassistant.turn_on
-        entity_id: switch.bedroom_fan 
-
-  - alias: Turn off bedroom fan when temperature upstairs is below 20
-    trigger: 
-      - platform: numeric_state
-        entity_id: sensor.temperature_158d0001701075
-        below: 20
-    action:
+        entity_id: switch.hallway_stairs
+      - delay: 00:03:00
       - service: homeassistant.turn_off
-        entity_id: switch.bedroom_fan 
+        entity_id: switch.hallway_stairs

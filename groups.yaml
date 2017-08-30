@@ -16,6 +16,12 @@
       - sensor.vardagsrum_temperature
       - sensor.livingroom_temperature_2
       - switch.Disco_Light
+      - binary_sensor.door_window_sensor_158d00015b60d7
+      - binary_sensor.door_window_sensor_158d00016c74c6
+      - binary_sensor.door_window_sensor_158d0001834f33
+      - binary_sensor.motion_sensor_158d0001656600
+      - light.gateway_light_34ce008c1bb1
+      - sensor.illumination_34ce008c1b
     icon: mdi:gamepad-variant
   Diningroom:
     entities:
@@ -23,6 +29,7 @@
       - switch.dining_room_cabinet
       - switch.dining_room_aquarium
       - binary_sensor.altandorr
+      - binary_sensor.motion_sensor_158d0001655ff2
     icon: mdi:seat-recline-normal
   Xiaomi_gateway:
     entities:
@@ -55,6 +62,7 @@
       - alarm_control_panel.hemgatan_alarm
       - binary_sensor.entre
       - binary_sensor.kallardorr
+      - binary_sensor.motion_sensor_158d0001655fde
     icon: mdi:stairs
   Bedroom:
     entities:
@@ -64,7 +72,15 @@
       - light.his_bedside
       - cover.bedroom_rollers
       - binary_sensor.bedroom_movement
+      - binary_sensor.switch_158d0001a65312
+      - sensor.humidity_158d0001701075
+      - sensor.temperature_158d0001701075
     icon: mdi:hotel
+  Bathroom:
+    name: Bathroom
+    entities:
+      - sensor.humidity_158d0001a1ffac
+      - sensor.temperature_158d0001a1ffac
   Bedside_lights:
     name: Bedside lights
     entities:
@@ -84,12 +100,15 @@
       - light.kitchen_top
       - sensor.kok_temperature
       - switch.kitchen_speaker
+      - binary_sensor.door_window_sensor_158d00016c7536
+      - binary_sensor.motion_sensor_158d0001656584
   Upper_Hallway:
     name: Upper Hallway
     entities:
       - sensor.ovanvaning_humidity
       - sensor.ovanvaning_temperature
       - light.upstairs_hallway
+      - binary_sensor.motion_sensor_158d0001656570
   Basement:
     name: Basement
     entities:
@@ -101,6 +120,7 @@
       - sensor.uterum_temperature
       - sensor.uterum_mouse
       - light.outside_room_wall
+      - binary_sensor.switch_158d00016d7b23
   Mouse_status:
     name: Mouse status
     entities:

@@ -113,5 +113,40 @@
     friendly_name: 'Vacation Mode'
     hidden: false
     icon: 'mdi:beach'
+  binary_sensor.door_window_sensor_158d00015b60d7:
+    friendly_name: Living Room Left Window
+  binary_sensor.door_window_sensor_158d00016c74c6:
+    friendly_name: Living Room Middle Window
+  binary_sensor.door_window_sensor_158d00016c7536:
+    friendly_name: Kitchen Window
+  binary_sensor.door_window_sensor_158d0001834f33:
+    friendly_name: Living Room Right Window
+  binary_sensor.motion_sensor_158d0001655fde:
+    friendly_name: Hallway Movement
+  binary_sensor.motion_sensor_158d0001655ff2:
+    friendly_name: Dining Room Movement
+  binary_sensor.motion_sensor_158d0001656570:
+    friendly_name: Upper Hallway Movement
+  binary_sensor.motion_sensor_158d0001656584:
+    friendly_name: Kitchen Movement
+  binary_sensor.motion_sensor_158d0001656600:
+    friendly_name: Living Room Movement
+  binary_sensor.switch_158d00016d7b23:
+    friendly_name: Door Bell
+  binary_sensor.switch_158d0001a65312:
+    friendly_name: Bedroom Fan Switch
+  sensor.humidity_158d0001701075:
+    friendly_name: Bedroom Humidity
+  sensor.humidity_158d0001a1ffac:
+    friendly_name: Bathroom Humidity
+  sensor.illumination_34ce008c1b:
+    friendly_name: Xiaomi Illumination
+  sensor.temperature_158d0001701075:
+    friendly_name: Bedroom Temperature
+  sensor.temperature_158d0001a1ffac:
+    friendly_name: Bathroom Temperature
+  light.gateway_light_34ce008c1bb1:
+    friendly_name: Xiaomi Gateway Living Room
+
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

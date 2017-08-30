@@ -224,6 +224,7 @@
       - switch.dummy_switch
       - script.update_config
       - script.test_script
+      - script.morning_sequence
     icon: mdi:raspberrypi
   Status:
     entities:

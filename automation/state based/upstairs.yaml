@@ -82,3 +82,13 @@
       - delay: 00:03:00
       - service: homeassistant.turn_off
         entity_id: switch.hallway_stairs
+
+  - alias: Morning sequence on long click
+    trigger:
+      platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001a65312
+        click_type: long_click_press
+    action:
+      service: script.morning_sequence

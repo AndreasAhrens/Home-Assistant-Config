@@ -132,7 +132,7 @@ discovery:
 xiaomi:
   gateways:
     - mac: 34:CE:00:8C:1B:B1
-      key: 
+      key: !secret xiaomi_key
       discovery_retry: 10
       # 68715608DB0F47B1
       #68715608DB0F47B1

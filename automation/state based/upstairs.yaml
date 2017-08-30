@@ -13,3 +13,29 @@
         - switch.bedroom_fan
         - light.her_bedside
         - light.his_bedside
+
+  - alias: Turn on Bedroom fan when button pressed, if off
+    trigger:
+      platform: state
+      entity_id: binary_sensor.switch_158d0001a65312
+      to: 'on'
+    condition:
+      - condition: state
+        entity_id: switch.bedroom_fan
+        state: 'off'
+    action:
+      service: homeassistant.turn_on
+      entity_id: switch.bedroom_fan
+
+  - alias: Turn off Bedroom fan when button pressed, if on
+    trigger:
+      platform: state
+      entity_id: binary_sensor.switch_158d0001a65312
+      to: 'on'
+    condition:
+      - condition: state
+        entity_id: switch.bedroom_fan
+        state: 'on'
+    action:
+      service: homeassistant.turn_off
+      entity_id: switch.bedroom_fan

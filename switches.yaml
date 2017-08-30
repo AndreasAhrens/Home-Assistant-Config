@@ -38,6 +38,11 @@
     payload_off: "0"
     optimistic: true
     qos: 0
+
+  - platform: xiaomi
+    host: 192.168.31.227
+    name: Front Door Light
+    token: 11e485a2892e2382ca83252e47a71bf8
     retain: true
 
   - platform: mqtt

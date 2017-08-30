@@ -24,6 +24,25 @@
       - switch.dining_room_aquarium
       - binary_sensor.altandorr
     icon: mdi:seat-recline-normal
+  Xiaomi_gateway:
+    entities:
+      - binary_sensor.door_window_sensor_158d00015b60d7
+      - binary_sensor.door_window_sensor_158d00016c74c6
+      - binary_sensor.door_window_sensor_158d00016c7536
+      - binary_sensor.door_window_sensor_158d0001834f33
+      - binary_sensor.motion_sensor_158d0001655fde
+      - binary_sensor.motion_sensor_158d0001655ff2
+      - binary_sensor.motion_sensor_158d0001656570
+      - binary_sensor.motion_sensor_158d0001656584
+      - binary_sensor.motion_sensor_158d0001656600
+      - binary_sensor.switch_158d00016d7b23
+      - binary_sensor.switch_158d0001a65312
+      - sensor.humidity_158d0001701075
+      - sensor.humidity_158d0001a1ffac
+      - sensor.illumination_34ce008c1bb1
+      - sensor.temperature_158d0001701075
+      - sensor.temperature_158d0001a1ffac
+      - light.gateway_light_34ce008c1bb1
   Garden:
     entities:
       - switch.garden_front_door
@@ -539,6 +558,7 @@
     entities:
       - group.System
       - group.Mediaplayers
+      - group.Xiaomi_gateway
   Plants_view:
     name: Plants
     view: yes

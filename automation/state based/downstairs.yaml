@@ -44,7 +44,7 @@
   - alias: Turn off bedroom fan when temperature upstairs is below 20
     trigger: 
       - platform: numeric_state
-        entity_id: sensor.ovanvaning_temperature
+        entity_id: sensor.temperature_158d0001701075
         below: 20
     action:
       - service: homeassistant.turn_off

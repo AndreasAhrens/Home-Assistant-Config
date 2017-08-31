@@ -41,6 +41,94 @@
     action:
       - service: homeassistant.turn_on
         entity_id: switch.hallway_stairs
-      - delay: 00:03:00
-      - service: homeassistant.turn_off
-        entity_id: switch.hallway_stairs
+
+  - alias: Turn off stairs light 3 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001655fde
+      to: 'off'
+      for:
+        minutes: 3
+    action:
+      service: homeassistant.turn_off
+      entity_id: switch.hallway_stairs
+
+  - alias: Turn on dining room lights when movement in dining room and sun is down
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_sensor_158d0001655ff2
+        from: 'off'
+        to: 'on'
+    condition:
+      condition: state
+      entity_id: sun.sun
+      state: below_horizon
+    action:
+      - service: homeassistant.turn_on
+        entity_id: switch.dining_room_table
+
+
+  - alias: Turn off dining room table light 10 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001655ff2
+      to: 'off'
+      for:
+        minutes: 10
+    action:
+      service: homeassistant.turn_off
+      entity_id: switch.dining_room_table
+
+  - alias: Turn on kitchen top light when movement in kitchen and sun is down
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_sensor_158d0001656584
+        from: 'off'
+        to: 'on'
+    condition:
+      condition: state
+      entity_id: sun.sun
+      state: below_horizon
+    action:
+      - service: homeassistant.turn_on
+        entity_id: light.kitchen_top
+
+
+  - alias: Turn off kitchen top light 10 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001656584
+      to: 'off'
+      for:
+        minutes: 10
+    action:
+      service: homeassistant.turn_off
+      entity_id: light.kitchen_top
+
+  - alias: Turn on livingroom wall light when movement in living room and sun is down
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_sensor_158d0001656600
+        from: 'off'
+        to: 'on'
+    condition:
+      condition: state
+      entity_id: sun.sun
+      state: below_horizon
+    action:
+      - service: homeassistant.turn_on
+        entity_id: light.living_room_wall
+
+
+  - alias: Turn off living room wall light 10 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001656600
+      to: 'off'
+      for:
+        minutes: 10
+    action:
+      service: homeassistant.turn_off
+      entity_id: light.living_room_wall
+
+    

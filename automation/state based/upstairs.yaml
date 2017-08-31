@@ -79,9 +79,17 @@
     action:
       - service: homeassistant.turn_on
         entity_id: switch.hallway_stairs
-      - delay: 00:03:00
-      - service: homeassistant.turn_off
-        entity_id: switch.hallway_stairs
+
+  - alias: Turn off stairs light 3 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001656570
+      to: 'off'
+      for:
+        minutes: 3
+    action:
+      service: homeassistant.turn_off
+      entity_id: switch.hallway_stairs
 
   - alias: Morning sequence on long click
     trigger:

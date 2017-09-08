@@ -30,30 +30,30 @@
           brightness: 77
           rgb_color: [45, 37, 77]
 
-  - alias: Turn on kitchen speaker when kitchen audio is playing
-    trigger:
-      - platform: state
-        entity_id: media_player.kitchen_audio
-        to: 'playing'
-    action:
-      - service: homeassistant.turn_on
-        entity_id: switch.kitchen_speaker
+  #- alias: Turn on kitchen speaker when kitchen audio is playing
+  #  trigger:
+  #    - platform: state
+  #      entity_id: media_player.kitchen_audio
+  #      to: 'playing'
+  #  action:
+  #    - service: homeassistant.turn_on
+  #      entity_id: switch.kitchen_speaker
 
-  - alias: Turn off kitchen speaker when kitchen audio stops playing
-    trigger:
-      - platform: state
-        entity_id: media_player.kitchen_audio
-        to: 'paused'
-        for:
-          minutes: 5
-      - platform: state
-        entity_id: media_player.kitchen_audio
-        to: 'idle'
-        for:
-          minutes: 5
-    action:
-      - service: homeassistant.turn_off
-        entity_id: switch.kitchen_speaker
+  #- alias: Turn off kitchen speaker when kitchen audio stops playing
+  #  trigger:
+  #    - platform: state
+  #      entity_id: media_player.kitchen_audio
+  #      to: 'paused'
+  #      for:
+  #        minutes: 5
+  #    - platform: state
+  #      entity_id: media_player.kitchen_audio
+  #      to: 'idle'
+  #      for:
+  #        minutes: 5
+  #  action:
+  #    - service: homeassistant.turn_off
+  #      entity_id: switch.kitchen_speaker
 
   ####### Spotify status #######
   #- alias: Turn on kitchen speaker when playing Spotify for breakfast

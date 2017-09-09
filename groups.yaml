@@ -13,12 +13,26 @@
       - switch.living_room_fan
       - light.tv_bench
       - switch.Disco_Light
+      - sensor.vardagsrum_humidity
+      - sensor.vardagsrum_temperature
+      - sensor.livingroom_temperature_2
+      - sensor.livingroom_humidity_2
+      - sensor.mold_indicator
       - binary_sensor.door_window_sensor_158d00015b60d7
       - binary_sensor.door_window_sensor_158d00016c74c6
       - binary_sensor.door_window_sensor_158d0001834f33
       - binary_sensor.motion_sensor_158d0001656600
       - light.gateway_light_34ce008c1bb1
       - sensor.illumination_34ce008c1b
+    icon: mdi:gamepad-variant
+  Livingroom_short:
+    name: Livingroom
+    entities:
+      - switch.livingroom_ceiling
+      - light.living_room_wall
+      - switch.living_room_fan
+      - light.tv_bench
+      - switch.Disco_Light
     icon: mdi:gamepad-variant
   Diningroom:
     entities:
@@ -27,6 +41,13 @@
       - switch.dining_room_aquarium
       - binary_sensor.altandorr
       - binary_sensor.motion_sensor_158d0001655ff2
+    icon: mdi:seat-recline-normal
+  Diningroom_short:
+    name: Diningroom
+    entities:
+      - switch.dining_room_table
+      - switch.dining_room_cabinet
+      - switch.dining_room_aquarium
     icon: mdi:seat-recline-normal
   Xiaomi_gateway:
     entities:
@@ -62,6 +83,12 @@
       - binary_sensor.kallardorr
       - binary_sensor.motion_sensor_158d0001655fde
     icon: mdi:stairs
+  Hallway_short:
+    name: Hallway
+    entities:
+      - switch.hallway_stairs
+      - alarm_control_panel.hemgatan_alarm
+    icon: mdi:stairs
   Bedroom:
     entities:
       - switch.bedroom_reading_light
@@ -73,6 +100,15 @@
       - binary_sensor.switch_158d0001a65312
       - sensor.humidity_158d0001701075
       - sensor.temperature_158d0001701075
+    icon: mdi:hotel
+  Bedroom_short:
+    name: Bedroom
+    entities:
+      - switch.bedroom_reading_light
+      - switch.bedroom_fan
+      - light.her_bedside
+      - light.his_bedside
+      - cover.bedroom_rollers
     icon: mdi:hotel
   Bathroom:
     name: Bathroom
@@ -100,13 +136,22 @@
       - switch.kitchen_speaker
       - binary_sensor.door_window_sensor_158d00016c7536
       - binary_sensor.motion_sensor_158d0001656584
+  Kitchen_short:
+    name: Kitchen
+    entities:
+      - light.kitchen_top
+      - switch.kitchen_speaker
   Upper_Hallway:
     name: Upper Hallway
     entities:
       - sensor.ovanvaning_humidity
       - sensor.ovanvaning_temperature
       - light.upstairs_hallway
-      - binary_sensor.motion_sensor_158d0001656570
+      - binary_sensor.
+  Upper_Hallway_short:
+    name: Upper Hallway
+    entities:
+      - light.upstairs_hallway
   Basement:
     name: Basement
     entities:
@@ -362,11 +407,24 @@
       - sensor.plant_watering_last_time
       - sensor.plant_watering_since_last_time
   Doors:
-    name: Doors
+    name: Doors and windows
     entities:
       - binary_sensor.altandorr
       - binary_sensor.entre
       - binary_sensor.kallardorr
+      - binary_sensor.door_window_sensor_158d00015b60d7
+      - binary_sensor.door_window_sensor_158d00016c74c6
+      - binary_sensor.door_window_sensor_158d0001834f33
+      - binary_sensor.door_window_sensor_158d00016c7536
+  Motion:
+    name: Motion sensors
+    entities:
+      - binary_sensor.motion_sensor_158d0001655fde
+      - binary_sensor.motion_sensor_158d0001655ff2
+      - binary_sensor.motion_sensor_158d0001656570
+      - binary_sensor.motion_sensor_158d0001656584
+      - binary_sensor.motion_sensor_158d0001656600
+
 
   Automations:
     name: Automations
@@ -555,21 +613,22 @@
     view: yes    ## Change to "no" to see the default view and be able to detect new devices and lights
     entities:
       - group.maindevices
-      - group.livingroom
-      - group.diningroom
-      - group.hallway
-      - group.kitchen
+      - group.livingroom_short
+      - group.diningroom_short
+      - group.hallway_short
+      - group.kitchen_short
       - group.garden
       - group.Mailbox_short
-      - group.bedroom
+      - group.Bedroom_short
       - group.amanda
       - group.linnea
-      - group.upper_hallway
+      - group.Upper_Hallway_short
       - group.status
       - group.Mouse_status
       - group.Mediaplayers_short
       - group.plants
       - group.doors
+      - group.motion
 
   Upstairs_view:
     name: Upstairs

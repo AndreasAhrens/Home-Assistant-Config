@@ -147,7 +147,7 @@
       - sensor.ovanvaning_humidity
       - sensor.ovanvaning_temperature
       - light.upstairs_hallway
-      - binary_sensor.
+      - binary_sensor.motion_sensor_158d0001656570
   Upper_Hallway_short:
     name: Upper Hallway
     entities:

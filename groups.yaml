@@ -82,6 +82,7 @@
       - binary_sensor.entre
       - binary_sensor.kallardorr
       - binary_sensor.motion_sensor_158d0001655fde
+      - binary_sensor.switch_158d00014a077d
     icon: mdi:stairs
   Hallway_short:
     name: Hallway

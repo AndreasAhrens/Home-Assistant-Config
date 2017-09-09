@@ -141,6 +141,8 @@
     friendly_name: Outside room door
     device_class: cover
     icon: mdi:glassdoor
+  binary_sensor.switch_158d00014a077d:
+    friendly_name: Hallway Button
   binary_sensor.motion_sensor_158d0001655fde:
     friendly_name: Hallway Movement
   binary_sensor.motion_sensor_158d0001655ff2:

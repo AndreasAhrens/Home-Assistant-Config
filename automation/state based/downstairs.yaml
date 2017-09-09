@@ -134,4 +134,33 @@
       service: homeassistant.turn_off
       entity_id: light.living_room_wall
 
+  - alias: Turn on hallways stairs when button is long clicked if off
+    trigger:
+      platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d00014a077d
+        click_type: long_click_press
+    condition:
+      - condition: state
+        entity_id: switch.hallway_stairs
+        state: 'off'
+    action:
+      service: homeassistant.turn_on
+      entity_id: switch.hallway_stairs
+
+  - alias: Turn off hallways stairs when button is long clicked if on
+    trigger:
+      platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d00014a077d
+        click_type: long_click_press
+    condition:
+      - condition: state
+        entity_id: switch.hallway_stairs
+        state: 'on'
+    action:
+      service: homeassistant.turn_off
+      entity_id: switch.hallway_stairs
     

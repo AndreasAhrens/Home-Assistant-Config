@@ -12,9 +12,6 @@
       - light.living_room_wall
       - switch.living_room_fan
       - light.tv_bench
-      - sensor.vardagsrum_humidity
-      - sensor.vardagsrum_temperature
-      - sensor.livingroom_temperature_2
       - switch.Disco_Light
       - binary_sensor.door_window_sensor_158d00015b60d7
       - binary_sensor.door_window_sensor_158d00016c74c6
@@ -191,6 +188,42 @@
       - sensor.livingroom_humidity_2
       - sensor.livingroom_temperature_2
     icon: mdi:thermometer
+  Livingroom_environment:
+    name: Livingroom
+    entities:
+      - sensor.vardagsrum_humidity
+      - sensor.vardagsrum_temperature
+      - sensor.livingroom_temperature_2
+      - sensor.livingroom_humidity_2
+      - sensor.mold_indicator
+  Kitchen_Environment:
+    name: Kitchen
+    entities:
+      - sensor.kok_temperature
+  Upstairs_Environment:
+    name: Upstairs Hallway
+    entities:
+      - sensor.ovanvaning_humidity
+      - sensor.ovanvaning_temperature
+  Basement_Environment:
+    name: Basement
+    entities:
+      - sensor.kallare_temperature
+  Outside_Environment:
+    name: Outside
+    entities:
+      - sensor.uterum_temperature
+      - sensor.dark_sky_temperature
+  Bathroom_Environment:
+    name: Bathroom
+    entities:
+      - sensor.humidity_158d0001a1ffac  
+      - sensor.temperature_158d0001a1ffac
+  Bedroom_Environment:
+    name: Bedroom
+    entities:
+      - sensor.temperature_158d0001701075
+      - sensor.humidity_158d0001a1ffac
   Weather:
     entities:
       - sensor.dark_sky_icon
@@ -584,7 +617,13 @@
     name: Environment
     view: yes
     entities:
-      - group.Environment
+      - group.Livingroom_environment
+      - group.Kitchen_Environment
+      - group.Upstairs_Environment
+      - group.Basement_Environment
+      - group.Outside_Environment
+      - group.Bathroom_Environment
+      - group.Bedroom_Environment
       - group.Weather
   System_view:
     name: System

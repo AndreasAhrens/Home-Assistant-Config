@@ -2,7 +2,10 @@
     trigger: 
       - platform: numeric_state
         entity_id: sensor.livingroom_temperature_2
-        above: 24
+        above: 26
+      - platform: numeric_state
+        entity_id: sensor.vardagsrum_temperature
+        above: 22
     condition:
       condition: and
       conditions:

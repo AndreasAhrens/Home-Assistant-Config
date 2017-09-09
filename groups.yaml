@@ -625,10 +625,10 @@
       - group.Upper_Hallway_short
       - group.status
       - group.Mouse_status
-      - group.Mediaplayers_short
       - group.plants
       - group.doors
       - group.motion
+      - group.Mediaplayers_short
 
   Upstairs_view:
     name: Upstairs

@@ -286,28 +286,40 @@
       - sensor.cypress_light_intensity
       - sensor.cypress_moisture
       - sensor.cypress_temperature
-      - sensor.Pelargonia_conductivity
-      - sensor.Pelargonia_light_intensity
-      - sensor.Pelargonia_moisture
-      - sensor.Pelargonia_temperature
+      - sensor.Peperomia_conductivity
+      - sensor.Peperomia_light_intensity
+      - sensor.Peperomia_moisture
+      - sensor.Peperomia_temperature
+      - sensor.Peperomia2_conductivity
+      - sensor.Peperomia2_light_intensity
+      - sensor.Peperomia2_moisture
+      - sensor.Peperomia2_temperature
       - sensor.phalaenopsis_conductivity
       - sensor.phalaenopsis_light_intensity
       - sensor.phalaenopsis_moisture
       - sensor.phalaenopsis_temperature
+      - sensor.Almera_conductivity
+      - sensor.Almera_light_intensity
+      - sensor.Almera_moisture
+      - sensor.Almera_temperature
   Plant_batteries:
     name: Plant Batteries
     entities:
       - sensor.heart_plant_battery
       - sensor.cypress_battery
-      - sensor.Pelargonia_battery
+      - sensor.Peperomia_battery
+      - sensor.Peperomia2_battery
       - sensor.phalaenopsis_battery
+      - sensor.Almera_battery
   Plants:
     name: Plants
     entities:
       - plant.heartplant
       - plant.cypress
-      - plant.Pelargonia
+      - plant.Peperomia
+      - plant.Peperomia2
       - plant.phalaenopsis
+      - plant.Almera
   Plant_Watering:
     name: Plant watering systems
     entities:

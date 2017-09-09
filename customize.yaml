@@ -139,14 +139,14 @@
     friendly_name: Bedroom Humidity
   sensor.humidity_158d0001a1ffac:
     friendly_name: Bathroom Humidity
-  sensor.illumination_34ce008c1b:
-    friendly_name: Xiaomi Illumination
   sensor.temperature_158d0001701075:
     friendly_name: Bedroom Temperature
   sensor.temperature_158d0001a1ffac:
     friendly_name: Bathroom Temperature
   light.gateway_light_34ce008c1bb1:
     friendly_name: Xiaomi Gateway Living Room
+  sensor.illumination_34ce008c1bb1:
+    friendly_name: Gateway Illumination
 
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

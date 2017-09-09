@@ -115,12 +115,32 @@
     icon: 'mdi:beach'
   binary_sensor.door_window_sensor_158d00015b60d7:
     friendly_name: Living Room Left Window
+    device_class: cover
+    icon: mdi:window-closed
   binary_sensor.door_window_sensor_158d00016c74c6:
     friendly_name: Living Room Middle Window
+    device_class: cover
+    icon: mdi:window-closed
   binary_sensor.door_window_sensor_158d00016c7536:
     friendly_name: Kitchen Window
+    device_class: cover
+    icon: mdi:window-closed
   binary_sensor.door_window_sensor_158d0001834f33:
     friendly_name: Living Room Right Window
+    device_class: cover
+    icon: mdi:window-closed
+  binary_sensor.kallardorr:
+    friendly_name: Källardörr
+    device_class: cover
+    icon: mdi:glassdoor
+  binary_sensor.entre:
+    friendly_name: Front door
+    device_class: cover
+    icon: mdi:glassdoor
+  binary_sensor.altandorr:
+    friendly_name: Outside room door
+    device_class: cover
+    icon: mdi:glassdoor
   binary_sensor.motion_sensor_158d0001655fde:
     friendly_name: Hallway Movement
   binary_sensor.motion_sensor_158d0001655ff2:

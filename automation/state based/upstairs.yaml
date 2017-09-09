@@ -44,10 +44,10 @@
       service: homeassistant.turn_off
       entity_id: switch.bedroom_fan
 
-  - alias: Turn on bedroom fan when temperature upstairs is above 22
+  - alias: Turn on bedroom fan when temperature in bedroom is above 22
     trigger: 
       - platform: numeric_state
-        entity_id: sensor.ovanvaning_temperature
+        entity_id: sensor.temperature_158d0001701075
         above: 22
     condition:
       - condition: state
@@ -57,7 +57,7 @@
       - service: homeassistant.turn_on
         entity_id: switch.bedroom_fan 
 
-  - alias: Turn off bedroom fan when temperature upstairs is below 20
+  - alias: Turn off bedroom fan when temperature in bedroom is below 20
     trigger: 
       - platform: numeric_state
         entity_id: sensor.temperature_158d0001701075

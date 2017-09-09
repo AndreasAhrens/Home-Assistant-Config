@@ -50,6 +50,7 @@
       - sensor.temperature_158d0001701075
       - sensor.temperature_158d0001a1ffac
       - light.gateway_light_34ce008c1bb1
+      - binary_sensor.cube_158d00010aecde
   Garden:
     entities:
       - switch.garden_front_door

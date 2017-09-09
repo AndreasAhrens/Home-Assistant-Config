@@ -99,6 +99,26 @@
       - light
       - conductivity
       - battery
+  - platform: miflora
+    mac: "C4:7C:8D:62:75:11"
+    name: Pelargonia 2 maybe
+    # median: 3
+    monitored_conditions:
+      - temperature
+      - moisture
+      - light
+      - conductivity
+      - battery
+  - platform: miflora
+    mac: "C4:7C:8D:61:FF:ED"
+    name: Almera
+    # median: 3
+    monitored_conditions:
+      - temperature
+      - moisture
+      - light
+      - conductivity
+      - battery
   - platform: google_travel_time
     name: Devv to Home
     api_key: !secret google_api_key

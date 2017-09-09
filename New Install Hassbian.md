@@ -6,39 +6,53 @@ cd /home/homeassistant/.homeassistant/
 
 
 Git:
-sudo apt-get update && upgrade
-sudo apt install git
-sudo ssh-keygen -t rsa -b 4096 -C "aa@devv.it"
+sudo apt-get update && sudo apt-get upgrade
+sudo apt install git && sudo ssh-keygen -t rsa -b 4096 -C "aa@devv.it" && sudo tail /root/.ssh/id_rsa.pub
 sudo nano /root/.ssh/id_rsa.pub
 sudo tail /root/.ssh/id_rsa.pub
 
 eval "$(ssh-agent -s)"
 
 sudo systemctl stop home-assistant@homeassistant.service 
-cd /home/homeassistant/.homeassistant
-sudo rm -rf /home/homeassistant/.homeassistant/*
-git init
-git remote add origin git@github.com:DevvAndreas/Home-Assistant-Config.git
-git fetch
-git checkout -t origin/master
+cd /home/homeassistant/.homeassistant && sudo rm -rf /home/homeassistant/.homeassistant/*
+sudo chmod -R g+w /home/homeassistant/.homeassistant/
+git init && git remote add origin git@github.com:DevvAndreas/Home-Assistant-Config.git && git fetch && git checkout -t origin/master
 
 
 
-sudo hassbian-config install mosquitto
-sudo hassbian-config install hue
-sudo hassbian-config install samba
+sudo hassbian-config install mosquitto && sudo hassbian-config install hue && sudo hassbian-config install samba 
+
+cd /etc/mosquitto/
+sudo cp mosquitto.conf mosquitto.conf.old && sudo rm -rf mosquitto.conf && sudo nano mosquitto.conf
+sudo systemctl restart mosquitto.service 
+
+Possibly:
 sudo hassbian-config install libcec
 
 sudo apt install htop wavemon
 
 Tellstick:
-sudo hassbian-config install tellstick
-sudo systemctl enable telldusd.service
-sudo nano /etc/tellstick.conf
+sudo hassbian-config install tellstick && sudo systemctl enable telldusd.service && sudo nano /etc/tellstick.conf
 sudo reboot now
 
 Install duckdns and letsencrypt:
 https://community.home-assistant.io/t/guide-how-to-set-up-duckdns-ssl-and-chrome-push-notifications/9722
+mkdir duckdns
+cd duckdns
+nano duck.sh
+chmod 700 duck.sh
+crontab -e
+./duck.sh
+cat duck.log
+
+mkdir certbot
+cd certbot
+wget https://dl.eff.org/certbot-auto
+chmod a+x certbot-auto
+./certbot-auto certonly --standalone --preferred-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
+./certbot-auto certonly --standalone --standalone-supported-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
+
+sudo chmod -R 777 /etc/letsencrypt
 
 Homebridge:
 sudo apt-get install nodejs npm
@@ -46,9 +60,8 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install libavahi-compat-libdnssd-dev
 sudo npm install -g --unsafe-perm homebridge
+sudo npm install -g homebridge-homeassistant && sudo npm install -g homebridge-magichome && npm install -g homebridge-mi-air-purifier miio && sudo npm install homebridge-server@latest -g
 sudo nano ~/.homebridge/config.json
-sudo npm install -g homebridge-homeassistant
-sudo npm install -g homebridge-magichome
 homebridge
 https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
 
@@ -56,6 +69,9 @@ Run homebridge on boot
 https://gist.github.com/johannrichard/0ad0de1feb6adb9eb61a/
 sudo nano /etc/default/homebridge
 sudo nano /etc/systemd/system/homebridge.service
+sudo useradd --system homebridge
+sudo mkdir /var/lib/homebridge
+sudo chown homebridge /var/lib/homebridge
 
 sudo nano /var/lib/homebridge/config.json
 journalctl -u homebridge

@@ -56,7 +56,7 @@
       service: homeassistant.turn_off
       entity_id: switch.hallway_stairs
 
-  - alias: Turn on dining room lights when movement in dining room and sun is down
+  - alias: Turn on dining room cabinet light when movement in dining room and sun is down
     trigger:
       - platform: state
         entity_id: binary_sensor.motion_sensor_158d0001655ff2
@@ -80,7 +80,7 @@
         minutes: 10
     action:
       service: homeassistant.turn_off
-      entity_id: switch.dining_room_table
+      entity_id: switch.dining_room_cabinet
 
   - alias: Turn on kitchen top light when movement in kitchen and sun is down
     trigger:

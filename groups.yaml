@@ -306,6 +306,7 @@
       - script.update_config
       - script.test_script
       - script.morning_sequence
+      - media_player.tts_bluetooth_speaker
     icon: mdi:raspberrypi
   Status:
     entities:

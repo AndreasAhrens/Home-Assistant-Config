@@ -1,5 +1,5 @@
 #!/bin/bash
 
 bluetoothctl << EOF
-connect 00:2F:AD:12:0D:42
+connect 68:37:E9:91:15:DD
 EOF

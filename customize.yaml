@@ -125,6 +125,10 @@
     friendly_name: Kitchen Window
     device_class: cover
     icon: mdi:window-closed
+  binary_sensor.door_window_sensor_158d00016c7655:
+    friendly_name: Front Door
+    device_class: cover
+    icon: mdi:glassdoor
   binary_sensor.door_window_sensor_158d0001834f33:
     friendly_name: Living Room Right Window
     device_class: cover
@@ -152,6 +156,8 @@
   binary_sensor.motion_sensor_158d0001656584:
     friendly_name: Kitchen Movement
   binary_sensor.motion_sensor_158d0001656600:
+    friendly_name: Living Room Movement
+  binary_sensor.motion_sensor_158d0001235a99:
     friendly_name: Living Room Movement
   binary_sensor.switch_158d00016d7b23:
     friendly_name: Door Bell

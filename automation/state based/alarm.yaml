@@ -99,11 +99,11 @@
       - condition: time
         before: '08:00:00'
     action:
-      # Set the volume to 40%
-      - service: media_player.volume_set
-        data:
-          entity_id: media_player.kitchen_audio
-          volume_level: 0.40
+      # Set the volume to 40% - disabled, not using chromecast anymore, using spotify
+      #- service: media_player.volume_set
+      #  data:
+      #    entity_id: media_player.kitchen_audio
+      #    volume_level: 0.40
       # Set shuffle to true
       - service: media_player.shuffle_set
         data: 
@@ -113,7 +113,7 @@
       - service: media_player.select_source 
         data:
           entity_id: media_player.spotify
-          source: "Kitchen Audio"
+          source: "Kitchen"
       # Play the Women of Jazz playlist
       - service: media_player.play_media
         data:
@@ -187,18 +187,26 @@
         to: 'disarmed'
     condition:
       - condition: numeric_state
-        entity_id: sensor.livingroom_temperature_2
+        entity_id: sensor.vardagsrum_temperature
         above: 23
     action:
       - service: homeassistant.turn_on
         entity_id: switch.living_room_fan
 
-  - alias: Alarm on, turn off all fans
+  - alias: Alarm on away, turn off all fans
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
         from: 'disarmed'
         to: 'armed_away'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: switch.living_room_fan
+      - service: homeassistant.turn_off
+        entity_id: switch.bedroom_fan
+
+  - alias: Alarm on home, turn off fan downstairs
+    trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
         from: 'disarmed'
@@ -206,6 +214,5 @@
     action:
       - service: homeassistant.turn_off
         entity_id: switch.living_room_fan
-      - service: homeassistant.turn_off
-        entity_id: switch.bedroom_fan
+
 

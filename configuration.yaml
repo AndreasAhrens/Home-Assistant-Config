@@ -297,6 +297,12 @@ media_player:
   - platform: mpd
     host: 192.168.31.68
     port: 6600
+  - platform: tts_bluetooth_speaker
+    address: 68:37:E9:91:15:DD   # Required - for example, 00:2F:AD:12:0D:42
+    volume: 0.45                   # Optional - default is 0.5
+    pre_silence_duration: 1       # Optional - No. of seconds silence before the TTS (default is 0)
+#    post_silence_duration: 0.5    # Optional - No. of seconds silence after the TTS (default is 0)
+#    cache_dir: /tmp/tts           # Optional - make sure it matches the same setting in TTS config
 
 
 # Verisure setup

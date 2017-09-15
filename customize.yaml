@@ -158,7 +158,7 @@
   binary_sensor.motion_sensor_158d0001656600:
     friendly_name: Living Room Movement
   binary_sensor.motion_sensor_158d0001235a99:
-    friendly_name: Living Room Movement
+    friendly_name: Front Door Movement
   binary_sensor.switch_158d00016d7b23:
     friendly_name: Door Bell
   binary_sensor.switch_158d0001a65312:

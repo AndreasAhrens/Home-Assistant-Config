@@ -417,6 +417,7 @@
       - binary_sensor.door_window_sensor_158d00016c74c6
       - binary_sensor.door_window_sensor_158d0001834f33
       - binary_sensor.door_window_sensor_158d00016c7536
+      - binary_sensor.door_window_sensor_158d00016c7655
   Motion:
     name: Motion sensors
     entities:
@@ -425,6 +426,7 @@
       - binary_sensor.motion_sensor_158d0001656570
       - binary_sensor.motion_sensor_158d0001656584
       - binary_sensor.motion_sensor_158d0001656600
+      - binary_sensor.motion_sensor_158d0001235a99
 
 
   Automations:

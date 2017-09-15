@@ -101,6 +101,7 @@
       - binary_sensor.switch_158d0001a65312
       - sensor.humidity_158d0001701075
       - sensor.temperature_158d0001701075
+      - binary_sensor.in_bed
     icon: mdi:hotel
   Bedroom_short:
     name: Bedroom

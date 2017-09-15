@@ -412,12 +412,13 @@
     entities:
       - binary_sensor.altandorr
       - binary_sensor.entre
+      - binary_sensor.door_window_sensor_158d00016c7655
       - binary_sensor.kallardorr
       - binary_sensor.door_window_sensor_158d00015b60d7
       - binary_sensor.door_window_sensor_158d00016c74c6
       - binary_sensor.door_window_sensor_158d0001834f33
       - binary_sensor.door_window_sensor_158d00016c7536
-      - binary_sensor.door_window_sensor_158d00016c7655
+      
   Motion:
     name: Motion sensors
     entities:

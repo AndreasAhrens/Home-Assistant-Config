@@ -191,6 +191,39 @@ binary_sensor:
     payload_on: "1"
     payload_off: "0"
     device_class: motion
+  - name: 'in_bed'
+    platform: 'bayesian'
+    prior: 0.25
+    probability_threshold: 0.95
+    observations:
+      - entity_id: 'binary_sensor.motion_sensor_158d0001656600'
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'binary_sensor.motion_sensor_158d0001655fde'
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'binary_sensor.motion_sensor_158d0001655ff2'
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'binary_sensor.motion_sensor_158d0001656584'
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'binary_sensor.bedroom_movement'
+        prob_given_true: 0.5
+        platform: 'state'
+        to_state: 'on'
+      - entity_id: 'sensor.sun'
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'below_horizon'
   #- platform: ffmpeg_motion
   #  input: !secret front_door_camera
   #  # tool: motion

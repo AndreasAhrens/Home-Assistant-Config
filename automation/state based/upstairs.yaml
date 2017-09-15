@@ -101,29 +101,29 @@
     action:
       service: script.morning_sequence
 
-  #- alias: Turn on bedside lights at movement when sun is down and time is between 7 and 22
-  #  trigger:
-  #    - platform: state
-  #      entity_id: binary_sensor.bedroom_movement
-  #      from: 'off'
-  #      to: 'on'
-  #  condition:
-  #    condition: and
-  #    conditions:
-  #      - platform: time
-  #        after: '07:00:00'
-  #        before: '22:00:00'
-  #      - condition: state
-  #        entity_id: sun.sun
-  #        state: below_horizon
-  #  action:
-  #    - service: homeassistant.turn_on
-  #      entity_id:
-  #        - light.her_bedside
-  #        - light.his_bedside
-  #      data:
-  #        brightness: 144
-  #        rgb_color: [243, 179, 80]
+  - alias: Turn on bedside lights at movement when sun is down and time is between 7 and 22
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.bedroom_movement
+        from: 'off'
+        to: 'on'
+    condition:
+      condition: and
+      conditions:
+        - condition: time
+          after: '07:00:00'
+          before: '22:00:00'
+        - condition: state
+          entity_id: sun.sun
+          state: below_horizon
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.her_bedside
+          - light.his_bedside
+        data:
+          brightness: 144
+          rgb_color: [243, 179, 80]
 
   - alias: Turn off bedside lights 10 minutes after last movement
     trigger:

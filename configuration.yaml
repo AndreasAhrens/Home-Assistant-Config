@@ -226,6 +226,7 @@ binary_sensor:
         to_state: 'below_horizon'
       - entity_id: 'alarm_control_panel.hemgatan_alarm'
         prob_given_true: 0.8
+        platform: 'state'
         to_state: 'armed_home'
   #- platform: ffmpeg_motion
   #  input: !secret front_door_camera

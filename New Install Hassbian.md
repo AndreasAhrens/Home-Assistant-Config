@@ -14,42 +14,56 @@ cd /home/homeassistant/.homeassistant/
 ``` shell
 sudo apt-get update && sudo apt-get upgrade
 sudo apt install git && sudo ssh-keygen -t rsa -b 4096 -C "aa@devv.it" && sudo cat /root/.ssh/id_rsa.pub
-(sudo nano /root/.ssh/id_rsa.pub)
-(sudo tail /root/.ssh/id_rsa.pub)
+# sudo nano /root/.ssh/id_rsa.pub
+# sudo tail /root/.ssh/id_rsa.pub
+```
+Put results of cat into a new deploy key on GitHub
 
+``` shell
 eval "$(ssh-agent -s)"
 
 sudo systemctl stop home-assistant@homeassistant.service 
 cd /home/homeassistant/.homeassistant && sudo rm -rf /home/homeassistant/.homeassistant/*
 sudo chmod -R g+w /home/homeassistant/.homeassistant/
+```
+Might not always work without sudo for git - try to find a fix!
+``` shell
 git init && git remote add origin git@github.com:DevvAndreas/Home-Assistant-Config.git && git fetch && git checkout -t origin/master
-
-
 
 sudo hassbian-config install mosquitto && sudo hassbian-config install hue && sudo hassbian-config install samba 
 
 cd /etc/mosquitto/
 sudo cp mosquitto.conf mosquitto.conf.old && sudo rm -rf mosquitto.conf && sudo nano mosquitto.conf
+```
+Enter mosquitto config
+
+``` shell
 sudo systemctl restart mosquitto.service 
 ```
-
-#### Possibly:
-``` shell
-sudo hassbian-config install libcec 
-```
-
+For troubleshooting
 ``` shell
 sudo apt install htop wavemon
 ```
 
+#### Possibly:
+``` shell
+# sudo hassbian-config install libcec 
+```
+
+
+
 ## Tellstick:
 ``` shell
 sudo hassbian-config install tellstick && sudo systemctl enable telldusd.service && sudo nano /etc/tellstick.conf
+```
+Enter predefined tellstick.conf
+``` shell
 sudo reboot now
 ```
 
 ## Install duckdns and letsencrypt:
 https://community.home-assistant.io/t/guide-how-to-set-up-duckdns-ssl-and-chrome-push-notifications/9722
+### Duck DNS
 ``` shell
 mkdir duckdns
 cd duckdns
@@ -60,18 +74,26 @@ crontab -e
 cat duck.log
 ```
 
+### Certbot
 ``` shell
 mkdir certbot
 cd certbot
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
-(./certbot-auto certonly --standalone --preferred-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org)
+```
+Old version, still supported, but gives warning:
+``` shell
+#./certbot-auto certonly --standalone --preferred-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
+```
+New version, no warning
+``` shell
 ./certbot-auto certonly --standalone --standalone-supported-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
 
 sudo chmod -R 777 /etc/letsencrypt
 ```
 
 ## Homebridge:
+Below manual install. Can also be installed via the Homebridge app automatically.
 ``` shell
 sudo apt-get install nodejs npm
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
@@ -83,6 +105,7 @@ sudo nano ~/.homebridge/config.json
 homebridge
 ```
 https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
+
 
 ### Run homebridge on boot
 https://gist.github.com/johannrichard/0ad0de1feb6adb9eb61a/
@@ -101,12 +124,12 @@ journalctl -u homebridge
 https://www.npmjs.com/package/homebridge-server
 
 ### Fix homebridge problem:
+Sometimes Homebridge stops working and is not shown in the Home app. The below code can sometimes solve it.
 ``` shell
 sudo systemctl stop homebridge.service
 sudo systemctl restart avahi-daemon
 sudo systemctl start homebridge.service 
 ```
-
 
 
 ``` shell
@@ -161,11 +184,11 @@ sudo systemctl start home-assistant@homeassistant.service
 
 ### Doesn't seem to work:
 ``` shell
-sudo -i
-su homeassistant
-cd /srv/homeassistant/homeassistant_venv/
-source bin/activate
-pip3 install mysqlclient
+#sudo -i
+#su homeassistant
+#cd /srv/homeassistant/homeassistant_venv/
+#source bin/activate
+#pip3 install mysqlclient
 ```
 
 ## Alternative, old way

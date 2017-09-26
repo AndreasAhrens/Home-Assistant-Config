@@ -116,6 +116,9 @@
         - condition: state
           entity_id: sun.sun
           state: below_horizon
+        - condition: state
+          entity_id: alarm_control_panel.hemgatan_alarm
+          state: 'disarmed'
     action:
       - service: homeassistant.turn_on
         entity_id:

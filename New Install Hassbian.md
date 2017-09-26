@@ -6,7 +6,8 @@ passwd
 
 hassbian-config
 
-cd /home/homeassistant/.homeassistant/```
+cd /home/homeassistant/.homeassistant/
+```
 
 
 ## Git:
@@ -29,19 +30,23 @@ sudo hassbian-config install mosquitto && sudo hassbian-config install hue && su
 
 cd /etc/mosquitto/
 sudo cp mosquitto.conf mosquitto.conf.old && sudo rm -rf mosquitto.conf && sudo nano mosquitto.conf
-sudo systemctl restart mosquitto.service ```
+sudo systemctl restart mosquitto.service 
+```
 
 #### Possibly:
 ``` shell
-sudo hassbian-config install libcec ```
+sudo hassbian-config install libcec 
+```
 
 ``` shell
-sudo apt install htop wavemon```
+sudo apt install htop wavemon
+```
 
 ## Tellstick:
 ``` shell
 sudo hassbian-config install tellstick && sudo systemctl enable telldusd.service && sudo nano /etc/tellstick.conf
-sudo reboot now```
+sudo reboot now
+```
 
 ## Install duckdns and letsencrypt:
 https://community.home-assistant.io/t/guide-how-to-set-up-duckdns-ssl-and-chrome-push-notifications/9722
@@ -52,7 +57,8 @@ nano duck.sh
 chmod 700 duck.sh
 crontab -e
 ./duck.sh
-cat duck.log```
+cat duck.log
+```
 
 ``` shell
 mkdir certbot
@@ -62,7 +68,8 @@ chmod a+x certbot-auto
 (./certbot-auto certonly --standalone --preferred-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org)
 ./certbot-auto certonly --standalone --standalone-supported-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
 
-sudo chmod -R 777 /etc/letsencrypt```
+sudo chmod -R 777 /etc/letsencrypt
+```
 
 ## Homebridge:
 ``` shell
@@ -73,7 +80,8 @@ sudo apt-get install libavahi-compat-libdnssd-dev
 sudo npm install -g --unsafe-perm homebridge
 sudo npm install -g homebridge-homeassistant && sudo npm install -g homebridge-magichome && sudo npm install -g homebridge-mi-air-purifier miio && sudo npm install homebridge-server@latest -g
 sudo nano ~/.homebridge/config.json
-homebridge```
+homebridge
+```
 https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
 
 ### Run homebridge on boot
@@ -86,7 +94,8 @@ sudo mkdir /var/lib/homebridge
 sudo chown homebridge /var/lib/homebridge
 
 sudo nano /var/lib/homebridge/config.json
-journalctl -u homebridge```
+journalctl -u homebridge
+```
 
 ### Homebridge server:
 https://www.npmjs.com/package/homebridge-server
@@ -95,14 +104,16 @@ https://www.npmjs.com/package/homebridge-server
 ``` shell
 sudo systemctl stop homebridge.service
 sudo systemctl restart avahi-daemon
-sudo systemctl start homebridge.service ```
+sudo systemctl start homebridge.service 
+```
 
 
 
 ``` shell
 sudo systemctl daemon-reload
 sudo systemctl enable homebridge
-sudo systemctl start homebridge```
+sudo systemctl start homebridge
+```
 
 ## Install MPD
 ``` shell
@@ -116,11 +127,13 @@ audio_output {
 #       mixer_device    "default"       # optional
 #       mixer_control   "PCM"           # optional
 #       mixer_index     "0"             # optional
-}```
+}
+```
 
 ## MySQL:
 ``` shell 
-sudo apt-get install mysql-server```
+sudo apt-get install mysql-server
+```
 
 ``` shell 
 mysql -u root -p
@@ -128,11 +141,13 @@ CREATE USER 'hassbian'@'localhost' IDENTIFIED BY 'password';
 CREATE DATABASE hassbian;
 GRANT ALL PRIVILEGES ON hassbian . * TO 'hassbian'@'localhost';
 FLUSH PRIVILEGES;
-exit;```
+exit;
+```
 
 ``` shell 
 sudo chown -R homeassistant /usr/local/lib/python3.4
-sudo apt-get install libmysqlclient-dev```
+sudo apt-get install libmysqlclient-dev
+```
 
 ### Seems to work:
 ``` shell
@@ -141,7 +156,8 @@ sudo su -s /bin/bash homeassistant
 source /srv/homeassistant/bin/activate
 pip3 install mysqlclient
 exit
-sudo systemctl start home-assistant@homeassistant.service```
+sudo systemctl start home-assistant@homeassistant.service
+```
 
 ### Doesn't seem to work:
 ``` shell
@@ -149,7 +165,8 @@ sudo -i
 su homeassistant
 cd /srv/homeassistant/homeassistant_venv/
 source bin/activate
-pip3 install mysqlclient```
+pip3 install mysqlclient
+```
 
 ## Alternative, old way
 
@@ -186,4 +203,5 @@ sudo systemctl enable telldusd.service
 
 sudo nano /etc/tellstick.conf
 
-sudo systemctl restart telldusd.service```
+sudo systemctl restart telldusd.service
+```

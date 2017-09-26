@@ -23,6 +23,9 @@ Put results of cat into a new deploy key on GitHub
 eval "$(ssh-agent -s)"
 
 sudo systemctl stop home-assistant@homeassistant.service 
+```
+Remove all existing standard files, without this, we can't get the existing config
+``` shell
 cd /home/homeassistant/.homeassistant && sudo rm -rf /home/homeassistant/.homeassistant/*
 sudo chmod -R g+w /home/homeassistant/.homeassistant/
 ```

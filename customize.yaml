@@ -115,35 +115,39 @@
     icon: 'mdi:beach'
   binary_sensor.door_window_sensor_158d00015b60d7:
     friendly_name: Living Room Left Window
-    device_class: cover
+    device_class: opening
     icon: mdi:window-closed
   binary_sensor.door_window_sensor_158d00016c74c6:
     friendly_name: Living Room Middle Window
-    device_class: cover
+    device_class: opening
     icon: mdi:window-closed
   binary_sensor.door_window_sensor_158d00016c7536:
     friendly_name: Kitchen Window
-    device_class: cover
+    device_class: opening
     icon: mdi:window-closed
   binary_sensor.door_window_sensor_158d00016c7655:
     friendly_name: Front Door
-    device_class: cover
+    device_class: opening
     icon: mdi:glassdoor
   binary_sensor.door_window_sensor_158d0001834f33:
     friendly_name: Living Room Right Window
-    device_class: cover
+    device_class: opening
     icon: mdi:window-closed
   binary_sensor.kallardorr:
-    friendly_name: Källardörr
-    device_class: cover
+    friendly_name: Basement door
+    device_class: opening
     icon: mdi:glassdoor
   binary_sensor.entre:
     friendly_name: Front door
-    device_class: cover
+    device_class: opening
     icon: mdi:glassdoor
   binary_sensor.altandorr:
     friendly_name: Outside room door
-    device_class: cover
+    device_class: opening
+    icon: mdi:glassdoor
+  binary_sensor.door_window_sensor_158d0001d84f5f:
+    friendly_name: Livingroom Door
+    device_class: opening
     icon: mdi:glassdoor
   binary_sensor.switch_158d00014a077d:
     friendly_name: Hallway Button
@@ -159,6 +163,8 @@
     friendly_name: Living Room Movement
   binary_sensor.motion_sensor_158d0001235a99:
     friendly_name: Front Door Movement
+  binary_sensor.motion_sensor_158d0001d665e2:
+    friendly_name: Outside Room Movement
   binary_sensor.switch_158d00016d7b23:
     friendly_name: Door Bell
   binary_sensor.switch_158d0001a65312:
@@ -175,6 +181,16 @@
     friendly_name: Xiaomi Gateway Living Room
   sensor.illumination_34ce008c1bb1:
     friendly_name: Gateway Illumination
+  sensor.dark_sky_nearest_storm_distance:
+    friendly_name: Distance to nearest storm
+  sensor.dark_sky_summary:
+    friendly_name: Weather summary
+  sensor.dark_sky_precip:
+    friendly_name: Precipitation
+  sensor.dark_sky_precip_intensity:
+    friendly_name: Precipitation intensity
+  sensor.dark_sky_precip_probability:
+    friendly_name: Precipitation probability
 
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

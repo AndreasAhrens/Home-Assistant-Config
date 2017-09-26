@@ -202,6 +202,8 @@ sudo systemctl start home-assistant@homeassistant.service
 #pip3 install mysqlclient
 ```
 
+## Make a backup!
+Now it's a good time to make a backup so you don't have to go through all of this again...
 
 ## Upgrade Home Assistant
 ``` shell

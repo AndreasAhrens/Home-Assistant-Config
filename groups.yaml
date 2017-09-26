@@ -165,7 +165,7 @@
       - sensor.uterum_temperature
       - sensor.uterum_mouse
       - light.outside_room_wall
-      - binary_sensor.switch_158d00016d7b23
+      - binary_sensor.motion_sensor_158d0001d665e2
   Mouse_status:
     name: Mouse status
     entities:
@@ -273,7 +273,6 @@
       - sensor.humidity_158d0001a1ffac
   Weather:
     entities:
-      - sensor.dark_sky_icon
       - sensor.dark_sky_nearest_storm_distance
       - sensor.dark_sky_summary
       - sensor.dark_sky_temperature
@@ -420,6 +419,7 @@
       - binary_sensor.door_window_sensor_158d00016c74c6
       - binary_sensor.door_window_sensor_158d0001834f33
       - binary_sensor.door_window_sensor_158d00016c7536
+      - binary_sensor.door_window_sensor_158d0001d84f5f
       
   Motion:
     name: Motion sensors
@@ -430,6 +430,7 @@
       - binary_sensor.motion_sensor_158d0001656584
       - binary_sensor.motion_sensor_158d0001656600
       - binary_sensor.motion_sensor_158d0001235a99
+      - binary_sensor.motion_sensor_158d0001d665e2
 
 
   Automations:
@@ -696,7 +697,6 @@
     entities:
       - group.System
       - group.Mediaplayers
-      - group.Xiaomi_gateway
   Plants_view:
     name: Plants
     view: yes

@@ -1,15 +1,17 @@
-#Setup of new installation of Home Assistant
+# Setup of new installation of Home Assistant
 This is a simple guide to setting up Home Assistant from scratch, with codes.
-##Initial setup
-```passwd
+## Initial setup
+``` shell
+passwd
 
 hassbian-config
 
 cd /home/homeassistant/.homeassistant/```
 
 
-##Git:
-```sudo apt-get update && sudo apt-get upgrade
+## Git:
+``` shell
+sudo apt-get update && sudo apt-get upgrade
 sudo apt install git && sudo ssh-keygen -t rsa -b 4096 -C "aa@devv.it" && sudo cat /root/.ssh/id_rsa.pub
 (sudo nano /root/.ssh/id_rsa.pub)
 (sudo tail /root/.ssh/id_rsa.pub)
@@ -29,18 +31,22 @@ cd /etc/mosquitto/
 sudo cp mosquitto.conf mosquitto.conf.old && sudo rm -rf mosquitto.conf && sudo nano mosquitto.conf
 sudo systemctl restart mosquitto.service ```
 
-####Possibly:
-```sudo hassbian-config install libcec```
+#### Possibly:
+``` shell
+sudo hassbian-config install libcec ```
 
-```sudo apt install htop wavemon```
+``` shell
+sudo apt install htop wavemon```
 
-##Tellstick:
-```sudo hassbian-config install tellstick && sudo systemctl enable telldusd.service && sudo nano /etc/tellstick.conf
+## Tellstick:
+``` shell
+sudo hassbian-config install tellstick && sudo systemctl enable telldusd.service && sudo nano /etc/tellstick.conf
 sudo reboot now```
 
-##Install duckdns and letsencrypt:
+## Install duckdns and letsencrypt:
 https://community.home-assistant.io/t/guide-how-to-set-up-duckdns-ssl-and-chrome-push-notifications/9722
-```mkdir duckdns
+``` shell
+mkdir duckdns
 cd duckdns
 nano duck.sh
 chmod 700 duck.sh
@@ -48,7 +54,8 @@ crontab -e
 ./duck.sh
 cat duck.log```
 
-```mkdir certbot
+``` shell
+mkdir certbot
 cd certbot
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
@@ -57,8 +64,9 @@ chmod a+x certbot-auto
 
 sudo chmod -R 777 /etc/letsencrypt```
 
-##Homebridge:
-```sudo apt-get install nodejs npm
+## Homebridge:
+``` shell
+sudo apt-get install nodejs npm
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install libavahi-compat-libdnssd-dev
@@ -68,9 +76,10 @@ sudo nano ~/.homebridge/config.json
 homebridge```
 https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
 
-###Run homebridge on boot
+### Run homebridge on boot
 https://gist.github.com/johannrichard/0ad0de1feb6adb9eb61a/
-```sudo nano /etc/default/homebridge
+``` shell
+sudo nano /etc/default/homebridge
 sudo nano /etc/systemd/system/homebridge.service
 sudo useradd --system homebridge
 sudo mkdir /var/lib/homebridge
@@ -79,22 +88,25 @@ sudo chown homebridge /var/lib/homebridge
 sudo nano /var/lib/homebridge/config.json
 journalctl -u homebridge```
 
-###Homebridge server:
+### Homebridge server:
 https://www.npmjs.com/package/homebridge-server
 
-###Fix homebridge problem:
-```sudo systemctl stop homebridge.service
+### Fix homebridge problem:
+``` shell
+sudo systemctl stop homebridge.service
 sudo systemctl restart avahi-daemon
 sudo systemctl start homebridge.service ```
 
 
 
-```sudo systemctl daemon-reload
+``` shell
+sudo systemctl daemon-reload
 sudo systemctl enable homebridge
 sudo systemctl start homebridge```
 
-##Install MPD
-```sudo apt-get install mpd mpc
+## Install MPD
+``` shell
+sudo apt-get install mpd mpc
 sudo nano /etc/mpd.conf
 audio_output {
         type            "alsa"
@@ -106,37 +118,43 @@ audio_output {
 #       mixer_index     "0"             # optional
 }```
 
-##MySQL:
-```sudo apt-get install mysql-server```
+## MySQL:
+``` shell 
+sudo apt-get install mysql-server```
 
-```mysql -u root -p
+``` shell 
+mysql -u root -p
 CREATE USER 'hassbian'@'localhost' IDENTIFIED BY 'password';
 CREATE DATABASE hassbian;
 GRANT ALL PRIVILEGES ON hassbian . * TO 'hassbian'@'localhost';
 FLUSH PRIVILEGES;
 exit;```
 
-```sudo chown -R homeassistant /usr/local/lib/python3.4
+``` shell 
+sudo chown -R homeassistant /usr/local/lib/python3.4
 sudo apt-get install libmysqlclient-dev```
 
-###Seems to work:
-```sudo systemctl stop home-assistant@homeassistant.service
+### Seems to work:
+``` shell
+sudo systemctl stop home-assistant@homeassistant.service
 sudo su -s /bin/bash homeassistant
 source /srv/homeassistant/bin/activate
 pip3 install mysqlclient
 exit
 sudo systemctl start home-assistant@homeassistant.service```
 
-###Doesn't seem to work:
-```sudo -i
+### Doesn't seem to work:
+``` shell
+sudo -i
 su homeassistant
 cd /srv/homeassistant/homeassistant_venv/
 source bin/activate
 pip3 install mysqlclient```
 
-##Alternative, old way
+## Alternative, old way
 
-```cd /home/pi/Downloads/
+``` shell
+cd /home/pi/Downloads/
 wget http://download.telldus.se/TellStick/Software/telldus-core/telldus-core-2.1.2.tar.gz
 sudo apt-get install libftdi1 libftdi-dev libconfuse0 libconfuse-dev cmake
 cd /usr/src

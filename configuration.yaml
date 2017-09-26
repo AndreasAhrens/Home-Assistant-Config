@@ -373,6 +373,12 @@ weblink:
     - name: Homebridge server
       url: http://192.168.31.68:9998/
 
+panel_iframe:
+  router:
+    title: 'Environment'
+    url: 'http://207.154.218.20:3003/dashboard/db/environment?edit&tab=time%20range'
+
+
 #hdmi_cec:
  # devices:
   #  TV: 0.0.0.0

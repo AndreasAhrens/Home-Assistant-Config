@@ -377,7 +377,7 @@ panel_iframe:
   grafana:
     title: 'Environment'
     icon: mdi:temperature-celsius
-    url: 'http://207.154.218.20:3003/dashboard/db/environment'
+    url: 'https://snapshot.raintank.io/dashboard/snapshot/5ghYe978qkPLJluQ8yZOLF0yyrSQkOtM?orgId=2&theme=light'
 
 
 #hdmi_cec:

@@ -129,7 +129,7 @@ zone 6:
 discovery:
 
 #Xiaomi gateway
-xiaomi:
+xiaomi_aqara:
   gateways:
     - mac: 34:CE:00:8C:1B:B1
       key: !secret xiaomi_key

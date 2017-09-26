@@ -13,7 +13,9 @@ cd /home/homeassistant/.homeassistant/
 ## Git:
 ``` shell
 sudo apt-get update && sudo apt-get upgrade
-sudo apt install git && sudo ssh-keygen -t rsa -b 4096 -C "aa@devv.it" && sudo cat /root/.ssh/id_rsa.pub
+# sudo apt install git && sudo ssh-keygen -t rsa -b 4096 -C "aa@devv.it" && sudo cat /root/.ssh/id_rsa.pub
+sudo apt install git && ssh-keygen -t rsa -b 4096 -C "aa@devv.it" && sudo cat /home/pi/.ssh/id_rsa.pub
+
 # sudo nano /root/.ssh/id_rsa.pub
 # sudo tail /root/.ssh/id_rsa.pub
 ```
@@ -29,11 +31,22 @@ Remove all existing standard files, without this, we can't get the existing conf
 cd /home/homeassistant/.homeassistant && sudo rm -rf /home/homeassistant/.homeassistant/*
 sudo chmod -R g+w /home/homeassistant/.homeassistant/
 ```
-Might not always work without sudo for git - try to find a fix!
+Only works if you have done the ssh key generation without sudo above.
 ``` shell
 git init && git remote add origin git@github.com:DevvAndreas/Home-Assistant-Config.git && git fetch && git checkout -t origin/master
 
 sudo hassbian-config install mosquitto && sudo hassbian-config install hue && sudo hassbian-config install samba 
+```
+While this is being installed:
+``` shell
+sudo nano secrets.yaml
+```
+Enter secrets.yaml that has been saved from before
+``` shell
+sudo nano known_devices.yaml
+```
+Same here, enter old config
+``` shell
 
 cd /etc/mosquitto/
 sudo cp mosquitto.conf mosquitto.conf.old && sudo rm -rf mosquitto.conf && sudo nano mosquitto.conf
@@ -68,31 +81,26 @@ sudo reboot now
 https://community.home-assistant.io/t/guide-how-to-set-up-duckdns-ssl-and-chrome-push-notifications/9722
 ### Duck DNS
 ``` shell
-mkdir duckdns
-cd duckdns
-nano duck.sh
-chmod 700 duck.sh
+sudo mkdir duckdns && cd duckdns && sudo touch duck.sh && sudo chmod 700 duck.sh && sudo mkdir /root/duckdns && sudo touch /root/duckdns/duck.log && sudo nano duck.sh
+# sudo hassbian-config install duckdns
 crontab -e
-./duck.sh
-cat duck.log
+*/5 * * * * ~/duckdns/duck.sh >/dev/null 2>&1
+sudo touch duck.log && sudo chmod 777 duck.log && sudo ./duck.sh && cat duck.log
 ```
 
 ### Certbot
 ``` shell
-mkdir certbot
-cd certbot
-wget https://dl.eff.org/certbot-auto
-chmod a+x certbot-auto
+cd ~ && mkdir certbot && cd certbot && wget https://dl.eff.org/certbot-auto && chmod a+x certbot-auto
 ```
-Old version, still supported, but gives warning:
+New version, No warning:
 ``` shell
-#./certbot-auto certonly --standalone --preferred-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
+./certbot-auto certonly --standalone --preferred-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
 ```
-New version, no warning
+old version, still supported, but gives warning
 ``` shell
-./certbot-auto certonly --standalone --standalone-supported-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
-
+#./certbot-auto certonly --standalone --standalone-supported-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
 sudo chmod -R 777 /etc/letsencrypt
+sudo systemctl restart home-assistant@homeassistant.service
 ```
 
 ## Homebridge:
@@ -194,6 +202,11 @@ sudo systemctl start home-assistant@homeassistant.service
 #pip3 install mysqlclient
 ```
 
+
+## Upgrade Home Assistant
+``` shell
+sudo hassbian-config uppgrade home-assistant
+```
 ## Alternative, old way
 
 ``` shell

@@ -105,6 +105,10 @@
   light.plants:
     emulated_hue: false
     homebridge_hidden: true
+  group.Basement:
+    homebridge_hidden: true
+  group.linnea:
+    homebridge_hidden: true
   switch.andreas_home:
     icon: mdi:cellphone_iphone
     emulated_hue: false

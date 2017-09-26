@@ -179,6 +179,11 @@ influxdb:
   port: !secret influx_port
   username: !secret influx_user
   password: !secret influx_password
+  database: home_assistant
+  default_measurement: state
+  tags:
+    instance: prod
+    source: hass
 # Enables tellstick
 tellstick:
   signal_repetitions: 10

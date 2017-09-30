@@ -4,7 +4,7 @@ This is a simple guide to setting up Home Assistant from scratch, with codes.
 ``` shell
 passwd
 
-hassbian-config
+raspbian-config
 
 cd /home/homeassistant/.homeassistant/
 ```
@@ -39,11 +39,11 @@ sudo hassbian-config install mosquitto && sudo hassbian-config install hue && su
 ```
 While this is being installed:
 ``` shell
-sudo nano secrets.yaml
+touch secrets.yaml && sudo chmod 755 secrets.yaml && sudo chown pi secrets.yaml && sudo nano secrets.yaml
 ```
 Enter secrets.yaml that has been saved from before
 ``` shell
-sudo nano known_devices.yaml
+touch known_devices.yaml && sudo chmod 755 known_devices.yaml && sudo chown pi known_devices.yaml  && sudo nano known_devices.yaml
 ```
 Same here, enter old config
 ``` shell

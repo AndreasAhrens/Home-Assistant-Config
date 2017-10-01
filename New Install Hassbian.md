@@ -48,8 +48,7 @@ touch known_devices.yaml && sudo chmod 755 known_devices.yaml && sudo chown pi k
 Same here, enter old config
 ``` shell
 
-cd /etc/mosquitto/
-sudo cp mosquitto.conf mosquitto.conf.old && sudo rm -rf mosquitto.conf && sudo nano mosquitto.conf
+cd /etc/mosquitto/ && sudo cp mosquitto.conf mosquitto.conf.old && sudo rm -rf mosquitto.conf && sudo nano mosquitto.conf
 ```
 Enter mosquitto config
 
@@ -95,12 +94,11 @@ cd ~ && mkdir certbot && cd certbot && wget https://dl.eff.org/certbot-auto && c
 New version, No warning:
 ``` shell
 ./certbot-auto certonly --standalone --preferred-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
+sudo chmod -R 777 /etc/letsencrypt && sudo systemctl restart home-assistant@homeassistant.service
 ```
 old version, still supported, but gives warning
 ``` shell
 #./certbot-auto certonly --standalone --standalone-supported-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
-sudo chmod -R 777 /etc/letsencrypt
-sudo systemctl restart home-assistant@homeassistant.service
 ```
 
 ## Homebridge:
@@ -149,6 +147,9 @@ sudo systemctl enable homebridge
 sudo systemctl start homebridge
 ```
 
+## FFMPEG
+sudo echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
+sudo apt-get update && sudo apt-get -t jessie-backports install ffmpeg
 ## Install MPD
 ``` shell
 sudo apt-get install mpd mpc

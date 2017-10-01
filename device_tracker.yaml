@@ -8,6 +8,9 @@
     username: !secret icloud_username
     password: !secret icloud_password
     account_name: icloud
+  - platform: nmap_tracker
+    hosts: 192.168.1.1/24
+    home_interval: 30
   # - platform: bluetooth_le_tracker #disabled because it sucks the lifeblood out of the pi. God damn it. 
   # To be fair, there is a warning at https://home-assistant.io/components/device_tracker.bluetooth_le_tracker/
   # - platform: bluetooth_tracker

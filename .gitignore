@@ -21,4 +21,4 @@ pyozw.sqlite
 .*
 !/.gitignore
 emulated_hue_ids.json
-
+bin/makegif.sh

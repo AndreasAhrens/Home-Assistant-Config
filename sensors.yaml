@@ -18,6 +18,15 @@
       - precip_type
       - precip_intensity
       - precip_probability
+      - wind_speed
+      - wind_bearing
+      - humidity
+      - apparent_temperature
+      - hourly_summary
+      - temperature_max
+      - temperature_min
+      - precip_intensity_max
+      - cloud_cover
     units: si
   - platform: cpuspeed
   - platform: fastdotcom

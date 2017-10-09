@@ -15,8 +15,9 @@
       - light.dimmable_light_2
       - light.dimmable_light_3
   Livingroom:
+    name: Living room
     entities:
-      - switch.livingroom_ceiling
+      # - switch.livingroom_ceiling
       - group.Livingroom_ceiling
       - light.living_room_wall
       - switch.living_room_fan
@@ -35,10 +36,10 @@
       - sensor.illumination_34ce008c1b
     icon: mdi:gamepad-variant
   Livingroom_short:
-    name: Livingroom
+    name: Living room
     entities:
-      - switch.livingroom_ceiling
-      - light.living_room_ceiling
+      # - switch.livingroom_ceiling
+      - group.Livingroom_ceiling
       - light.living_room_wall
       - switch.living_room_fan
       - light.tv_bench

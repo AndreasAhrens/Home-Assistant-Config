@@ -17,6 +17,7 @@
   Livingroom:
     entities:
       - switch.livingroom_ceiling
+      - group.Livingroom_ceiling
       - light.living_room_wall
       - switch.living_room_fan
       - light.tv_bench
@@ -37,6 +38,7 @@
     name: Livingroom
     entities:
       - switch.livingroom_ceiling
+      - light.living_room_ceiling
       - light.living_room_wall
       - switch.living_room_fan
       - light.tv_bench

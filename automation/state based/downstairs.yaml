@@ -124,7 +124,7 @@
           entity_id: light.living_room_wall
           state: 'off'
     action:
-      - service: homeassistant.turn_on
+      - service: light.turn_on
         entity_id: 
           - light.living_room_wall
         data:
@@ -141,13 +141,13 @@
       for:
         minutes: 10
     action:
-      - service: homeassistant.turn_on
+      - service: light.turn_on
         entity_id: light.living_room_wall
         data: 
           brightness: 10
           rgb_color: [243, 179, 80]
           transition: 60
-      - service: homeassistant.turn_off
+      - service: light.turn_off
         entity_id: light.living_room_wall
 
   - alias: Turn on hallways stairs when button is long clicked if off

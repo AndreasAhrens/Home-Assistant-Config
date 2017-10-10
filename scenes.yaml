@@ -46,6 +46,8 @@
         state: off
       light.living_room_wall:
         state: off
+      group.Livingroom_ceiling:
+        state: off
       light.tv_bench:
         state: off
       light.kitchen_top:

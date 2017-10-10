@@ -29,6 +29,34 @@
         entity_id:
           - switch.hallway_stairs
 
+  - alias: Turn on living room ceiling at sunset
+    trigger:
+      - platform: sun
+        event: sunset
+        offset: '-00:15:00'
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: alarm_control_panel.hemgatan_alarm
+          state: 'disarmed'
+        - condition: state
+          entity_id: input_boolean.vacation_mode
+          state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.living_room_ceiling
+        data:
+          brightness: 90
+          transition: 900
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.living_room_ceiling
+        data:
+          brightness: 180
+          transition: 1800
+
   - alias: Turn on kitchen top on sun down
     trigger:
       - platform: sun

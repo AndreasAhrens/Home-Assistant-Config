@@ -26,6 +26,27 @@
         entity_id:
           - switch.hallway_stairs
 
+  - alias: Turn off living room ceiling at 22:00 (fade)
+    trigger:
+      - platform: time
+        at: '22:00:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.living_room_ceiling
+        data:
+          brightness: 90
+          transition: 1800
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.living_room_ceiling
+        data:
+          brightness: 10
+          transition: 900
+      - service: homeassistant.turn_off
+        entity_id:
+          - light.living_room_ceiling
+
           
   ####### AQUARIUM #######
   - alias: Turn on aquarium at 07:00

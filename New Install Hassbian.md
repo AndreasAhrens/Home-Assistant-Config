@@ -7,8 +7,9 @@ passwd
 raspbian-config
 
 cd /home/homeassistant/.homeassistant/
+http://IP:8123/
 ```
-
+Check if Home Assistant is up, takes a while first setup.
 
 ## Git:
 ``` shell

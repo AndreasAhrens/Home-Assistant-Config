@@ -274,6 +274,10 @@ cover:
 # Enables support for tracking state changes over time.
 history:
 
+duckdns:
+  domain: !secret duckurl
+  access_token: !secret ducktoken
+
 # View all events in a logbook
 logbook:
   exclude:

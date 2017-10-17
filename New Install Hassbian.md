@@ -112,6 +112,7 @@ sudo apt-get install libavahi-compat-libdnssd-dev
 sudo npm install -g --unsafe-perm homebridge
 sudo npm install -g homebridge-homeassistant && sudo npm install -g homebridge-magichome && sudo npm install -g homebridge-mi-air-purifier miio && sudo npm install homebridge-server@latest -g
 sudo nano ~/.homebridge/config.json
+sudo nano /root/.homebridge/config.json
 homebridge
 ```
 https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi
@@ -149,7 +150,7 @@ sudo systemctl start homebridge
 ```
 
 ## FFMPEG
-sudo echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
+sudo echo "deb http://ftp.debian.org/debian jessie-backports main" | sudo tee /etc/apt/sources.list
 sudo apt-get update && sudo apt-get -t jessie-backports install ffmpeg
 ## Install MPD
 ``` shell

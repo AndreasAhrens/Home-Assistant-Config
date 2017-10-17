@@ -368,20 +368,24 @@ notify:
 
 weblink:
   entities:
-    - name: Router
-      url: http://192.168.32.1
+    - name: Router downstairs
+      url: http://192.168.1.11
+    - name: Router upstairs
+      url: http://192.168.1.20
     - name: Home Assistant
       url: https://home-assistant.io
     - name: Home Assistant Forum
       url: https://community.home-assistant.io/
-    - name: Homebridge server
-      url: http://192.168.1.68:9998/
+    - name: Grafana
+      url: http://192.168.1.25:3000/
+    - name: Influx db
+      url: http://192.168.1.25:8083/
 
 panel_iframe:
   grafana:
     title: 'Environment'
     icon: mdi:temperature-celsius
-    url: 'https://snapshot.raintank.io/dashboard/snapshot/5ghYe978qkPLJluQ8yZOLF0yyrSQkOtM?orgId=2&theme=light'
+    url: 'http://192.168.1.25:3000/dashboard/db/environment?theme=light'
 
 
 #hdmi_cec:

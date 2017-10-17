@@ -56,7 +56,7 @@
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - switch.dining_room_aquarium
+          - switch.dining_room_aquarium_2
 
   - alias: Turn off aquarium at 21:30
     trigger:
@@ -65,7 +65,7 @@
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - switch.dining_room_aquarium
+          - switch.dining_room_aquarium_2
 
   - alias: Turn off kitchen top on at 21:00
     trigger:

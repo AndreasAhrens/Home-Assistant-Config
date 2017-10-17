@@ -40,6 +40,8 @@
         state: off
       switch.dining_room_aquarium:
         state: off
+      switch.dining_room_aquarium_2:
+        state: off
       switch.garden_driveway:
         state: off
       switch.hallway_stairs:

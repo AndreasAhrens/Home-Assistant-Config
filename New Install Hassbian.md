@@ -59,6 +59,7 @@ sudo systemctl restart mosquitto.service
 For troubleshooting
 ``` shell
 sudo apt install htop wavemon
+sudo apt-get install net-tools nmap
 ```
 
 #### Possibly:

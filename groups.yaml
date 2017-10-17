@@ -49,7 +49,6 @@
     entities:
       - switch.dining_room_table
       - switch.dining_room_cabinet
-      - switch.dining_room_aquarium
       - switch.dining_room_aquarium_2
       - binary_sensor.altandorr
       - binary_sensor.motion_sensor_158d0001655ff2
@@ -59,7 +58,6 @@
     entities:
       - switch.dining_room_table
       - switch.dining_room_cabinet
-      - switch.dining_room_aquarium
       - switch.dining_room_aquarium_2
     icon: mdi:seat-recline-normal
   Xiaomi_gateway:

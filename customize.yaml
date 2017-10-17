@@ -10,7 +10,7 @@
     icon: mdi:monitor
   switch.dining_room_aquarium:
     icon: mdi:fish
-  switch.dining_room_aquarium:
+  switch.dining_room_aquarium_2:
     icon: mdi:fish
   sensor.ovanvaning_humidity:
     icon: mdi:water-percent

@@ -10,6 +10,8 @@
     icon: mdi:monitor
   switch.dining_room_aquarium:
     icon: mdi:fish
+    emulated_hue: false
+    homebridge_hidden: true
   switch.dining_room_aquarium_2:
     icon: mdi:fish
   sensor.ovanvaning_humidity:

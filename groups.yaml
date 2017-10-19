@@ -23,6 +23,7 @@
       - switch.living_room_fan
       - light.tv_bench
       - switch.Disco_Light
+      - vacuum.blitzwolf_vacuum
       - sensor.vardagsrum_humidity
       - sensor.vardagsrum_temperature
       - sensor.livingroom_temperature_2
@@ -44,6 +45,7 @@
       - switch.living_room_fan
       - light.tv_bench
       - switch.Disco_Light
+      - vacuum.blitzwolf_vacuum
     icon: mdi:gamepad-variant
   Diningroom:
     entities:

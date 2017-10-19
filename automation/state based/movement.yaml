@@ -45,27 +45,27 @@
           message: 'Andreas has left work and is on his way home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
       
 
-  - alias: 'Andreas Close to home notification'
-    trigger:
-      - platform: zone
-        event: enter
-        zone: zone.close_to_home
-        entity_id: device_tracker.allyourbasearebelongtous2
-      - platform: zone
-        event: enter
-        zone: zone.close_to_home
-        entity_id: device_tracker.all_your_base_are_belong_to_us_2
-    action:
-      - service: homeassistant.turn_on
-        entity_id:
-          - switch.garden_driveway
-      - service: script.speak_message
-        data:
-          message: 'Andreas is almost home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
-      - delay: '00:10:00'
-      - service: homeassistant.turn_off
-        entity_id:
-          - switch.garden_driveway
+#  - alias: 'Andreas Close to home notification'
+#    trigger:
+#      - platform: zone
+#        event: enter
+#        zone: zone.close_to_home
+#        entity_id: device_tracker.allyourbasearebelongtous2
+#      - platform: zone
+#        event: enter
+#        zone: zone.close_to_home
+#        entity_id: device_tracker.all_your_base_are_belong_to_us_2
+#    action:
+#      - service: homeassistant.turn_on
+#        entity_id:
+#          - switch.garden_driveway
+#      - service: script.speak_message
+#        data:
+#          message: 'Andreas is almost home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
+#      - delay: '00:10:00'
+#      - service: homeassistant.turn_off
+#        entity_id:
+#          - switch.garden_driveway
 
   - alias: 'Andreas Home notification'
     trigger:

@@ -108,38 +108,38 @@
       service: homeassistant.turn_off
       entity_id: light.kitchen_top
 
-  - alias: Turn on livingroom wall & ceiling light when movement in living room and sun is down
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.motion_sensor_158d0001656600
-        from: 'off'
-        to: 'on'
-    condition:
-      condition: and
-      conditions:
-        - condition: state
-          entity_id: sun.sun
-          state: below_horizon
-        - condition: state
-          entity_id: light.living_room_wall
-          state: 'off'
-        - conditions: state
-          entity_id: group.livingroom_ceiling
-          state: 'off'
-    action:
-      - service: light.turn_on
-        entity_id: 
-          - light.living_room_wall
-        data:
-          brightness: 90
-          rgb_color: [243, 179, 80]
-          transition: 10
-      - service: homeassistant.turn_on
-        entity_id: 
-          - group.livingroom_ceiling
-        data:
-          brightness: 90
-          transition: 10
+#  - alias: Turn on livingroom wall & ceiling light when movement in living room and sun is down
+#    trigger:
+#      - platform: state
+#        entity_id: binary_sensor.motion_sensor_158d0001656600
+#        from: 'off'
+#        to: 'on'
+#    condition:
+#      condition: and
+#      conditions:
+#        - condition: state
+#          entity_id: sun.sun
+#          state: below_horizon
+#        - condition: state
+#          entity_id: light.living_room_wall
+#          state: 'off'
+#        - conditions: state
+#          entity_id: group.livingroom_ceiling
+#          state: 'off'
+#    action:
+#      - service: light.turn_on
+#        entity_id: 
+#          - light.living_room_wall
+#        data:
+#          brightness: 90
+#          rgb_color: [243, 179, 80]
+#          transition: 10
+#      - service: homeassistant.turn_on
+#        entity_id: 
+#          - group.livingroom_ceiling
+#        data:
+#          brightness: 90
+#          transition: 10
 
 
 

@@ -123,9 +123,6 @@
         - condition: state
           entity_id: light.living_room_wall
           state: 'off'
-        - conditions: state
-          entity_id: light.living_room_roof_1
-          state: 'off'
     action:
       - service: light.turn_on
         entity_id: 

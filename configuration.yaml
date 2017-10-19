@@ -101,7 +101,7 @@ zone 3:
   name: Lidl
   latitude: 56.139298
   longitude: 12.940771
-  radius: 40
+  radius: 20
   icon: mdi:store
 
 zone 4:
@@ -122,8 +122,16 @@ zone 6:
   name: Internationella Engelska Skolan
   latitude: 56.039186
   longitude: 12.709115
-  radius: 100
+  radius: 150
   icon: mdi:school
+
+zone 7:
+  name: Close to home
+  latitude: 56.13249654651926
+  longitude: 12.94041155717445
+  radius: 200
+  icon: mdi:home-outline
+  passive: yes
 
 # Discover some devices automatically
 discovery:
@@ -134,10 +142,7 @@ xiaomi_aqara:
     - mac: 34:CE:00:8C:1B:B1
       key: !secret xiaomi_key
       discovery_retry: 10
-      # 68715608DB0F47B1
-      #68715608DB0F47B1
-      #11e485a2892e2382ca83252e47a71bf8
-      #34:CE:00:8C:1B:B1  34:CE:00:8C:1B:B1
+
 
 #Presence based lights
 #device_sun_light_trigger:

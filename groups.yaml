@@ -115,6 +115,7 @@
       - sensor.humidity_158d0001701075
       - sensor.temperature_158d0001701075
       - binary_sensor.in_bed_sensor
+      - binary_sensor.door_window_sensor_158d00014d4149
     icon: mdi:hotel
   Bedroom_short:
     name: Bedroom
@@ -445,6 +446,7 @@
       - binary_sensor.door_window_sensor_158d0001834f33
       - binary_sensor.door_window_sensor_158d00016c7536
       - binary_sensor.door_window_sensor_158d0001d84f5f
+      - binary_sensor.door_window_sensor_158d00014d4149
       
   Motion:
     name: Motion sensors
@@ -642,7 +644,7 @@
 
 ###### VIEWS #######
   default_view:
-    view: no    ## Change to "no" to see the default view and be able to detect new devices and lights
+    view: yes    ## Change to "no" to see the default view and be able to detect new devices and lights
     entities:
       - group.maindevices
       - group.livingroom_short

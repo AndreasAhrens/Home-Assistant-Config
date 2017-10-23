@@ -137,6 +137,10 @@
     friendly_name: Front Door
     device_class: opening
     icon: mdi:glassdoor
+  binary_sensor.door_window_sensor_158d00014d4149:
+    friendly_name: Bedroom Window
+    device_class: opening
+    icon: mdi:window-closed
   binary_sensor.door_window_sensor_158d0001834f33:
     friendly_name: Living Room Right Window
     device_class: opening

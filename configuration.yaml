@@ -140,10 +140,11 @@ discovery:
 
 #Xiaomi gateway
 xiaomi_aqara:
+  discovery_retry: 5
   gateways:
     - mac: 34:CE:00:8C:1B:B1
       key: !secret xiaomi_key
-      discovery_retry: 10
+      
 
 
 #Presence based lights

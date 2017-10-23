@@ -19,6 +19,8 @@ homeassistant:
 # Enables the frontend
 frontend:
 
+map:
+
 http:
   api_password: !secret http_password
   ssl_certificate: !secret ssl_cert

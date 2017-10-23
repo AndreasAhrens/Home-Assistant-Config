@@ -48,13 +48,13 @@
         entity_id:
           - light.living_room_ceiling
         data:
-          brightness: 90
+          brightness: 75
           transition: 900
       - service: light.turn_on
         entity_id:
           - light.living_room_ceiling
         data:
-          brightness: 180
+          brightness: 150
           transition: 1800
 
   - alias: Turn on kitchen top on sun down

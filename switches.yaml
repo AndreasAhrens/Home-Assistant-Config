@@ -54,3 +54,8 @@
     optimistic: true
     qos: 0
     retain: true
+
+  - platform: xiaomi_miio
+    name: Front door plug
+    host: 192.168.1.41
+    token: 11e485a2892e2382ca83252e47a71bf8

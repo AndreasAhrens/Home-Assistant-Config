@@ -14,9 +14,11 @@
   ## as a binary sensor, it can only have two values, on or off.
   - alias: Livingroom switch left button single click
     trigger:
-      - platform: state
-        entity_id: binary_sensor.wall_switch_left_158d000171d630
-        to: 'on'
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          click_type: single
     condition:
       - condition: state
         entity_id: input_select.livingroom_switch_left_status
@@ -30,8 +32,18 @@
   - alias: Livingroom switch left button set to off
     trigger:
       - platform: state
-        entity_id: binary_sensor.wall_switch_left_158d000171d630
-        to: 'off'
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'single'
+        for:
+          seconds: 5
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'double'
+        for:
+          seconds: 5
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'long'
         for:
           seconds: 5
     action:
@@ -42,9 +54,11 @@
 
   - alias: Livingroom switch left button long click
     trigger:
-      - platform: state
-        entity_id: binary_sensor.wall_switch_left_158d000171d630
-        to: 'on'
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          click_type: single
         for: 
           seconds: 1
     action:
@@ -55,9 +69,11 @@
 
   - alias: Livingroom switch left button double click
     trigger:
-      - platform: state
-        entity_id: binary_sensor.wall_switch_left_158d000171d630
-        to: 'on'
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          click_type: single
     condition: 
       - condition: state
         entity_id: input_select.livingroom_switch_left_status

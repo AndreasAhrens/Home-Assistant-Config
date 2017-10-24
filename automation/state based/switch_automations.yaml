@@ -79,13 +79,13 @@
       - service: input_number.set_value
         data_template: 
           entity_id: input_number.livingroom_switch_left_number
-          value: '{{ states.input_number.livingroom_switch_left_number.state | int + 25 }}'
+          value: '{{ states.input_number.livingroom_switch_left_number.state | int + 18 }}'
       - condition: template
         value_template: '{{ input_number.livingroom_switch_left_number.state > 100 }}'
       - service: input_number.set_value
         data_template: 
           entity_id: input_number.livingroom_switch_left_number
-          value: '1'
+          value: '5'
 
 
   - alias: Livingroom switch left button set to off

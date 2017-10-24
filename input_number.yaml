@@ -2,19 +2,19 @@
     name: Living room switch left status
     initial: 0
     min: 0
-    max: 100
+    max: 110
     step: 1
 
   livingroom_switch_right_number:
     name: Living room switch right status
     initial: 0
     min: 0
-    max: 100
+    max: 110
     step: 1
     
   livingroom_switch_both_number:
     name: Living room switch both status
     initial: 0
     min: 0
-    max: 100
+    max: 110
     step: 1

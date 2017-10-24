@@ -84,6 +84,8 @@ light: !include lights.yaml
 plant: !include plant.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
+input_text: !include input_text.yaml
+input_number: !include input_number.yaml
 
 zone:
   name: Home
@@ -144,7 +146,10 @@ xiaomi_aqara:
   gateways:
     - mac: 34:CE:00:8C:1B:B1
       key: !secret xiaomi_key
-      
+      # 68715608DB0F47B1
+      #68715608DB0F47B1
+      #11e485a2892e2382ca83252e47a71bf8
+      #34:CE:00:8C:1B:B1  34:CE:00:8C:1B:B1
 
 
 #Presence based lights

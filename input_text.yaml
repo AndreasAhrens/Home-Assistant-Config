@@ -1,0 +1,11 @@
+  livingroom_switch_left_status:
+    name: Living room switch left status
+    initial: 'off'
+
+  livingroom_switch_right_status:
+    name: Living room switch right status
+    initial: 'off'
+    
+  livingroom_switch_both_status:
+    name: Living room switch both status
+    initial: 'off'

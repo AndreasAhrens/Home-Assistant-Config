@@ -641,6 +641,9 @@
   debug_group:
     name: Debug
     entities:
+      - binary_sensor.wall_switch_both_158d000171d630
+      - binary_sensor.wall_switch_left_158d000171d630
+      - binary_sensor.wall_switch_right_158d000171d630
       - switch.front_door_plug
 
 

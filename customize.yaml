@@ -145,6 +145,12 @@
     friendly_name: Living Room Right Window
     device_class: opening
     icon: mdi:window-closed
+  binary_sensor.wall_switch_both_158d000171d630:
+    friendly_name: Living room switch both
+  binary_sensor.wall_switch_left_158d000171d630:
+    friendly_name: Living room switch left
+  binary_sensor.wall_switch_right_158d000171d630:
+    friendly_name: Living room switch right
   binary_sensor.kallardorr:
     friendly_name: Basement door
     device_class: opening

@@ -85,6 +85,7 @@
   Garden:
     entities:
       - switch.garden_front_door
+      - switch.front_door_plug
       - switch.garden_driveway
       - sensor.dark_sky_temperature
     icon: mdi:pine-tree
@@ -637,8 +638,10 @@
       - automation.turn_on_bedroom_fan_when_temperature_upstairs_is_above_22
       - automation.turn_on_livingroom_fan_when_temperature_in_livingroom_above_23
 
-
-
+  debug_group:
+    name: Debug
+    entities:
+      - switch.front_door_plug
 
 
 
@@ -663,6 +666,12 @@
       - group.doors
       - group.motion
       - group.Mediaplayers_short
+
+  debug:
+    view: yes
+    name: Debug
+    entities:
+      - group.debug_group
 
   Upstairs_view:
     name: Upstairs

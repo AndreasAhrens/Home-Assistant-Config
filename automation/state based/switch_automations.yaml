@@ -80,6 +80,17 @@
         data_template: 
           entity_id: input_number.livingroom_switch_left_number
           value: '{{ states.input_number.livingroom_switch_left_number.state | int + 18 }}'
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_left_status
+          option: 'off'
+      
+
+  - alias: Set livingroom switch state to 5 if over 100
+    trigger:
+      - platform: state
+        entity_id: input_number.livingroom_switch_left_number
+    condition:
       - condition: template
         value_template: '{{ input_number.livingroom_switch_left_number.state > 100 }}'
       - service: input_number.set_value

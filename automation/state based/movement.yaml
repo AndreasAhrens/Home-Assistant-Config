@@ -70,11 +70,11 @@
   - alias: 'Andreas exiting Close to home '
     trigger:
       - platform: zone
-        event: exit
+        event: leave
         zone: zone.close_to_home
         entity_id: device_tracker.allyourbasearebelongtous2
       - platform: zone
-        event: exit
+        event: leave
         zone: zone.close_to_home
         entity_id: device_tracker.all_your_base_are_belong_to_us_2
     action:

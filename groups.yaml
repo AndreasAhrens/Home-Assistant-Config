@@ -84,7 +84,7 @@
       - binary_sensor.cube_158d00010aecde
   Garden:
     entities:
-      - switch.garden_front_door
+      # - switch.garden_front_door
       - switch.front_door_plug
       - switch.garden_driveway
       - sensor.dark_sky_temperature

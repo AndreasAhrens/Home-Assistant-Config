@@ -7,6 +7,11 @@
   #     - 'double'
   #     - 'long'
 
+  ## These automations are used to set the status of an aqara button to either off, single, double or long. 
+  ## The Aqara buttons does not support this out of the box, so this is a way to emulate it with automations and input selects.
+  ## A bit of a hack, but should work. Have to be repeated for left button, right button and both buttons in order to get it all to work.
+  ## Then the input select can be used for automations rather than using the on/off directly. Since the Aqara buttons only show up
+  ## as a binary sensor, it can only have two values, on or off.
   - alias: Livingroom switch left button single click
     trigger:
       - platform: state

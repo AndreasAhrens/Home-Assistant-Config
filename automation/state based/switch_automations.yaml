@@ -93,6 +93,7 @@
     condition:
       - condition: template
         value_template: '{{ input_number.livingroom_switch_left_number.state > 100 }}'
+    action:
       - service: input_number.set_value
         data_template: 
           entity_id: input_number.livingroom_switch_left_number

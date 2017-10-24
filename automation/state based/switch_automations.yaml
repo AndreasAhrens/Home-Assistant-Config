@@ -80,12 +80,12 @@
         data_template: 
           entity_id: input_number.livingroom_switch_left_number
           value: '{{ states.input_number.livingroom_switch_left_number.state | int + 25 }}'
-      #- condition: template
-      #  value_template: '{{ input_number.livingroom_switch_left_number.state > 100 }}'
-      #- service: input_number.set_value
-      #  data_template: 
-      #    entity_id: input_number.livingroom_switch_left_number
-      #    value: '0'
+      - condition: template
+        value_template: '{{ input_number.livingroom_switch_left_number.state > 100 }}'
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.livingroom_switch_left_number
+          value: '1'
 
 
   - alias: Livingroom switch left button set to off
@@ -94,17 +94,17 @@
         entity_id: input_select.livingroom_switch_left_status
         to: 'single'
         for:
-          seconds: 5
+          seconds: 3
       - platform: state
         entity_id: input_select.livingroom_switch_left_status
         to: 'double'
         for:
-          seconds: 5
+          seconds: 3
       - platform: state
         entity_id: input_select.livingroom_switch_left_status
         to: 'long'
         for:
-          seconds: 5
+          seconds: 3
     action:
       - service: input_select.select_option
         data:

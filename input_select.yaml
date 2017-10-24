@@ -1,0 +1,39 @@
+  livingroom_switch_left_status:
+    name: Living room switch left status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
+  livingroom_switch_right_status:
+    name: Living room switch right status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
+  livingroom_switch_both_status:
+    name: Living room switch both status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
+  andreas_location:
+    name: Andreas
+    options:
+      - Home
+      - On the way home
+      - Not Home
+      - Devv
+      - Lidl
+      - Hyllinge
+      - Vala
+    initial: Home
+    icon: mdi:human-male

@@ -59,20 +59,6 @@ input_boolean:
   vacation_mode:
     initial: off
 
-input_select:
-  andreas_location:
-    name: Andreas
-    options:
-      - Home
-      - On the way home
-      - Not Home
-      - Devv
-      - Lidl
-      - Hyllinge
-      - Vala
-    initial: Home
-    icon: mdi:human-male
-
 #### INCLUDES ########
 automation old: !include_dir_merge_list automation/
 automation: !include automations.yaml
@@ -84,8 +70,9 @@ light: !include lights.yaml
 plant: !include plant.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
-input_text: !include input_text.yaml
+# input_text: !include input_text.yaml
 input_number: !include input_number.yaml
+input_select: !include input_select.yaml
 
 zone:
   name: Home

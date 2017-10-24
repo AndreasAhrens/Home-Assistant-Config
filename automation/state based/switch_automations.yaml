@@ -1,0 +1,65 @@
+  # livingroom_switch_left_status:
+  #   name: Living room switch left status
+  #   initial: 'off'
+  #   options:
+  #     - 'off'
+  #     - 'single'
+  #     - 'double'
+  #     - 'long'
+
+  - alias: Livingroom switch left button single click
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.wall_switch_left_158d000171d630
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_select.livingroom_switch_left_status
+        state: 'off'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_left_status
+          option: 'single'
+
+  - alias: Livingroom switch left button set to off
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.wall_switch_left_158d000171d630
+        to: 'off'
+        for:
+          seconds: 5
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_left_status
+          option: 'off'
+
+  - alias: Livingroom switch left button long click
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.wall_switch_left_158d000171d630
+        to: 'on'
+        for: 
+          seconds: 1
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_left_status
+          option: 'long'
+
+  - alias: Livingroom switch left button double click
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.wall_switch_left_158d000171d630
+        to: 'on'
+    condition: 
+      - condition: state
+        entity_id: input_select.livingroom_switch_left_status
+        state: 'single'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_left_status
+          option: 'double'
+

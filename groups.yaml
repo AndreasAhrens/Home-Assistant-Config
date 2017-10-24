@@ -645,6 +645,12 @@
       - binary_sensor.wall_switch_left_158d000171d630
       - binary_sensor.wall_switch_right_158d000171d630
       - switch.front_door_plug
+      - input_number.livingroom_switch_both_number
+      - input_number.livingroom_switch_left_number
+      - input_number.livingroom_switch_right_number
+      - input_select.livingroom_switch_both_status
+      - input_select.livingroom_switch_left_status
+      - input_select.livingroom_switch_right_status
 
 
 

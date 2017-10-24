@@ -178,6 +178,7 @@
           entity_id: input_select.andreas_location
           option: Lidl
 
+
   - alias: 'Andreas Lidl input select'
     trigger:
       - platform: state
@@ -187,6 +188,9 @@
       - service: script.speak_message
         data:
           message: 'Andreas is at Lidl, shold he buy something?'
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.garden_driveway
 
 
   - alias: 'Andreas Home MQTT'

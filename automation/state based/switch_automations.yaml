@@ -30,13 +30,16 @@
           option: 'single'
 
 
-  - alias: Livingroom switch left button single click ceiling is on
+  - alias: Livingroom switch left button double click ceiling is on
     trigger:
-      - platform: event
-        event_type: click
-        event_data:
-          entity_id: binary_sensor.wall_switch_left_158d000171d630
-          click_type: single
+      #- platform: event
+      #  event_type: click
+      #  event_data:
+      #    entity_id: binary_sensor.wall_switch_left_158d000171d630
+      #    click_type: single
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'double'
     condition:
       - condition: state
         entity_id: light.living_room_roof_1
@@ -46,13 +49,16 @@
         entity_id: 
           - group.livingroom_ceiling
 
-  - alias: Livingroom switch left button single click ceiling is off
+  - alias: Livingroom switch left button double click ceiling is off
     trigger:
-      - platform: event
-        event_type: click
-        event_data:
-          entity_id: binary_sensor.wall_switch_left_158d000171d630
-          click_type: single
+      #- platform: event
+      #  event_type: click
+      #  event_data:
+      #    entity_id: binary_sensor.wall_switch_left_158d000171d630
+      #    click_type: single
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'double'
     condition:
       - condition: state
         entity_id: light.living_room_roof_1
@@ -61,6 +67,25 @@
       - service: homeassistant.turn_on
         entity_id: 
           - group.livingroom_ceiling
+
+  - alias: Livingroom switch left button single press increase number
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'single'
+        for:
+          seconds: 2
+    action:
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.livingroom_switch_left_number
+          value: '{{ states.input_number.livingroom_switch_left_number.state + 25 | int }}'
+      - condition: template
+        value_template: '{{ input_number.livingroom_switch_left_number.state > 100 }}'
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.livingroom_switch_left_number
+          value: '0'
 
 
   - alias: Livingroom switch left button set to off

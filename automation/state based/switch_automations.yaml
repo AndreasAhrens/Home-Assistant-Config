@@ -52,20 +52,20 @@
           entity_id: input_select.livingroom_switch_left_status
           option: 'off'
 
-  - alias: Livingroom switch left button long click
-    trigger:
-      - platform: event
-        event_type: click
-        event_data:
-          entity_id: binary_sensor.wall_switch_left_158d000171d630
-          click_type: single
-        for: 
-          seconds: 1
-    action:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.livingroom_switch_left_status
-          option: 'long'
+  #- alias: Livingroom switch left button long click
+  #  trigger:
+  #    - platform: event
+  #      event_type: click
+  #      event_data:
+  #        entity_id: binary_sensor.wall_switch_left_158d000171d630
+  #        click_type: single
+  #      for: 
+  #        seconds: 1
+  #  action:
+  #    - service: input_select.select_option
+  #      data:
+  #        entity_id: input_select.livingroom_switch_left_status
+  #        option: 'long'
 
   - alias: Livingroom switch left button double click
     trigger:

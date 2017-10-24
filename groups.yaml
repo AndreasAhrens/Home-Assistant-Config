@@ -667,12 +667,6 @@
       - group.motion
       - group.Mediaplayers_short
 
-  debug:
-    view: yes
-    name: Debug
-    entities:
-      - group.debug_group
-
   Upstairs_view:
     name: Upstairs
     view: yes
@@ -763,6 +757,12 @@
       - group.Automation_Temperature
       - group.Automation_Other
       - group.Automations
+
+  debug:
+    view: yes
+    name: Debug
+    entities:
+      - group.debug_group
 
 
       #- group.devices

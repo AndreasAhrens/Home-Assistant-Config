@@ -29,6 +29,40 @@
           entity_id: input_select.livingroom_switch_left_status
           option: 'single'
 
+
+  - alias: Livingroom switch left button single click ceiling is on
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: light.living_room_roof_1
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - group.livingroom_ceiling
+
+  - alias: Livingroom switch left button single click ceiling is off
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: light.living_room_roof_1
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - group.livingroom_ceiling
+
+
   - alias: Livingroom switch left button set to off
     trigger:
       - platform: state

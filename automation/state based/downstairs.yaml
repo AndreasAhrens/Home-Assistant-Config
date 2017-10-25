@@ -138,11 +138,15 @@
           brightness: 90
           transition: 10
 
-  - alias: Turn on livingroom wall and ceiling if livingroom door is opened
+  - alias: Turn on livingroom wall and ceiling if livingroom door is opened if dark enough
     trigger:
       - platform: state
         entity_id: binary_sensor.door_window_sensor_158d0001d84f5f
         to: 'on'
+    condition:
+      - condition: numeric_state
+        entity_id: sensor.illumination_34ce008c1bb1
+        below: 300
     action:
       - service: light.turn_on
         entity_id: 

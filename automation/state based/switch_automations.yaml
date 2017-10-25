@@ -75,7 +75,7 @@
           entity_id: input_select.livingroom_switch_left_status
           option: 'off'
 
-  # If the input select is double, turn off the ceiling group if on, turn on if off. 
+  # If the input select is double, turn off the ceiling group if on, turn on if off. Also set status to off.
   - alias: Livingroom switch left button double click ceiling is on
     trigger:
       - platform: state
@@ -89,6 +89,10 @@
       - service: homeassistant.turn_off
         entity_id: 
           - group.livingroom_ceiling
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_left_status
+          option: 'off'
 
   - alias: Livingroom switch left button double click ceiling is off
     trigger:
@@ -103,6 +107,10 @@
       - service: homeassistant.turn_on
         entity_id: 
           - group.livingroom_ceiling
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_left_status
+          option: 'off'
 
   # I want to increase the light if single press is done. Max is 100. Starting at 5 and going up 17 per time, we get these numbers:
   # 5, 22, 39, 56, 73, 90, 107
@@ -115,7 +123,7 @@
         entity_id: input_select.livingroom_switch_left_status
         to: 'single'
         for:
-          seconds: 1.5
+          seconds: 1.3
     action:
       - service: input_number.set_value
         data_template: 

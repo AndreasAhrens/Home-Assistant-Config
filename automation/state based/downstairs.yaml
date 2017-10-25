@@ -138,6 +138,25 @@
           brightness: 90
           transition: 10
 
+  - alias: Turn on livingroom wall and ceiling if livingroom door is opened
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.door_window_sensor_158d0001d84f5f
+        to: 'on'
+    action:
+      - service: light.turn_on
+        entity_id: 
+          - light.living_room_wall
+        data:
+          brightness: 90
+          rgb_color: [243, 179, 80]
+          transition: 10
+      - service: homeassistant.turn_on
+        entity_id: 
+          - group.livingroom_ceiling
+        data:
+          brightness: 90
+          transition: 10
 
 
   - alias: Turn off living room wall light 10 minutes after last movement

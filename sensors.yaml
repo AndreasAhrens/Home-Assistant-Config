@@ -190,5 +190,49 @@
       - queries_forwarded
       - unique_clients
       - unique_domains
+
+  - platform: min_max
+    name: Average Temperature
+    entity_ids:
+      - sensor.kok_temperature
+      - sensor.ovanvaning_temperature
+      - sensor.vardagsrum_temperature
+      - sensor.temperature_158d0001a1ffac
+      - sensor.temperature_158d0001701075
+
+  - platform: min_max
+    name: Average illumination
+    entity_ids:
+      - sensor.heart_plant_light_intensity
+      - sensor.cypress_light_intensity
+      - sensor.Peperomia_light_intensity
+      - sensor.Peperomia2_light_intensity
+      - sensor.phalaenopsis_light_intensity
+      - sensor.Almera_light_intensity
+      - sensor.illumination_34ce008c1bb1
+
+  - platform: history_stats
+    name: Tv time livingroom apple tv
+    entity_id: media_player.apple_tv_i_vardagsrum
+    state: 'playing'
+    type: time
+    start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+    end: '{{ now() }}'
+
+  - platform: history_stats
+    name: Tv time bedroom apple tv
+    entity_id: media_player.apple_tv_i_sovrum
+    state: 'playing'
+    type: time
+    start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+    end: '{{ now() }}'
+
+  - platform: history_stats
+    name: Tv time Livingroom Chromecast
+    entity_id: media_player.living_room
+    state: 'playing'
+    type: time
+    start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+    end: '{{ now() }}'
  
  

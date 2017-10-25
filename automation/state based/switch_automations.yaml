@@ -98,6 +98,16 @@
           entity_id: input_number.livingroom_switch_left_number
           value: '5'
 
+  - alias: Set livingroom ceiling based on input_number
+    trigger:
+      - platform: state
+        entity_id: input_number.livingroom_switch_left_number
+    action:
+      - service: homeassistant.turn_on
+        data_template:
+          entity_id: group.livingroom_ceiling
+          brightness_pct: '{{ states.input_number.livingroom_switch_left_number.state | int }}'
+
 
   - alias: Livingroom switch left button set to off
     trigger:

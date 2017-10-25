@@ -249,6 +249,8 @@
       - sensor.uterum_temperature
       - sensor.livingroom_humidity_2
       - sensor.livingroom_temperature_2
+      - sensor.average_temperature
+      - sensor.average_illumination
     icon: mdi:thermometer
   Livingroom_environment:
     name: Livingroom
@@ -312,7 +314,8 @@
       - media_player.spotify
       - sensor.date
       - sensor.time
-      - sensor.ipv4_address
+      - sensor.ipv4_address_eth0
+      - sensor.ipv6_address_eth0
       - sensor.fastcom_download
       - sensor.speedtest_ping
       - sensor.speedtest_download
@@ -320,8 +323,10 @@
       - sensor.cpu_speed
       - sensor.since_last_boot
       - sensor.ram_used
+      - sensor.ram_used_2
       - sensor.ram_available
       - sensor.disk_used_
+      - sensor.disk_free_
       - sensor.cpu_used
       - sensor.ssl_cert_expiry
       - sensor.hassbian_cert_expiry
@@ -331,6 +336,10 @@
       - script.morning_sequence
       - media_player.tts_bluetooth_speaker
       - binary_sensor.cube_158d00010aecde
+      - sensor.received_eth0
+      - sensor.sent_eth0
+      - sensor.packets_received_eth0
+      - sensor.packets_sent_eth0
     icon: mdi:raspberrypi
   Pi_hole:
     name: Pi-hole
@@ -355,6 +364,9 @@
       - sensor.home_to_devv
       - input_boolean.vacation_mode
       - script.update_config
+      - sensor.tv_time_bedroom_apple_tv
+      - sensor.tv_time_livingroom_apple_tv
+      - sensor.tv_time_livingroom_chromecast
       - weblink.router
       - weblink.home_assistant
       - weblink.home_assistant_forum

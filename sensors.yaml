@@ -50,11 +50,28 @@
     resources:
       - type: disk_use_percent
         arg: /
+      - type: disk_free
+        arg: /
       - type: memory_free
       - type: memory_use_percent
+      - type: memory_use
       - type: processor_use
       - type: since_last_boot
       - type: ipv4_address
+        arg: eth0
+      - type: ipv6_address
+        arg: eth0
+      - type: network_in
+        arg: eth0
+      - type: network_out
+        arg: eth0
+      - type: packets_in
+        arg: eth0
+      - type: packets_out
+        arg: eth0
+      - type: load_15m
+      - type: load_1m
+      - type: load_5m
   - platform: mqtt
     state_topic: '/outside/mailbox/hatch/'
     name: 'Mailbox Hatch'

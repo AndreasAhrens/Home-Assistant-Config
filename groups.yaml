@@ -34,7 +34,7 @@
       - binary_sensor.door_window_sensor_158d0001834f33
       - binary_sensor.motion_sensor_158d0001656600
       - light.gateway_light_34ce008c1bb1
-      - sensor.illumination_34ce008c1b
+      - sensor.illumination_34ce008c1bb1
     icon: mdi:gamepad-variant
   Livingroom_short:
     name: Living room
@@ -646,7 +646,7 @@
       - input_select.livingroom_switch_left_status
       - input_select.livingroom_switch_right_status
       - input_select.livingroom_switch_both_status
-      - sensor.illumination_34ce008c1b
+      - sensor.illumination_34ce008c1bb1
 
 
 

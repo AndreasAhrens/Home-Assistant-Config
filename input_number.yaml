@@ -12,9 +12,10 @@
     max: 110
     step: 1
     
-  livingroom_switch_both_number:
-    name: Living room switch both status
-    initial: 0
-    min: 0
-    max: 110
-    step: 1
+  # Both doesn't need a number, is just used as a switch  
+  # livingroom_switch_both_number:
+  #   name: Living room switch both status
+  #   initial: 0
+  #   min: 0
+  #   max: 110
+  #   step: 1

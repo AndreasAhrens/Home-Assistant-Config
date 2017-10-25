@@ -124,7 +124,7 @@
         entity_id: input_select.livingroom_switch_left_status
         to: 'single'
         for:
-          seconds: 1
+          seconds: 1.2
     action:
       - service: input_number.set_value
         data_template: 
@@ -282,7 +282,7 @@
         entity_id: input_select.livingroom_switch_right_status
         to: 'single'
         for:
-          seconds: 1
+          seconds: 1.2
     action:
       - service: input_number.set_value
         data_template: 
@@ -421,7 +421,7 @@
         entity_id: input_select.livingroom_switch_both_status
         to: 'single'
         for:
-          seconds: 1
+          seconds: 1.5
     condition:
       - condition: state
         entity_id: light.tv_bench
@@ -441,7 +441,7 @@
         entity_id: input_select.livingroom_switch_both_status
         to: 'single'
         for:
-          seconds: 1
+          seconds: 1.5
     condition:
       - condition: state
         entity_id: light.tv_bench

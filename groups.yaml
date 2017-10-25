@@ -646,6 +646,7 @@
       - input_select.livingroom_switch_left_status
       - input_select.livingroom_switch_right_status
       - input_select.livingroom_switch_both_status
+      - sensor.illumination_34ce008c1b
 
 
 

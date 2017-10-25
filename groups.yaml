@@ -354,12 +354,14 @@
       - sensor.devv_to_home
       - sensor.home_to_devv
       - input_boolean.vacation_mode
+      - script.update_config
       - weblink.router
       - weblink.home_assistant
       - weblink.home_assistant_forum
       - weblink.grafana
       - weblink.router_upstairs
       - weblink.router_downstairs
+      - weblink.pihole
   Mailbox:
     entities:
       - switch.mailbox_inside_light

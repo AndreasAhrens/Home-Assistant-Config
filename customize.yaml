@@ -209,6 +209,9 @@
     friendly_name: Precipitation intensity
   sensor.dark_sky_precip_probability:
     friendly_name: Precipitation probability
+  script.update_config:
+    friendly_name: Update HA Config
+    icon: mdi:home-assistant
 
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

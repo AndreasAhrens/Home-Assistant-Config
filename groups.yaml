@@ -35,6 +35,9 @@
       - binary_sensor.motion_sensor_158d0001656600
       - light.gateway_light_34ce008c1bb1
       - sensor.illumination_34ce008c1bb1
+      - sensor.tv_time_livingroom_apple_tv
+      - sensor.tv_time_livingroom_chromecast
+      - sensor.average_illumination
     icon: mdi:gamepad-variant
   Livingroom_short:
     name: Living room
@@ -117,6 +120,7 @@
       - sensor.temperature_158d0001701075
       - binary_sensor.in_bed_sensor
       - binary_sensor.door_window_sensor_158d00014d4149
+      - sensor.tv_time_bedroom_apple_tv
     icon: mdi:hotel
   Bedroom_short:
     name: Bedroom
@@ -338,8 +342,9 @@
       - binary_sensor.cube_158d00010aecde
       - sensor.received_eth0
       - sensor.sent_eth0
-      - sensor.packets_received_eth0
-      - sensor.packets_sent_eth0
+      - sensor.average_load_1m
+      - sensor.average_load_5m
+      - sensor.average_load_15m
     icon: mdi:raspberrypi
   Pi_hole:
     name: Pi-hole
@@ -361,8 +366,8 @@
       - sensor.speedtest_ping
       - sensor.since_last_boot
       - sensor.hassbian_cert_expiry
-      - sensor.devv_to_home
-      - sensor.home_to_devv
+      # - sensor.devv_to_home
+      # - sensor.home_to_devv
       - input_boolean.vacation_mode
       - script.update_config
       - sensor.tv_time_bedroom_apple_tv

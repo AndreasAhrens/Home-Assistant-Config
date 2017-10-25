@@ -420,6 +420,8 @@
       - platform: state
         entity_id: input_select.livingroom_switch_both_status
         to: 'single'
+        for:
+          seconds: 1
     condition:
       - condition: state
         entity_id: light.tv_bench
@@ -438,6 +440,8 @@
       - platform: state
         entity_id: input_select.livingroom_switch_both_status
         to: 'single'
+        for:
+          seconds: 1
     condition:
       - condition: state
         entity_id: light.tv_bench

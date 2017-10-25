@@ -7,11 +7,20 @@
   #     - 'double'
   #     - 'long'
 
+  # livingroom_switch_left_number:
+  #   name: Living room switch left status
+  #   initial: 0
+  #   min: 0
+  #   max: 110
+  #   step: 1
+
   ## These automations are used to set the status of an aqara button to either off, single, double or long. 
   ## The Aqara buttons does not support this out of the box, so this is a way to emulate it with automations and input selects.
   ## A bit of a hack, but should work. Have to be repeated for left button, right button and both buttons in order to get it all to work.
   ## Then the input select can be used for automations rather than using the on/off directly. Since the Aqara buttons only show up
   ## as a binary sensor, it can only have two values, on or off.
+
+  # Set an input select when button is clicked.
   - alias: Livingroom switch left button single click
     trigger:
       - platform: event
@@ -29,124 +38,7 @@
           entity_id: input_select.livingroom_switch_left_status
           option: 'single'
 
-
-  - alias: Livingroom switch left button double click ceiling is on
-    trigger:
-      #- platform: event
-      #  event_type: click
-      #  event_data:
-      #    entity_id: binary_sensor.wall_switch_left_158d000171d630
-      #    click_type: single
-      - platform: state
-        entity_id: input_select.livingroom_switch_left_status
-        to: 'double'
-    condition:
-      - condition: state
-        entity_id: light.living_room_roof_1
-        state: 'on'
-    action:
-      - service: homeassistant.turn_off
-        entity_id: 
-          - group.livingroom_ceiling
-
-  - alias: Livingroom switch left button double click ceiling is off
-    trigger:
-      #- platform: event
-      #  event_type: click
-      #  event_data:
-      #    entity_id: binary_sensor.wall_switch_left_158d000171d630
-      #    click_type: single
-      - platform: state
-        entity_id: input_select.livingroom_switch_left_status
-        to: 'double'
-    condition:
-      - condition: state
-        entity_id: light.living_room_roof_1
-        state: 'off'
-    action:
-      - service: homeassistant.turn_on
-        entity_id: 
-          - group.livingroom_ceiling
-
-  - alias: Livingroom switch left button single press increase number
-    trigger:
-      - platform: state
-        entity_id: input_select.livingroom_switch_left_status
-        to: 'single'
-        for:
-          seconds: 2
-    action:
-      - service: input_number.set_value
-        data_template: 
-          entity_id: input_number.livingroom_switch_left_number
-          value: '{{ states.input_number.livingroom_switch_left_number.state | int + 17 }}'
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.livingroom_switch_left_status
-          option: 'off'
-      
-
-  - alias: Set livingroom switch state to 5 if over 100
-    trigger:
-      - platform: numeric_state
-        entity_id: input_number.livingroom_switch_left_number
-        # value_template: '{{ states.input_number.livingroom_switch_left_number.state  }}'
-        above: 100
-    action:
-      - service: input_number.set_value
-        data_template: 
-          entity_id: input_number.livingroom_switch_left_number
-          value: '5'
-
-  - alias: Set livingroom ceiling based on input_number
-    trigger:
-      - platform: state
-        entity_id: input_number.livingroom_switch_left_number
-    action:
-      - service: homeassistant.turn_on
-        data_template:
-          entity_id: group.livingroom_ceiling
-          brightness_pct: '{{ states.input_number.livingroom_switch_left_number.state | int }}'
-
-
-  - alias: Livingroom switch left button set to off
-    trigger:
-      - platform: state
-        entity_id: input_select.livingroom_switch_left_status
-        to: 'single'
-        for:
-          seconds: 3
-      - platform: state
-        entity_id: input_select.livingroom_switch_left_status
-        to: 'double'
-        for:
-          seconds: 3
-      - platform: state
-        entity_id: input_select.livingroom_switch_left_status
-        to: 'long'
-        for:
-          seconds: 3
-    action:
-      - service: input_select.select_option
-        data:
-          entity_id: input_select.livingroom_switch_left_status
-          option: 'off'
-
-  #- alias: Livingroom switch left button long click
-  #  trigger:
-  #    - platform: event
-  #      event_type: click
-  #      event_data:
-  #        entity_id: binary_sensor.wall_switch_left_158d000171d630
-  #        click_type: single
-  #      for: 
-  #        seconds: 1
-  #  action:
-  #    - service: input_select.select_option
-  #      data:
-  #        entity_id: input_select.livingroom_switch_left_status
-  #        option: 'long'
-
+  # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
   - alias: Livingroom switch left button double click
     trigger:
       - platform: event
@@ -163,4 +55,118 @@
         data:
           entity_id: input_select.livingroom_switch_left_status
           option: 'double'
+
+  # If the input select doesn't change state for 3 seconds, change back to off. 
+  - alias: Livingroom switch left button set to off
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'single'
+        for:
+          seconds: 3
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'double'
+        for:
+          seconds: 3
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_left_status
+          option: 'off'
+
+  # If the input select is double, turn off the ceiling group if on, turn on if off. 
+  - alias: Livingroom switch left button double click ceiling is on
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: light.living_room_roof_1
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - group.livingroom_ceiling
+
+  - alias: Livingroom switch left button double click ceiling is off
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: light.living_room_roof_1
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - group.livingroom_ceiling
+
+  # I want to increase the light if single press is done. Max is 100. Starting at 5 and going up 17 per time, we get these numbers:
+  # 5, 22, 39, 56, 73, 90, 107
+  # 5 is pretty perfect for low light like watching tv, and 90 is too bright already.
+  # 110 is the maximum number for the input_number so I needed something that maxed out over 100 but below 110.
+  # Also sets the status to off so it can be used again without waiting for the reset timer
+  - alias: Livingroom switch left button single press increase number
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_left_status
+        to: 'single'
+        for:
+          seconds: 1.5
+    action:
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.livingroom_switch_left_number
+          value: '{{ states.input_number.livingroom_switch_left_number.state | int + 17 }}'
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_left_status
+          option: 'off'
+      
+  # If we go over 100, reduce to 5 to restart the flow. 
+  - alias: Set livingroom switch state to 5 if over 100
+    trigger:
+      - platform: numeric_state
+        entity_id: input_number.livingroom_switch_left_number
+        # value_template: '{{ states.input_number.livingroom_switch_left_number.state  }}'
+        above: 100
+    action:
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.livingroom_switch_left_number
+          value: '5'
+
+  # When we change the input_number, set the ceiling group to that brightness as a percentage
+  - alias: Set livingroom ceiling based on input_number
+    trigger:
+      - platform: state
+        entity_id: input_number.livingroom_switch_left_number
+    action:
+      - service: homeassistant.turn_on
+        data_template:
+          entity_id: group.livingroom_ceiling
+          brightness_pct: '{{ states.input_number.livingroom_switch_left_number.state | int }}'
+
+
+
+  # Never found a good way to make this work
+  #- alias: Livingroom switch left button long click
+  #  trigger:
+  #    - platform: event
+  #      event_type: click
+  #      event_data:
+  #        entity_id: binary_sensor.wall_switch_left_158d000171d630
+  #        click_type: single
+  #      for: 
+  #        seconds: 1
+  #  action:
+  #    - service: input_select.select_option
+  #      data:
+  #        entity_id: input_select.livingroom_switch_left_status
+  #        option: 'long'
+
+
 

@@ -20,11 +20,14 @@ sudo apt install git && ssh-keygen -t rsa -b 4096 -C "aa@devv.it" && sudo cat /h
 sudo su -s /bin/bash homeassistant
 source /srv/homeassistant/bin/activate
 cat /home/homeassistant/.ssh/id_rsa.pub
+cd /home/homeassistant/.homeassistant
+sudo chown -hR homeassistant /home/homeassistant/.homeassistant
 
 # sudo nano /root/.ssh/id_rsa.pub
 # sudo tail /root/.ssh/id_rsa.pub
 ```
 Put results of cat into a new deploy key on GitHub
+The second deploy key is used for the homeassistant user.
 
 ``` shell
 eval "$(ssh-agent -s)"

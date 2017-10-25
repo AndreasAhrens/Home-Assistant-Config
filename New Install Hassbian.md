@@ -17,6 +17,10 @@ sudo apt-get update && sudo apt-get upgrade
 # sudo apt install git && sudo ssh-keygen -t rsa -b 4096 -C "aa@devv.it" && sudo cat /root/.ssh/id_rsa.pub
 sudo apt install git && ssh-keygen -t rsa -b 4096 -C "aa@devv.it" && sudo cat /home/pi/.ssh/id_rsa.pub
 
+sudo su -s /bin/bash homeassistant
+source /srv/homeassistant/bin/activate
+cat /home/homeassistant/.ssh/id_rsa.pub
+
 # sudo nano /root/.ssh/id_rsa.pub
 # sudo tail /root/.ssh/id_rsa.pub
 ```

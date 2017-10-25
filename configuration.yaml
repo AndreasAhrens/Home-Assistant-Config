@@ -382,6 +382,8 @@ weblink:
       url: http://192.168.1.25:8083/
     - name: Pi-Hole
       url: http://192.168.1.25/admin
+    - name: Draytek Router
+      url: http://192.168.1.1:81/
 
 panel_iframe:
   grafana:

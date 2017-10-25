@@ -317,3 +317,139 @@
           entity_id: light.living_room_wall
           brightness_pct: '{{ states.input_number.livingroom_switch_right_number.state | int }}'
 
+
+
+
+  ##### Livingroom both buttons #####
+  # Set an input select when button is clicked.
+  - alias: Livingroom switch both buttons single click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_both_158d000171d630
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: input_select.livingroom_switch_both_status
+        state: 'off'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_both_status
+          option: 'single'
+
+  # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
+  - alias: Livingroom switch both buttons double click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_both_158d000171d630
+          click_type: single
+    condition: 
+      - condition: state
+        entity_id: input_select.livingroom_switch_both_status
+        state: 'single'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_both_status
+          option: 'double'
+
+  # If the input select doesn't change state for 2 seconds, change back to off. 
+  - alias: Livingroom switch both buttons set to off
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_both_status
+        to: 'single'
+        for:
+          seconds: 2
+      - platform: state
+        entity_id: input_select.livingroom_switch_both_status
+        to: 'double'
+        for:
+          seconds: 2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_both_status
+          option: 'off'
+
+  # If the input select is double, turn off the livingroom fan if on, turn on if off. Also set status to off.
+  - alias: Livingroom switch both buttons double click fan is on
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_both_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: switch.living_room_fan
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - switch.living_room_fan
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_both_status
+          option: 'off'
+
+  - alias: Livingroom switch both buttons double click fan is off
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_both_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: switch.living_room_fan
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - switch.living_room_fan
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_both_status
+          option: 'off'
+
+
+  # If the input select is single, turn off the livingroom tv bench if on, turn on if off. Also set status to off.
+  - alias: Livingroom switch both buttons double click tv bench is on
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_both_status
+        to: 'single'
+    condition:
+      - condition: state
+        entity_id: light.tv_bench
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - light.tv_bench
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_both_status
+          option: 'off'
+
+  - alias: Livingroom switch both button double click tv bench is off
+    trigger:
+      - platform: state
+        entity_id: input_select.livingroom_switch_both_status
+        to: 'single'
+    condition:
+      - condition: state
+        entity_id: light.tv_bench
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - light.tv_bench
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.livingroom_switch_both_status
+          option: 'off'
+
+  
+

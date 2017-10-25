@@ -56,19 +56,19 @@
           entity_id: input_select.livingroom_switch_left_status
           option: 'double'
 
-  # If the input select doesn't change state for 3 seconds, change back to off. 
+  # If the input select doesn't change state for 2 seconds, change back to off. 
   - alias: Livingroom switch left button set to off
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_left_status
         to: 'single'
         for:
-          seconds: 3
+          seconds: 2
       - platform: state
         entity_id: input_select.livingroom_switch_left_status
         to: 'double'
         for:
-          seconds: 3
+          seconds: 2
     action:
       - service: input_select.select_option
         data:
@@ -123,7 +123,7 @@
         entity_id: input_select.livingroom_switch_left_status
         to: 'single'
         for:
-          seconds: 1.3
+          seconds: 1
     action:
       - service: input_number.set_value
         data_template: 

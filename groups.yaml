@@ -240,6 +240,10 @@
     entities:
       - binary_sensor.andreasahrensnew
       - switch.andreasahrensnew
+  Averages:
+    entities:
+      - sensor.average_temperature
+      - sensor.average_illumination
   Environment:
     entities:
       - sensor.dark_sky_temperature
@@ -749,6 +753,7 @@
     name: Environment
     view: yes
     entities:
+      - group.averages
       - group.Livingroom_environment
       - group.Kitchen_Environment
       - group.Upstairs_Environment
@@ -757,6 +762,7 @@
       - group.Bathroom_Environment
       - group.Bedroom_Environment
       - group.Weather
+      
   System_view:
     name: System
     view: yes

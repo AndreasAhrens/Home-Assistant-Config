@@ -319,10 +319,10 @@
       - sensor.speedtest_upload
       - sensor.cpu_speed
       - sensor.since_last_boot
-      - sensor.ram_use
-      - sensor.ram_free
-      - sensor.disk_use_
-      - sensor.cpu_use
+      - sensor.ram_used
+      - sensor.ram_available
+      - sensor.disk_used_
+      - sensor.cpu_used
       - sensor.ssl_cert_expiry
       - sensor.hassbian_cert_expiry
       - switch.dummy_switch

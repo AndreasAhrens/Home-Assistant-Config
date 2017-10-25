@@ -356,6 +356,7 @@
     entities:
       - alarm_control_panel.hemgatan_alarm
       - updater.updater
+      - sensor.version
       - sensor.speedtest_download
       - sensor.speedtest_ping
       - sensor.since_last_boot

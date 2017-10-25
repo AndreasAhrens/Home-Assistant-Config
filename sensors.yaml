@@ -28,8 +28,17 @@
       - precip_intensity_max
       - cloud_cover
     units: si
+  - platform: season
+    type: astronomical
+  - platform: template
+    sensors:
+      solar_angle:
+        friendly_name: "Sun Angle"
+        unit_of_measurement: '°'
+        value_template: "{{ '%+.1f'|format(states.sun.sun.attributes.elevation) }}"
   - platform: cpuspeed
   - platform: fastdotcom
+  - platform: version
   - platform: speedtest
     monitored_conditions:
       - ping

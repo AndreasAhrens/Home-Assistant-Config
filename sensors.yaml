@@ -196,6 +196,13 @@
       - unique_clients
       - unique_domains
 
+  - platform: template
+    sensors:
+      illumination_in_lux:
+        friendly_name: "Illumination in lux"
+        unit_of_measurement: 'lux'
+        value_template: "{{ states.sensor.illumination_34ce008c1bb1.state }}"
+
   - platform: min_max
     name: Average Temperature
     entity_ids:
@@ -204,6 +211,7 @@
       - sensor.vardagsrum_temperature
       - sensor.temperature_158d0001a1ffac
       - sensor.temperature_158d0001701075
+      - sensor.illumination_in_lux
 
   - platform: min_max
     name: Average illumination
@@ -214,7 +222,6 @@
       - sensor.Peperomia2_light_intensity
       - sensor.phalaenopsis_light_intensity
       - sensor.Almera_light_intensity
-      - sensor.illumination_34ce008c1bb1
 
   - platform: history_stats
     name: Tv time livingroom apple tv

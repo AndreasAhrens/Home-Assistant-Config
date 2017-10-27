@@ -50,7 +50,7 @@ emulated_hue:
 #### INCLUDES ########
 automation old: !include_dir_merge_list automation/
 automation: !include automations.yaml
-camera: !input_text camera.yaml
+camera: !include camera.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 device_tracker: !include device_tracker.yaml
@@ -101,7 +101,7 @@ influxdb:
   tags:
     instance: prod
     source: hass
-    
+
 # Enables tellstick
 tellstick:
   signal_repetitions: 10

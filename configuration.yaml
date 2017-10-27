@@ -67,7 +67,7 @@ cover: !include cover.yaml
 media_player: !include mediaplayer.yaml
 vacuum: !include vacuum.yaml
 notify: !include notify.yaml
-shell_command: !include shell_command
+shell_command: !include shell_command.yaml
 
 
 input_boolean:

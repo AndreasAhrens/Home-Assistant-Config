@@ -124,5 +124,11 @@ TODO: set up individual watering, possibly with automatic adding of nutrition to
 - Notify (TTS and app) if my daughter arrives at or leaves school
 - Turn on driveway light if I get close, then turn off a while after I get home
 
+## Other
+- Counters for TV time per unit, in hours per day
+- In bed sensor using Bayesian sensor
+- Mouse sensors with notifications
+
+
 
 

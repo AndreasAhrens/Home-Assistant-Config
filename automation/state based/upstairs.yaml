@@ -119,14 +119,38 @@
         - condition: state
           entity_id: alarm_control_panel.hemgatan_alarm
           state: 'disarmed'
+        - condition: state
+          entity_id: light.her_bedside
+          state: 'off'
+        - condition: state
+          entity_id: light.his_bedside
+          state: 'off'
     action:
       - service: homeassistant.turn_on
         entity_id:
           - light.her_bedside
           - light.his_bedside
         data:
-          brightness: 144
+          brightness: 135
           rgb_color: [243, 179, 80]
+
+  - alias: Detect AA awake
+    trigger:
+      - platform: state
+        entity_id: light.his_bedside
+        from: 'off'
+        to: 'on'
+        for:
+          minutes: 10
+    condition:
+      condition: and
+      conditions:
+        - condition: time
+          before: '09:00:00'
+          after: '05:30:00'
+    action:
+      service: script.morning_sequence
+
 
   - alias: Turn off bedside lights 10 minutes after last movement
     trigger:

@@ -1,0 +1,3 @@
+  renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
+  get_latest_config: bash /home/homeassistant/.homeassistant/bin/update_config_from_github.sh
+  makegif: ./home/homeassistant/.homeassistant/bin/makegif.sh

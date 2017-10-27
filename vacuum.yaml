@@ -1,0 +1,14 @@
+  - platform: mqtt
+    name: "Blitzwolf Vacuum"
+    supported_features:
+      - turn_on
+      - turn_off
+      - pause
+      - return_home
+      - send_command
+    payload_turn_on: "15691919"
+    payload_turn_off: "15691919"
+    payload_start_pause: "15687839"
+    payload_return_to_base: "15675599"
+    command_topic: "/inside/livingroom/OpenMQTTGateway/commands/MQTTtoIR"
+    send_command_topic: '/inside/livingroom/OpenMQTTGateway/commands/MQTTtoIR'

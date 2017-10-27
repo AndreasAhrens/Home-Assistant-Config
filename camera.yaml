@@ -1,0 +1,3 @@
+  - platform: ffmpeg
+    input: !secret front_door_camera
+    name: Front-door

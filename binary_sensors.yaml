@@ -1,0 +1,46 @@
+  - platform: digital_ocean
+    droplets:
+      - 'Andreasahrensnew'
+  - platform: mqtt
+    name: "Bedroom Movement"
+    state_topic: "/inside/bedroom/movement/"
+    payload_on: "1"
+    payload_off: "0"
+    device_class: motion
+  - name: 'In bed sensor'
+    platform: 'bayesian'
+    prior: 0.25
+    probability_threshold: 0.95
+    observations:
+      - entity_id: 'binary_sensor.motion_sensor_158d0001656600' # Livingroom movement
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'binary_sensor.motion_sensor_158d0001655fde' # Hallway movement
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'binary_sensor.motion_sensor_158d0001655ff2' # Diningroom movement
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'binary_sensor.motion_sensor_158d0001656584' # Kitchen movement
+        prob_given_true: 0.4
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'binary_sensor.bedroom_movement'             # Bedroom movement
+        prob_given_true: 0.6
+        platform: 'state'
+        to_state: 'on'
+      - entity_id: 'sensor.sun'
+        prob_given_true: 0.7
+        platform: 'state'
+        to_state: 'below_horizon'
+      - entity_id: 'alarm_control_panel.hemgatan_alarm'
+        prob_given_true: 0.9
+        platform: 'state'
+        to_state: 'armed_home'

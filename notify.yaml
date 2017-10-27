@@ -1,0 +1,9 @@
+  - name: Facebook_Notify
+    platform: facebook
+    page_access_token: !secret facebook_token
+  - name: Mailgun_Notifier
+    platform: mailgun
+    recipient: andreas@ahrensit.se
+  - name: iOSApp
+    platform: ios
+    token: !secret ios_token

@@ -1,25 +1,28 @@
 homeassistant:
   # Name of the location where Home Assistant is running
   name: Hemgatan
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret lat
   longitude: !secret long
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 41
   # it seems we're 41 meters over sea level. Checked through https://www.daftlogic.com/sandbox-google-maps-find-altitude.htm
   # metric for Metric, imperial for Imperial
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Stockholm
   customize: !include customize.yaml
 
-# Show links to resources in log and frontend
-# introduction:
-
-# Enables the frontend
 frontend:
-
 map:
+updater:
+  reporting: no
+  include_used_components: true
+discovery:
+conversation:
+history:
+sun:
+config:
+ios:
+tts:
+  platform: google
 
 http:
   api_password: !secret http_password
@@ -32,36 +35,22 @@ http:
   ip_ban_enabled: True
   login_attempts_threshold: 10
 
-  # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: example.duckdns.org:8123
-
-# Checks for available updates
-updater:
-
-# Add support for ffmpeg in order to use video streams
 ffmpeg:
-  #ffmpeg_bin: /usr/bin/avconv
-  #ffmpeg_bin: /usr/local/bin/ffmpeg
   ffmpeg_bin: /usr/bin/ffmpeg
-# Now add the cameras
-camera:
-  - platform: ffmpeg
-    input: !secret front_door_camera
-    name: Front-door
-  #- platform: onvif
-  #  name: Front door 2
-  #  host: !secret front_door_ip
-  #  username: !secret front_door_username
-  #  password: !secret front_door_password
-  #  port: !secret front_door_port
 
-input_boolean:
-  vacation_mode:
-    initial: off
+# Amazon Echo config
+emulated_hue:
+  host_ip: 192.168.1.68
+  exposed_domains:
+    - light
+    - switch
+    - fan
+
 
 #### INCLUDES ########
 automation old: !include_dir_merge_list automation/
 automation: !include automations.yaml
+camera: !input_text camera.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 device_tracker: !include device_tracker.yaml
@@ -73,7 +62,136 @@ script: !include scripts.yaml
 # input_text: !include input_text.yaml
 input_number: !include input_number.yaml
 input_select: !include input_select.yaml
+binary_sensor: !include binary_sensor.yaml
+cover: !include cover.yaml
+media_player: !include mediaplayer.yaml
+vacuum: !include vacuum.yaml
+notify: !include notify.yaml
+shell_command: !include shell_command
 
+
+input_boolean:
+  vacation_mode:
+    initial: off
+
+
+# Use MySQL database
+recorder:
+  # Added mysql connection again to try it out
+  db_url: !secret mysql_connection
+  # db_url: !secret mysql_connection2
+  exclude:
+    entities:
+      - sensor.andreas_to_home
+      - sensor.devv_to_home
+      - sensor.disk_use_
+      - sensor.ram_free
+      - sensor.ram_use
+      - sensor.since_last_boot
+      - sensor.ssl_cert_expiry
+      - sensor.time
+
+influxdb:
+  host: !secret influx_host
+  port: !secret influx_port
+  username: !secret influx_user
+  password: !secret influx_password
+  database: home_assistant
+  default_measurement: state
+  tags:
+    instance: prod
+    source: hass
+    
+# Enables tellstick
+tellstick:
+  signal_repetitions: 10
+
+#Xiaomi gateway
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - mac: 34:CE:00:8C:1B:B1
+      key: !secret xiaomi_key
+
+digital_ocean:
+  access_token: !secret digital_ocean_api
+
+duckdns:
+  domain: !secret duckurl
+  access_token: !secret ducktoken
+
+
+# View all events in a logbook
+logbook:
+  exclude:
+  #  domains:
+  #    - automation
+  #    - device_tracker
+  #    - sun
+  #    - group
+  #    - media_player
+    entities:
+  #    - sun.sun   # Don't record sun data
+      - sensor.last_boot
+  #    - sensor.date
+      - sensor.all_your_base_are_belong_to_us_2_battery_level
+      - sensor.all_your_base_are_belong_to_us_2_battery_state
+      - sensor.andreas_to_home
+      - sensor.devv_to_home
+      - sensor.disk_use_
+      - sensor.ram_free
+      - sensor.ram_use
+      - sensor.since_last_boot
+      - sensor.ssl_cert_expiry
+      - sensor.time
+
+# Verisure setup
+verisure:
+  username: !secret verisure_username
+  password: !secret verisure_password
+
+#MQTT setup, Mosquito
+mqtt:
+  broker: 192.168.1.68
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+  # TODO - get it working with Username and Password and then
+  # add to secrets.yaml
+  # username: USERNAME
+  # password: PASSWORD
+
+mailgun:
+  domain: andreasahrens.se
+  api_key: !secret mailgun_token
+  sandbox: False
+
+weblink:
+  entities:
+    - name: Router downstairs
+      url: http://192.168.1.11
+    - name: Router upstairs
+      url: http://192.168.1.20
+    - name: Home Assistant
+      url: https://home-assistant.io
+    - name: Home Assistant Forum
+      url: https://community.home-assistant.io/
+    - name: Grafana
+      url: http://192.168.1.25:3000/
+    - name: Influx db
+      url: http://192.168.1.25:8083/
+    - name: Pi-Hole
+      url: http://192.168.1.25/admin
+    - name: Draytek Router
+      url: http://192.168.1.1:81/
+
+panel_iframe:
+  grafana:
+    title: 'Environment'
+    icon: mdi:temperature-celsius
+    url: 'http://192.168.1.25:3000/dashboard/db/environment?theme=light'
+
+## Zones  
 zone:
   name: Home
   latitude: !secret lat
@@ -123,291 +241,6 @@ zone 7:
   radius: 200
   icon: mdi:home-outline
   passive: yes
-
-# Discover some devices automatically
-discovery:
-
-#Xiaomi gateway
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - mac: 34:CE:00:8C:1B:B1
-      key: !secret xiaomi_key
-      # 68715608DB0F47B1
-      #68715608DB0F47B1
-      #11e485a2892e2382ca83252e47a71bf8
-      #34:CE:00:8C:1B:B1  34:CE:00:8C:1B:B1
-
-
-#Presence based lights
-#device_sun_light_trigger:
-#  light_group: group.coming_home_lights
-#  #light_profile: relax
-#  device_group: group.maindevices
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
-
-# Amazon Echo config
-emulated_hue:
-  host_ip: 192.168.1.68
-  exposed_domains:
-    - light
-    - switch
-    - fan
-
-# Use MySQL database
-recorder:
-  # Added mysql connection again to try it out
-  db_url: !secret mysql_connection
-  # db_url: !secret mysql_connection2
-  exclude:
-    #domains:
-    #  - device_tracker
-    entities:
-      - sensor.andreas_to_home
-      - sensor.devv_to_home
-      - sensor.disk_use_
-      - sensor.ram_free
-      - sensor.ram_use
-      - sensor.since_last_boot
-      - sensor.ssl_cert_expiry
-      - sensor.time
-
-influxdb:
-  host: !secret influx_host
-  port: !secret influx_port
-  username: !secret influx_user
-  password: !secret influx_password
-  database: home_assistant
-  default_measurement: state
-  tags:
-    instance: prod
-    source: hass
-# Enables tellstick
-tellstick:
-  signal_repetitions: 10
-
-digital_ocean:
-  access_token: !secret digital_ocean_api
-
-binary_sensor:
-  - platform: digital_ocean
-    droplets:
-      - 'Andreasahrensnew'
-  - platform: mqtt
-    name: "Bedroom Movement"
-    state_topic: "/inside/bedroom/movement/"
-    payload_on: "1"
-    payload_off: "0"
-    device_class: motion
-  - name: 'In bed sensor'
-    platform: 'bayesian'
-    prior: 0.25
-    probability_threshold: 0.95
-    observations:
-      - entity_id: 'binary_sensor.motion_sensor_158d0001656600' # Livingroom movement
-        prob_given_true: 0.4
-        prob_given_false: 0.2
-        platform: 'state'
-        to_state: 'off'
-      - entity_id: 'binary_sensor.motion_sensor_158d0001655fde' # Hallway movement
-        prob_given_true: 0.4
-        prob_given_false: 0.2
-        platform: 'state'
-        to_state: 'off'
-      - entity_id: 'binary_sensor.motion_sensor_158d0001655ff2' # Diningroom movement
-        prob_given_true: 0.4
-        prob_given_false: 0.2
-        platform: 'state'
-        to_state: 'off'
-      - entity_id: 'binary_sensor.motion_sensor_158d0001656584' # Kitchen movement
-        prob_given_true: 0.4
-        prob_given_false: 0.2
-        platform: 'state'
-        to_state: 'off'
-      - entity_id: 'binary_sensor.bedroom_movement'             # Bedroom movement
-        prob_given_true: 0.6
-        platform: 'state'
-        to_state: 'on'
-      - entity_id: 'sensor.sun'
-        prob_given_true: 0.7
-        platform: 'state'
-        to_state: 'below_horizon'
-      - entity_id: 'alarm_control_panel.hemgatan_alarm'
-        prob_given_true: 0.9
-        platform: 'state'
-        to_state: 'armed_home'
-  #- platform: ffmpeg_motion
-  #  input: !secret front_door_camera
-  #  # tool: motion
-  #  extra_arguments: -filter:v "crop=in_w/2:in_h/2:0:in_h/2"
-  #  # extra_arguments: -q:v 2
-  #  name: Front door motion
-  #  changes: 10
-  #  # repeat: 2
-  #  reset: 10
-  #  # repeat_time: 0
-  #  # ffmpeg_bin: /usr/bin/ffmpeg
-  #- platform: ffmpeg_noise
-  #  input: !secret front_door_camera
-  #  duration: 3
-  #  name: Front door noise
-  #  peak: -10
-
-cover:
-  - platform: mqtt
-    state_topic: "/inside/bedroom/cover/"
-    command_topic: "/inside/bedroom/cover/set"
-    name: "Bedroom Rollers"
-    qos: 0
-    #retain: true
-    payload_open: "0"
-    payload_close: "1"
-    payload_stop: "STOP"
-    state_open: "OPEN"
-    state_closed: "CLOSED"
-    optimistic: false
-    #value_template: '{{ value.x }}'
-
-
-# Enables support for tracking state changes over time.
-history:
-
-duckdns:
-  domain: !secret duckurl
-  access_token: !secret ducktoken
-
-# View all events in a logbook
-logbook:
-  exclude:
-  #  domains:
-  #    - automation
-  #    - device_tracker
-  #    - sun
-  #    - group
-  #    - media_player
-    entities:
-  #    - sun.sun   # Don't record sun data
-      - sensor.last_boot
-  #    - sensor.date
-      - sensor.all_your_base_are_belong_to_us_2_battery_level
-      - sensor.all_your_base_are_belong_to_us_2_battery_state
-      - sensor.andreas_to_home
-      - sensor.devv_to_home
-      - sensor.disk_use_
-      - sensor.ram_free
-      - sensor.ram_use
-      - sensor.since_last_boot
-      - sensor.ssl_cert_expiry
-      - sensor.time
-
-# Track the sun
-sun:
-
-# Enables configuration
-config:
-
-media_player:
-  - platform: spotify
-    client_id: !secret spotify_client_id
-    client_secret: !secret spotify_client_secret
-  - platform: mpd
-    host: 192.168.1.68
-    port: 6600
-  - platform: tts_bluetooth_speaker
-    address: 68:37:E9:91:15:DD   # Required - for example, 00:2F:AD:12:0D:42
-    volume: 0.45                   # Optional - default is 0.5
-    pre_silence_duration: 1       # Optional - No. of seconds silence before the TTS (default is 0)
-#    post_silence_duration: 0.5    # Optional - No. of seconds silence after the TTS (default is 0)
-#    cache_dir: /tmp/tts           # Optional - make sure it matches the same setting in TTS config
-
-
-# Verisure setup
-verisure:
-  username: !secret verisure_username
-  password: !secret verisure_password
-
-#MQTT setup, Mosquito
-mqtt:
-  broker: 192.168.1.68
-  port: 1883
-  client_id: home-assistant-1
-  keepalive: 60
-  # TODO - get it working with Username and Password and then
-  # add to secrets.yaml
-  # username: USERNAME
-  # password: PASSWORD
-
-ios:
-  # Use the iOS app
-# Text to speech
-tts:
-  platform: google
-
-mailgun:
-  domain: andreasahrens.se
-  api_key: !secret mailgun_token
-  sandbox: False
-
-shell_command:
-  renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
-  get_latest_config: bash /home/homeassistant/.homeassistant/bin/update_config_from_github.sh
-  makegif: ./home/homeassistant/.homeassistant/bin/makegif.sh
-notify:
-  - name: Facebook_Notify
-    platform: facebook
-    page_access_token: !secret facebook_token
-  - name: Mailgun_Notifier
-    platform: mailgun
-    recipient: andreas@ahrensit.se
-  - name: iOSApp
-    platform: ios
-    token: !secret ios_token
-
-
-weblink:
-  entities:
-    - name: Router downstairs
-      url: http://192.168.1.11
-    - name: Router upstairs
-      url: http://192.168.1.20
-    - name: Home Assistant
-      url: https://home-assistant.io
-    - name: Home Assistant Forum
-      url: https://community.home-assistant.io/
-    - name: Grafana
-      url: http://192.168.1.25:3000/
-    - name: Influx db
-      url: http://192.168.1.25:8083/
-    - name: Pi-Hole
-      url: http://192.168.1.25/admin
-    - name: Draytek Router
-      url: http://192.168.1.1:81/
-
-panel_iframe:
-  grafana:
-    title: 'Environment'
-    icon: mdi:temperature-celsius
-    url: 'http://192.168.1.25:3000/dashboard/db/environment?theme=light'
-
-vacuum:
-  - platform: mqtt
-    name: "Blitzwolf Vacuum"
-    supported_features:
-      - turn_on
-      - turn_off
-      - pause
-      - return_home
-      - send_command
-    payload_turn_on: "15691919"
-    payload_turn_off: "15691919"
-    payload_start_pause: "15687839"
-    payload_return_to_base: "15675599"
-    command_topic: "/inside/livingroom/OpenMQTTGateway/commands/MQTTtoIR"
-    send_command_topic: '/inside/livingroom/OpenMQTTGateway/commands/MQTTtoIR'
-
-
 #hdmi_cec:
  # devices:
   #  TV: 0.0.0.0

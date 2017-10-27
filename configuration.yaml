@@ -62,7 +62,7 @@ script: !include scripts.yaml
 # input_text: !include input_text.yaml
 input_number: !include input_number.yaml
 input_select: !include input_select.yaml
-binary_sensor: !include binary_sensor.yaml
+binary_sensor: !include binary_sensors.yaml
 cover: !include cover.yaml
 media_player: !include mediaplayer.yaml
 vacuum: !include vacuum.yaml

@@ -10,6 +10,10 @@
         data_template:
           entity_id: media_player.mpd
           message: 'Good night'
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.bedroom_speaker
+          message: 'Good night'
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
           message: "Alarm set to home mode"
@@ -20,7 +24,7 @@
         entity_id: script.night_mode
       
 
-  # Turn on bedroom lights bright when alarm is in home mode and it's before 22:30
+  # Turn on bedroom lights bright and close rollers when alarm is in home mode and it's before 22:30
   - alias: Alarm status home mode bright bedroom
     trigger:
       - platform: state
@@ -32,6 +36,9 @@
         before: '22:30:00'
         after: '06:00:00'
     action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - cover.bedroom_rollers
       - service: homeassistant.turn_on
         entity_id:
           - light.upstairs_hallway
@@ -71,6 +78,9 @@
           - light.upstairs_hallway
         data:
           brightness: 25
+      - service: homeassistant.turn_on
+        entity_id:
+          - cover.bedroom_rollers
 
 
   # When Amanda sets Alarm to off, turn off her light

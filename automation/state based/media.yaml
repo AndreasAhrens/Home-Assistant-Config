@@ -22,7 +22,7 @@
           brightness: 50
       - service: homeassistant.turn_off
         entity_id:
-          - switch.livingroom_ceiling
+          - group.livingroom_ceiling
       - service: homeassistant.turn_on
         entity_id:
           - light.tv_bench

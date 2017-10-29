@@ -78,7 +78,7 @@
         data_template:
           # entity_id: media_player.kitchen_audio
           entity_id: media_player.bedroom_speaker
-          message: "Good morning Andreas and Judith. The time is {{ states.sensor.time.state }} and it's {{ states.sensor.date.state}}. Today the weather is {{ states.sensor.dark_sky_hourly_summary.state }}. There is a {{states.sensor.dark_sky_precip_probability.state | round(0) }} percent chance of {{states.sensor.dark_sky_precip.state}} today with an intensity of {{ states.sensor.dark_sky_precip_intensity.state | round(0) }} millimeters. The Temperature is {{ states.sensor.dark_sky_temperature.state | round(0) }} degrees but it will feel like {{ states.sensor.dark_sky_apparent_temperature.state | round(0) }}. The wind speed is {{ states.sensor.dark_sky_wind_speed.state | round(0) }} "
+          message: "Good morning Andreas and Judith. The time is {{ states.sensor.time.state }} and it's {{ states.sensor.date.state}}. Today the weather is {{ states.sensor.dark_sky_hourly_summary.state }}. There is a {{states.sensor.dark_sky_precip_probability.state | round(0) }} percent chance of {{states.sensor.dark_sky_precip.state}} today with an intensity of {{ states.sensor.dark_sky_precip_intensity.state | round(0) }} millimeters. The Temperature is {{ states.sensor.dark_sky_temperature.state | round(0) }} degrees but it will feel like {{ states.sensor.dark_sky_apparent_temperature.state | round(0) }}. The wind speed is {{ states.sensor.dark_sky_wind_speed.state | round(0) }} meters per second."
 
 
 

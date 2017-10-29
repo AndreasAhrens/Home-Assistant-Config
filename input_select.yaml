@@ -25,6 +25,33 @@
       - 'double'
       - 'long'
 
+  diningroom_switch_left_status:
+    name: Diningroom switch left status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
+  diningroom_switch_right_status:
+    name: Diningroom switch right status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
+  diningroom_switch_both_status:
+    name: Diningroom switch both status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
   andreas_location:
     name: Andreas
     options:

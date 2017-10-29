@@ -20,6 +20,14 @@
   ## Then the input select can be used for automations rather than using the on/off directly. Since the Aqara buttons only show up
   ## as a binary sensor, it can only have two values, on or off.
 
+
+
+
+  ##################################
+  ####### Livingroom buttons #######
+  ##################################
+
+
   ##### Livingroom left button #####
   # Set an input select when button is clicked.
   - alias: Livingroom switch left button single click
@@ -457,3 +465,291 @@
 
   
 
+  ##################################
+  ##################################
+  ####### Diningroom buttons #######
+  ##################################
+  ##################################
+
+  ##### Diningroom left button #####
+  # Set an input select when button is clicked.
+  - alias: Diningroom switch left button single click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: input_select.diningroom_switch_left_status
+        state: 'off'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_left_status
+          option: 'single'
+
+  # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
+  - alias: Diningroom switch left button double click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          click_type: single
+    condition: 
+      - condition: state
+        entity_id: input_select.diningroom_switch_left_status
+        state: 'single'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_left_status
+          option: 'double'
+
+  # If the input select doesn't change state for 2 seconds, change back to off. 
+  - alias: Diningroom switch left button set to off
+    trigger:
+      - platform: state
+        entity_id: input_select.diningroom_switch_left_status
+        to: 'single'
+        for:
+          seconds: 2
+      - platform: state
+        entity_id: input_select.diningroom_switch_left_status
+        to: 'double'
+        for:
+          seconds: 2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_left_status
+          option: 'off'
+
+  # If the input select is sinlge, turn off the diningroom table light if on, turn on if off. Also set status to off.
+  - alias: Diningroom switch left button single click ceiling is on
+    trigger:
+      - platform: state
+        entity_id: input_select.diningroom_switch_left_status
+        to: 'single'
+    condition:
+      - condition: state
+        entity_id: switch.dining_room_table
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - switch.dining_room_table
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_left_status
+          option: 'off'
+
+  - alias: Diningroom switch left button single click ceiling is off
+    trigger:
+      - platform: state
+        entity_id: input_select.diningroom_switch_left_status
+        to: 'single'
+    condition:
+      - condition: state
+        entity_id: switch.dining_room_table
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - switch.dining_room_table
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_left_status
+          option: 'off'
+
+  
+
+##### Diningroom right button #####
+  # Set an input select when button is clicked.
+  - alias: Diningroom switch right button single click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_right_158d000171d630
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: input_select.diningroom_switch_right_status
+        state: 'off'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_right_status
+          option: 'single'
+
+  # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
+  - alias: Diningroom switch right button single click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_right_158d000171d630
+          click_type: single
+    condition: 
+      - condition: state
+        entity_id: input_select.diningroom_switch_right_status
+        state: 'single'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_right_status
+          option: 'double'
+
+  # If the input select doesn't change state for 2 seconds, change back to off. 
+  - alias: Diningroom switch right button set to off
+    trigger:
+      - platform: state
+        entity_id: input_select.diningroom_switch_right_status
+        to: 'single'
+        for:
+          seconds: 2
+      - platform: state
+        entity_id: input_select.diningroom_switch_right_status
+        to: 'double'
+        for:
+          seconds: 2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_right_status
+          option: 'off'
+
+  # If the input select is single, turn off the ceiling group if on, turn on if off. Also set status to off.
+  - alias: Diningroom switch right button double click ceiling is on
+    trigger:
+      - platform: state
+        entity_id: input_select.diningroom_switch_right_status
+        to: 'single'
+    condition:
+      - condition: state
+        entity_id: switch.dining_room_cabinet
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - switch.dining_room_cabinet
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_right_status
+          option: 'off'
+
+  - alias: Diningroom switch right button single click ceiling is off
+    trigger:
+      - platform: state
+        entity_id: input_select.diningroom_switch_right_status
+        to: 'single'
+    condition:
+      - condition: state
+        entity_id: switch.dining_room_cabinet
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - switch.dining_room_cabinet
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_right_status
+          option: 'off'
+
+
+
+  ##### Diningroom both buttons #####
+  # Set an input select when button is clicked.
+  - alias: Diningroom switch both buttons single click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_both_158d000171d630
+          click_type: both
+    condition:
+      - condition: state
+        entity_id: input_select.diningroom_switch_both_status
+        state: 'off'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_both_status
+          option: 'single'
+
+  # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
+  - alias: Diningroom switch both buttons double click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_both_158d000171d630
+          click_type: both
+    condition: 
+      - condition: state
+        entity_id: input_select.diningroom_switch_both_status
+        state: 'single'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_both_status
+          option: 'double'
+
+  # If the input select doesn't change state for 2 seconds, change back to off. 
+  - alias: Diningroom switch both buttons set to off
+    trigger:
+      - platform: state
+        entity_id: input_select.diningroom_switch_both_status
+        to: 'single'
+        for:
+          seconds: 2
+      - platform: state
+        entity_id: input_select.diningroom_switch_both_status
+        to: 'double'
+        for:
+          seconds: 2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_both_status
+          option: 'off'
+
+  # If the input select is single, turn off the Diningroom tv bench if on, turn on if off. Also set status to off.
+  - alias: Diningroom switch both buttons double click tv bench is on
+    trigger:
+      - platform: state
+        entity_id: input_select.diningroom_switch_both_status
+        to: 'single'
+    condition:
+      - condition: state
+        entity_id: switch.dining_room_aquarium_2
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - switch.dining_room_aquarium_2
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_both_status
+          option: 'off'
+
+  - alias: Diningroom switch both button double click tv bench is off
+    trigger:
+      - platform: state
+        entity_id: input_select.diningroom_switch_both_status
+        to: 'single'
+    condition:
+      - condition: state
+        entity_id: switch.dining_room_aquarium_2
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - switch.dining_room_aquarium_2
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.diningroom_switch_both_status
+          option: 'off'

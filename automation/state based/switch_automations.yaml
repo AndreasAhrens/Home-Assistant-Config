@@ -478,7 +478,7 @@
       - platform: event
         event_type: click
         event_data:
-          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          entity_id: binary_sensor.wall_switch_left_158d000163ba89
           click_type: single
     condition:
       - condition: state
@@ -496,7 +496,7 @@
       - platform: event
         event_type: click
         event_data:
-          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          entity_id: binary_sensor.wall_switch_left_158d000163ba89
           click_type: single
     condition: 
       - condition: state
@@ -573,7 +573,7 @@
       - platform: event
         event_type: click
         event_data:
-          entity_id: binary_sensor.wall_switch_right_158d000171d630
+          entity_id: binary_sensor.wall_switch_right_158d000163ba89
           click_type: single
     condition:
       - condition: state
@@ -591,7 +591,7 @@
       - platform: event
         event_type: click
         event_data:
-          entity_id: binary_sensor.wall_switch_right_158d000171d630
+          entity_id: binary_sensor.wall_switch_right_158d000163ba89
           click_type: single
     condition: 
       - condition: state
@@ -668,7 +668,7 @@
       - platform: event
         event_type: click
         event_data:
-          entity_id: binary_sensor.wall_switch_both_158d000171d630
+          entity_id: binary_sensor.wall_switch_both_158d000163ba89
           click_type: both
     condition:
       - condition: state
@@ -686,7 +686,7 @@
       - platform: event
         event_type: click
         event_data:
-          entity_id: binary_sensor.wall_switch_both_158d000171d630
+          entity_id: binary_sensor.wall_switch_both_158d000163ba89
           click_type: both
     condition: 
       - condition: state

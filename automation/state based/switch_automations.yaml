@@ -725,12 +725,12 @@
         to: 'single'
     condition:
       - condition: state
-        entity_id: switch.dining_room_aquarium_2
+        entity_id: switch.dining_room_aquarium
         state: 'on'
     action:
       - service: homeassistant.turn_off
         entity_id: 
-          - switch.dining_room_aquarium_2
+          - switch.dining_room_aquarium
       - service: input_select.select_option
         data:
           entity_id: input_select.diningroom_switch_both_status
@@ -743,12 +743,12 @@
         to: 'single'
     condition:
       - condition: state
-        entity_id: switch.dining_room_aquarium_2
+        entity_id: switch.dining_room_aquarium
         state: 'off'
     action:
       - service: homeassistant.turn_on
         entity_id: 
-          - switch.dining_room_aquarium_2
+          - switch.dining_room_aquarium
       - service: input_select.select_option
         data:
           entity_id: input_select.diningroom_switch_both_status

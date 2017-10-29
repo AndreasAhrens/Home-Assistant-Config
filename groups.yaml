@@ -54,6 +54,7 @@
     entities:
       - switch.dining_room_table
       - switch.dining_room_cabinet
+      - switch.dining_room_aquarium
       - switch.dining_room_aquarium_2
       - binary_sensor.altandorr
       - binary_sensor.motion_sensor_158d0001655ff2
@@ -682,6 +683,9 @@
       - input_select.livingroom_switch_left_status
       - input_select.livingroom_switch_right_status
       - input_select.livingroom_switch_both_status
+      - input_select.diningroom_switch_left_status
+      - input_select.diningroom_switch_right_status
+      - input_select.diningroom_switch_both_status
       - sensor.illumination_34ce008c1bb1
 
 

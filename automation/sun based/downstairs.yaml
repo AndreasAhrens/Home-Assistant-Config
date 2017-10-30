@@ -29,6 +29,16 @@
         entity_id:
           - switch.hallway_stairs
 
+  - alias: Turn off ceiling light at sunrise
+    trigger:
+      - platform: sun
+        event: sunrise
+        offset: '00:20:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - group.living_room_ceiling
+
   
   - alias: Turn on living room ceiling at sunset
     trigger:
@@ -48,15 +58,15 @@
           entity_id: input_boolean.vacation_mode
           state: 'off'
     action:
-      - service: light.turn_on
+      - service: homeassistant.turn_on
         entity_id:
-          - light.living_room_ceiling
+          - group.living_room_ceiling
         data:
           brightness: 75
           transition: 900
-      - service: light.turn_on
+      - service: homeassistant.turn_on
         entity_id:
-          - light.living_room_ceiling
+          - group.living_room_ceiling
         data:
           brightness: 150
           transition: 1800

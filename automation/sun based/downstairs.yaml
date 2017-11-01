@@ -47,7 +47,7 @@
         event: sunset
         offset: '-00:15:00'
       - platform: numeric_state
-        entity_id: sensor.illumination_34ce008c1bb1
+        entity_id: sensor.average_illumination
         below: 300
     condition:
       condition: and

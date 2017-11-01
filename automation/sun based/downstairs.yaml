@@ -45,7 +45,7 @@
     trigger:
       - platform: sun
         event: sunset
-        offset: '-00:15:00'
+        offset: '-00:25:00'
       - platform: numeric_state
         entity_id: sensor.average_illumination
         below: 300

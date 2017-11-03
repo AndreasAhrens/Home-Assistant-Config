@@ -11,6 +11,16 @@ http://IP:8123/
 ```
 Check if Home Assistant is up, takes a while first setup.
 
+## Set up HA aliases
+```shell
+echo "alias hastart='sudo systemctl start home-assistant@homeassistant.service'" >> ~/.bash_profile
+echo "alias hastop='sudo systemctl stop home-assistant@homeassistant.service'" >> ~/.bash_profile
+echo "alias hastatus='sudo systemctl status -l home-assistant@homeassistant.service'" >> ~/.bash_profile
+echo "alias halog='tail -f  /home/homeassistant/.homeassistant/home-assistant.log'" >> ~/.bash_profile
+echo "alias hy='history'" >> ~/.bash_profile
+source ~/.bash_profile 
+```
+
 ## Git:
 ``` shell
 sudo apt-get update && sudo apt-get upgrade

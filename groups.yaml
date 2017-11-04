@@ -365,7 +365,7 @@
   Status:
     entities:
       - updater.updater
-      - sensor.version
+      - sensor.current_version
       - sensor.speedtest_download
       - sensor.speedtest_ping
       - sensor.since_last_boot

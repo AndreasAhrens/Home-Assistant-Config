@@ -167,6 +167,12 @@
     entities:
       - light.upstairs_hallway
       - fan.xiaomi_air_purifier_2_upstairs
+      - sensor.purifier_upstairs_api
+      - sensor.purifier_upstairs_hours_used
+      - sensor.purifier_upstairs_temperature
+      - sensor.purifier_upstairs_humidity
+      - sensor.purifier_upstairs_motor_speed
+      - sensor.purifier_upstairs_percent_left
       - sensor.ovanvaning_humidity
       - sensor.ovanvaning_temperature
       - binary_sensor.motion_sensor_158d0001656570

@@ -10,6 +10,10 @@ homeassistant:
   time_zone: Europe/Stockholm
   customize: !include customize.yaml
 
+##############################
+### Standard setup details ###
+##############################
+
 frontend:
 map:
 updater:
@@ -46,35 +50,35 @@ emulated_hue:
     - switch
     - fan
 
+##############################
+######## INCLUDES ############
+##############################
 
-#### INCLUDES ########
 automation old: !include_dir_merge_list automation/
 automation: !include automations.yaml
+binary_sensor: !include binary_sensors.yaml
 camera: !include camera.yaml
-sensor: !include sensors.yaml
-switch: !include switches.yaml
+cover: !include cover.yaml
 device_tracker: !include device_tracker.yaml
+fan: !include fans.yaml
 group: !include groups.yaml
+input_number: !include input_number.yaml
+input_select: !include input_select.yaml
+# input_text: !include input_text.yaml
 light: !include lights.yaml
+media_player: !include mediaplayer.yaml
+notify: !include notify.yaml
 plant: !include plant.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
-fan: !include fans.yaml
-# input_text: !include input_text.yaml
-input_number: !include input_number.yaml
-input_select: !include input_select.yaml
-binary_sensor: !include binary_sensors.yaml
-cover: !include cover.yaml
-media_player: !include mediaplayer.yaml
-vacuum: !include vacuum.yaml
-notify: !include notify.yaml
+sensor: !include sensors.yaml
 shell_command: !include shell_command.yaml
-
+switch: !include switches.yaml
+vacuum: !include vacuum.yaml
 
 input_boolean:
   vacation_mode:
     initial: off
-
 
 # Use MySQL database
 recorder:
@@ -120,7 +124,6 @@ digital_ocean:
 duckdns:
   domain: !secret duckurl
   access_token: !secret ducktoken
-
 
 # View all events in a logbook
 logbook:
@@ -192,7 +195,10 @@ panel_iframe:
     icon: mdi:temperature-celsius
     url: 'http://192.168.1.25:3000/dashboard/db/environment?theme=light'
 
-## Zones  
+##############################
+########### Zones ############
+############################## 
+
 zone:
   name: Home
   latitude: !secret lat
@@ -242,6 +248,7 @@ zone 7:
   radius: 200
   icon: mdi:home-outline
   passive: yes
+
 #hdmi_cec:
  # devices:
   #  TV: 0.0.0.0

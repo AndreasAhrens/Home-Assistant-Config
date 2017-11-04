@@ -688,6 +688,9 @@
       - input_select.diningroom_switch_right_status
       - input_select.diningroom_switch_both_status
       - sensor.illumination_34ce008c1bb1
+      - binary_sensor.wall_switch_left_158d000171d630
+      - binary_sensor.wall_switch_right_158d000171d630
+      - binary_sensor.wall_switch_both_158d000171d630
 
 
 

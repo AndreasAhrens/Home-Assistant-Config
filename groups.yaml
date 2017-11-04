@@ -165,14 +165,16 @@
   Upper_Hallway:
     name: Upper Hallway
     entities:
+      - light.upstairs_hallway
+      - fan.xiaomi_air_purifier_2_upstairs
       - sensor.ovanvaning_humidity
       - sensor.ovanvaning_temperature
-      - light.upstairs_hallway
       - binary_sensor.motion_sensor_158d0001656570
   Upper_Hallway_short:
     name: Upper Hallway
     entities:
       - light.upstairs_hallway
+      - fan.xiaomi_air_purifier_2_upstairs
   Basement:
     name: Basement
     entities:

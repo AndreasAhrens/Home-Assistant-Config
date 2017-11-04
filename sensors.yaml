@@ -36,6 +36,42 @@
         friendly_name: "Sun Angle"
         unit_of_measurement: '°'
         value_template: "{{ '%+.1f'|format(states.sun.sun.attributes.elevation) }}"
+  - platform: template
+    sensors:
+      solar_angle:
+        friendly_name: "Air purifier upstairs days left on filter"
+        unit_of_measurement: 'days'
+        value_template: "{{ states.fan.xiaomi_air_purifier_2_upstairs.attributes.filter_life_remaining }}"
+  - platform: template
+    sensors:
+      solar_angle:
+        friendly_name: "Air purifier upstairs aqi"
+        unit_of_measurement: 'ppm'
+        value_template: "{{ states.fan.xiaomi_air_purifier_2_upstairs.attributes.aqi }}"
+  - platform: template
+    sensors:
+      solar_angle:
+        friendly_name: "Air purifier upstairs hours used"
+        unit_of_measurement: 'hours'
+        value_template: "{{ states.fan.xiaomi_air_purifier_2_upstairs.attributes.filter_hours_used }}"
+  - platform: template
+    sensors:
+      solar_angle:
+        friendly_name: "Air purifier upstairs humidity"
+        unit_of_measurement: '%'
+        value_template: "{{ states.fan.xiaomi_air_purifier_2_upstairs.attributes.humidity }}"
+  - platform: template
+    sensors:
+      solar_angle:
+        friendly_name: "Air purifier upstairs humidity"
+        unit_of_measurement: '°C'
+        value_template: "{{ states.fan.xiaomi_air_purifier_2_upstairs.attributes.temperature }}"
+  - platform: template
+    sensors:
+      solar_angle:
+        friendly_name: "Air purifier upstairs Motor speed"
+        unit_of_measurement: 'rpm'
+        value_template: "{{ states.fan.xiaomi_air_purifier_2_upstairs.attributes.motor_speed }}"
   - platform: cpuspeed
   - platform: fastdotcom
   - platform: version

@@ -51,7 +51,7 @@ sudo chmod -R g+w /home/homeassistant/.homeassistant/
 ```
 Only works if you have done the ssh key generation without sudo above.
 ``` shell
-git init && git remote add origin git@github.com:DevvAndreas/Home-Assistant-Config.git && git fetch && git checkout -t origin/master
+git init && git remote add origin git@github.com:AndreasAhrens/Home-Assistant-Config.git && git fetch && git checkout -t origin/master
 
 sudo hassbian-config install mosquitto && sudo hassbian-config install hue && sudo hassbian-config install samba 
 ```

@@ -238,7 +238,7 @@ zone 6:
   name: Internationella Engelska Skolan
   latitude: 56.039186
   longitude: 12.709115
-  radius: 150
+  radius: 200
   icon: mdi:school
 
 zone 7:

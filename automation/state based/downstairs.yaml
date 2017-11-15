@@ -216,4 +216,13 @@
     action:
       service: homeassistant.turn_off
       entity_id: switch.hallway_stairs
+
+  - alias: Fridge counter
+    trigger:
+      platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00016c7ccd
+      to: 'open'
+    action:
+      service: counter.increment
+      entity_id: counter.Fridge_opening
     

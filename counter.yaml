@@ -1,0 +1,5 @@
+  - Fridge_opening:
+    name: Fridge opening
+    initial: 0
+    step: 1
+    icon: mdi:fridge

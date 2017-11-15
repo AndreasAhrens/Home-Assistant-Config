@@ -221,8 +221,8 @@
     trigger:
       platform: state
       entity_id: binary_sensor.door_window_sensor_158d00016c7ccd
-      to: 'open'
+      to: 'on'
     action:
       service: counter.increment
-      entity_id: counter.Fridge_opening
+      entity_id: counter.fridge_opening
     

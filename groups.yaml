@@ -709,6 +709,7 @@
       - binary_sensor.door_window_sensor_158d00016ccebc
       - counter.fridge_opening
       - script.test_script
+      - media_player.spotify
 
 
 

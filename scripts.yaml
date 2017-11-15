@@ -96,10 +96,6 @@
         data:
           entity_id: media_player.spotify
           source: Kitchen
-      - service: media_player.shuffle_set
-        data: 
-          entity_id: media_player.spotify
-          shuffle: 'true'
       - service: media_player.volume_set
         data:
           entity_id: media_player.spotify
@@ -110,6 +106,10 @@
         #data:
           entity_id: media_player.spotify
           media_content_type: playlist
+      - service: media_player.shuffle_set
+        data: 
+          entity_id: media_player.spotify
+          shuffle: 'true'
       - service: media_player.media_next_track
         data:
           entity_id: media_player.spotify

@@ -110,13 +110,13 @@
         data: 
           entity_id: media_player.spotify
           shuffle: 'true'
+      - service: media_player.media_next_track
+        data:
+          entity_id: media_player.spotify
       - service: media_player.volume_set
         data:
           entity_id: media_player.spotify
           volume_level: 0.50
-      - service: media_player.media_next_track
-        data:
-          entity_id: media_player.spotify
         
 
       #- service: media_player.volume_set

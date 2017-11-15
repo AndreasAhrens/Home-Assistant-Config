@@ -155,6 +155,18 @@
     friendly_name: Basement door
     device_class: opening
     icon: mdi:glassdoor
+  binary_sensor.door_window_sensor_158d00016ccebc:
+    friendly_name: Basement door 2
+    device_class: opening
+    icon: mdi:glassdoor
+  binary_sensor.door_window_sensor_158d00016c7ccd:
+    friendly_name: Fridge
+    device_class: opening
+    icon: mdi:glassdoor
+  binary_sensor.door_window_sensor_158d00016c7bcd:
+    friendly_name: Bathroom door
+    device_class: opening
+    icon: mdi:glassdoor
   binary_sensor.entre:
     friendly_name: Front door
     device_class: opening

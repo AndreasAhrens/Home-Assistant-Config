@@ -86,7 +86,7 @@
   #    {% if is_state("calendar.nathan_tech_shop", "on") and as_timestamp(states.calendar.nathan_tech_shop.attributes.end_time) - as_timestamp(now()) < 900  %}on{% else %}off{% endif %}
   #{% else %}off{% endif %}
 
-  test_script:
+  morning_music:
     sequence:
       #- service: tts.google_say
       #  data_template:

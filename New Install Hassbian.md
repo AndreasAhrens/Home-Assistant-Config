@@ -168,7 +168,7 @@ sudo systemctl start homebridge
 ```
 
 ## FFMPEG
-sudo echo "deb http://ftp.debian.org/debian jessie-backports main" | sudo tee /etc/apt/sources.list
+echo "deb http://ftp.debian.org/debian jessie-backports main" | sudo tee /etc/apt/sources.list
 sudo apt-get update && sudo apt-get -t jessie-backports install ffmpeg
 ## Install MPD
 ``` shell

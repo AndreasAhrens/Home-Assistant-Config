@@ -75,3 +75,11 @@
       - service: homeassistant.turn_off
         entity_id:
           - light.kitchen_top
+
+  - alias: Reset fridge counter
+    trigger:
+      - platform: time
+        at: '23:59:59'
+    action:
+      service: counter.reset
+      entity_id: counter.fridge_opening

@@ -75,7 +75,15 @@ sensor: !include sensors.yaml
 shell_command: !include shell_command.yaml
 switch: !include switches.yaml
 vacuum: !include vacuum.yaml
-counter: !include counter.yaml
+counter: 
+  Fridge_opening:
+    name: Fridge opening
+    initial: 0
+    step: 1
+    icon: mdi:fridge
+
+
+  #!include counter.yaml
 
 input_boolean:
   vacation_mode:

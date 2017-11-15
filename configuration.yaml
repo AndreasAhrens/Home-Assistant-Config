@@ -75,14 +75,7 @@ sensor: !include sensors.yaml
 shell_command: !include shell_command.yaml
 switch: !include switches.yaml
 vacuum: !include vacuum.yaml
-counter: 
-  fridge_opening:
-    initial: 0
-    step: 1
-    
-
-
-  #!include counter.yaml
+counter: !include counter.yaml
 
 input_boolean:
   vacation_mode:

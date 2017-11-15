@@ -697,6 +697,9 @@
       - binary_sensor.wall_switch_left_158d000171d630
       - binary_sensor.wall_switch_right_158d000171d630
       - binary_sensor.wall_switch_both_158d000171d630
+      - binary_sensor.door_window_sensor_158d00016c7bcd
+      - binary_sensor.door_window_sensor_158d00016c7ccd
+      - binary_sensor.door_window_sensor_158d00016ccebc
 
 
 

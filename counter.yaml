@@ -1,4 +1,4 @@
-  - Fridge_opening:
+  Fridge_opening:
     name: Fridge opening
     initial: 0
     step: 1

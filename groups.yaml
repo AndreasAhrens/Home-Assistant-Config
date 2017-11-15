@@ -100,6 +100,7 @@
       - binary_sensor.kallardorr
       - binary_sensor.motion_sensor_158d0001655fde
       - binary_sensor.switch_158d00014a077d
+      - binary_sensor.door_window_sensor_158d00016ccebc
     icon: mdi:stairs
   Hallway_short:
     name: Hallway
@@ -136,6 +137,7 @@
     entities:
       - sensor.humidity_158d0001a1ffac
       - sensor.temperature_158d0001a1ffac
+      - binary_sensor.door_window_sensor_158d00016c7bcd
   Bedside_lights:
     name: Bedside lights
     entities:
@@ -157,6 +159,7 @@
       - switch.kitchen_speaker
       - binary_sensor.door_window_sensor_158d00016c7536
       - binary_sensor.motion_sensor_158d0001656584
+      - binary_sensor.door_window_sensor_158d00016c7ccd
   Kitchen_short:
     name: Kitchen
     entities:
@@ -486,12 +489,15 @@
       - binary_sensor.entre
       - binary_sensor.door_window_sensor_158d00016c7655
       - binary_sensor.kallardorr
+      - binary_sensor.door_window_sensor_158d00016ccebc
       - binary_sensor.door_window_sensor_158d00015b60d7
       - binary_sensor.door_window_sensor_158d00016c74c6
       - binary_sensor.door_window_sensor_158d0001834f33
       - binary_sensor.door_window_sensor_158d00016c7536
       - binary_sensor.door_window_sensor_158d0001d84f5f
       - binary_sensor.door_window_sensor_158d00014d4149
+      - binary_sensor.door_window_sensor_158d00016c7ccd
+      - binary_sensor.door_window_sensor_158d00016c7bcd
       
   Motion:
     name: Motion sensors

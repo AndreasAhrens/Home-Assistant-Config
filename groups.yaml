@@ -160,6 +160,7 @@
       - binary_sensor.door_window_sensor_158d00016c7536
       - binary_sensor.motion_sensor_158d0001656584
       - binary_sensor.door_window_sensor_158d00016c7ccd
+      - counter.fridge_opening
   Kitchen_short:
     name: Kitchen
     entities:
@@ -706,6 +707,7 @@
       - binary_sensor.door_window_sensor_158d00016c7bcd
       - binary_sensor.door_window_sensor_158d00016c7ccd
       - binary_sensor.door_window_sensor_158d00016ccebc
+      - counter.fridge_opening
 
 
 

@@ -110,6 +110,10 @@
         #data:
           entity_id: media_player.spotify
           media_content_type: playlist
+      - service: media_player.media_next_track
+        data:
+          entity_id: media_player.spotify
+        
 
       #- service: media_player.volume_set
       #  data:

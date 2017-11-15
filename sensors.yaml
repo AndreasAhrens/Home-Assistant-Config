@@ -241,6 +241,7 @@
 
   - platform: min_max
     name: Average Temperature
+    type: mean
     entity_ids:
       - sensor.kok_temperature
       - sensor.ovanvaning_temperature
@@ -251,6 +252,7 @@
 
   - platform: min_max
     name: Average illumination
+    type: mean
     entity_ids:
       - sensor.heart_plant_light_intensity
       - sensor.cypress_light_intensity

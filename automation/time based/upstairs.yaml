@@ -93,7 +93,7 @@
     condition:
       - condition: numeric_state
         entity_id: light.her_bedside
-        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.his_bedside.attributes.brightness }}{% else %}0{% endif %}'
+        value_template: '{% if states.light.her_bedside.state == "on"  %}{{ states.light.her_bedside.attributes.brightness }}{% else %}0{% endif %}'
         above: 25
     action:
       - service: homeassistant.turn_on

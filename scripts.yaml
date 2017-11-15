@@ -88,14 +88,14 @@
 
   test_script:
     sequence:
-      - service: tts.google_say
-        data_template:
-          entity_id: media_player.kitchen_audio
-          message: 'Good morning'
+      #- service: tts.google_say
+      #  data_template:
+      #    entity_id: media_player.kitchen_audio
+      #    message: 'Good morning'
       - service: media_player.select_source
         data:
           entity_id: media_player.spotify
-          source: Kitchen Audio
+          source: Kitchen
       - service: media_player.shuffle_set
         data: 
           entity_id: media_player.spotify

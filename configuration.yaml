@@ -98,7 +98,7 @@ recorder:
       - sensor.time
 
 influxdb:
-  host: !secret influx_host
+  host: 192.168.1.48 #!secret influx_host
   port: !secret influx_port
   username: !secret influx_user
   password: !secret influx_password

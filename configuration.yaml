@@ -182,11 +182,11 @@ weblink:
     - name: Home Assistant Forum
       url: https://community.home-assistant.io/
     - name: Grafana
-      url: http://192.168.1.25:3000/
+      url: http://grafana.local:3000/
     - name: Influx db
-      url: http://192.168.1.25:8083/
+      url: http://grafana.local:8083/
     - name: Pi-Hole
-      url: http://192.168.1.25/admin
+      url: http://pihole.local/admin
     - name: Draytek Router
       url: http://192.168.1.1:81/
 

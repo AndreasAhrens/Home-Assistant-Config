@@ -57,7 +57,7 @@ emulated_hue:
 automation old: !include_dir_merge_list automation/
 automation: !include automations.yaml
 binary_sensor: !include binary_sensors.yaml
-# camera: !include camera.yaml
+camera: !include camera.yaml
 cover: !include cover.yaml
 device_tracker: !include device_tracker.yaml
 fan: !include fans.yaml

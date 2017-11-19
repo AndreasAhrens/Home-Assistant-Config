@@ -189,6 +189,10 @@ weblink:
       url: http://pihole.local/admin
     - name: Draytek Router
       url: http://192.168.1.1:81/
+    - name: Zoneminder
+      url: http://zoneminder.local/zm
+    - name: ESXi host
+      url: https://192.168.1.24/ui
 
 panel_iframe:
   grafana:

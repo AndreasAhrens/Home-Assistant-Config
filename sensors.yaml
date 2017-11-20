@@ -239,6 +239,13 @@
         unit_of_measurement: 'lux'
         value_template: "{{ states.sensor.illumination_34ce008c1bb1.state }}"
 
+  - platform: template
+    sensors:
+      server_power_usage:
+        friendly_name: "ESXi power usage"
+        unit_of_measurement: 'w'
+        value_template: "{{ states.switch.plug_158d000183aef6.attributes.load_power }}"
+
   - platform: min_max
     name: Average Temperature
     type: mean

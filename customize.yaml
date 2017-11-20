@@ -167,6 +167,9 @@
     friendly_name: Bathroom door
     device_class: opening
     icon: mdi:glassdoor
+  switch.plug_158d000183aef6:
+    friendly_name: Server Plug
+    icon: mdi:server
   binary_sensor.entre:
     friendly_name: Front door
     device_class: opening

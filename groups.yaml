@@ -188,6 +188,7 @@
   Basement:
     name: Basement
     entities:
+      - switch.plug_158d000183aef6
       - sensor.kallare_mouse
       - sensor.kallare_temperature
   Outside_room:

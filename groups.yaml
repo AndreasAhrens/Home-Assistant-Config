@@ -397,6 +397,8 @@
       - weblink.router_downstairs
       - weblink.draytek_router
       - weblink.pihole
+      - switch.plug_158d000183aef6
+      - sensor.server_power_usage
   Mailbox:
     entities:
       - switch.mailbox_inside_light

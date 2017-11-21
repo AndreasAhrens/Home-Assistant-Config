@@ -193,6 +193,8 @@ weblink:
       url: http://zoneminder.local/zm
     - name: ESXi host
       url: https://192.168.1.24/ui
+    - name: Docker Portainer
+      url: http://docker.local:9000/
 
 panel_iframe:
   grafana:

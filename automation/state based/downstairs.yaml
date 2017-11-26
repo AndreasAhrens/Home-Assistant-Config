@@ -54,7 +54,7 @@
       condition: time
       after: '19:00:00'
     action:
-      - service: homeassistant.turn_on
+      - service: cover.close_cover
         entity_id:
           - cover.bedroom_rollers
 

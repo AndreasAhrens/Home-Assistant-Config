@@ -225,4 +225,7 @@
     action:
       service: counter.increment
       entity_id: counter.fridge_opening
+      
+
+
     

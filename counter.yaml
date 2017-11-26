@@ -1,3 +1,7 @@
   fridge_opening:
     initial: 0
     step: 1
+
+  morning_sequence_count:
+    initial: 0
+    step: 1

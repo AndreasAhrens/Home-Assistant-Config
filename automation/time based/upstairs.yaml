@@ -225,3 +225,11 @@
     - service: homeassistant.turn_off
       entity_id:
         - switch.amanda_ceiling
+
+  - alias: Reset morning sequence counter
+    trigger:
+      - platform: time
+        at: '23:59:59'
+    action:
+      service: counter.reset
+      entity_id: counter.morning_sequence_count

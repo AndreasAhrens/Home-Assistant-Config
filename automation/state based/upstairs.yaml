@@ -148,6 +148,9 @@
         - condition: time
           before: '09:00:00'
           after: '05:30:00'
+        - condition: numeric_state
+          entity_id: counter.morning_sequence_count
+          below: '1'
     action:
       service: script.morning_sequence
 

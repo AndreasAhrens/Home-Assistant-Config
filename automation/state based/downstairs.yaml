@@ -45,6 +45,20 @@
       - service: homeassistant.turn_on
         entity_id: switch.hallway_stairs
 
+  - alias: Close bedroom rollers when livingroom door is closed and it's after 19:00
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.door_window_sensor_158d0001d84f5f
+        to: 'off'
+    condition:
+      condition: time
+      after: '19:00:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - cover.bedroom_rollers
+
+
   - alias: Turn off stairs light 3 minutes after last movement
     trigger:
       platform: state

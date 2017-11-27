@@ -52,6 +52,33 @@
       - 'double'
       - 'long'
 
+  bedroom_switch_left_status:
+    name: Bedroom switch left status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
+  bedroom_switch_right_status:
+    name: Bedroom switch right status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
+  bedroom_switch_both_status:
+    name: Bedroom switch both status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
   andreas_location:
     name: Andreas
     options:

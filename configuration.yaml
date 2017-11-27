@@ -118,6 +118,8 @@ xiaomi_aqara:
   gateways:
     - mac: 34:CE:00:8C:1B:B1
       key: !secret xiaomi_key
+    - mac: 34:CE:00:8B:FA:2B
+      key: !secret xiaomi_key2 
 
 digital_ocean:
   access_token: !secret digital_ocean_api

@@ -753,3 +753,425 @@
         data:
           entity_id: input_select.diningroom_switch_both_status
           option: 'off'
+
+  ##################################
+  ####### Bedroom buttons #######
+  ##################################
+
+
+  ##### Bedroom left button #####
+  # Set an input select when button is clicked.
+  - alias: Bedroom switch left button single click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d000163dc70
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: input_select.bedroom_switch_left_status
+        state: 'off'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_left_status
+          option: 'single'
+
+  # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
+  - alias: Bedroom switch left button double click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d000163dc70
+          click_type: single
+    condition: 
+      - condition: state
+        entity_id: input_select.bedroom_switch_left_status
+        state: 'single'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_left_status
+          option: 'double'
+
+  # If the input select doesn't change state for 2 seconds, change back to off. 
+  - alias: Bedroom switch left button set to off
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_left_status
+        to: 'single'
+        for:
+          seconds: 2
+      - platform: state
+        entity_id: input_select.bedroom_switch_left_status
+        to: 'double'
+        for:
+          seconds: 2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_left_status
+          option: 'off'
+
+  # If the input select is double, turn off the her bedside  if on, turn on if off. Also set status to off.
+  - alias: Bedroom switch left button double click her bedside is on
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_left_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: light.her_bedside
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - light.her_bedside
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_left_status
+          option: 'off'
+
+  - alias: Bedroom switch left button double click her bedside is off
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_left_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: light.her_bedside
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - light.her_bedside
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_left_status
+          option: 'off'
+
+  # I want to increase the light if single press is done. Max is 100. Starting at 5 and going up 17 per time, we get these numbers:
+  # 5, 22, 39, 56, 73, 90, 107
+  # 5 is pretty perfect for low light like watching tv, and 90 is too bright already.
+  # 110 is the maximum number for the input_number so I needed something that maxed out over 100 but below 110.
+  # Also sets the status to off so it can be used again without waiting for the reset timer
+  - alias: Bedroom switch left button single press increase number
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_left_status
+        to: 'single'
+        for:
+          seconds: 1.2
+    action:
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.bedroom_switch_left_number
+          value: '{{ states.input_number.bedroom_switch_left_number.state | int + 17 }}'
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_left_status
+          option: 'off'
+      
+  # If we go over 100, reduce to 5 to restart the flow. 
+  - alias: Set Bedroom switch state to 5 if over 100
+    trigger:
+      - platform: numeric_state
+        entity_id: input_number.bedroom_switch_left_number
+        # value_template: '{{ states.input_number.bedroom_switch_left_number.state  }}'
+        above: 100
+    action:
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.bedroom_switch_left_number
+          value: '5'
+
+  # When we change the input_number, set the ceiling group to that brightness as a percentage
+  - alias: Set Bedroom her bedside based on input_number
+    trigger:
+      - platform: state
+        entity_id: input_number.bedroom_switch_left_number
+    action:
+      - service: homeassistant.turn_on
+        data_template:
+          entity_id: light.her_bedside
+          brightness_pct: '{{ states.input_number.bedroom_switch_left_number.state | int }}'
+
+
+##### Bedroom right button #####
+  # Set an input select when button is clicked.
+  - alias: Bedroom switch right button single click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_right_158d000163dc70
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: input_select.bedroom_switch_right_status
+        state: 'off'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_right_status
+          option: 'single'
+
+  # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
+  - alias: Bedroom switch right button double click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_right_158d000163dc70
+          click_type: single
+    condition: 
+      - condition: state
+        entity_id: input_select.bedroom_switch_right_status
+        state: 'single'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_right_status
+          option: 'double'
+
+  # If the input select doesn't change state for 2 seconds, change back to off. 
+  - alias: Bedroom switch right button set to off
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_right_status
+        to: 'single'
+        for:
+          seconds: 2
+      - platform: state
+        entity_id: input_select.bedroom_switch_right_status
+        to: 'double'
+        for:
+          seconds: 2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_right_status
+          option: 'off'
+
+  # If the input select is double, turn off the his bedside light  if on, turn on if off. Also set status to off.
+  - alias: Bedroom switch right button double click ceiling is on
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_right_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: light.his_bedside
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - light.his_bedside
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_right_status
+          option: 'off'
+
+  - alias: Bedroom switch right button double click ceiling is off
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_right_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: light.his_bedside
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - light.his_bedside
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_right_status
+          option: 'off'
+
+  # I want to increase the light if single press is done. Max is 100. Starting at 5 and going up 17 per time, we get these numbers:
+  # 5, 22, 39, 56, 73, 90, 107
+  # 5 is pretty perfect for low light like watching tv, and 90 is too bright already.
+  # 110 is the maximum number for the input_number so I needed something that maxed out over 100 but below 110.
+  # Also sets the status to off so it can be used again without waiting for the reset timer
+  - alias: Bedroom switch right button single press increase number
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_right_status
+        to: 'single'
+        for:
+          seconds: 1.2
+    action:
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.bedroom_switch_right_number
+          value: '{{ states.input_number.bedroom_switch_right_number.state | int + 17 }}'
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_right_status
+          option: 'off'
+      
+  # If we go over 100, reduce to 5 to restart the flow. 
+  - alias: Set Bedroom switch state to 5 if over 100
+    trigger:
+      - platform: numeric_state
+        entity_id: input_number.bedroom_switch_right_number
+        # value_template: '{{ states.input_number.bedroom_switch_right_number.state  }}'
+        above: 100
+    action:
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.bedroom_switch_right_number
+          value: '5'
+
+  # When we change the input_number, set the his bedside light to that brightness as a percentage
+  - alias: Set Bedroom ceiling based on input_number
+    trigger:
+      - platform: state
+        entity_id: input_number.Bedroom_switch_right_number
+    action:
+      - service: homeassistant.turn_on
+        data_template:
+          entity_id: light.his_bedside
+          brightness_pct: '{{ states.input_number.bedroom_switch_right_number.state | int }}'
+
+
+
+
+  ##### Bedroom both buttons #####
+  # Set an input select when button is clicked.
+  - alias: Bedroom switch both buttons single click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_both_158d000163dc70
+          click_type: both
+    condition:
+      - condition: state
+        entity_id: input_select.bedroom_switch_both_status
+        state: 'off'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_both_status
+          option: 'single'
+
+  # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
+  - alias: Bedroom switch both buttons double click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_both_158d000163dc70
+          click_type: both
+    condition: 
+      - condition: state
+        entity_id: input_select.bedroom_switch_both_status
+        state: 'single'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.Bedroom_switch_both_status
+          option: 'double'
+
+  # If the input select doesn't change state for 2 seconds, change back to off. 
+  - alias: Bedroom switch both buttons set to off
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_both_status
+        to: 'single'
+        for:
+          seconds: 2
+      - platform: state
+        entity_id: input_select.bedroom_switch_both_status
+        to: 'double'
+        for:
+          seconds: 2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_both_status
+          option: 'off'
+
+  # If the input select is double, turn off the Bedroom fan if on, turn on if off. Also set status to off.
+  - alias: Bedroom switch both buttons double click fan is on
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_both_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: switch.bedroom_fan
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - switch.bedroom_fan
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_both_status
+          option: 'off'
+
+  - alias: Bedroom switch both buttons double click fan is off
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_both_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: switch.bedroom_fan
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - switch.bedroom_fan
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_both_status
+          option: 'off'
+
+
+  # If the input select is single, open cover if closed, turn close if open. Also set status to off.
+  - alias: Bedroom switch both buttons double click rollers are open
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_both_status
+        to: 'single'
+        for:
+          seconds: 1.5
+    condition:
+      - condition: state
+        entity_id: cover.bedroom_rollers
+        state: 'open'
+    action:
+      - service: cover.close_cover
+        entity_id: 
+          - cover.bedroom_rollers
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_both_status
+          option: 'off'
+
+  - alias: Bedroom switch both button double click rollers are closed
+    trigger:
+      - platform: state
+        entity_id: input_select.bedroom_switch_both_status
+        to: 'single'
+        for:
+          seconds: 1.5
+    condition:
+      - condition: state
+        entity_id: cover.bedroom_rollers
+        state: 'closed'
+    action:
+      - service: cover.open_cover
+        entity_id: 
+          - cover.bedroom_rollers
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.bedroom_switch_both_status
+          option: 'off'

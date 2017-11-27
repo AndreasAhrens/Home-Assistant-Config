@@ -61,6 +61,7 @@
       - service: homeassistant.turn_on
         entity_id: 
           - light.his_bedside
+          - light.her_bedside
 
   - alias: Turn off bedroom lights if on
     trigger:
@@ -77,6 +78,7 @@
       - service: homeassistant.turn_off
         entity_id: 
           - light.his_bedside
+          - light.her_bedside
 
   - alias: Turn on bedroom fan when temperature in bedroom is above 22
     trigger: 

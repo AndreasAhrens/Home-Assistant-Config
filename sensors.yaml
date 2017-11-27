@@ -234,8 +234,15 @@
 
   - platform: template
     sensors:
-      illumination_in_lux:
-        friendly_name: "Illumination in lux"
+      illumination_in_lux1:
+        friendly_name: "Illumination gateway 1 in lux"
+        unit_of_measurement: 'lux'
+        value_template: "{{ states.sensor.illumination_34ce008c1bb1.state }}"
+
+  - platform: template
+    sensors:
+      illumination_in_lux2:
+        friendly_name: "Illumination gateway 2 in lux"
         unit_of_measurement: 'lux'
         value_template: "{{ states.sensor.illumination_34ce008c1bb1.state }}"
 
@@ -267,7 +274,8 @@
       - sensor.Peperomia2_light_intensity
       - sensor.phalaenopsis_light_intensity
       - sensor.Almera_light_intensity
-      - sensor.illumination_in_lux
+      - sensor.illumination_in_lux1
+      - sensor.illumination_in_lux1
 
   - platform: history_stats
     name: Tv time livingroom apple tv

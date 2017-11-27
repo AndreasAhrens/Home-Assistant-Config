@@ -151,6 +151,18 @@
     friendly_name: Living room switch left
   binary_sensor.wall_switch_right_158d000171d630:
     friendly_name: Living room switch right
+  binary_sensor.wall_switch_both_158d000163dc70:
+    friendly_name: Bedroom switch both
+  binary_sensor.wall_switch_left_158d000163dc70:
+    friendly_name: Bedroom switch left
+  binary_sensor.wall_switch_right_158d000163dc70:
+    friendly_name: Bedroom switch right
+  binary_sensor.wall_switch_both_158d000163ba89:
+    friendly_name: Diningroom switch both
+  binary_sensor.wall_switch_left_158d000163ba89:
+    friendly_name: Diningroom switch left
+  binary_sensor.wall_switch_right_158d000163ba89:
+    friendly_name: Diningroom switch right
   binary_sensor.kallardorr:
     friendly_name: Basement door
     device_class: opening
@@ -212,8 +224,12 @@
     friendly_name: Bathroom Temperature
   light.gateway_light_34ce008c1bb1:
     friendly_name: Xiaomi Gateway Living Room
+  light.gateway_light_34ce008bfa2b:
+    friendly_name: Xiaomi Gateway Upstairs Hallway
   sensor.illumination_34ce008c1bb1:
     friendly_name: Gateway 1 Illumination
+  sensor.illumination_34ce008bfa2b:
+    friendly_name: Gateway 2 Illumination
   sensor.dark_sky_nearest_storm_distance:
     friendly_name: Distance to nearest storm
   sensor.dark_sky_summary:

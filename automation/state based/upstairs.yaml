@@ -14,7 +14,39 @@
         - light.her_bedside
         - light.his_bedside
 
-  - alias: Turn on Bedroom fan when button pressed, if off
+  - alias: Open cover if door button double clicked and it is closed
+    trigger:
+      platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001a65312
+        click_type: double
+    condition:
+      - condition: state
+        entity_id: cover.bedroom_rollers
+        state: 'closed'
+    action:
+      - service: cover.open_cover
+        entity_id: 
+          - cover.bedroom_rollers
+
+  - alias: Close cover if door button double clicked and it is open
+    trigger:
+      platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d0001a65312
+        click_type: double
+    condition:
+      - condition: state
+        entity_id: cover.bedroom_rollers
+        state: 'open'
+    action:
+      - service: cover.close_cover
+        entity_id: 
+          - cover.bedroom_rollers
+
+  - alias: Turn on bedroom lights if off
     trigger:
       platform: event
       event_type: click
@@ -23,13 +55,14 @@
         click_type: single
     condition:
       - condition: state
-        entity_id: switch.bedroom_fan
+        entity_id: light.his_bedside
         state: 'off'
     action:
-      service: homeassistant.turn_on
-      entity_id: switch.bedroom_fan
+      - service: homeassistant.turn_on
+        entity_id: 
+          - light.his_bedside
 
-  - alias: Turn off Bedroom fan when button pressed, if on
+  - alias: Turn off bedroom lights if on
     trigger:
       platform: event
       event_type: click
@@ -38,11 +71,12 @@
         click_type: single
     condition:
       - condition: state
-        entity_id: switch.bedroom_fan
+        entity_id: light.his_bedside
         state: 'on'
     action:
-      service: homeassistant.turn_off
-      entity_id: switch.bedroom_fan
+      - service: homeassistant.turn_off
+        entity_id: 
+          - light.his_bedside
 
   - alias: Turn on bedroom fan when temperature in bedroom is above 22
     trigger: 

@@ -14,6 +14,18 @@
         - light.her_bedside
         - light.his_bedside
 
+  - alias: Open bedroom rollers if no movement for 60 minutes
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.bedroom_movement
+        to: 'off'
+        for:
+          minutes: 60
+    action:
+      - service: cover.open_cover
+        entity_id: 
+          - cover.bedroom_rollers
+
   - alias: Open cover if door button double clicked and it is closed
     trigger:
       platform: event
@@ -161,6 +173,9 @@
         - condition: state
           entity_id: light.his_bedside
           state: 'off'
+        - condition: state
+          entity_id: cover.bedroom_rollers
+          state: 'open'
     action:
       - service: homeassistant.turn_on
         entity_id:

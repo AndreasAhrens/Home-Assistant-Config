@@ -126,10 +126,9 @@
   Bedroom_short:
     name: Bedroom
     entities:
-      - switch.bedroom_reading_light
-      - switch.bedroom_fan
       - light.her_bedside
       - light.his_bedside
+      - switch.bedroom_fan
       - cover.bedroom_rollers
     icon: mdi:hotel
   Bathroom:
@@ -165,7 +164,7 @@
     name: Kitchen
     entities:
       - light.kitchen_top
-      - switch.kitchen_speaker
+      # - switch.kitchen_speaker
   Upper_Hallway:
     name: Upper Hallway
     entities:

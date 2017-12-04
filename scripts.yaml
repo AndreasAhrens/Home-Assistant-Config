@@ -119,6 +119,36 @@
         data:
           entity_id: media_player.spotify
           volume_level: 0.50
+
+  security_kitchen:
+    sequence:
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.spotify
+          source: Kitchen
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.spotify
+          volume_level: 1.00
+      - service: media_player.play_media
+        data_template:
+          media_content_id: 'spotify:user:eiolos:playlist:3ndB93jCUzGaxT0zEFeKGD'
+        #data:
+          entity_id: media_player.spotify
+          media_content_type: playlist
+      - service: media_player.shuffle_set
+        data: 
+          entity_id: media_player.spotify
+          shuffle: 'true'
+      - service: media_player.media_next_track
+        data:
+          entity_id: media_player.spotify
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.spotify
+          volume_level: 1.00
+      - delay: '00:05:00'
+      - service: media_player.media_pause
         
 
       #- service: media_player.volume_set

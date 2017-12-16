@@ -207,3 +207,44 @@
         entity_id: switch.living_room_fan
 
 
+  ################################
+  #### Movement when alarm on ####
+  ################################
+
+  - alias: Movements when alarms is on
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.door_window_sensor_158d00015b60d7
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.door_window_sensor_158d00016c74c6
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.door_window_sensor_158d00016c7536
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.door_window_sensor_158d0001834f33
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.motion_sensor_158d0001d665e2
+        to: 'on'
+    ## condition:  ## not yet, should be when alarm is in home mode or away mode
+    action:
+      - service: homeassistant.turn_on
+        entity_id: group.livingroom_ceiling
+      - service: homeassistant.turn_on
+        entity_id: switch.dining_room_table
+      - service: homeassistant.turn_on
+        entity_id: switch.dining_room_cabinet
+      - service: script.turn_on
+        entity_id: script.security_kitchen
+      - delay: '00:15:00'
+      - service: homeassistant.turn_off
+        entity_id: group.livingroom_ceiling
+      - service: homeassistant.turn_off
+        entity_id: switch.dining_room_table
+      - service: homeassistant.turn_off
+        entity_id: switch.dining_room_cabinet
+
+
+

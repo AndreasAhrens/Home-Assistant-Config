@@ -696,6 +696,7 @@
   debug_group:
     name: Debug
     entities:
+      - script.security_kitchen
       - input_number.livingroom_switch_left_number
       - input_number.livingroom_switch_right_number
       - input_select.livingroom_switch_left_status

@@ -725,6 +725,7 @@
 
 ###### VIEWS #######
   default_view:
+    name: Hemgatan
     view: yes    ## Change to "no" to see the default view and be able to detect new devices and lights
     entities:
       - group.maindevices

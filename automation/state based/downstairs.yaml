@@ -31,6 +31,36 @@
       - service: homeassistant.turn_off
         entity_id: switch.living_room_fan
 
+  - alias: Turn on stairs, driveway and door light when hallway door is opened
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.door_window_sensor_158d00016c7655
+        to: 'on'
+    condition:
+      - condition: numeric_state
+        entity_id: sensor.illumination_34ce008c1bb1
+        below: 400
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.plug_158d0001dbf3b2
+          - switch.front_door_plug
+          - switch.garden_driveway
+
+  - alias: Turn off stairs, driveway and door light when hallway door is closed for 5 minutes
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.door_window_sensor_158d00016c7655
+        to: 'off'
+        for:
+          minutes: 5
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - switch.plug_158d0001dbf3b2
+          - switch.front_door_plug
+          - switch.garden_driveway
+
   - alias: Turn on stairs when movement in hallway and sun is down
     trigger:
       - platform: state

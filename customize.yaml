@@ -4,6 +4,9 @@
     icon: mdi:fan
   switch.hallway_stairs:
     icon: mdi:stairs
+  switch.plug_158d0001dbf3b2:
+    icon: mdi:stairs
+    friendly_name: Hallway Stairs 
   switch.garden_driveway:
     icon: mdi:car
   light.tv_bench:
@@ -42,6 +45,9 @@
     friendly_name: Outside Room Temperature
   switch.dining_room_table:
     icon: mdi:seat-recline-normal
+  switch.plug_158d0001de56ce:
+    icon: mdi:seat-recline-normal
+    friendly_name: Diningroom Table
   alarm_control_panel.alarm_1:
     icon: mdi:security-home
   switch.amanda_ceiling:

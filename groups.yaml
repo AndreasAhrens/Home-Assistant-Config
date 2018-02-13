@@ -699,7 +699,10 @@
       - script.security_kitchen
       - binary_sensor.switch_158d00016d91a1
       - binary_sensor.switch_158d0001714261
-      - switch.plug_158d0001de56ce
+      - switch.plug_158d0001de56ce #probably new diningroom table 
+      - switch.plug_158d0001dbd0d2
+      - switch.plug_158d0001dbf3b2
+      - switch.plug_158d0001de56ce # probably stairs
       - input_number.livingroom_switch_left_number
       - input_number.livingroom_switch_right_number
       - input_select.livingroom_switch_left_status

@@ -345,12 +345,11 @@
       - sensor.speedtest_upload
       - sensor.cpu_speed
       - sensor.since_last_boot
-      - sensor.ram_used
-      - sensor.ram_used_2
-      - sensor.ram_available
-      - sensor.disk_used_
+      - sensor.memory_use
+      - sensor.memory_free
+      - sensor.disk_use
       - sensor.disk_free_
-      - sensor.cpu_used
+      - sensor.processor_use
       - sensor.ssl_cert_expiry
       - sensor.hassbian_cert_expiry
       - switch.dummy_switch
@@ -359,11 +358,11 @@
       - script.morning_sequence
       - media_player.tts_bluetooth_speaker
       - binary_sensor.cube_158d00010aecde
-      - sensor.received_eth0
-      - sensor.sent_eth0
-      - sensor.average_load_1m
-      - sensor.average_load_5m
-      - sensor.average_load_15m
+      - sensor.network_in_eth0
+      - sensor.network_out_eth0
+      - sensor.load_1m
+      - sensor.load_5m
+      - sensor.load_15m
     icon: mdi:raspberrypi
   Pi_hole:
     name: Pi-hole

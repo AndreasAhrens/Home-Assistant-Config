@@ -10,10 +10,13 @@ cd /home/homeassistant/.homeassistant/
 http://IP:8123/
 ```
 Check if Home Assistant is up, takes a while first setup.
+check status
+sudo /srv/homeassistant/bin/hass --script check_config -c /home/homeassistant/.homeassistant
 
 ## Set up HA aliases
 ```shell
 echo "alias hastart='sudo systemctl start home-assistant@homeassistant.service'" >> ~/.bash_profile
+echo "alias harestart='sudo systemctl restart home-assistant@homeassistant.service'" >> ~/.bash_profile
 echo "alias hastop='sudo systemctl stop home-assistant@homeassistant.service'" >> ~/.bash_profile
 echo "alias hastatus='sudo systemctl status -l home-assistant@homeassistant.service'" >> ~/.bash_profile
 echo "alias halog='tail -f  /home/homeassistant/.homeassistant/home-assistant.log'" >> ~/.bash_profile
@@ -29,6 +32,7 @@ sudo apt install git && ssh-keygen -t rsa -b 4096 -C "andreas@ahrensit.se" && su
 
 sudo su -s /bin/bash homeassistant
 source /srv/homeassistant/bin/activate
+ssh-keygen -t rsa -b 4096 -C "andreas@ahrensit.se"
 cat /home/homeassistant/.ssh/id_rsa.pub
 cd /home/homeassistant/.homeassistant
 sudo chown -hR homeassistant /home/homeassistant/.homeassistant
@@ -52,8 +56,10 @@ sudo chmod -R g+w /home/homeassistant/.homeassistant/
 Only works if you have done the ssh key generation without sudo above.
 ``` shell
 git init && git remote add origin git@github.com:AndreasAhrens/Home-Assistant-Config.git && git fetch && git checkout -t origin/master
+#git init && git remote add origin git@github.com:AndreasAhrens/Home-Assistant-config-Braatehus.git && git fetch && git checkout -t origin/master
 
 sudo hassbian-config install mosquitto && sudo hassbian-config install hue && sudo hassbian-config install samba 
+sudo hassbian-config install tradfri && sudo hassbian-config install razberry
 ```
 While this is being installed:
 ``` shell
@@ -79,6 +85,18 @@ sudo apt install htop wavemon
 sudo apt-get install net-tools nmap
 ```
 
+
+``` shell
+sudo systemctl disable hciuart
+sudo nano /boot/config.txt
+	dtoverlay=pi3-disable-bt
+	core_freq=250
+sudo systemctl mask serial-getty@ttyAMA0.service
+sudo chgrp dialout /dev/ttyAMA0
+sudo chmod g+rw /dev/ttyAMA0
+sudo systemctl disable z-way-server.service 
+wget -q -O - razberry.z-wave.me/install | sudo bash
+```
 #### Possibly:
 ``` shell
 # sudo hassbian-config install libcec 
@@ -113,6 +131,7 @@ cd ~ && mkdir certbot && cd certbot && wget https://dl.eff.org/certbot-auto && c
 New version, No warning:
 ``` shell
 ./certbot-auto certonly --standalone --preferred-challenges http-01 --email andreas@ahrensit.se -d eiolos.duckdns.org
+#./certbot-auto certonly --standalone --preferred-challenges http-01 --email andreas@ahrensit.se -d braatehus.duckdns.org
 sudo chmod -R 777 /etc/letsencrypt && sudo systemctl restart home-assistant@homeassistant.service
 ```
 old version, still supported, but gives warning

@@ -120,6 +120,8 @@ xiaomi_aqara:
       key: !secret xiaomi_key
     - mac: 34:CE:00:8B:FA:2B
       key: !secret xiaomi_key2 
+    - mac: 78:11:DC:B2:28:44
+      key: !secret xiaomi_key3
 
 digital_ocean:
   access_token: !secret digital_ocean_api

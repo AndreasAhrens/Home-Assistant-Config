@@ -132,8 +132,7 @@
           option: Devv
 
   - id: 1C5BBBEF-8BBA-49DE-9369-64FB88B49CDD
-    id: 1BBE7B5C-20E9-4676-8494-93EBE1EFA8A6
-      alias: 'Andreas Hyllinge position'
+    alias: 'Andreas Hyllinge position'
     trigger:
       - platform: zone
         event: enter

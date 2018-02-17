@@ -196,7 +196,7 @@
 
 ##### Livingroom right button #####
   # Set an input select when button is clicked.
-  - id: Livingroom switch right button single click
+  - id: Livingroom_switch_right_button_single_click
     alias: Livingroom switch right button single click
     trigger:
       - platform: event

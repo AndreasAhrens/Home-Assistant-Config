@@ -1236,3 +1236,23 @@
         data:
           entity_id: input_select.bedroom_switch_both_status
           option: 'off'
+
+
+  ##################################
+  ############## CUBE ##############
+  ##################################
+
+  - id: 20A70BCE-7733-4EA7-8B3D-7C91275ABB18
+    alias: Cube event tap_twice
+    trigger:
+      - platform: event
+        event_type: cube_action
+        event_data:
+          entity_id: binary_sensor.cube_158d00010aecde
+          action_type: tap_twice
+    action:
+      - service: remote.send_command
+        data:
+          entity_id: remote.apple_tv_i_vardagsrum
+          command:
+            - select

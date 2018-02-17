@@ -30,12 +30,13 @@
 
   ##### Livingroom left button #####
   # Set an input select when button is clicked.
-  - alias: Livingroom switch left button single click
+  - id: livingroom_switch_left_button_single_click
+    alias: Livingroom switch left button single click
     trigger:
       - platform: event
         event_type: click
         event_data:
-          entity_id: binary_sensor.wall_switch_left_158d000171d630
+          entity_id:  
           click_type: single
     condition:
       - condition: state
@@ -48,7 +49,8 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - alias: Livingroom switch left button double click
+  - id: livingroom_switch_left_button_double_click
+    alias: Livingroom switch left button double click
     trigger:
       - platform: event
         event_type: click
@@ -66,7 +68,8 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - alias: Livingroom switch left button set to off
+  - id: livingroom_switch_left_button_off
+    alias: Livingroom switch left button set to off
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_left_status
@@ -85,7 +88,8 @@
           option: 'off'
 
   # If the input select is double, turn off the ceiling group if on, turn on if off. Also set status to off.
-  - alias: Livingroom switch left button double click ceiling is on
+  - id: livingroom_switch_left_button_double_click_ceiling_is_on
+    alias: Livingroom switch left button double click ceiling is on
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_left_status
@@ -103,7 +107,8 @@
           entity_id: input_select.livingroom_switch_left_status
           option: 'off'
 
-  - alias: Livingroom switch left button double click ceiling is off
+  - id: Livingroom_switch_left_button_double_click_ceiling_is_off
+    alias: Livingroom switch left button double click ceiling is off
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_left_status
@@ -126,7 +131,8 @@
   # 5 is pretty perfect for low light like watching tv, and 90 is too bright already.
   # 110 is the maximum number for the input_number so I needed something that maxed out over 100 but below 110.
   # Also sets the status to off so it can be used again without waiting for the reset timer
-  - alias: Livingroom switch left button single press increase number
+  - id: Livingroom_switch_left_button_single_press_increase_number
+    alias: Livingroom switch left button single press increase number
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_left_status
@@ -144,7 +150,8 @@
           option: 'off'
       
   # If we go over 100, reduce to 5 to restart the flow. 
-  - alias: Set livingroom switch state to 5 if over 100
+  - id: Set_livingroom_switch_state_to_5_if_over_100
+    alias: Set livingroom switch state to 5 if over 100
     trigger:
       - platform: numeric_state
         entity_id: input_number.livingroom_switch_left_number
@@ -157,7 +164,8 @@
           value: '5'
 
   # When we change the input_number, set the ceiling group to that brightness as a percentage
-  - alias: Set livingroom ceiling based on input_number
+  - id: Set_livingroom_ceiling_based_on_input_number
+    alias: Set livingroom ceiling based on input_number
     trigger:
       - platform: state
         entity_id: input_number.livingroom_switch_left_number

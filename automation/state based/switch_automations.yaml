@@ -36,7 +36,7 @@
       - platform: event
         event_type: click
         event_data:
-          entity_id:  
+          entity_id: binary_sensor.wall_switch_left_158d000171d630
           click_type: single
     condition:
       - condition: state

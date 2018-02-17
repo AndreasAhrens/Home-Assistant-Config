@@ -1,7 +1,8 @@
   ####### Bedroom #######
 
   ### Dim the Bedroom bedside lights when getting closer to bed - but never higher than it's already set
-  - alias: His Bedside 50% at 22:00
+  - id: 7EACC595-F839-42A7-8614-EF75068621A6
+    alias: His Bedside 50% at 22:00
     trigger:
       - platform: time
         at: '22:00:00'
@@ -18,7 +19,8 @@
           brightness: 144
           rgb_color: [243, 179, 80]
 
-  - alias: Her Bedside 50% at 22:00
+  - id: 2D11D0B7-0FC5-434D-98B2-07049B780EB7
+    alias: Her Bedside 50% at 22:00
     trigger:
       - platform: time
         at: '22:00:00'
@@ -35,7 +37,8 @@
           brightness: 144
           
 
-  - alias: His Bedside 25% at 22:30
+  - id: 7CB1D880-BBDE-474A-A51D-62CE8381EF03
+    alias: His Bedside 25% at 22:30
     trigger:
       - platform: time
         at: '22:30:00'
@@ -52,7 +55,8 @@
           brightness: 64
           rgb_color: [243, 179, 80]
 
-  - alias: Her Bedside 25% at 22:30
+  - id: 7E0C638F-8C91-4F58-B931-5A0D47175E64
+    alias: Her Bedside 25% at 22:30
     trigger:
       - platform: time
         at: '22:30:00'
@@ -69,7 +73,8 @@
           brightness: 64
           
 
-  - alias: His Bedside 10% at 22:45
+  - id: DE364484-C007-4478-9B74-645CC49E6B32
+    alias: His Bedside 10% at 22:45
     trigger:
       - platform: time
         at: '22:45:00'
@@ -86,7 +91,8 @@
           brightness: 25
           rgb_color: [243, 179, 80]
 
-  - alias: Her Bedside 10% at 22:45
+  - id: D4E0C732-6EDA-466B-BFAA-E9FFD85F266B
+    alias: Her Bedside 10% at 22:45
     trigger:
       - platform: time
         at: '22:45:00'
@@ -103,7 +109,8 @@
           brightness: 25
           
 
-  - alias: His Bedside 5% at 23:00
+  - id: 06E4F986-CD3F-436D-BE8C-145906CFF6D1
+    alias: His Bedside 5% at 23:00
     trigger:
       - platform: time
         at: '23:00:00'
@@ -120,7 +127,8 @@
           brightness: 12
           rgb_color: [243, 179, 80]
 
-  - alias: Her Bedside 5% at 23:00
+  - id: 291B0ADE-4EC7-44D6-A53D-DCC5E004EA63
+    alias: Her Bedside 5% at 23:00
     trigger:
       - platform: time
         at: '23:00:00'
@@ -137,7 +145,8 @@
           brightness: 12
           
 
-  - alias: His Bedside off at 23:15
+  - id: AFD55A34-85CE-4328-90F6-B95D44D96188
+    alias: His Bedside off at 23:15
     trigger:
       - platform: time
         at: '23:15:00'
@@ -151,7 +160,8 @@
         entity_id:
           - light.his_bedside
 
-  - alias: Her Bedside off at 23:15
+  - id: 3D8F8B4E-9BCB-4184-AA1F-FC6ADD5F5A79
+    alias: Her Bedside off at 23:15
     trigger:
       - platform: time
         at: '23:15:00'
@@ -165,7 +175,8 @@
         entity_id:
           - light.her_bedside
 
-  - alias: Both Bedsides off at 08:00
+  - id: 604CAB74-62EC-4558-B2BF-C30C3F02DA4C
+    alias: Both Bedsides off at 08:00
     trigger:
       - platform: time
         at: '08:00:00'
@@ -178,7 +189,8 @@
 
 
   ####### Upper Hallway #######
-  - alias: Upstairs hallway 10% at 23:00
+  - id: ACAB2159-9E63-4182-BFBE-6015DA6DDA90
+    alias: Upstairs hallway 10% at 23:00
     trigger:
       - platform: time
         at: '23:00:00'
@@ -194,7 +206,8 @@
         data:
           brightness: 25
 
-  - alias: Upstairs hallway 30% at 20:30
+  - id: 343ECA76-B218-4602-8551-37663F42AF9D
+    alias: Upstairs hallway 30% at 20:30
     trigger:
       - platform: time
         at: '20:30:00'
@@ -217,7 +230,8 @@
           brightness: 45
 
   ####### Amandas room #######
-  - alias: Turn off Amandas room at 8:00
+  - id: 22EBCDE4-5910-4506-ABF0-79E9579733FF
+    alias: Turn off Amandas room at 8:00
     trigger:
       - platform: time
         at: '08:00:00'
@@ -226,7 +240,8 @@
       entity_id:
         - switch.amanda_ceiling
 
-  - alias: Reset morning sequence counter
+  - id: 3BD242DE-56AC-46E3-B567-90AA6318139A
+    alias: Reset morning sequence counter
     trigger:
       - platform: time
         at: '23:59:59'

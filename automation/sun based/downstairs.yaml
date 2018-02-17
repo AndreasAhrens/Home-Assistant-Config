@@ -1,5 +1,6 @@
   ####### STAIRS #######
-  - alias: Turn on Stairs light at sunset
+  - id: 1459D8A7-AC58-47A8-9158-4AD6DB65F44C
+    alias: Turn on Stairs light at sunset
     trigger:
       - platform: sun
         event: sunset
@@ -19,7 +20,8 @@
           - switch.hallway_stairs
 
 
-  - alias: Turn off Stairs light at sunrise
+  - id: 43A62A01-A9DD-40BB-BE93-83B38ABB3081
+    alias: Turn off Stairs light at sunrise
     trigger:
       - platform: sun
         event: sunrise
@@ -29,7 +31,8 @@
         entity_id:
           - switch.hallway_stairs
 
-  - alias: Turn off ceiling light wall light in livingroom at sunrise
+  - id: 0A7F4CEC-58A8-42D2-9385-77F217473147
+    alias: Turn off ceiling light wall light in livingroom at sunrise
     trigger:
       - platform: sun
         event: sunrise
@@ -41,7 +44,8 @@
           - light.living_room_wall
 
   
-  - alias: Turn on living room ceiling at sunset
+  - id: 758CBBBF-8F1A-4E26-A740-F2D2DCB52FA2
+    alias: Turn on living room ceiling at sunset
     trigger:
       - platform: sun
         event: sunset
@@ -72,7 +76,8 @@
           brightness: 150
           transition: 1800
 
-  - alias: Turn on kitchen top on sun down
+  - id: 6EA4F14A-53B0-4782-94D4-81435496637E
+    alias: Turn on kitchen top on sun down
     trigger:
       - platform: sun
         event: sunset

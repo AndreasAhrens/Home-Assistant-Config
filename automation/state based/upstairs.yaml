@@ -1,5 +1,6 @@
   # Turn off bedroom when no movement for 30 minutes
-  - alias: Turn off Bedroom 30 minutes after last movement
+  - id: 0A70D17A-1F2E-424F-BC9C-7988264A1B1B
+    alias: Turn off Bedroom 30 minutes after last movement
     trigger:
       platform: state
       entity_id: binary_sensor.bedroom_movement
@@ -14,7 +15,8 @@
         - light.her_bedside
         - light.his_bedside
 
-  - alias: Open bedroom rollers if no movement for 60 minutes
+  - id: 6669A088-321A-496E-8C44-B9C44937A012
+    alias: Open bedroom rollers if no movement for 60 minutes
     trigger:
       - platform: state
         entity_id: binary_sensor.bedroom_movement
@@ -26,7 +28,8 @@
         entity_id: 
           - cover.bedroom_rollers
 
-  - alias: Open cover if door button double clicked and it is closed
+  - id: E46AB07D-F1BE-44A3-A3E3-A37C6E1D849B
+    alias: Open cover if door button double clicked and it is closed
     trigger:
       platform: event
       event_type: click
@@ -42,7 +45,8 @@
         entity_id: 
           - cover.bedroom_rollers
 
-  - alias: Close cover if door button double clicked and it is open
+  - id: CC0B930C-E50C-4BFD-AC51-5CBB254B0FC1
+    alias: Close cover if door button double clicked and it is open
     trigger:
       platform: event
       event_type: click
@@ -58,7 +62,8 @@
         entity_id: 
           - cover.bedroom_rollers
 
-  - alias: Turn on bedroom lights if off
+  - id: 5008FD5F-4643-493D-8EDC-0DB57933FE5F
+    alias: Turn on bedroom lights if off
     trigger:
       platform: event
       event_type: click
@@ -75,7 +80,8 @@
           - light.his_bedside
           - light.her_bedside
 
-  - alias: Turn off bedroom lights if on
+  - id: 72D0524F-D910-4B3A-8111-721C64BC7E99
+    alias: Turn off bedroom lights if on
     trigger:
       platform: event
       event_type: click
@@ -92,7 +98,8 @@
           - light.his_bedside
           - light.her_bedside
 
-  - alias: Turn on bedroom fan when temperature in bedroom is above 22
+  - id: 92ACF96F-D684-496D-8BE9-AEB242CF385A
+    alias: Turn on bedroom fan when temperature in bedroom is above 22
     trigger: 
       - platform: numeric_state
         entity_id: sensor.temperature_158d0001701075
@@ -105,7 +112,8 @@
       - service: homeassistant.turn_on
         entity_id: switch.bedroom_fan 
 
-  - alias: Turn off bedroom fan when temperature in bedroom is below 20
+  - id: 0FD6560E-DE4C-4407-92F5-FBB83EB2B5F3
+    alias: Turn off bedroom fan when temperature in bedroom is below 20
     trigger: 
       - platform: numeric_state
         entity_id: sensor.temperature_158d0001701075
@@ -114,7 +122,8 @@
       - service: homeassistant.turn_off
         entity_id: switch.bedroom_fan 
 
-  - alias: Turn on stairs when movement in upstairs hallway and sun is down
+  - id: 8E38BE44-F6D0-4EEA-B1D0-0AB7AF19254C
+    alias: Turn on stairs when movement in upstairs hallway and sun is down
     trigger:
       - platform: state
         entity_id: binary_sensor.motion_sensor_158d0001656570
@@ -128,7 +137,8 @@
       - service: homeassistant.turn_on
         entity_id: switch.hallway_stairs
 
-  - alias: Turn off stairs light 3 minutes after last movement
+  - id: 1D0BB42C-90B5-40CB-9A52-D141FBC75892
+    alias: Turn off stairs light 3 minutes after last movement
     trigger:
       platform: state
       entity_id: binary_sensor.motion_sensor_158d0001656570
@@ -139,7 +149,8 @@
       service: homeassistant.turn_off
       entity_id: switch.hallway_stairs
 
-  - alias: Morning sequence on long click
+  - id: CFD834CC-03BD-47E7-9AC9-FD6EF6976D79
+    alias: Morning sequence on long click
     trigger:
       platform: event
       event_type: click
@@ -149,7 +160,8 @@
     action:
       service: script.morning_sequence
 
-  - alias: Turn on bedside lights at movement when sun is down and time is between 7 and 22
+  - id: CB9DF28D-8ABA-4E80-BE47-3D523B557782
+    alias: Turn on bedside lights at movement when sun is down and time is between 7 and 22
     trigger:
       - platform: state
         entity_id: binary_sensor.bedroom_movement
@@ -185,7 +197,8 @@
           brightness: 135
           rgb_color: [243, 179, 80]
 
-  - alias: Detect AA awake
+  - id: 0569FD95-1FDA-48B7-A512-CA692F4D0C90
+    alias: Detect AA awake
     trigger:
       - platform: state
         entity_id: light.his_bedside
@@ -206,7 +219,8 @@
       service: script.morning_sequence
 
 
-  - alias: Turn off bedside lights 10 minutes after last movement
+  - id: 115E635A-5CFF-4265-8E2A-78F412BCFF99
+    alias: Turn off bedside lights 10 minutes after last movement
     trigger:
       platform: state
       entity_id: binary_sensor.bedroom_movement

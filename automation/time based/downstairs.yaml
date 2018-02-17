@@ -9,7 +9,8 @@
   #       entity_id:
   #         - switch.hallway_stairs
 
-  - alias: Turn on Stairs light at 06:30
+  - id: BEC2470E-9838-4187-BB62-4CB2FAF41187
+    alias: Turn on Stairs light at 06:30
     trigger:
       - platform: time
         at: '06:30:00'
@@ -26,7 +27,8 @@
         entity_id:
           - switch.hallway_stairs
 
-  - alias: Turn off living room ceiling at 22:00 (fade)
+  - id: C2F7C83D-D2A9-467B-A1B2-558BDD5F1441
+    alias: Turn off living room ceiling at 22:00 (fade)
     trigger:
       - platform: time
         at: '22:00:00'
@@ -49,7 +51,8 @@
 
           
   ####### AQUARIUM #######
-  - alias: Turn on aquarium at 07:00
+  - id: 9B571779-BBA0-4EFD-993C-F4AD50E1A50F
+    alias: Turn on aquarium at 07:00
     trigger:
       - platform: time
         at: '07:00:00'
@@ -58,7 +61,8 @@
         entity_id:
           - switch.dining_room_aquarium_2
 
-  - alias: Turn off aquarium at 21:30
+  - id: 95DA2C5A-236A-479E-BB48-771C42BC4166
+    alias: Turn off aquarium at 21:30
     trigger:
       - platform: time
         at: '21:30:00'
@@ -67,7 +71,8 @@
         entity_id:
           - switch.dining_room_aquarium_2
 
-  - alias: Turn off kitchen top on at 21:00
+  - id: F9E14067-AFD8-497B-94A9-2AEFC127C383
+    alias: Turn off kitchen top on at 21:00
     trigger:
       - platform: time
         at: '21:00:00'
@@ -76,7 +81,8 @@
         entity_id:
           - light.kitchen_top
 
-  - alias: Reset fridge counter
+  - id: 4B78E19A-C0D3-48B1-ADF3-337B2AF8EEBC
+    alias: Reset fridge counter
     trigger:
       - platform: time
         at: '23:59:59'

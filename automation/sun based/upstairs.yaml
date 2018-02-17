@@ -1,5 +1,6 @@
   ####### Upper Hallway #######
-  - alias: Turn off upper hallway light at sunrise
+  - id: 127C1A09-2574-4E58-8DE6-39EDE2A19A7E
+    alias: Turn off upper hallway light at sunrise
     trigger:
       - platform: sun
     # Possible values: sunset, sunrise
@@ -11,7 +12,8 @@
         entity_id:
           - light.upstairs_hallway
 
-  - alias: Turn on upper hallway light at sunset not vacation mode
+  - id: C027BAF0-FD13-4546-8BB4-ABECA8183D19
+    alias: Turn on upper hallway light at sunset not vacation mode
     trigger:
       - platform: sun
         event: sunset
@@ -27,7 +29,8 @@
         data:
           brightness: 180
 
-  - alias: Turn on upper hallway light at sunset vacation mode
+  - id: 1EF617CD-BAAE-46A3-9859-41E97156A363
+    alias: Turn on upper hallway light at sunset vacation mode
     trigger:
       - platform: sun
         event: sunset

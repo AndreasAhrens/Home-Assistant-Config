@@ -1,6 +1,7 @@
   ## Plant based automations ##
 
-  - alias: Water if Heart plant humidity is too low
+  - id: E66FE911-238A-40E2-AE7E-711DCC08394F
+    alias: Water if Heart plant humidity is too low
     trigger:
       - platform: time
         minutes: 00

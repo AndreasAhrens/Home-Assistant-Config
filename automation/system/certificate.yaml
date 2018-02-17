@@ -1,5 +1,6 @@
   ####### Renew SSL Cert #######
-  - alias: Auto Renew SSL Cert
+  - id: CB6E4055-E18D-4112-9372-EBAA3F6A648B
+    alias: Auto Renew SSL Cert
     trigger:
       platform: numeric_state
       entity_id: sensor.hassbian_cert_expiry
@@ -7,7 +8,8 @@
     action:
       service: shell_command.renew_ssl
 
-  - alias: SSL expiry notification
+  - id: 9838AA9E-FA1B-4423-9806-485FBA069AE0
+    alias: SSL expiry notification
     trigger:
       platform: numeric_state
       entity_id: sensor.hassbian_cert_expiry

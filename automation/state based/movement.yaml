@@ -1,4 +1,5 @@
-  - alias: 'Andreas Not Home'
+  - id: 57A4D6A5-C155-4872-B9D4-3AAA8F134B13
+    alias: 'Andreas Not Home'
     trigger:
       - platform: zone
         event: leave
@@ -26,7 +27,8 @@
           entity_id: input_select.andreas_location
           option: Not Home
 
-  - alias: 'Andreas Leave Work notification'
+  - id: 6C64E7E3-449A-4C2A-9637-4141A4C44AFF
+    alias: 'Andreas Leave Work notification'
     trigger:
       - platform: zone
         event: leave
@@ -45,7 +47,8 @@
           message: 'Andreas has left work and is on his way home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
       
 
-  - alias: 'Andreas Close to home notification'
+  - id: 5A93A538-8ED5-42AB-B41D-F6767CF4F9C1
+    alias: 'Andreas Close to home notification'
     trigger:
       - platform: zone
         event: enter
@@ -67,7 +70,8 @@
         entity_id:
           - switch.garden_driveway
 
-  - alias: 'Andreas exiting Close to home '
+  - id: EF56F107-0F1C-4487-94CB-6E0340FC7104
+    alias: 'Andreas exiting Close to home '
     trigger:
       - platform: zone
         event: leave
@@ -82,7 +86,8 @@
         entity_id:
           - switch.garden_driveway          
 
-  - alias: 'Andreas Home notification'
+  - id: E28B5A74-0EAF-4E8E-84EF-A9EECC96ED8E
+    alias: 'Andreas Home notification'
     trigger:
       - platform: zone
         event: enter
@@ -109,7 +114,8 @@
         entity_id:
           - switch.garden_driveway
 
-  - alias: 'Andreas Devv position'
+  - id: 246A6F2A-A12C-4E1E-A8BB-94CC03906AAE
+    alias: 'Andreas Devv position'
     trigger:
       - platform: zone
         event: enter
@@ -125,7 +131,9 @@
           entity_id: input_select.andreas_location
           option: Devv
 
-  - alias: 'Andreas Hyllinge position'
+  - id: 1C5BBBEF-8BBA-49DE-9369-64FB88B49CDD
+    id: 1BBE7B5C-20E9-4676-8494-93EBE1EFA8A6
+      alias: 'Andreas Hyllinge position'
     trigger:
       - platform: zone
         event: enter
@@ -141,7 +149,8 @@
           entity_id: input_select.andreas_location
           option: Hyllinge
 
-  - alias: 'Andreas Hyllinge input select'
+  - id: 1BBE7B5C-20E9-4676-8494-93EBE1EFA8A6
+    alias: 'Andreas Hyllinge input select'
     trigger:
       - platform: state
         entity_id: input_select.andreas_location
@@ -151,7 +160,8 @@
         data:
           message: 'Andreas is at Hyllinge, shold he buy something?'
 
-  - alias: 'Andreas Väla position'
+  - id: DACEA012-15F3-456D-89C9-9E6488D020FC
+    alias: 'Andreas Väla position'
     trigger:
       - platform: zone
         event: enter
@@ -167,7 +177,8 @@
           entity_id: input_select.andreas_location
           option: Vala
 
-  - alias: 'Andreas Väla input select'
+  - id: B6D0647D-7BC1-4B1F-AA20-8682EFC305E2
+    alias: 'Andreas Väla input select'
     trigger:
       - platform: state
         entity_id: input_select.andreas_location
@@ -177,7 +188,8 @@
         data:
           message: 'Andreas is at Väla, shold he buy something?'
 
-  - alias: 'Andreas Lidl position'
+  - id: E0B44002-20D3-4D1E-AD49-195205A5280E
+    alias: 'Andreas Lidl position'
     trigger:
       - platform: zone
         event: enter
@@ -194,7 +206,8 @@
           option: Lidl
 
 
-  - alias: 'Andreas Lidl input select'
+  - id: 5A208C00-51ED-4A75-960E-05A6F536C7AB
+    alias: 'Andreas Lidl input select'
     trigger:
       - platform: state
         entity_id: input_select.andreas_location
@@ -208,7 +221,8 @@
           - switch.garden_driveway
 
 
-  - alias: 'Andreas Home MQTT'
+  - id: 75ECBAC9-F8BE-4640-966D-412A3BAFFA78
+    alias: 'Andreas Home MQTT'
     trigger:
       - platform: zone
         event: enter
@@ -226,7 +240,8 @@
       - service: switch.turn_on
         entity_id: switch.andreas_home
 
-  - alias: 'Andreas Leave Home MQTT'
+  - id: 781D5168-8D9F-4A39-A3A6-8620D48484A8
+    alias: 'Andreas Leave Home MQTT'
     trigger:
       - platform: zone
         event: leave
@@ -244,7 +259,8 @@
       - service: switch.turn_off
         entity_id: switch.andreas_home
 
-  - alias: 'Amanda leaving school'
+  - id: 6D0679A5-E9A4-4D94-ACAF-B07D1342894A
+    alias: 'Amanda leaving school'
     trigger:
       - platform: zone
         event: leave
@@ -258,7 +274,8 @@
         data:
           message: "Amanda is leaving school"
 
-  - alias: 'Amanda arriving at school'
+  - id: 53FE03E6-5503-4057-BB7C-48E226F99332
+    alias: 'Amanda arriving at school'
     trigger:
       - platform: zone
         event: enter

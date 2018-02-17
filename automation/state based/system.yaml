@@ -1,4 +1,5 @@
-  - alias: Update notifications
+  - id: 2BC2704A-5A04-4BA3-BC3B-481DCA3CA09B
+    alias: Update notifications
     trigger:
       - platform: state
         entity_id: updater.updater

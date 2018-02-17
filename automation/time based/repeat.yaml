@@ -1,4 +1,5 @@
-  - alias: calculate time since last watering
+  - id: A7F5480F-10CC-489A-A777-E7D2B35B9A5C
+    alias: calculate time since last watering
     trigger:
       - platform: time
         seconds: 00

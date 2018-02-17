@@ -1,5 +1,6 @@
   ####### FRONT DOOR #######
-  - alias: Turn on front door light at sunset
+  - id: 20C6F45F-9058-4872-B0DC-5EDBF3EF27EF
+    alias: Turn on front door light at sunset
     trigger:
       - platform: sun
     # Possible values: sunset, sunrise
@@ -16,7 +17,8 @@
 
 
 
-  - alias: Turn off front door light at sunrise OR 8:30 if not off
+  - id: CC22AAC4-D5DF-45DF-BE3E-229BC3D95782
+    alias: Turn off front door light at sunrise OR 8:30 if not off
     trigger:
       - platform: sun
     # Possible values: sunset, sunrise
@@ -48,7 +50,8 @@
   #        - switch.garden_driveway
 
 
-  - alias: Turn off DRIVEWAY light at sunrise
+  - id: 1CDC8162-CEBA-4711-995E-AA176DA65537
+    alias: Turn off DRIVEWAY light at sunrise
     trigger:
       - platform: sun
     # Possible values: sunset, sunrise
@@ -61,7 +64,8 @@
           - switch.garden_driveway
 
 ##### Mailbox ####
-  - alias: Turn on mailbox outside light at sunset
+  - id: CF122F2B-4CF5-423B-B77B-457AC69F1BC8
+    alias: Turn on mailbox outside light at sunset
     trigger:
       - platform: sun
         event: sunset
@@ -71,7 +75,8 @@
         entity_id:
           - switch.mailbox_outside_light
 
-  - alias: Turn off mailbox outside light at sunrise
+  - id: 90A9784D-4EBC-473E-BE3C-695777EFD3F4
+    alias: Turn off mailbox outside light at sunrise
     trigger:
       - platform: sun
     # Possible values: sunset, sunrise

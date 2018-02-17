@@ -1,6 +1,7 @@
   ####### TV and media #######
 
-  - alias: Set TV to movie mode
+  - id: 5345AE44-3381-4A41-8B4C-DD288B8FB6A5
+    alias: Set TV to movie mode
     trigger:
       - platform: state
         entity_id: media_player.apple_tv_i_vardagsrum
@@ -93,7 +94,8 @@
 
   ####### Text to speech automations #######
 
-  - alias: 'Test dummy switch'
+  - id: A0ED47B0-FAF8-4A41-A427-267A85EA220F
+    alias: 'Test dummy switch'
     trigger:
       - platform: state
         entity_id: switch.dummy_switch

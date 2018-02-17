@@ -1,4 +1,5 @@
-  - alias: Turn on livingroom fan when temperature in livingroom above 23
+  - id: F86286B2-CECA-4679-ABB5-A9C1D26FC549
+    alias: Turn on livingroom fan when temperature in livingroom above 23
     trigger: 
       #- platform: numeric_state
       #  entity_id: sensor.livingroom_temperature_2
@@ -22,7 +23,8 @@
       - service: homeassistant.turn_on
         entity_id: switch.living_room_fan
 
-  - alias: Turn off livingroom fan when temperature in livingroom below 20
+  - id: 0BAF90BD-A380-440D-A974-F605BE944552
+    alias: Turn off livingroom fan when temperature in livingroom below 20
     trigger: 
       - platform: numeric_state
         entity_id: sensor.livingroom_temperature_2
@@ -31,7 +33,8 @@
       - service: homeassistant.turn_off
         entity_id: switch.living_room_fan
 
-  - alias: Turn on stairs, driveway and door light when hallway door is opened
+  - id: 36F4A03F-BFA2-4430-B576-ECBD25F73AEC
+    alias: Turn on stairs, driveway and door light when hallway door is opened
     trigger:
       - platform: state
         entity_id: binary_sensor.door_window_sensor_158d00016c7655
@@ -52,7 +55,8 @@
           - switch.front_door_plug
           - switch.garden_driveway
 
-  - alias: Turn off stairs, driveway and door light when hallway door is closed for 5 minutes
+  - id: 51ADF970-37BE-423D-8104-F8EDD1256DE3
+    alias: Turn off stairs, driveway and door light when hallway door is closed for 5 minutes
     trigger:
       - platform: state
         entity_id: binary_sensor.door_window_sensor_158d00016c7655
@@ -66,7 +70,8 @@
           - switch.front_door_plug
           - switch.garden_driveway
 
-  - alias: Turn on stairs when movement in hallway and sun is down
+  - id: 3F97CE3A-A636-4A2A-8DA4-1716B724572B
+    alias: Turn on stairs when movement in hallway and sun is down
     trigger:
       - platform: state
         entity_id: binary_sensor.motion_sensor_158d0001655fde
@@ -80,7 +85,8 @@
       - service: homeassistant.turn_on
         entity_id: switch.hallway_stairs
 
-  - alias: Close bedroom rollers when livingroom door is closed and it's after 19:00
+  - id: A0BEE8C9-A188-4E25-9134-A53160F2838C
+    alias: Close bedroom rollers when livingroom door is closed and it's after 19:00
     trigger:
       - platform: state
         entity_id: binary_sensor.door_window_sensor_158d0001d84f5f
@@ -94,7 +100,8 @@
           - cover.bedroom_rollers
 
 
-  - alias: Turn off stairs light 3 minutes after last movement
+  - id: EB6A3F7C-99C9-440E-94A2-D0738CFFAEE8
+    alias: Turn off stairs light 3 minutes after last movement
     trigger:
       platform: state
       entity_id: binary_sensor.motion_sensor_158d0001655fde
@@ -105,7 +112,8 @@
       service: homeassistant.turn_off
       entity_id: switch.hallway_stairs
 
-  - alias: Turn on dining room cabinet light when movement in dining room and sun is down
+  - id: 01EE994F-E267-4424-99C9-7CD96B476179
+    alias: Turn on dining room cabinet light when movement in dining room and sun is down
     trigger:
       - platform: state
         entity_id: binary_sensor.motion_sensor_158d0001655ff2
@@ -120,7 +128,8 @@
         entity_id: switch.dining_room_cabinet
 
 
-  - alias: Turn off dining room cabinet light 10 minutes after last movement
+  - id: 863EAD3C-32C5-4431-A560-D680A3949371
+    alias: Turn off dining room cabinet light 10 minutes after last movement
     trigger:
       platform: state
       entity_id: binary_sensor.motion_sensor_158d0001655ff2
@@ -131,7 +140,8 @@
       service: homeassistant.turn_off
       entity_id: switch.dining_room_cabinet
 
-  - alias: Turn on kitchen top light when movement in kitchen and sun is down
+  - id: 0FDECB19-C960-41CD-8119-3A5657216230
+    alias: Turn on kitchen top light when movement in kitchen and sun is down
     trigger:
       - platform: state
         entity_id: binary_sensor.motion_sensor_158d0001656584
@@ -146,7 +156,8 @@
         entity_id: light.kitchen_top
 
 
-  - alias: Turn off kitchen top light 10 minutes after last movement
+  - id: DCC9704E-B755-4B35-B92F-353272A240B4
+    alias: Turn off kitchen top light 10 minutes after last movement
     trigger:
       platform: state
       entity_id: binary_sensor.motion_sensor_158d0001656584
@@ -157,7 +168,8 @@
       service: homeassistant.turn_off
       entity_id: light.kitchen_top
 
-  - alias: Turn on livingroom wall & ceiling light when movement in living room and sun is down
+  - id: 824DC1AC-BBC6-4730-B528-4A7A745ED927
+    alias: Turn on livingroom wall & ceiling light when movement in living room and sun is down
     trigger:
       - platform: state
         entity_id: binary_sensor.motion_sensor_158d0001656600
@@ -187,7 +199,8 @@
           brightness: 90
           transition: 10
 
-  - alias: Turn on livingroom wall and ceiling if livingroom door is opened if dark enough
+  - id: B453FDF2-5B2C-4B49-B5FD-66B60228E84A
+    alias: Turn on livingroom wall and ceiling if livingroom door is opened if dark enough
     trigger:
       - platform: state
         entity_id: binary_sensor.door_window_sensor_158d0001d84f5f
@@ -212,7 +225,8 @@
           transition: 10
 
 
-  - alias: Turn off living room wall light 10 minutes after last movement
+  - id: B5A88593-BB35-4EA8-9E65-21DBE47753B0
+    alias: Turn off living room wall light 10 minutes after last movement
     trigger:
       platform: state
       entity_id: binary_sensor.motion_sensor_158d0001656600
@@ -236,7 +250,8 @@
       - service: homeassistant.turn_off
         entity_id: group.livingroom_ceiling
 
-  - alias: Turn on hallways stairs when button is long clicked if off
+  - id: C0D4D88F-B274-45A0-93A7-EAB7B41DD0CE
+    alias: Turn on hallways stairs when button is long clicked if off
     trigger:
       platform: event
       event_type: click
@@ -251,7 +266,8 @@
       service: homeassistant.turn_on
       entity_id: switch.hallway_stairs
 
-  - alias: Turn off hallways stairs when button is long clicked if on
+  - id: 8E5EE016-01A6-434A-8CE2-69CE4E5559CE
+    alias: Turn off hallways stairs when button is long clicked if on
     trigger:
       platform: event
       event_type: click
@@ -266,7 +282,8 @@
       service: homeassistant.turn_off
       entity_id: switch.hallway_stairs
 
-  - alias: Fridge counter
+  - id: 75ED9051-C79E-4111-954A-8458190EE89E
+    alias: Fridge counter
     trigger:
       platform: state
       entity_id: binary_sensor.door_window_sensor_158d00016c7ccd

@@ -1,5 +1,6 @@
   ####### Mailbox automations #######
-  - alias: Turn on mailbox inside light when hatch open
+  - id: F3B3DFA4-FC39-4CCD-AEE6-8A666FEA83C7
+    alias: Turn on mailbox inside light when hatch open
     trigger:
       - platform: state
         entity_id: sensor.mailbox_hatch
@@ -10,7 +11,8 @@
           - switch.mailbox_inside_light
 
           
-  - alias: Turn off mailbox inside light when hatch closed
+  - id: 80335F1F-DA63-4371-A5A2-C4E12B42AE06
+    alias: Turn off mailbox inside light when hatch closed
     trigger:
       - platform: state
         entity_id: sensor.mailbox_hatch
@@ -21,7 +23,8 @@
           - switch.mailbox_inside_light
 
           
-  - alias: Turn on mailbox inside light when door open
+  - id: 81CC64A6-9CC9-4187-8578-9FFBA3474950
+    alias: Turn on mailbox inside light when door open
     trigger:
       - platform: state
         entity_id: sensor.mailbox_door
@@ -30,7 +33,8 @@
       - service: homeassistant.turn_on
         entity_id:
           - switch.mailbox_inside_light
-  - alias: Turn off mailbox inside light when door closed
+  - id: 6557DFFF-C090-411D-A22C-2DB4E3DDDAC5
+    alias: Turn off mailbox inside light when door closed
     trigger:
       - platform: state
         entity_id: sensor.mailbox_door
@@ -44,7 +48,8 @@
 
 
 
-  - alias: Notify via email and app when hatch open
+  - id: FFAD72B5-F002-41A7-BFFA-B3F8B19B7D5B
+    alias: Notify via email and app when hatch open
     trigger:
       - platform: state
         entity_id: sensor.mailbox_hatch
@@ -67,7 +72,8 @@
 
 
 
-  - alias: Notify when person at the door
+  - id: 16A5115D-41EF-40C8-931D-E9089CFB4572
+    alias: Notify when person at the door
     trigger:
       - platform: state
         entity_id: switch.dummy_switch  

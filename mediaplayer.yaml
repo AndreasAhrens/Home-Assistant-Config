@@ -9,4 +9,4 @@
     volume: 0.45                   # Optional - default is 0.5
     pre_silence_duration: 1       # Optional - No. of seconds silence before the TTS (default is 0)
   - platform: cast
-    host: 192.168.1.16
+    #host: 192.168.1.16

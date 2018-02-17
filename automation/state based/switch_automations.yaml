@@ -30,7 +30,7 @@
 
   ##### Livingroom left button #####
   # Set an input select when button is clicked.
-  - id: livingroom_switch_left_button_single_click
+  - id: 6A2F6211-677D-410E-A657-C7C6D1812089
     alias: Livingroom switch left button single click
     trigger:
       - platform: event
@@ -49,7 +49,7 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - id: livingroom_switch_left_button_double_click
+  - id: 9C9A8702-9167-4EC4-A760-609271470F6D
     alias: Livingroom switch left button double click
     trigger:
       - platform: event
@@ -68,7 +68,7 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - id: livingroom_switch_left_button_off
+  - id: F88BC003-BA85-4108-8FF6-47EE35C01F01
     alias: Livingroom switch left button set to off
     trigger:
       - platform: state
@@ -88,7 +88,7 @@
           option: 'off'
 
   # If the input select is double, turn off the ceiling group if on, turn on if off. Also set status to off.
-  - id: livingroom_switch_left_button_double_click_ceiling_is_on
+  - id: 44DEE307-E55E-42F1-9CFA-6D79C8C2A920
     alias: Livingroom switch left button double click ceiling is on
     trigger:
       - platform: state
@@ -107,7 +107,7 @@
           entity_id: input_select.livingroom_switch_left_status
           option: 'off'
 
-  - id: Livingroom_switch_left_button_double_click_ceiling_is_off
+  - id: 1E30F10C-8881-433B-8814-8E28E5EF0BDF
     alias: Livingroom switch left button double click ceiling is off
     trigger:
       - platform: state
@@ -131,7 +131,7 @@
   # 5 is pretty perfect for low light like watching tv, and 90 is too bright already.
   # 110 is the maximum number for the input_number so I needed something that maxed out over 100 but below 110.
   # Also sets the status to off so it can be used again without waiting for the reset timer
-  - id: Livingroom_switch_left_button_single_press_increase_number
+  - id: E287CC07-EDF4-4963-A94C-108811E46CCB
     alias: Livingroom switch left button single press increase number
     trigger:
       - platform: state
@@ -150,7 +150,7 @@
           option: 'off'
       
   # If we go over 100, reduce to 5 to restart the flow. 
-  - id: Set_livingroom_switch_state_to_5_if_over_100
+  - id: 7104B3FE-EFA5-455D-A1CE-7822C1A8A1ED
     alias: Set livingroom switch state to 5 if over 100
     trigger:
       - platform: numeric_state
@@ -164,7 +164,7 @@
           value: '5'
 
   # When we change the input_number, set the ceiling group to that brightness as a percentage
-  - id: Set_livingroom_ceiling_based_on_input_number
+  - id: 531E17EB-19EE-43FC-860F-CFB0195A5C6A
     alias: Set livingroom ceiling based on input_number
     trigger:
       - platform: state
@@ -196,7 +196,7 @@
 
 ##### Livingroom right button #####
   # Set an input select when button is clicked.
-  - id: Livingroom_switch_right_button_single_click
+  - id: A74B9CB0-2397-4925-B0E3-BA4FB4C4640E
     alias: Livingroom switch right button single click
     trigger:
       - platform: event
@@ -919,8 +919,8 @@
           option: 'off'
       
   # If we go over 100, reduce to 5 to restart the flow. 
-  - id: 0CE7E039-88CB-45E0-AE35-18D70AA95125
-    alias: Set Bedroom switch state to 5 if over 100
+  - id: 9E0663A7-E599-4C97-A63E-10B1FA6BA469
+    alias: Set Bedroom switch left state to 5 if over 100
     trigger:
       - platform: numeric_state
         entity_id: input_number.bedroom_switch_left_number
@@ -1068,7 +1068,7 @@
       
   # If we go over 100, reduce to 5 to restart the flow. 
   - id: 8DC700B0-7C20-4236-B1C8-86518D15A509
-    alias: Set Bedroom switch state to 5 if over 100
+    alias: Set Bedroom switch right state to 5 if over 100
     trigger:
       - platform: numeric_state
         entity_id: input_number.bedroom_switch_right_number

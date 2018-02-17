@@ -215,7 +215,8 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - alias: Livingroom switch right button double click
+  - id: 7E84178C-C831-4DBB-906F-D05A8BE9157C
+    alias: Livingroom switch right button double click
     trigger:
       - platform: event
         event_type: click
@@ -233,7 +234,8 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - alias: Livingroom switch right button set to off
+  - id: 19B628D1-869A-47A2-AD3E-9F146A5D26B6
+    alias: Livingroom switch right button set to off
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_right_status
@@ -252,7 +254,8 @@
           option: 'off'
 
   # If the input select is double, turn off the ceiling group if on, turn on if off. Also set status to off.
-  - alias: Livingroom switch right button double click ceiling is on
+  - id: 65CA679D-5ED8-4691-91A4-851A555CB2DC
+    alias: Livingroom switch right button double click ceiling is on
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_right_status
@@ -270,7 +273,8 @@
           entity_id: input_select.livingroom_switch_right_status
           option: 'off'
 
-  - alias: Livingroom switch right button double click ceiling is off
+  - id: 65CA679D-5ED8-4691-91A4-851A555CB2DC
+    alias: Livingroom switch right button double click ceiling is off
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_right_status
@@ -293,7 +297,8 @@
   # 5 is pretty perfect for low light like watching tv, and 90 is too bright already.
   # 110 is the maximum number for the input_number so I needed something that maxed out over 100 but below 110.
   # Also sets the status to off so it can be used again without waiting for the reset timer
-  - alias: Livingroom switch right button single press increase number
+  - id: DB1B6D71-773F-4380-A99F-BFED09ED5D42
+    alias: Livingroom switch right button single press increase number
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_right_status
@@ -311,7 +316,8 @@
           option: 'off'
       
   # If we go over 100, reduce to 5 to restart the flow. 
-  - alias: Set livingroom switch state to 5 if over 100
+  - id: 4E44CB4F-B7BF-4B9C-B093-263C0B98C483
+    alias: Set livingroom switch state to 5 if over 100
     trigger:
       - platform: numeric_state
         entity_id: input_number.livingroom_switch_right_number
@@ -324,7 +330,8 @@
           value: '5'
 
   # When we change the input_number, set the ceiling group to that brightness as a percentage
-  - alias: Set livingroom ceiling based on input_number
+  - id: 32F64A12-BCD0-4A34-A360-E519523CD5E9
+    alias: Set livingroom ceiling based on input_number
     trigger:
       - platform: state
         entity_id: input_number.livingroom_switch_right_number
@@ -339,7 +346,8 @@
 
   ##### Livingroom both buttons #####
   # Set an input select when button is clicked.
-  - alias: Livingroom switch both buttons single click
+  - id: C3E8C1A3-4D22-40B6-882B-3CBB7D93A417
+    alias: Livingroom switch both buttons single click
     trigger:
       - platform: event
         event_type: click
@@ -357,7 +365,8 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - alias: Livingroom switch both buttons double click
+  - id: 42DD21AE-3600-4EBC-A008-9E4F9F101B6D
+    alias: Livingroom switch both buttons double click
     trigger:
       - platform: event
         event_type: click
@@ -375,7 +384,8 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - alias: Livingroom switch both buttons set to off
+  - id: 5D5E3280-1018-4E57-BA07-E872D067425C
+    alias: Livingroom switch both buttons set to off
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_both_status
@@ -394,7 +404,8 @@
           option: 'off'
 
   # If the input select is double, turn off the livingroom fan if on, turn on if off. Also set status to off.
-  - alias: Livingroom switch both buttons double click fan is on
+  - id: 74248EB9-A2E3-420E-8987-A1A49AFA7B46
+    alias: Livingroom switch both buttons double click fan is on
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_both_status
@@ -412,7 +423,8 @@
           entity_id: input_select.livingroom_switch_both_status
           option: 'off'
 
-  - alias: Livingroom switch both buttons double click fan is off
+  - id: CCBDA265-0D04-4C4B-B809-A07CCACFE9F5
+    alias: Livingroom switch both buttons double click fan is off
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_both_status
@@ -432,7 +444,8 @@
 
 
   # If the input select is single, turn off the livingroom tv bench if on, turn on if off. Also set status to off.
-  - alias: Livingroom switch both buttons double click tv bench is on
+  - id: 5E9F4C9A-806B-43E8-9C3A-5418DB950A1D
+    alias: Livingroom switch both buttons double click tv bench is on
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_both_status
@@ -452,7 +465,8 @@
           entity_id: input_select.livingroom_switch_both_status
           option: 'off'
 
-  - alias: Livingroom switch both button double click tv bench is off
+  - id: 49B4CBE9-222B-4A4C-B7DC-4FE09E17A9FC
+    alias: Livingroom switch both button double click tv bench is off
     trigger:
       - platform: state
         entity_id: input_select.livingroom_switch_both_status
@@ -482,7 +496,8 @@
 
   ##### Diningroom left button #####
   # Set an input select when button is clicked.
-  - alias: Diningroom switch left button single click
+  - id: 44BC2D28-6ABC-4A1B-84CC-297A0F2EF4F6
+    alias: Diningroom switch left button single click
     trigger:
       - platform: event
         event_type: click
@@ -500,7 +515,8 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - alias: Diningroom switch left button double click
+  - id: B208FB14-94F2-42F9-BCD3-AC3262325151
+    alias: Diningroom switch left button double click
     trigger:
       - platform: event
         event_type: click
@@ -518,7 +534,8 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - alias: Diningroom switch left button set to off
+  - id: 01BF9737-5D56-48FE-8EF7-1943400E5DF5
+    alias: Diningroom switch left button set to off
     trigger:
       - platform: state
         entity_id: input_select.diningroom_switch_left_status
@@ -537,7 +554,8 @@
           option: 'off'
 
   # If the input select is sinlge, turn off the diningroom table light if on, turn on if off. Also set status to off.
-  - alias: Diningroom switch left button single click ceiling is on
+  - id: DF42248B-A7C8-4F99-88F0-188FA08FB20F
+    alias: Diningroom switch left button single click ceiling is on
     trigger:
       - platform: state
         entity_id: input_select.diningroom_switch_left_status
@@ -555,7 +573,8 @@
           entity_id: input_select.diningroom_switch_left_status
           option: 'off'
 
-  - alias: Diningroom switch left button single click ceiling is off
+  - id: E81EEB25-6F34-4B1B-BAB5-B4EA92F8DF16
+    alias: Diningroom switch left button single click ceiling is off
     trigger:
       - platform: state
         entity_id: input_select.diningroom_switch_left_status
@@ -577,7 +596,8 @@
 
 ##### Diningroom right button #####
   # Set an input select when button is clicked.
-  - alias: Diningroom switch right button single click
+  - id: D247158F-AA6F-4D9D-B245-D8F1E250AF07
+    alias: Diningroom switch right button single click
     trigger:
       - platform: event
         event_type: click
@@ -595,7 +615,8 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - alias: Diningroom switch right button single click
+  - id: 1FE238BB-C9F5-4399-A466-62735B7F2CF5
+    alias: Diningroom switch right button single click
     trigger:
       - platform: event
         event_type: click
@@ -613,7 +634,8 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - alias: Diningroom switch right button set to off
+  - id: 85237DFB-940A-4D72-98F7-68E741A34D3F
+    alias: Diningroom switch right button set to off
     trigger:
       - platform: state
         entity_id: input_select.diningroom_switch_right_status
@@ -632,7 +654,8 @@
           option: 'off'
 
   # If the input select is single, turn off the ceiling group if on, turn on if off. Also set status to off.
-  - alias: Diningroom switch right button double click ceiling is on
+  - id: F8ACF702-E076-449B-80FE-89CF2711A797
+    alias: Diningroom switch right button double click ceiling is on
     trigger:
       - platform: state
         entity_id: input_select.diningroom_switch_right_status
@@ -650,7 +673,8 @@
           entity_id: input_select.diningroom_switch_right_status
           option: 'off'
 
-  - alias: Diningroom switch right button single click ceiling is off
+  - id: F3B8F6B8-2DB1-458C-8B16-5237C3217881
+    alias: Diningroom switch right button single click ceiling is off
     trigger:
       - platform: state
         entity_id: input_select.diningroom_switch_right_status
@@ -672,7 +696,8 @@
 
   ##### Diningroom both buttons #####
   # Set an input select when button is clicked.
-  - alias: Diningroom switch both buttons single click
+  - id: AD8DF3F9-A3F3-472A-AF10-99BCA699F78F
+    alias: Diningroom switch both buttons single click
     trigger:
       - platform: event
         event_type: click
@@ -690,7 +715,8 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - alias: Diningroom switch both buttons double click
+  - id: 4FF730C0-92A6-4143-9CDC-EA5F50002E54
+    alias: Diningroom switch both buttons double click
     trigger:
       - platform: event
         event_type: click
@@ -708,7 +734,8 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - alias: Diningroom switch both buttons set to off
+  - id: CE117ED3-DDCC-4DC0-9C5D-ADDF6DF7E88F
+    alias: Diningroom switch both buttons set to off
     trigger:
       - platform: state
         entity_id: input_select.diningroom_switch_both_status
@@ -727,7 +754,8 @@
           option: 'off'
 
   # If the input select is single, turn off the Diningroom tv bench if on, turn on if off. Also set status to off.
-  - alias: Diningroom switch both buttons double click tv bench is on
+  - id: 92A53DAB-6593-41D7-8CE7-14C1DC78C45E
+    alias: Diningroom switch both buttons double click tv bench is on
     trigger:
       - platform: state
         entity_id: input_select.diningroom_switch_both_status
@@ -745,7 +773,8 @@
           entity_id: input_select.diningroom_switch_both_status
           option: 'off'
 
-  - alias: Diningroom switch both button double click tv bench is off
+  - id: 212E72F2-7C89-4A3E-A359-722D68F22263
+    alias: Diningroom switch both button double click tv bench is off
     trigger:
       - platform: state
         entity_id: input_select.diningroom_switch_both_status
@@ -770,7 +799,8 @@
 
   ##### Bedroom left button #####
   # Set an input select when button is clicked.
-  - alias: Bedroom switch left button single click
+  - id: 162E4E3D-2D20-4DAF-A272-1AAF321BDA77
+    alias: Bedroom switch left button single click
     trigger:
       - platform: event
         event_type: click
@@ -788,7 +818,8 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - alias: Bedroom switch left button double click
+  - id: 6EA639FD-BBCC-4375-9F45-2ABCFAD9DFEC
+    alias: Bedroom switch left button double click
     trigger:
       - platform: event
         event_type: click
@@ -806,7 +837,8 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - alias: Bedroom switch left button set to off
+  - id: 5E52B55B-510C-465E-8075-1DC0FC886F60
+    alias: Bedroom switch left button set to off
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_left_status
@@ -825,7 +857,8 @@
           option: 'off'
 
   # If the input select is double, turn off the her bedside  if on, turn on if off. Also set status to off.
-  - alias: Bedroom switch left button double click her bedside is on
+  - id: F47EE4D3-4134-4953-83AB-499194FF977F
+    alias: Bedroom switch left button double click her bedside is on
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_left_status
@@ -843,7 +876,8 @@
           entity_id: input_select.bedroom_switch_left_status
           option: 'off'
 
-  - alias: Bedroom switch left button double click her bedside is off
+  - id: 6A8D7AE9-0B76-420F-A518-8C850DD8BF9D
+    alias: Bedroom switch left button double click her bedside is off
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_left_status
@@ -866,7 +900,8 @@
   # 5 is pretty perfect for low light like watching tv, and 90 is too bright already.
   # 110 is the maximum number for the input_number so I needed something that maxed out over 100 but below 110.
   # Also sets the status to off so it can be used again without waiting for the reset timer
-  - alias: Bedroom switch left button single press increase number
+  - id: 2FBE77FE-D21F-4676-9B37-33548008AB0F
+    alias: Bedroom switch left button single press increase number
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_left_status
@@ -884,7 +919,8 @@
           option: 'off'
       
   # If we go over 100, reduce to 5 to restart the flow. 
-  - alias: Set Bedroom switch state to 5 if over 100
+  - id: 0CE7E039-88CB-45E0-AE35-18D70AA95125
+    alias: Set Bedroom switch state to 5 if over 100
     trigger:
       - platform: numeric_state
         entity_id: input_number.bedroom_switch_left_number
@@ -897,7 +933,8 @@
           value: '5'
 
   # When we change the input_number, set the ceiling group to that brightness as a percentage
-  - alias: Set Bedroom her bedside based on input_number
+  - id: 9B4CB66E-4E84-4BB7-A818-0D47CBC8FE61
+    alias: Set Bedroom her bedside based on input_number
     trigger:
       - platform: state
         entity_id: input_number.bedroom_switch_left_number
@@ -910,7 +947,8 @@
 
 ##### Bedroom right button #####
   # Set an input select when button is clicked.
-  - alias: Bedroom switch right button single click
+  - id: 60CE557D-6D4C-4569-8F9D-86A86E912FB0
+    alias: Bedroom switch right button single click
     trigger:
       - platform: event
         event_type: click
@@ -928,7 +966,8 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - alias: Bedroom switch right button double click
+  - id: 52F09526-74FC-4BAB-82A6-4A7D9DF909D4
+    alias: Bedroom switch right button double click
     trigger:
       - platform: event
         event_type: click
@@ -946,7 +985,8 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - alias: Bedroom switch right button set to off
+  - id: 31E9FD4F-12F3-4EF2-90A6-E2ACE158C9F7
+    alias: Bedroom switch right button set to off
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_right_status
@@ -965,7 +1005,8 @@
           option: 'off'
 
   # If the input select is double, turn off the his bedside light  if on, turn on if off. Also set status to off.
-  - alias: Bedroom switch right button double click ceiling is on
+  - id: 862EA9DD-C571-4ADD-A2CA-E170FBBA656E
+    alias: Bedroom switch right button double click ceiling is on
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_right_status
@@ -983,7 +1024,8 @@
           entity_id: input_select.bedroom_switch_right_status
           option: 'off'
 
-  - alias: Bedroom switch right button double click ceiling is off
+  - id: 432FFCA4-7816-41B5-B42A-2DE916F7A0AD
+    alias: Bedroom switch right button double click ceiling is off
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_right_status
@@ -1006,7 +1048,8 @@
   # 5 is pretty perfect for low light like watching tv, and 90 is too bright already.
   # 110 is the maximum number for the input_number so I needed something that maxed out over 100 but below 110.
   # Also sets the status to off so it can be used again without waiting for the reset timer
-  - alias: Bedroom switch right button single press increase number
+  - id: CA0C6257-5008-4DD2-A6C3-A21CE622F0F2
+    alias: Bedroom switch right button single press increase number
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_right_status
@@ -1024,7 +1067,8 @@
           option: 'off'
       
   # If we go over 100, reduce to 5 to restart the flow. 
-  - alias: Set Bedroom switch state to 5 if over 100
+  - id: 8DC700B0-7C20-4236-B1C8-86518D15A509
+    alias: Set Bedroom switch state to 5 if over 100
     trigger:
       - platform: numeric_state
         entity_id: input_number.bedroom_switch_right_number
@@ -1037,7 +1081,8 @@
           value: '5'
 
   # When we change the input_number, set the his bedside light to that brightness as a percentage
-  - alias: Set Bedroom ceiling based on input_number
+  - id: B366719B-96D9-4C89-B114-9CF487146358
+    alias: Set Bedroom ceiling based on input_number
     trigger:
       - platform: state
         entity_id: input_number.Bedroom_switch_right_number
@@ -1052,7 +1097,8 @@
 
   ##### Bedroom both buttons #####
   # Set an input select when button is clicked.
-  - alias: Bedroom switch both buttons single click
+  - id: 4C5DD6A7-BA91-46D6-B4CF-B53E4D1C09FF
+    alias: Bedroom switch both buttons single click
     trigger:
       - platform: event
         event_type: click
@@ -1070,7 +1116,8 @@
           option: 'single'
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
-  - alias: Bedroom switch both buttons double click
+  - id: B106752C-57D4-416D-BF4E-1BB838058350
+    alias: Bedroom switch both buttons double click
     trigger:
       - platform: event
         event_type: click
@@ -1088,7 +1135,8 @@
           option: 'double'
 
   # If the input select doesn't change state for 2 seconds, change back to off. 
-  - alias: Bedroom switch both buttons set to off
+  - id: 4531497B-DCF6-4B75-B921-393ECCE10665
+    alias: Bedroom switch both buttons set to off
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_both_status
@@ -1107,7 +1155,8 @@
           option: 'off'
 
   # If the input select is double, turn off the Bedroom fan if on, turn on if off. Also set status to off.
-  - alias: Bedroom switch both buttons double click fan is on
+  - id: BDDC63F5-A68F-49FA-9427-0D563AB6151C
+    alias: Bedroom switch both buttons double click fan is on
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_both_status
@@ -1125,7 +1174,8 @@
           entity_id: input_select.bedroom_switch_both_status
           option: 'off'
 
-  - alias: Bedroom switch both buttons double click fan is off
+  - id: 79FF681C-3FEE-4463-924F-E3AC1E595ED8
+    alias: Bedroom switch both buttons double click fan is off
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_both_status
@@ -1145,7 +1195,8 @@
 
 
   # If the input select is single, open cover if closed, turn close if open. Also set status to off.
-  - alias: Bedroom switch both buttons double click rollers are open
+  - id: 51587587-53B4-46C0-836B-8CF5044C0F87
+    alias: Bedroom switch both buttons double click rollers are open
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_both_status
@@ -1165,7 +1216,8 @@
           entity_id: input_select.bedroom_switch_both_status
           option: 'off'
 
-  - alias: Bedroom switch both button double click rollers are closed
+  - id: 3543F710-44B2-476A-9063-15C17550A73F
+    alias: Bedroom switch both button double click rollers are closed
     trigger:
       - platform: state
         entity_id: input_select.bedroom_switch_both_status

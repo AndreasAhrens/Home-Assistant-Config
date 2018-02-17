@@ -1,5 +1,6 @@
   # Turn off lights when alarm is in home mode 
-  - alias: Alarm status home mode
+  - id: 7B5DB95A-6311-4E2F-B345-7F9B89CE8BB6
+    alias: Alarm status home mode
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -25,7 +26,8 @@
       
 
   # Turn on bedroom lights bright and close rollers when alarm is in home mode and it's before 22:30
-  - alias: Alarm status home mode bright bedroom
+  - id: 1C8848AE-7313-4074-A40D-1104B05BBA6A
+    alias: Alarm status home mode bright bedroom
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -58,7 +60,8 @@
           transition: 120
 
  # Turn on bedroom lights LOW when alarm is in home mode and it's after 22:30
-  - alias: Alarm status home mode low bedroom
+  - id: 4BC4FC90-B804-42F9-A28E-6DB99832EAAD
+    alias: Alarm status home mode low bedroom
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -84,7 +87,8 @@
 
 
   # When Amanda sets Alarm to off, turn off her light
-  - alias: Amanda turned off alarm
+  - id: 500049D3-94A4-4614-B03F-730E1481507C
+    alias: Amanda turned off alarm
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -99,7 +103,8 @@
           - switch.amanda_ceiling
   
   # In the morning, when alarm is turned off, play some nice music. 
-  - alias: Alarm off, play music
+  - id: 8246D8F0-C233-4F3B-9750-A7137B6A4531
+    alias: Alarm off, play music
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -119,7 +124,8 @@
           entity_id: media_player.spotify
 
   # If we leave in less than one hour, stop it anyway. We usually do.
-  - alias: Alarm away mode, stop music
+  - id: FD0102BB-167A-4C06-AF7F-08391C76A044
+    alias: Alarm away mode, stop music
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -144,7 +150,8 @@
             by {{ trigger.to_state.attributes.changed_by }}
 
   # A welcome home is always nice. 
-  - alias: Welcome home
+  - id: 7173FE63-96CC-4B4C-ACDA-7188F218741E
+    alias: Welcome home
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -156,7 +163,8 @@
           entity_id: media_player.mpd
           message: 'Welcome home! I hope your day has been good'
 
-  - alias: Turn on bedroom fan upon alarm home mode if too warm upstairs
+  - id: 1E03847A-B8B9-4D03-B994-D8EC30FD5117
+    alias: Turn on bedroom fan upon alarm home mode if too warm upstairs
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -170,7 +178,8 @@
       - service: homeassistant.turn_on
         entity_id: switch.bedroom_fan 
 
-  - alias: Alarm off turn on fan in livingroom if too warm
+  - id: 564ED718-D107-494A-8173-F4CD0B05AAB9
+    alias: Alarm off turn on fan in livingroom if too warm
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -184,7 +193,8 @@
       - service: homeassistant.turn_on
         entity_id: switch.living_room_fan
 
-  - alias: Alarm on away, turn off all fans
+  - id: F373FC1A-E879-4B66-B071-76F2A4598247
+    alias: Alarm on away, turn off all fans
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -196,7 +206,8 @@
       - service: homeassistant.turn_off
         entity_id: switch.bedroom_fan
 
-  - alias: Alarm on home, turn off fan downstairs
+  - id: 1BB7D4F1-97E8-4A11-9430-0186723444FD
+    alias: Alarm on home, turn off fan downstairs
     trigger:
       - platform: state
         entity_id: alarm_control_panel.hemgatan_alarm
@@ -211,7 +222,8 @@
   #### Movement when alarm on ####
   ################################
 
-  - alias: Movements when alarms is on
+  - id: 236CF836-89EF-4D38-BB11-5096AAB7B866
+    alias: Movements when alarms is on
     trigger:
       - platform: state
         entity_id: binary_sensor.door_window_sensor_158d00015b60d7

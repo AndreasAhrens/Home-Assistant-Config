@@ -83,7 +83,7 @@
       state: below_horizon
     action:
       - service: homeassistant.turn_on
-        entity_id: switch.hallway_stairs
+        entity_id: switch.plug_158d0001dbf3b2
 
   - id: A0BEE8C9-A188-4E25-9134-A53160F2838C
     alias: Close bedroom rollers when livingroom door is closed and it's after 19:00
@@ -100,7 +100,7 @@
           - cover.bedroom_rollers
 
 
-  - id: EB6A3F7C-99C9-440E-94A2-D0738CFFAEE8
+  - id: 7FCA2245-A987-4D98-8ACA-4F641A9A9371
     alias: Turn off stairs light 3 minutes after last movement
     trigger:
       platform: state
@@ -110,7 +110,7 @@
         minutes: 3
     action:
       service: homeassistant.turn_off
-      entity_id: switch.hallway_stairs
+      entity_id: switch.plug_158d0001dbf3b2
 
   - id: 01EE994F-E267-4424-99C9-7CD96B476179
     alias: Turn on dining room cabinet light when movement in dining room and sun is down
@@ -260,11 +260,11 @@
         click_type: long_click_press
     condition:
       - condition: state
-        entity_id: switch.hallway_stairs
+        entity_id: switch.plug_158d0001dbf3b2
         state: 'off'
     action:
       service: homeassistant.turn_on
-      entity_id: switch.hallway_stairs
+      entity_id: switch.plug_158d0001dbf3b2
 
   - id: 8E5EE016-01A6-434A-8CE2-69CE4E5559CE
     alias: Turn off hallways stairs when button is long clicked if on
@@ -276,11 +276,11 @@
         click_type: long_click_press
     condition:
       - condition: state
-        entity_id: switch.hallway_stairs
+        entity_id: switch.plug_158d0001dbf3b2
         state: 'on'
     action:
       service: homeassistant.turn_off
-      entity_id: switch.hallway_stairs
+      entity_id: switch.plug_158d0001dbf3b2
 
   - id: 75ED9051-C79E-4111-954A-8458190EE89E
     alias: Fridge counter

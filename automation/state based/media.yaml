@@ -31,6 +31,81 @@
           brightness: 77
           rgb_color: [45, 37, 77]
 
+  - id: E642C9C3-FE42-4A75-82E4-4CFF544F3486
+    alias: Downstairs tv paused
+    trigger:
+      - platform: state
+        entity_id: media_player.apple_tv_i_vardagsrum
+        to: 'paused'
+      - platform: state
+        entity_id: media_player.living_room
+        to: 'paused'
+    condition:
+      #- condition: template
+      #  value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - light.living_room_wall
+        data: 
+          brightness: 75
+      - service: homeassistant.turn_on
+        entity_id:
+          - group.livingroom_ceiling
+        data: 
+          brightness: 20
+      - service: homeassistant.turn_on
+        entity_id:
+          - light.tv_bench
+        data:
+          brightness: 77
+          rgb_color: [45, 37, 77]
+
+
+  - id: 941466FA-4839-4380-97D0-5D2FD836E8E7
+    alias: Set upstairs TV to movie mode
+    trigger:
+      - platform: state
+        entity_id: media_player.apple_tv_i_sovrum
+        to: 'playing'
+    condition:
+      #- condition: template
+      #  value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - light.his_bedside
+          - light.her_bedside
+        data: 
+          brightness: 10
+
+
+  - id: 62DF8F6A-CA60-4946-87E3-C134792BCEED
+    alias: Upstairs tv paused
+    trigger:
+      - platform: state
+        entity_id: media_player.apple_tv_i_sovrum
+        to: 'paused'
+    condition:
+      #- condition: template
+      #  value_template: '{{ states.sun.sun.attributes.elevation < 0 }}' #only if sun is down
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - light.his_bedside
+          - light.her_bedside
+        data: 
+          brightness: 30
+
   #- alias: Turn on kitchen speaker when kitchen audio is playing
   #  trigger:
   #    - platform: state

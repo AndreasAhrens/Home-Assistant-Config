@@ -222,7 +222,7 @@
 
   - platform: pi_hole
     name: Pi Hole
-    host: 192.168.1.25
+    host: 192.168.1.38
     monitored_conditions:
       - ads_blocked_today
       - ads_percentage_today

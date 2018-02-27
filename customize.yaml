@@ -168,7 +168,13 @@
   binary_sensor.wall_switch_left_158d000163ba89:
     friendly_name: Diningroom switch left
   binary_sensor.wall_switch_right_158d000163ba89:
-    friendly_name: Diningroom switch right
+    friendly_name: Diningroom switch 
+  binary_sensor.wall_switch_both_158d0001639cdc:
+    friendly_name: Upper Hallway switch both
+  binary_sensor.wall_switch_left_158d0001639cdc:
+    friendly_name: Upper Hallway switch left
+  binary_sensor.wall_switch_right_158d0001639cdc:
+    friendly_name: Upper Hallway switch right
   binary_sensor.kallardorr:
     friendly_name: Basement door
     device_class: opening

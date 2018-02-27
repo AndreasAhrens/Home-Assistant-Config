@@ -1238,6 +1238,157 @@
           option: 'off'
 
 
+
+  ###### Upper hallway button ####
+
+  ##### Upper hallway left button #####
+  # Set an input select when button is clicked.
+  - id: CE9674D2-00B8-4E17-A9A7-A98A2973B4A5
+    alias: Upper Hallway switch left button single click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d0001639cdc
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: input_select.upper_hallway_switch_left_status
+        state: 'off'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.upper_hallway_switch_left_status
+          option: 'single'
+
+  # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
+  - id: 516A54AA-9149-4F7E-B8AA-9906839404E3
+    alias: Upper Hallway switch left button double click
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.wall_switch_left_158d0001639cdc
+          click_type: single
+    condition: 
+      - condition: state
+        entity_id: input_select.upper_hallway_switch_left_status
+        state: 'single'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.upper_hallway_switch_left_status
+          option: 'double'
+
+  # If the input select doesn't change state for 2 seconds, change back to off. 
+  - id: 8CB9A77E-0869-4FF8-A1AA-EE6FBCF62C4C
+    alias: Upper Hallway switch left button set to off
+    trigger:
+      - platform: state
+        entity_id: input_select.upper_hallway_switch_left_status
+        to: 'single'
+        for:
+          seconds: 2
+      - platform: state
+        entity_id: input_select.upper_hallway_switch_left_status
+        to: 'double'
+        for:
+          seconds: 2
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.upper_hallway_switch_left_status
+          option: 'off'
+
+  # If the input select is double, turn off the her bedside  if on, turn on if off. Also set status to off.
+  - id: 89C37560-4E54-4B8E-B35D-2B56E38498B2
+    alias: Upper Hallway switch left button double click her bedside is on
+    trigger:
+      - platform: state
+        entity_id: input_select.upper_hallway_switch_left_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: light.upstairs_hallway
+        state: 'on'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: 
+          - light.upstairs_hallway
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.upper_hallway_switch_left_status
+          option: 'off'
+
+  - id: 307A1E3D-450B-45CD-985D-F6CD4F9B346C
+    alias: Upper Hallway switch left button double click her bedside is off
+    trigger:
+      - platform: state
+        entity_id: input_select.upper_hallway_switch_left_status
+        to: 'double'
+    condition:
+      - condition: state
+        entity_id: light.upstairs_hallway
+        state: 'off'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: 
+          - light.upstairs_hallway
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.upper_hallway_switch_left_status
+          option: 'off'
+
+  # I want to increase the light if single press is done. Max is 100. Starting at 5 and going up 17 per time, we get these numbers:
+  # 5, 22, 39, 56, 73, 90, 107
+  # 5 is pretty perfect for low light like watching tv, and 90 is too bright already.
+  # 110 is the maximum number for the input_number so I needed something that maxed out over 100 but below 110.
+  # Also sets the status to off so it can be used again without waiting for the reset timer
+  - id: E537FC11-4F4A-4C00-A2F0-285A5365763A
+    alias: Upper Hallway switch left button single press increase number
+    trigger:
+      - platform: state
+        entity_id: input_select.upper_hallway_switch_left_status
+        to: 'single'
+        for:
+          seconds: 1.2
+    action:
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.upper_hallway_switch_left_number
+          value: '{{ states.input_number.upper_hallway_switch_left_number.state | int + 17 }}'
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.upper_hallway_switch_left_status
+          option: 'off'
+      
+  # If we go over 100, reduce to 5 to restart the flow. 
+  - id: 076FF262-78ED-4E98-906A-E723D20D9640
+    alias: Set Upper Hallway switch left state to 5 if over 100
+    trigger:
+      - platform: numeric_state
+        entity_id: input_number.upper_hallway_switch_left_number
+        # value_template: '{{ states.input_number.bedroom_switch_left_number.state  }}'
+        above: 100
+    action:
+      - service: input_number.set_value
+        data_template: 
+          entity_id: input_number.upper_hallway_switch_left_number
+          value: '5'
+
+  # When we change the input_number, set the ceiling group to that brightness as a percentage
+  - id: 1D1C0E68-78E4-402B-BB43-16C7858F51FE
+    alias: Set Upper Hallway her bedside based on input_number
+    trigger:
+      - platform: state
+        entity_id: input_number.upper_hallway_switch_left_number
+    action:
+      - service: homeassistant.turn_on
+        data_template:
+          entity_id: light.upstairs_hallway
+          brightness_pct: '{{ states.input_number.upper_hallway_switch_left_number.state | int }}'
+
+
   ##################################
   ############## CUBE ##############
   ##################################

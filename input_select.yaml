@@ -79,6 +79,33 @@
       - 'double'
       - 'long'
 
+  upper_hallway_switch_left_status:
+    name: Upper Hallway switch left status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
+  upper_hallway_switch_right_status:
+    name: Upper Hallway switch right status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
+  upper_hallway_switch_both_status:
+    name: Upper Hallway switch both status
+    initial: 'off'
+    options:
+      - 'off'
+      - 'single'
+      - 'double'
+      - 'long'
+
   andreas_location:
     name: Andreas
     options:

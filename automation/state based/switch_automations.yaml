@@ -616,7 +616,7 @@
 
   # Now to detect double clicks. We detect a single click and check if the input select is already single. if so, it's a double.
   - id: 1FE238BB-C9F5-4399-A466-62735B7F2CF5
-    alias: Diningroom switch right button single click
+    alias: Diningroom switch right button double click
     trigger:
       - platform: event
         event_type: click

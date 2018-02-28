@@ -141,7 +141,7 @@
     action:
       - service: homeassistant.turn_off
         entity_id: switch.dining_room_cabinet
-      - service: homeassistant.turn_on
+      - service: homeassistant.turn_off
         entity_id: switch.plug_158d0001de56ce
 
   - id: 0FDECB19-C960-41CD-8119-3A5657216230

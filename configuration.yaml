@@ -162,8 +162,8 @@ verisure:
 
 #MQTT setup, Mosquito
 mqtt:
-  # broker: 192.168.1.68 # Old, Raspberry pi
-  broker: 192.168.1.55 # New, Ubuntu on server
+  broker: 192.168.1.68 # Old, Raspberry pi
+  # broker: 192.168.1.55 # New, Ubuntu on server
   port: 1883
   client_id: home-assistant-1
   keepalive: 60

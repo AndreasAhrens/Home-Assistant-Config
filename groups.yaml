@@ -702,6 +702,9 @@
       - switch.plug_158d0001dbd0d2
       - switch.plug_158d0001dbf3b2 # probably stairs
       - switch.plug_158d0001de56ce 
+      - switch.plug_158d0001dbd0d2
+      - switch.plug_158d0001dbec4f
+      - switch.plug_158d0001dd4fe7
       - input_number.livingroom_switch_left_number
       - input_number.livingroom_switch_right_number
       - input_select.livingroom_switch_left_status

@@ -61,14 +61,14 @@
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f
       - service: script.speak_message
         data:
           message: 'Andreas is almost home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
       - delay: '00:10:00'
-      - service: homeassistant.turn_on
+      - service: homeassistant.turn_off
         entity_id:
-          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f
 
   - id: EF56F107-0F1C-4487-94CB-6E0340FC7104
     alias: 'Andreas exiting Close to home '
@@ -84,7 +84,7 @@
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - switch.garden_driveway          
+          - switch.plug_158d0001dbec4f         
 
   - id: E28B5A74-0EAF-4E8E-84EF-A9EECC96ED8E
     alias: 'Andreas Home notification'
@@ -112,7 +112,7 @@
       - delay: '00:05:00'
       - service: homeassistant.turn_off
         entity_id:
-          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f
 
   - id: 246A6F2A-A12C-4E1E-A8BB-94CC03906AAE
     alias: 'Andreas Devv position'
@@ -217,7 +217,7 @@
           message: 'Andreas is at Lidl, shold he buy something?'
       - service: homeassistant.turn_off
         entity_id:
-          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f
 
 
   - id: 75ECBAC9-F8BE-4640-966D-412A3BAFFA78

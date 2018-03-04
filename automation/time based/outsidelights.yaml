@@ -33,7 +33,7 @@
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f
 
   - id: 6D3B8A22-11FC-4826-9F3F-2CBEB1881548
     alias: Turn on DRIVEWAY light at 07:00
@@ -51,4 +51,4 @@
     action:
       - service: homeassistant.turn_on
         entity_id:
-          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f

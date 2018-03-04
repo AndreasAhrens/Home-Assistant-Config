@@ -53,7 +53,7 @@
         entity_id:
           - switch.plug_158d0001dbf3b2
           - switch.front_door_plug
-          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f
 
   - id: 51ADF970-37BE-423D-8104-F8EDD1256DE3
     alias: Turn off stairs, driveway and door light when hallway door is closed for 5 minutes
@@ -68,7 +68,7 @@
         entity_id:
           - switch.plug_158d0001dbf3b2
           - switch.front_door_plug
-          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f
 
   - id: 3F97CE3A-A636-4A2A-8DA4-1716B724572B
     alias: Turn on stairs when movement in hallway and sun is down

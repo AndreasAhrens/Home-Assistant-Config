@@ -61,7 +61,7 @@
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f
 
 ##### Mailbox ####
   - id: CF122F2B-4CF5-423B-B77B-457AC69F1BC8

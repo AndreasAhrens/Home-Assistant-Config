@@ -44,7 +44,8 @@ ffmpeg:
 
 # Amazon Echo config
 emulated_hue:
-  host_ip: 192.168.1.68
+  # host_ip: 192.168.1.68 #old, raspberry pi
+  host_ip: 192.168.1.55 # New, ubuntu server
   exposed_domains:
     - light
     - switch
@@ -161,7 +162,8 @@ verisure:
 
 #MQTT setup, Mosquito
 mqtt:
-  broker: 192.168.1.68
+  # broker: 192.168.1.68 # Old, Raspberry pi
+  broker: 192.168.1.55 # New, Ubuntu on server
   port: 1883
   client_id: home-assistant-1
   keepalive: 60

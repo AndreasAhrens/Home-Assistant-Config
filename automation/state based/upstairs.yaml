@@ -11,7 +11,7 @@
       service: homeassistant.turn_off
       entity_id: 
         - switch.bedroom_reading_light
-        - switch.bedroom_fan
+        - switch.plug_158d0001dbd0d2
         - light.her_bedside
         - light.his_bedside
 
@@ -110,7 +110,7 @@
         state: 'armed_home'
     action:
       - service: homeassistant.turn_on
-        entity_id: switch.bedroom_fan 
+        entity_id: switch.plug_158d0001dbd0d2 
 
   - id: 0FD6560E-DE4C-4407-92F5-FBB83EB2B5F3
     alias: Turn off bedroom fan when temperature in bedroom is below 20
@@ -120,7 +120,7 @@
         below: 20
     action:
       - service: homeassistant.turn_off
-        entity_id: switch.bedroom_fan 
+        entity_id: switch.plug_158d0001dbd0d2 
 
   - id: 8E38BE44-F6D0-4EEA-B1D0-0AB7AF19254C
     alias: Turn on stairs when movement in upstairs hallway and sun is down

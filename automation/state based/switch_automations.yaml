@@ -412,12 +412,12 @@
         to: 'double'
     condition:
       - condition: state
-        entity_id: switch.living_room_fan
+        entity_id: switch.plug_158d0001dd4fe7
         state: 'on'
     action:
       - service: homeassistant.turn_off
         entity_id: 
-          - switch.living_room_fan
+          - switch.plug_158d0001dd4fe7
       - service: input_select.select_option
         data:
           entity_id: input_select.livingroom_switch_both_status
@@ -431,12 +431,12 @@
         to: 'double'
     condition:
       - condition: state
-        entity_id: switch.living_room_fan
+        entity_id: switch.plug_158d0001dd4fe7
         state: 'off'
     action:
       - service: homeassistant.turn_on
         entity_id: 
-          - switch.living_room_fan
+          - switch.plug_158d0001dd4fe7
       - service: input_select.select_option
         data:
           entity_id: input_select.livingroom_switch_both_status
@@ -1163,12 +1163,12 @@
         to: 'double'
     condition:
       - condition: state
-        entity_id: switch.bedroom_fan
+        entity_id: switch.plug_158d0001dbd0d2
         state: 'on'
     action:
       - service: homeassistant.turn_off
         entity_id: 
-          - switch.bedroom_fan
+          - switch.plug_158d0001dbd0d2
       - service: input_select.select_option
         data:
           entity_id: input_select.bedroom_switch_both_status
@@ -1182,12 +1182,12 @@
         to: 'double'
     condition:
       - condition: state
-        entity_id: switch.bedroom_fan
+        entity_id: switch.plug_158d0001dbd0d2
         state: 'off'
     action:
       - service: homeassistant.turn_on
         entity_id: 
-          - switch.bedroom_fan
+          - switch.plug_158d0001dbd0d2
       - service: input_select.select_option
         data:
           entity_id: input_select.bedroom_switch_both_status

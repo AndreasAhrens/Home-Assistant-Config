@@ -21,7 +21,7 @@
           state: 'off'
     action:
       - service: homeassistant.turn_on
-        entity_id: switch.living_room_fan
+        entity_id: switch.plug_158d0001dd4fe7
 
   - id: 0BAF90BD-A380-440D-A974-F605BE944552
     alias: Turn off livingroom fan when temperature in livingroom below 20
@@ -31,7 +31,7 @@
         below: 20
     action:
       - service: homeassistant.turn_off
-        entity_id: switch.living_room_fan
+        entity_id: switch.plug_158d0001dd4fe7
 
   - id: 36F4A03F-BFA2-4430-B576-ECBD25F73AEC
     alias: Turn on stairs, driveway and door light when hallway door is opened

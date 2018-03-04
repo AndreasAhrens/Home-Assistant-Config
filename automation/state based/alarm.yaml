@@ -176,7 +176,7 @@
         above: 22
     action:
       - service: homeassistant.turn_on
-        entity_id: switch.bedroom_fan 
+        entity_id: switch.plug_158d0001dbd0d2 
 
   - id: 564ED718-D107-494A-8173-F4CD0B05AAB9
     alias: Alarm off turn on fan in livingroom if too warm
@@ -191,7 +191,7 @@
         above: 23
     action:
       - service: homeassistant.turn_on
-        entity_id: switch.living_room_fan
+        entity_id: switch.plug_158d0001dd4fe7
 
   - id: F373FC1A-E879-4B66-B071-76F2A4598247
     alias: Alarm on away, turn off all fans
@@ -202,9 +202,9 @@
         to: 'armed_away'
     action:
       - service: homeassistant.turn_off
-        entity_id: switch.living_room_fan
+        entity_id: switch.plug_158d0001dd4fe7
       - service: homeassistant.turn_off
-        entity_id: switch.bedroom_fan
+        entity_id: switch.plug_158d0001dbd0d2
 
   - id: 1BB7D4F1-97E8-4A11-9430-0186723444FD
     alias: Alarm on home, turn off fan downstairs
@@ -215,7 +215,7 @@
         to: 'armed_home'
     action:
       - service: homeassistant.turn_off
-        entity_id: switch.living_room_fan
+        entity_id: switch.plug_158d0001dd4fe7
 
 
   ################################

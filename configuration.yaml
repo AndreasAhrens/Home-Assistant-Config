@@ -45,7 +45,8 @@ ffmpeg:
 # Amazon Echo config
 emulated_hue:
   # host_ip: 192.168.1.68 #old, raspberry pi
-  host_ip: 192.168.1.55 # New, ubuntu server
+  # host_ip: 192.168.1.55 # New, ubuntu server
+  host_ip: 127.0.0.1 # Let's just use localhost, will work for both
   exposed_domains:
     - light
     - switch

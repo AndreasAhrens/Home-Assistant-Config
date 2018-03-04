@@ -54,6 +54,15 @@
     icon: mdi:spotlight-beam
   switch.bedroom_fan:
     icon: mdi:fan
+  switch.plug_158d0001dbd0d2:
+    friendly_name: Bedroom Fan
+    icon: mdi:fan
+  switch.plug_158d0001dbec4f:
+    friendly_name: Driveway light
+    icon: mdi:car
+  switch.plug_158d0001dd4fe7:
+    friendly_name: Livingroom Fan
+    icon: mdi:fan
   switch.garden_front_door:
     icon: mdi:stairs
   cover.bedroom_rollers:

@@ -20,7 +20,8 @@
       # - switch.livingroom_ceiling
       - group.Livingroom_ceiling
       - light.living_room_wall
-      - switch.living_room_fan
+      - switch.plug_158d0001dd4fe7
+      # - switch.living_room_fan
       - light.tv_bench
       - switch.Disco_Light
       - vacuum.blitzwolf_vacuum
@@ -45,7 +46,8 @@
       # - switch.livingroom_ceiling
       - group.Livingroom_ceiling
       - light.living_room_wall
-      - switch.living_room_fan
+      - switch.plug_158d0001dd4fe7
+      #- switch.living_room_fan
       - light.tv_bench
       - switch.Disco_Light
       - vacuum.blitzwolf_vacuum
@@ -89,7 +91,8 @@
     entities:
       # - switch.garden_front_door
       - switch.front_door_plug
-      - switch.garden_driveway
+      - switch.plug_158d0001dbec4f
+      # - switch.garden_driveway
       - sensor.dark_sky_temperature
     icon: mdi:pine-tree
   Hallway:
@@ -111,7 +114,8 @@
   Bedroom:
     entities:
       - switch.bedroom_reading_light
-      - switch.bedroom_fan
+      - switch.plug_158d0001dbd0d2
+      # - switch.bedroom_fan
       - light.her_bedside
       - light.his_bedside
       - cover.bedroom_rollers
@@ -128,7 +132,8 @@
     entities:
       - light.her_bedside
       - light.his_bedside
-      - switch.bedroom_fan
+      - switch.plug_158d0001dbd0d2
+      # - switch.bedroom_fan
       - cover.bedroom_rollers
     icon: mdi:hotel
   Bathroom:
@@ -698,10 +703,10 @@
       - script.security_kitchen
       - binary_sensor.switch_158d00016d91a1
       - binary_sensor.switch_158d0001714261
-      - switch.plug_158d0001dbd0d2
+      - switch.plug_158d0001dbd0d2 # Bedroom fan
       - switch.plug_158d0001de56ce 
       - switch.plug_158d0001dbd0d2
-      - switch.plug_158d0001dbec4f # first
+      - switch.plug_158d0001dbec4f # driveway
       - switch.plug_158d0001dd4fe7 # Livingroom fan
       - input_number.livingroom_switch_left_number
       - input_number.livingroom_switch_right_number

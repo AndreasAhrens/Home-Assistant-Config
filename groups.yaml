@@ -719,6 +719,7 @@
       - binary_sensor.door_window_sensor_158d00016ccebc
       - counter.fridge_opening
       - script.morning_music
+      - script.security_kitchen
       - media_player.spotify
 
 

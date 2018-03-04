@@ -2,6 +2,8 @@
     icon: mdi:spotlight-beam
   switch.living_room_fan:
     icon: mdi:fan
+    emulated_hue_hidden: true
+    homebridge_hidden: true
   switch.hallway_stairs:
     icon: mdi:stairs
   switch.plug_158d0001dbf3b2:
@@ -9,6 +11,8 @@
     friendly_name: Hallway Stairs 
   switch.garden_driveway:
     icon: mdi:car
+    emulated_hue_hidden: true
+    homebridge_hidden: true
   light.tv_bench:
     icon: mdi:monitor
   switch.dining_room_aquarium:
@@ -54,6 +58,8 @@
     icon: mdi:spotlight-beam
   switch.bedroom_fan:
     icon: mdi:fan
+    emulated_hue_hidden: true
+    homebridge_hidden: true
   switch.plug_158d0001dbd0d2:
     friendly_name: Bedroom Fan
     icon: mdi:fan

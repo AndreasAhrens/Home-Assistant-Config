@@ -111,8 +111,8 @@ influxdb:
     source: hass
 
 # Enables tellstick
-tellstick:
-  signal_repetitions: 10
+#tellstick:
+#  signal_repetitions: 10
 
 #Xiaomi gateway
 xiaomi_aqara:

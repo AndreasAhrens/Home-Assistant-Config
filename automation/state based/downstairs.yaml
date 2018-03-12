@@ -182,9 +182,9 @@
     condition:
       condition: and
       conditions:
-        - condition: state
-          entity_id: sun.sun
-          state: below_horizon
+        - condition: numeric_state
+          entity_id: sensor.solar_angle
+          below: 6
         - condition: state
           entity_id: light.living_room_wall
           state: 'off'
@@ -212,7 +212,7 @@
     condition:
       - condition: numeric_state
         entity_id: sensor.illumination_34ce008c1bb1
-        below: 300
+        below: 350
     action:
       - service: light.turn_on
         entity_id: 

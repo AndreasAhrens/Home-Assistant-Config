@@ -100,8 +100,8 @@
           - cover.bedroom_rollers
 
 
-  - id: 7FCA2245-A987-4D98-8ACA-4F641A9A9371
-    alias: Turn off stairs light 3 minutes after last movement
+  - id: 508EC867-F1F3-4C3A-AF22-36A8FE2C1B88
+    alias: Turn off stairs light 3 minutes after last movement downstairs
     trigger:
       platform: state
       entity_id: binary_sensor.motion_sensor_158d0001655fde

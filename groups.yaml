@@ -748,7 +748,7 @@
       - group.Upper_Hallway_short
       - group.status
       - group.Mouse_status
-      - group.plants
+      # - group.plants
       - group.doors
       - group.motion
       - group.Mediaplayers_short

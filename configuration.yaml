@@ -54,6 +54,10 @@ emulated_hue:
 homekit:
   auto_start: False
   port: 51825
+  filter:
+    include_entities:
+      - light.living_room_ceiling
+      - switch.plug_158d0001dd4fe7
 ##############################
 ######## INCLUDES ############
 ##############################

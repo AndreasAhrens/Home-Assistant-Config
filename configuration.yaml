@@ -52,7 +52,7 @@ emulated_hue:
     - switch
     - fan
 homekit:
-  
+  auto_start: False
 ##############################
 ######## INCLUDES ############
 ##############################

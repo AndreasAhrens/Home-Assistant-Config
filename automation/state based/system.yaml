@@ -10,3 +10,11 @@
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data_template:
           message: "Version {{ states.updater.updater.state }} of Home Asssistant is available"
+  - id: 4E4A00E0-007E-460A-BF04-3BF9B66C8241
+    alias: 'Start HomeKit'
+    trigger:
+      - platform: homeassistant
+        event: start
+    action:
+      - delay: 00:05  # Waits 5 minutes
+      - service: homekit.start

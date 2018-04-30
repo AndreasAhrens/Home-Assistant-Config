@@ -53,6 +53,7 @@ emulated_hue:
     - fan
 homekit:
   auto_start: False
+  port: 51825
 ##############################
 ######## INCLUDES ############
 ##############################

@@ -257,6 +257,8 @@
       - switch.dummy_switch
   Servers:
     entities:
+      - switch.plug_158d000183aef6
+      - sensor.server_power_usage
       - binary_sensor.andreasahrensnew
       - switch.andreasahrensnew
   Averages:
@@ -403,7 +405,6 @@
       - weblink.router_downstairs
       - weblink.draytek_router
       - weblink.pihole
-      - switch.plug_158d000183aef6
       - sensor.server_power_usage
   Mailbox:
     entities:
@@ -813,6 +814,7 @@
     name: System
     view: yes
     entities:
+      - group.servers
       - group.System
       - group.Mediaplayers
       - group.Pi_hole

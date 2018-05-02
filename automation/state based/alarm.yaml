@@ -241,6 +241,15 @@
         entity_id: binary_sensor.motion_sensor_158d0001d665e2
         to: 'on'
     ## condition:  ## not yet, should be when alarm is in home mode or away mode
+    condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: alarm_control_panel.hemgatan_alarm
+          state: 'armed_home'
+        - condition: state
+          entity_id: alarm_control_panel.hemgatan_alarm
+          state: 'armed_away'
     action:
       - service: homeassistant.turn_on
         entity_id: group.livingroom_ceiling

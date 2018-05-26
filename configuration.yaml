@@ -42,6 +42,9 @@ http:
 ffmpeg:
   ffmpeg_bin: /usr/bin/ffmpeg
 
+tradfri:
+  host: 192.168.1.69
+
 # Amazon Echo config
 emulated_hue:
   # host_ip: 192.168.1.68 #old, raspberry pi

@@ -237,14 +237,14 @@
     sensors:
       illumination_in_lux1:
         friendly_name: "Illumination gateway 1 in lux"
-        unit_of_measurement: 'lux'
+        unit_of_measurement: 'lx'
         value_template: "{{ states.sensor.illumination_34ce008c1bb1.state }}"
 
   - platform: template
     sensors:
       illumination_in_lux2:
         friendly_name: "Illumination gateway 2 in lux"
-        unit_of_measurement: 'lux'
+        unit_of_measurement: 'lx'
         value_template: "{{ states.sensor.illumination_34ce008c1bb1.state }}"
 
   - platform: template

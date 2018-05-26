@@ -117,6 +117,8 @@ homekit:
       - sensor.dark_sky_humidity
       - switch.mailbox_inside_light
       - switch.mailbox_outside_light
+      - light.tradfri_bulb_e14_ws_opal_400lm
+      - light.tradfri_bulb_e14_ws_opal_400lm_2
       
 ##############################
 ######## INCLUDES ############

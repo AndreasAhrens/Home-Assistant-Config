@@ -278,6 +278,10 @@
   sensor.average_illumination:
     friendly_name: Average Illumination
     icon: mdi:lightbulb
+  light.tradfri_bulb_e14_ws_opal_400lm_2:
+    friendly_name: Amanda Ceiling 1
+  light.tradfri_bulb_e14_ws_opal_400lm:
+    friendly_name: Amanda Ceiling 2
 
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

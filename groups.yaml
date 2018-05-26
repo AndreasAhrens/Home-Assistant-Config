@@ -149,8 +149,14 @@
       - light.his_bedside
   Amanda:
     entities:
-      - switch.amanda_ceiling
+      #- switch.amanda_ceiling
+      - group.amanda_ceiling
     icon: mdi:human-female
+  Amanda_Ceiling:
+    name: Amanda's Ceiling
+    entities:
+      - light.tradfri_bulb_e14_ws_opal_400lm
+      - light.tradfri_bulb_e14_ws_opal_400lm_2
   Linnea:
     entities:
       - light.linnea_ceiling

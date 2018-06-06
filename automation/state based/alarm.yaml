@@ -23,6 +23,25 @@
               sound: "US-EN-Morgan-Freeman-Good-Night.wav"
       - service: script.turn_on
         entity_id: script.night_mode
+
+  - id: 7B2DB45A-6311-4E2F-B345-7F9B89CE8BB6
+    alias: Alarm warn shell is not closed - home alarm
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.hemgatan_alarm
+        from: 'disarmed'
+        to: 'armed_home'
+    condition:
+      - condition: state
+          entity_id: binary_sensor.home_shell_closed
+          state: 'off'
+    action:
+      - delay: '00:01:00'
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.bedroom_speaker
+          message: 'Some doors or windows downstairs are not closed! Please check before you go to bed.'
+        
       
 
   # Turn on bedroom lights bright and close rollers when alarm is in home mode and it's before 22:30
@@ -160,7 +179,7 @@
     action:
       - service: tts.google_say
         data_template:
-          entity_id: media_player.mpd
+          entity_id: media_player.diningroom
           message: 'Welcome home! I hope your day has been good'
 
   - id: 1E03847A-B8B9-4D03-B994-D8EC30FD5117

@@ -501,6 +501,7 @@
   Doors:
     name: Doors and windows
     entities:
+      - binary_sensor.home_shell_closed
       - binary_sensor.altandorr
       - binary_sensor.entre
       - binary_sensor.door_window_sensor_158d00016c7655

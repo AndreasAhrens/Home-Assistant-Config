@@ -49,25 +49,18 @@
 
   speak_message:
     sequence:
-      - service: tts.google_say
-        data_template:
-          entity_id: media_player.mpd
-          message: "{{ message }}"
-      - service: homeassistant.turn_on
-        entity_id: switch.kitchen_speaker
-      - delay: '00:00:05'
       - service: media_player.volume_set
         data:
-          entity_id: media_player.kitchen_audio
+          entity_id: media_player.diningroom
           volume_level: 0.75
       - service: tts.google_say
         data_template:
-          entity_id: media_player.kitchen_audio
+          entity_id: media_player.diningroom
           message: "{{ message }}"
       - delay: '00:00:05'
       - service: media_player.volume_set
         data:
-          entity_id: media_player.kitchen_audio
+          entity_id: media_player.diningroom
           volume_level: 0.25
       #- service: homeassistant.turn_off
       #  entity_id: switch.kitchen_speaker

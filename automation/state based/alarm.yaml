@@ -41,6 +41,22 @@
         data_template:
           entity_id: media_player.bedroom_speaker
           message: 'Some doors or windows downstairs are not closed! Please check before you go to bed.'
+
+  - id: 7B2DB45A-4441-4E2F-B345-7F9B89CE8BB6
+    alias: Alarm warn shell is not closed - not home alarm
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.hemgatan_alarm
+        from: 'disarmed'
+        to: 'armed_away'
+    condition:
+      - condition: state
+          entity_id: binary_sensor.home_shell_closed
+          state: 'off'
+    action:
+      - service: notify.ios_all_your_base_are_belong_to_us_2
+        data:
+          message: "Some doors and windows are not closed! Please check before leaving home."
         
       
 

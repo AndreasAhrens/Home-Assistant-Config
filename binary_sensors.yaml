@@ -12,11 +12,18 @@
     sensors:
       home_shell_closed:
         friendly_name: Home shell status
-        device_class: opening
         value_template: >-
           {{ is_state('binary_sensor.altandorr', 'off') 
-             and is_state('binary_sensor.entre', 'off') }}
-
+             and is_state('binary_sensor.entre', 'off') 
+             and is_state('binary_sensor.door_window_sensor_158d0001a1e712', 'off')
+             and is_state('binary_sensor.kallardorr', 'off')
+             and is_state('binary_sensor.door_window_sensor_158d00016ccebc', 'off')
+             and is_state('binary_sensor.door_window_sensor_158d00015b60d7', 'off')
+             and is_state('binary_sensor.door_window_sensor_158d00016c74c6', 'off')
+             and is_state('binary_sensor.door_window_sensor_158d0001834f33', 'off')
+             and is_state('binary_sensor.door_window_sensor_158d00016c7536', 'off')
+             and is_state('binary_sensor.door_window_sensor_158d0001d84f5f', 'off')
+             and is_state('binary_sensor.door_window_sensor_158d00016c7ccd', 'off') }}
   - name: 'In bed sensor'
     platform: 'bayesian'
     prior: 0.25

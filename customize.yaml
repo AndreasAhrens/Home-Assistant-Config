@@ -154,7 +154,7 @@
     friendly_name: Kitchen Window
     device_class: opening
     icon: mdi:window-closed
-  binary_sensor.door_window_sensor_158d00016c7655:
+  binary_sensor.door_window_sensor_158d0001a1e712:
     friendly_name: Front Door
     device_class: opening
     icon: mdi:glassdoor

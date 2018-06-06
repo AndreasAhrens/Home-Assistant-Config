@@ -33,8 +33,8 @@
         to: 'armed_home'
     condition:
       - condition: state
-          entity_id: binary_sensor.home_shell_closed
-          state: 'off'
+        entity_id: binary_sensor.home_shell_closed
+        state: 'off'
     action:
       - delay: '00:01:00'
       - service: tts.google_say
@@ -51,8 +51,8 @@
         to: 'armed_away'
     condition:
       - condition: state
-          entity_id: binary_sensor.home_shell_closed
-          state: 'off'
+        entity_id: binary_sensor.home_shell_closed
+        state: 'off'
     action:
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:

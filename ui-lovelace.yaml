@@ -3,6 +3,10 @@
 # https://github.com/dale3h/python-lovelace
 
 title: Home
+cards:
+  - type: iframe
+    url: https://embed.windy.com/embed2.html
+    aspect_ratio: 75%
 views:
   - title: Hemgatan
     cards:

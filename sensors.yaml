@@ -43,6 +43,8 @@
       - hourly_summary
       - cloud_cover
     units: si
+    update_interval:
+      minutes: 5
   - platform: season
     type: astronomical
   - platform: template

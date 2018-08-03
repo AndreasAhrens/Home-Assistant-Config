@@ -165,7 +165,7 @@ views:
     garage_door_tilt_sensor_alarm_level: Weather
     cards:
       - type: "custom:weather-card"
-        entity_weather: weather.darksky
+        entity_weather: weather.dark_sky
         entity_sun: sun.sun
 
   - title: Upstairs

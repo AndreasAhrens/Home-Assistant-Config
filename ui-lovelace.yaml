@@ -164,6 +164,7 @@ views:
     garage_door_tilt_sensor_alarm_level: Weather
     cards:
       - type: vertical-stack
+        cards:
           - type: iframe
             title: Weather radar
             url: https://embed.windy.com/embed2.html

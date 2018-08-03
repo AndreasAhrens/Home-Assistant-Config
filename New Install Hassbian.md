@@ -28,7 +28,7 @@ source ~/.bash_profile
 ``` shell
 sudo apt-get update && sudo apt-get upgrade
 # sudo apt install git && sudo ssh-keygen -t rsa -b 4096 -C "andreas@ahrensit.se" && sudo cat /root/.ssh/id_rsa.pub
-sudo apt install git && ssh-keygen -t rsa -b 4096 -C "andreas@ahrensit.se" && sudo cat /home/pi/.ssh/id_rsa.pub
+sudo apt install git && ssh-keygen -t rsa -b 4096 -C "andreas@ahrensit.se" && sudo cat /home/andreas/.ssh/id_rsa.pub
 
 sudo su -s /bin/bash homeassistant
 source /srv/homeassistant/bin/activate
@@ -63,7 +63,7 @@ sudo hassbian-config install tradfri && sudo hassbian-config install razberry
 ```
 While this is being installed:
 ``` shell
-touch secrets.yaml && sudo chmod 755 secrets.yaml && sudo chown pi secrets.yaml && sudo nano secrets.yaml
+touch secrets.yaml && sudo chmod 755 secrets.yaml && sudo chown andreas secrets.yaml && sudo nano secrets.yaml
 ```
 Enter secrets.yaml that has been saved from before
 ``` shell

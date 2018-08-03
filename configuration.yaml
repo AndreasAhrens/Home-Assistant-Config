@@ -241,6 +241,12 @@ mqtt:
   # username: USERNAME
   # password: PASSWORD
 
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api
+
+    
 mailgun:
   domain: andreasahrens.se
   api_key: !secret mailgun_token

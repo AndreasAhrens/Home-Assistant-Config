@@ -162,7 +162,6 @@ views:
     id: weather
     title: Weather
     garage_door_tilt_sensor_alarm_level: Weather
-    cards:
     - type: vertical-stack
         - type: iframe
           title: Weather radar

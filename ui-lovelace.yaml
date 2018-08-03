@@ -15,20 +15,26 @@ views:
         entities:
           - device_tracker.judithsiphone
           - device_tracker.allyourbasearebelongtous2
-      - type: entities
+      - type: picture-glance
+        image: /images/living_room.png
         title: Living room
-        show_header_toggle: true
         entities:
           - light.living_room_wall
+          - light.living_room_ceiling
           - switch.plug_158d0001dd4fe7
           - light.tv_bench
           - switch.disco_light
           - vacuum.blitzwolf_vacuum
       - type: entities
-        title: Livingroom Ceiling
+        title: Living room
         show_header_toggle: true
         entities:
+          - light.living_room_wall
           - light.living_room_ceiling
+          - switch.plug_158d0001dd4fe7
+          - light.tv_bench
+          - switch.disco_light
+          - vacuum.blitzwolf_vacuum
       - type: entities
         title: Diningroom
         show_header_toggle: true

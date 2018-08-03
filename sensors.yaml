@@ -11,22 +11,36 @@
     #  - windSpeed
   - platform: darksky
     api_key: !secret darksky_api
+    forecast:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
     monitored_conditions:
-      - summary
       - icon
+      - summary
       - nearest_storm_distance
+      - nearest_storm_bearing
+      - humidity
       - temperature
-      - precip_type
-      - precip_intensity
-      - precip_probability
+      - temperature_high
+      - temperature_low
+      - apparent_temperature
+      - apparent_temperature_high
+      - apparent_temperature_low
       - wind_speed
       - wind_bearing
-      - humidity
-      - apparent_temperature
-      - hourly_summary
-      - temperature_max
-      - temperature_min
+      - precip_type
+      - precip_probability
+      - precip_accumulation
+      - precip_intensity
       - precip_intensity_max
+      - uv_index
+      - daily_summary
+      - pressure
+      - visibility
+      - hourly_summary
       - cloud_cover
     units: si
   - platform: season

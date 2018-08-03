@@ -3,6 +3,17 @@
 # https://github.com/dale3h/python-lovelace
 
 title: Home
+cards:
+        # The filter card will filter entities for their state
+      - type: entity-filter
+        entities:
+          - device_tracker.allyourbasearebelongtous2
+          - device_tracker.judithsiphone
+        state_filter:
+          - 'home'
+        card:
+          type: glance
+          title: People that are home
 views:
   - title: Hemgatan
     cards:

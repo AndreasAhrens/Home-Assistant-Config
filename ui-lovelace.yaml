@@ -4,8 +4,8 @@
 resources:
   - url: /local/custom_ui/dark-sky-weather-card.js
     type: js
-  - url: /local/custom_ui/weather-card.js
-    type: js
+  #- url: /local/custom_ui/weather-card.js
+  #  type: js
 
 title: Home
 views:

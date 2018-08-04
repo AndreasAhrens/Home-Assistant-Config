@@ -183,7 +183,7 @@ views:
           - "on"
         card:
           type: glance
-    show_state: false
+          show_state: false
       - type: entities
         title: Motion sensors
         show_header_toggle: true

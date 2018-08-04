@@ -379,10 +379,6 @@ views:
         title: Weather radar
         url: https://embed.windy.com/embed2.html
         aspect_ratio: 100%
-      - type: "custom:weather-card"
-        title: Yahoo Weather
-        entity_weather: weather.yweather
-        entity_sun: sun.sun
       - type: custom:dark-sky-weather-card
         title: Dark sky
         entity_sun: sun.sun
@@ -409,6 +405,10 @@ views:
         entity_forecast_icon_3: sensor.dark_sky_icon_3
         entity_forecast_icon_4: sensor.dark_sky_icon_4
         entity_forecast_icon_5: sensor.dark_sky_icon_5
+      - type: "custom:weather-card"
+        title: Yahoo Weather
+        entity_weather: weather.yweather
+        entity_sun: sun.sun
   
   - title: Upstairs
     cards:

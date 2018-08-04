@@ -139,7 +139,7 @@ input_select: !include input_select.yaml
 light: !include lights.yaml
 media_player: !include mediaplayer.yaml
 notify: !include notify.yaml
-plant: !include plant.yaml
+# plant: !include plant.yaml # We need to fix a raspberry to get Bluetooth before this can be used
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml

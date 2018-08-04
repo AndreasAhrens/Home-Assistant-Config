@@ -29,18 +29,20 @@ views:
           - switch.disco_light
           - vacuum.blitzwolf_vacuum
       - type: conditional
+        title: Living room
+        show_header_toggle: true
         conditions:
           - entity: input_boolean.livingroom_visible
             state: "on"
-        title: Living room
-        show_header_toggle: true
-        entities:
-          - light.living_room_wall
-          - light.living_room_ceiling
-          - switch.plug_158d0001dd4fe7
-          - light.tv_bench
-          - switch.disco_light
-          - vacuum.blitzwolf_vacuum
+        card:
+          type: entities
+          entities:
+            - light.living_room_wall
+            - light.living_room_ceiling
+            - switch.plug_158d0001dd4fe7
+            - light.tv_bench
+            - switch.disco_light
+            - vacuum.blitzwolf_vacuum
       - type: entities
         title: Diningroom
         show_header_toggle: true

@@ -148,61 +148,62 @@
   - platform: mqtt
     state_topic: '/inside/livingroom/plantwatering/sincelasttime'
     name: 'Plant watering since last time'
-  - platform: command_line
-    name: SSL cert expiry
-    unit_of_measurement: days
-    scan_interval: 10800
-    command: "ssl-cert-check -b -c /etc/letsencrypt/live/eiolos.duckdns.org/cert.pem | awk '{ print $NF }'"
-  - platform: miflora
-    mac: "C4:7C:8D:60:D5:36"
-    name: Heart plant
-    # median: 3
-    monitored_conditions:
-      - temperature
-      - moisture
-      - light
-      - conductivity
-      - battery
-  - platform: miflora
-    mac: "C4:7C:8D:61:B5:C1"
-    name: Phalaenopsis
-    # median: 3
-    monitored_conditions:
-      - temperature
-      - moisture
-      - light
-      - conductivity
-      - battery
-  - platform: miflora
-    mac: "C4:7C:8D:62:B1:04"
-    name: Peperomia
-    # median: 3
-    monitored_conditions:
-      - temperature
-      - moisture
-      - light
-      - conductivity
-      - battery
-  - platform: miflora
-    mac: "C4:7C:8D:62:75:11"
-    name: Almera
-    # median: 3
-    monitored_conditions:
-      - temperature
-      - moisture
-      - light
-      - conductivity
-      - battery
-  - platform: miflora
-    mac: "C4:7C:8D:61:FF:ED"
-    name: Peperomia2
-    # median: 3
-    monitored_conditions:
-      - temperature
-      - moisture
-      - light
-      - conductivity
-      - battery
+  #- platform: command_line
+  #  name: SSL cert expiry
+  #  unit_of_measurement: days
+  #  scan_interval: 10800
+  #  command: "ssl-cert-check -b -c /etc/letsencrypt/live/eiolos.duckdns.org/cert.pem | awk '{ print $NF }'"
+  
+  #- platform: miflora
+  #  mac: "C4:7C:8D:60:D5:36"
+  #  name: Heart plant
+  #  # median: 3
+  #  monitored_conditions:
+  #    - temperature
+  #    - moisture
+  #    - light
+  #    - conductivity
+  #    - battery
+  #- platform: miflora
+  #  mac: "C4:7C:8D:61:B5:C1"
+  #  name: Phalaenopsis
+  #  # median: 3
+  #  monitored_conditions:
+  #    - temperature
+  #    - moisture
+  #    - light
+  #    - conductivity
+  #    - battery
+  #- platform: miflora
+  #  mac: "C4:7C:8D:62:B1:04"
+  #  name: Peperomia
+  #  # median: 3
+  #  monitored_conditions:
+  #    - temperature
+  #    - moisture
+  #    - light
+  #    - conductivity
+  #    - battery
+  #- platform: miflora
+  #  mac: "C4:7C:8D:62:75:11"
+  #  name: Almera
+  #  # median: 3
+  #  monitored_conditions:
+  #    - temperature
+  #    - moisture
+  #    - light
+  #    - conductivity
+  #    - battery
+  #- platform: miflora
+  #  mac: "C4:7C:8D:61:FF:ED"
+  #  name: Peperomia2
+  #  # median: 3
+  #  monitored_conditions:
+  #    - temperature
+  #    - moisture
+  #    - light
+  #    - conductivity
+  #    - battery
   - platform: google_travel_time
     name: Devv to Home
     api_key: !secret google_api_key

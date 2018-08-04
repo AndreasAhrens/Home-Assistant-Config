@@ -31,7 +31,7 @@ views:
       - type: conditional
         conditions:
           - entity: input_boolean.livingroom_visible
-           state: "on"
+            state: "on"
         title: Living room
         show_header_toggle: true
         entities:

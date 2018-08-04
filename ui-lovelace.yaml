@@ -168,12 +168,14 @@ views:
         entities:
           - light.tradfri_bulb_e14_ws_opal_400lm
           - light.tradfri_bulb_e14_ws_opal_400lm_2
+
       - type: entities
         title: Linnea
         show_header_toggle: true
         entities:
           - light.linnea_ceiling
           - light.linnea_heart
+
       - type: entities
         title: Upper Hallway
         show_header_toggle: true
@@ -239,12 +241,23 @@ views:
 
       
           
-      - type: entities
+      - type: entity-filter
         title: Mouse status
-        show_header_toggle: true
+        show_header_toggle: false
         entities:
           - sensor.kallare_mouse
           - sensor.uterum_mouse
+        state_filter:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
 
       - type: entity-filter
         title: Doors and windows

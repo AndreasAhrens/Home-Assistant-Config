@@ -309,5 +309,11 @@
     icon: mdi:eye
   input_boolean.system_visible:
     icon: mdi:eye
+  input_boolean.links_visible:
+    icon: mdi:link-variant
+  input_boolean.tv_visible:
+    icon: mdi:television
+  input_boolean.internet_visible:
+    icon: mdi:web
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

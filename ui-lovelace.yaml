@@ -133,34 +133,72 @@ views:
         entities:
           - light.upstairs_hallway
           - fan.xiaomi_air_purifier_2_upstairs
+
       - type: entities
         title: Status
         show_header_toggle: true
         entities:
-          - sensor.current_version
-          - sensor.speedtest_download
-          - sensor.speedtest_ping
-          - sensor.since_last_boot
-          - sensor.hassbian_cert_expiry
+          - input_boolean.links_visible
+          - input_boolean.tv_visible
+          - input_boolean.internet_visible
           - input_boolean.vacation_mode
-          - script.update_config
-          - sensor.tv_time_bedroom_apple_tv
-          - sensor.tv_time_livingroom_apple_tv
-          - sensor.tv_time_livingroom_chromecast
-          - weblink.home_assistant
-          - weblink.home_assistant_forum
-          - weblink.grafana
-          - weblink.router_upstairs
-          - weblink.router_downstairs
-          - weblink.draytek_router
-          - weblink.pihole
-          - sensor.server_power_usage
+          
+      - type: conditional
+        title: Links
+        show_header_toggle: false
+        conditions:
+          - entity: input_boolean.links_visible
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - weblink.home_assistant
+            - weblink.home_assistant_forum
+            - weblink.grafana
+            - weblink.router_upstairs
+            - weblink.router_downstairs
+            - weblink.draytek_router
+            - weblink.pihole
+
+      - type: conditional
+        title: TV
+        show_header_toggle: false
+        conditions:
+          - entity: input_boolean.tv_visible
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - sensor.tv_time_bedroom_apple_tv
+            - sensor.tv_time_livingroom_apple_tv
+            - sensor.tv_time_livingroom_chromecast
+
+      - type: conditional
+        title: TV
+        show_header_toggle: false
+        conditions:
+          - entity: input_boolean.internet_visible
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - sensor.current_version
+            - sensor.speedtest_download
+            - sensor.speedtest_ping
+            - sensor.since_last_boot
+            - sensor.hassbian_cert_expiry
+            - script.update_config
+            - sensor.server_power_usage
+
+      
+          
       - type: entities
         title: Mouse status
         show_header_toggle: true
         entities:
           - sensor.kallare_mouse
           - sensor.uterum_mouse
+
       - type: entity-filter
         title: Doors and windows
         show_header_toggle: false

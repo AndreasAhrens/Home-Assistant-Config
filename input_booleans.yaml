@@ -36,3 +36,12 @@
 
   system_visible:
     initial: off
+
+  links_visible:
+    initial: off
+
+  tv_visible:
+    initial: off
+
+  internet_visible:
+    initial: off

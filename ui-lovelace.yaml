@@ -178,9 +178,6 @@ views:
             - binary_sensor.door_window_sensor_158d00014d4149
             - sensor.tv_time_bedroom_apple_tv
 
-
-      
-
       - type: picture-glance
         image: /images/amanda.png
         title: Amanda
@@ -195,13 +192,37 @@ views:
           - light.linnea_ceiling
           - light.linnea_heart
 
-      - type: entities
+      - type: picture-glance
+        image: /images/upper_hallway.png
         title: Upper Hallway
-        show_header_toggle: true
         entities:
+          - input_boolean.upper_hallway_visible
           - light.upstairs_hallway
           - fan.xiaomi_air_purifier_2_upstairs
-
+          - binary_sensor.motion_sensor_158d0001656570
+      - type: conditional
+        title: Upper Hallway
+        show_header_toggle: true
+        conditions:
+          - entity: input_boolean.upper_hallway_visible
+            state: "on"
+        card:
+          type: entities
+          entities:
+          - light.upstairs_hallway
+          - fan.xiaomi_air_purifier_2_upstairs
+          - sensor.purifier_upstairs_api
+          - sensor.purifier_upstairs_hours_used
+          - sensor.purifier_upstairs_temperature
+          - sensor.purifier_upstairs_humidity
+          - sensor.purifier_upstairs_motor_speed
+          - sensor.purifier_upstairs_percent_left
+          - sensor.ovanvaning_humidity
+          - sensor.ovanvaning_temperature
+          - binary_sensor.motion_sensor_158d0001656570
+          - sensor.illumination_34ce008bfa2b
+          - light.gateway_light_34ce008bfa2b
+          
       - type: entities
         title: Status
         show_header_toggle: true
@@ -298,9 +319,7 @@ views:
           - binary_sensor.door_window_sensor_158d0001a1e712
         state_filter:
           - "on"
-        #card:
-        #  type: glance
-        #  show_state: false
+
       - type: entity-filter
         title: Motion sensors
         show_header_toggle: true
@@ -314,6 +333,7 @@ views:
           - binary_sensor.motion_sensor_158d0001d665e2
         state_filter:
           - "on"
+
       - type: entity-filter
         entities:
           - media_player.apple_tv_i_vardagsrum

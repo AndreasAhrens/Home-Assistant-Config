@@ -69,17 +69,14 @@ views:
               top: 95%
               left: 50%
               color: white
-          - type: icon
-            icon: mdi:thermometer
-            entity: binary_sensor.motion_sensor_158d0001656600
-            tap_action: more-info
-            style:
-              top: 82%
-              left: 64% 
-              color: white
-
-​
-
+          #- type: icon
+          #  icon: mdi:thermometer
+          #  entity: binary_sensor.motion_sensor_158d0001656600
+          #  tap_action: more-info
+          #  style:
+          #    top: 82%
+          #    left: 64% 
+          #    color: white
       #########################
 
       - type: picture-glance

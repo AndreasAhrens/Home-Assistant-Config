@@ -82,9 +82,11 @@
   light.living_room_wall:
     emulated_hue_hidden: true
     homebridge_hidden: true
+    icon: mdi:wall-sconce-flat
   light.living_room:
     emulated_hue_hidden: true
     homebridge_hidden: true
+    icon: mdi:track-light
   light.upstairs:
     emulated_hue_hidden: true
     homebridge_hidden: true

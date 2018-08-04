@@ -11,19 +11,6 @@ title: Home
 views:
   - title: Hemgatan
     cards:
-      - type: entity-filter
-        title: At home
-        show_header_toggle: true
-        entities:
-          - device_tracker.judithsiphone
-          - device_tracker.allyourbasearebelongtous2
-          - device_tracker.amandasiphone
-          - device_tracker.linneasiphone
-          - device_tracker.tompasiphone
-          - device_tracker.anitasiphonese
-        state_filter:
-          - 'home'
-
       - type: picture-glance
         image: /local/livingroom.JPG
         title: Living room
@@ -222,6 +209,19 @@ views:
           - binary_sensor.motion_sensor_158d0001656570
           - sensor.illumination_34ce008bfa2b
           - light.gateway_light_34ce008bfa2b
+          
+      - type: entity-filter
+        title: At home
+        show_header_toggle: true
+        entities:
+          - device_tracker.judithsiphone
+          - device_tracker.allyourbasearebelongtous2
+          - device_tracker.amandasiphone
+          - device_tracker.linneasiphone
+          - device_tracker.tompasiphone
+          - device_tracker.anitasiphonese
+        state_filter:
+          - 'home'
 
       - type: entities
         title: Status

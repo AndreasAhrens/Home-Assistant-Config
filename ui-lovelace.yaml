@@ -181,12 +181,12 @@ views:
           - binary_sensor.door_window_sensor_158d0001a1e712
         state_filter:
           - "on"
-        card:
-          type: glance
-          show_state: false
-      - type: entities
+        #card:
+        #  type: glance
+        #  show_state: false
+      - type: entity-filter
         title: Motion sensors
-        show_header_toggle: true
+        show_header_toggle: false
         entities:
           - binary_sensor.motion_sensor_158d0001655fde
           - binary_sensor.motion_sensor_158d0001655ff2
@@ -195,6 +195,8 @@ views:
           - binary_sensor.motion_sensor_158d0001656600
           - binary_sensor.motion_sensor_158d0001235a99
           - binary_sensor.motion_sensor_158d0001d665e2
+        state_filter:
+          - "on"
       - type: entity-filter
         entities:
           - media_player.apple_tv_i_vardagsrum

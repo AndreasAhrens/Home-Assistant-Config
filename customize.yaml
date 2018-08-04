@@ -282,9 +282,14 @@
     icon: mdi:lightbulb
   light.tradfri_bulb_e14_ws_opal_400lm_2:
     friendly_name: Amanda Ceiling 1
+    icon: mdi:ceiling-light
   light.tradfri_bulb_e14_ws_opal_400lm:
     friendly_name: Amanda Ceiling 2
-
+    icon: mdi:ceiling-light
+  light.linnea_heart:
+    icon: mdi:heart
+  light.linnea_ceiling:
+    icon: mdi:ceiling-light
   input_boolean.livingroom_visible:
     icon: mdi:eye
   input_boolean.diningroom_visible:

@@ -13,7 +13,7 @@ views:
     cards:
       - type: entity-filter
         title: At home
-        show_header_toggle: false
+        show_header_toggle: true
         entities:
           - device_tracker.judithsiphone
           - device_tracker.allyourbasearebelongtous2
@@ -179,16 +179,18 @@ views:
             - sensor.tv_time_bedroom_apple_tv
 
 
-      - type: entities
-        title: Amanda's Ceiling
-        show_header_toggle: true
+      
+
+      - type: picture-glance
+        image: /images/amanda.png
+        title: Amanda
         entities:
           - light.tradfri_bulb_e14_ws_opal_400lm
           - light.tradfri_bulb_e14_ws_opal_400lm_2
 
-      - type: entities
+      - type: picture-glance
+        image: /images/linnea.png
         title: Linnea
-        show_header_toggle: true
         entities:
           - light.linnea_ceiling
           - light.linnea_heart
@@ -211,7 +213,7 @@ views:
 
       - type: conditional
         title: Links
-        show_header_toggle: false
+        show_header_toggle: true
         conditions:
           - entity: input_boolean.links_visible
             state: "on"
@@ -228,7 +230,7 @@ views:
 
       - type: conditional
         title: TV
-        show_header_toggle: false
+        show_header_toggle: true
         conditions:
           - entity: input_boolean.tv_visible
             state: "on"
@@ -241,7 +243,7 @@ views:
 
       - type: conditional
         title: TV
-        show_header_toggle: false
+        show_header_toggle: true
         conditions:
           - entity: input_boolean.internet_visible
             state: "on"
@@ -260,7 +262,7 @@ views:
           
       - type: entity-filter
         title: Mouse status
-        show_header_toggle: false
+        show_header_toggle: true
         entities:
           - sensor.kallare_mouse
           - sensor.uterum_mouse
@@ -278,7 +280,7 @@ views:
 
       - type: entity-filter
         title: Doors and windows
-        show_header_toggle: false
+        show_header_toggle: true
         entities:
           - binary_sensor.home_shell_closed
           - binary_sensor.altandorr
@@ -301,7 +303,7 @@ views:
         #  show_state: false
       - type: entity-filter
         title: Motion sensors
-        show_header_toggle: false
+        show_header_toggle: true
         entities:
           - binary_sensor.motion_sensor_158d0001655fde
           - binary_sensor.motion_sensor_158d0001655ff2

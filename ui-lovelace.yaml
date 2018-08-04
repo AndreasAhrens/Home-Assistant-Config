@@ -129,14 +129,39 @@ views:
         entities:
           - switch.mailbox_outside_light
           - sensor.mailbox_deposits
-      - type: entities
+
+      - type: picture-glance
+        image: /images/bedroom.png
         title: Bedroom
-        show_header_toggle: true
         entities:
+          - input_boolean.bedroom_visible
           - light.her_bedside
           - light.his_bedside
           - switch.plug_158d0001dbd0d2
           - cover.bedroom_rollers
+          - sensor.temperature_158d0001701075
+      - type: conditional
+        title: Bedroom
+        show_header_toggle: true
+        conditions:
+          - entity: input_boolean.bedroom_visible
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - light.her_bedside
+            - light.his_bedside
+            - switch.plug_158d0001dbd0d2
+            - cover.bedroom_rollers
+            - binary_sensor.bedroom_movement
+            - binary_sensor.switch_158d0001a65312
+            - sensor.humidity_158d0001701075
+            - sensor.temperature_158d0001701075
+            - binary_sensor.in_bed_sensor
+            - binary_sensor.door_window_sensor_158d00014d4149
+            - sensor.tv_time_bedroom_apple_tv
+
+
       - type: entities
         title: Amanda's Ceiling
         show_header_toggle: true

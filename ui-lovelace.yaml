@@ -31,24 +31,28 @@ views:
         image: /local/livingroom.JPG
         elements:
           - type: state-icon
+            tap_action: toggle
             entity: input_boolean.livingroom_visible
             style:
               top: 87%
               left: 5%
               color: white
           - type: state-icon
+            tap_action: toggle
             entity: light.living_room_wall
             style:
               top: 86%
               left: 14%
               color: white
           - type: state-icon
+            tap_action: toggle
             entity: light.living_room_ceiling
             style:
               top: 86%
               left: 23%
               color: white
           - type: state-icon
+            tap_action: toggle
             entity: switch.plug_158d0001dd4fe7
             style:
               top: 86%
@@ -70,6 +74,7 @@ views:
               left: 50%
               color: white
           - type: state-icon
+            tap_action: more-info
             entity: binary_sensor.motion_sensor_158d0001656600
             style:
               top: 82%

@@ -11,12 +11,19 @@ title: Home
 views:
   - title: Hemgatan
     cards:
-      - type: entities
-        title: Main Devices
-        show_header_toggle: true
+      - type: entity-filter
+        title: At home
+        show_header_toggle: false
         entities:
           - device_tracker.judithsiphone
           - device_tracker.allyourbasearebelongtous2
+          - device_tracker.amandasiphone
+          - device_tracker.linneasiphone
+          - device_tracker.tompasiphone
+          - device_tracker.anitasiphonese
+        state_filter:
+          - home
+
       - type: picture-glance
         image: /images/living_room.png
         title: Living room
@@ -31,6 +38,7 @@ views:
           - binary_sensor.motion_sensor_158d0001656600
           #- sensor.vardagsrum_humidity
           - sensor.vardagsrum_temperature
+
       - type: conditional
         title: Living room
         show_header_toggle: true

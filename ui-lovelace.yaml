@@ -4,8 +4,8 @@
 resources:
   - url: /local/custom_ui/dark-sky-weather-card.js
     type: js
-  #- url: /local/custom_ui/weather-card.js
-  #  type: js
+  - url: /local/custom_ui/weather-card.js
+    type: js
 
 title: Home
 views:
@@ -379,10 +379,10 @@ views:
         title: Weather radar
         url: https://embed.windy.com/embed2.html
         aspect_ratio: 100%
-      #- type: "custom:weather-card"
-      #  title: Yahoo Weather
-      #  entity_weather: weather.yweather
-      #  entity_sun: sun.sun
+      - type: "custom:weather-card"
+        title: Yahoo Weather
+        entity_weather: weather.yweather
+        entity_sun: sun.sun
       - type: custom:dark-sky-weather-card
         title: Dark sky
         entity_sun: sun.sun

@@ -59,23 +59,6 @@ views:
           - binary_sensor.door_window_sensor_158d00016ccebc
           - binary_sensor.motion_sensor_158d0001655fde
           - binary_sensor.entre
-      - type: conditional
-        title: Hallway
-        show_header_toggle: true
-        conditions:
-          - entity: input_boolean.hallway_visible
-            state: "on"
-        card:
-          type: entities
-          entities:
-            - switch.plug_158d0001dbf3b2
-            - alarm_control_panel.hemgatan_alarm
-            - binary_sensor.door_window_sensor_158d00016ccebc
-            - binary_sensor.kallardorr
-            - binary_sensor.motion_sensor_158d0001655fde
-            - binary_sensor.entre
-            - binary_sensor.door_window_sensor_158d00016ccebc
-            - binary_sensor.switch_158d00014a077d
           
       - type: picture-glance
         image: /local/kitchen.JPG
@@ -100,15 +83,6 @@ views:
           - sensor.uterum_temperature
 
       - type: picture-glance
-        image: /local/upper_hallway.JPG
-        title: Upper Hallway
-        entities:
-          - input_boolean.upper_hallway_visible
-          - light.upstairs_hallway
-          - fan.xiaomi_air_purifier_2_upstairs
-          - binary_sensor.motion_sensor_158d0001656570
-          
-      - type: picture-glance
         image: /local/bedroom.JPG
         title: Bedroom
         entities:
@@ -118,26 +92,7 @@ views:
           - switch.plug_158d0001dbd0d2
           - cover.bedroom_rollers
           - sensor.temperature_158d0001701075
-      - type: conditional
-        title: Bedroom
-        show_header_toggle: true
-        conditions:
-          - entity: input_boolean.bedroom_visible
-            state: "on"
-        card:
-          type: entities
-          entities:
-            - light.her_bedside
-            - light.his_bedside
-            - switch.plug_158d0001dbd0d2
-            - cover.bedroom_rollers
-            - binary_sensor.bedroom_movement
-            - binary_sensor.switch_158d0001a65312
-            - sensor.humidity_158d0001701075
-            - sensor.temperature_158d0001701075
-            - binary_sensor.in_bed_sensor
-            - binary_sensor.door_window_sensor_158d00014d4149
-            - sensor.tv_time_bedroom_apple_tv
+      
 
       - type: picture-glance
         image: /local/amanda.JPG
@@ -153,7 +108,15 @@ views:
           - light.linnea_ceiling
           - light.linnea_heart
 
-      
+      - type: picture-glance
+        image: /local/upper_hallway.JPG
+        title: Upper Hallway
+        entities:
+          - input_boolean.upper_hallway_visible
+          - light.upstairs_hallway
+          - fan.xiaomi_air_purifier_2_upstairs
+          - binary_sensor.motion_sensor_158d0001656570
+
       - type: conditional
         title: Upper Hallway
         show_header_toggle: true
@@ -178,6 +141,45 @@ views:
           - light.gateway_light_34ce008bfa2b
 
 
+      - type: conditional
+        title: Hallway
+        show_header_toggle: true
+        conditions:
+          - entity: input_boolean.hallway_visible
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - switch.plug_158d0001dbf3b2
+            - alarm_control_panel.hemgatan_alarm
+            - binary_sensor.door_window_sensor_158d00016ccebc
+            - binary_sensor.kallardorr
+            - binary_sensor.motion_sensor_158d0001655fde
+            - binary_sensor.entre
+            - binary_sensor.door_window_sensor_158d00016ccebc
+            - binary_sensor.switch_158d00014a077d
+
+            
+      - type: conditional
+        title: Bedroom
+        show_header_toggle: true
+        conditions:
+          - entity: input_boolean.bedroom_visible
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - light.her_bedside
+            - light.his_bedside
+            - switch.plug_158d0001dbd0d2
+            - cover.bedroom_rollers
+            - binary_sensor.bedroom_movement
+            - binary_sensor.switch_158d0001a65312
+            - sensor.humidity_158d0001701075
+            - sensor.temperature_158d0001701075
+            - binary_sensor.in_bed_sensor
+            - binary_sensor.door_window_sensor_158d00014d4149
+            - sensor.tv_time_bedroom_apple_tv
 
 
       - type: conditional

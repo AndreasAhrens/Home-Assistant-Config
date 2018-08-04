@@ -28,6 +28,9 @@ views:
           - light.tv_bench
           - switch.disco_light
           - vacuum.blitzwolf_vacuum
+          - binary_sensor.motion_sensor_158d0001656600
+          - sensor.vardagsrum_humidity
+          - sensor.vardagsrum_temperature
       - type: conditional
         title: Living room
         show_header_toggle: true
@@ -43,12 +46,43 @@ views:
             - light.tv_bench
             - switch.disco_light
             - vacuum.blitzwolf_vacuum
-      - type: entities
+            - binary_sensor.door_window_sensor_158d00015b60d7
+            - binary_sensor.door_window_sensor_158d00016c74c6
+            - binary_sensor.door_window_sensor_158d0001834f33
+            - binary_sensor.door_window_sensor_158d0001d84f5f
+            - binary_sensor.motion_sensor_158d0001656600
+            - sensor.vardagsrum_humidity
+            - sensor.vardagsrum_temperature
+            - sensor.livingroom_temperature_2
+            - sensor.livingroom_humidity_2
+            - sensor.mold_indicator
+            - sensor.illumination_34ce008c1bb1
+            - light.gateway_light_34ce008c1bb1
+
+      - type: picture-glance
+        image: /images/diningroom.png
         title: Diningroom
-        show_header_toggle: true
         entities:
+          - input_boolean.diningroom_visible
           - switch.plug_158d0001de56ce
           - switch.dining_room_aquarium
+          - binary_sensor.motion_sensor_158d0001655ff2
+          - binary_sensor.altandorr
+      - type: conditional
+        title: Diningroom
+        show_header_toggle: true
+        conditions:
+          - entity: input_boolean.diningroom_visible
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - switch.plug_158d0001de56ce
+            - switch.dining_room_aquarium
+            - binary_sensor.motion_sensor_158d0001655ff2
+            - binary_sensor.altandorr
+
+          
       - type: entities
         title: Hallway
         show_header_toggle: true

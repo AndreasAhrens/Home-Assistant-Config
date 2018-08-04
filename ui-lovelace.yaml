@@ -25,7 +25,7 @@ views:
           - 'home'
 
       - type: picture-glance
-        image: /local/livingroom.jpg
+        image: /local/livingroom.JPG
         title: Living room
         entities:
           - input_boolean.livingroom_visible
@@ -119,7 +119,7 @@ views:
             - binary_sensor.switch_158d00014a077d
           
       - type: picture-glance
-        image: /images/kitchen.jpg
+        image: /images/kitchen.JPG
         title: Kitchen
         entities:
           - light.kitchen_top

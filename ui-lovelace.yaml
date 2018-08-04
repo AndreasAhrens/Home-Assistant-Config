@@ -129,13 +129,17 @@ views:
           - binary_sensor.door_window_sensor_158d00016c7ccd
           - counter.fridge_opening
 
-      - type: entities
+      - type: picture-glance
+        image: /images/garden.png
         title: Garden
-        show_header_toggle: true
         entities:
           - switch.front_door_plug
           - switch.plug_158d0001dbec4f
+          - light.outside_room_wall
+          - binary_sensor.motion_sensor_158d0001d665e2
           - sensor.dark_sky_temperature
+          - sensor.uterum_temperature
+
       - type: entities
         title: Mailbox
         show_header_toggle: true
@@ -498,6 +502,7 @@ views:
         entity: media_player.apple_tv_i_vardagsrum
       - type: media-control
         entity: media_player.living_room
+
   - title: Outside
     cards:
       - type: entities
@@ -516,6 +521,8 @@ views:
           - sensor.mailbox_hatch
           - sensor.mailbox_door
           - sensor.mailbox_deposits
+
+
       - type: entities
         title: Outside room
         show_header_toggle: true
@@ -524,6 +531,7 @@ views:
           - sensor.uterum_mouse
           - light.outside_room_wall
           - binary_sensor.motion_sensor_158d0001d665e2
+
       - type: picture-entity
         title: Front-door
         entity: camera.frontdoor

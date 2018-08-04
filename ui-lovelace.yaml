@@ -25,7 +25,7 @@ views:
           - 'home'
 
       - type: picture-glance
-        image: /local/living_room.jpg
+        image: /local/livingroom.jpg
         title: Living room
         entities:
           - input_boolean.livingroom_visible

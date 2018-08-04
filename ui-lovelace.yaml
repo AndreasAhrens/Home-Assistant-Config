@@ -100,6 +100,15 @@ views:
           - sensor.uterum_temperature
 
       - type: picture-glance
+        image: /local/upper_hallway.JPG
+        title: Upper Hallway
+        entities:
+          - input_boolean.upper_hallway_visible
+          - light.upstairs_hallway
+          - fan.xiaomi_air_purifier_2_upstairs
+          - binary_sensor.motion_sensor_158d0001656570
+          
+      - type: picture-glance
         image: /local/bedroom.JPG
         title: Bedroom
         entities:
@@ -144,14 +153,7 @@ views:
           - light.linnea_ceiling
           - light.linnea_heart
 
-      - type: picture-glance
-        image: /local/upper_hallway.JPG
-        title: Upper Hallway
-        entities:
-          - input_boolean.upper_hallway_visible
-          - light.upstairs_hallway
-          - fan.xiaomi_air_purifier_2_upstairs
-          - binary_sensor.motion_sensor_158d0001656570
+      
       - type: conditional
         title: Upper Hallway
         show_header_toggle: true
@@ -205,7 +207,7 @@ views:
             - sensor.mold_indicator
             - sensor.illumination_34ce008c1bb1
             - light.gateway_light_34ce008c1bb1
-            
+
       - type: entities
         title: Mailbox
         show_header_toggle: true

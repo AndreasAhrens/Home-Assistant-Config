@@ -68,7 +68,7 @@ views:
             - light.gateway_light_34ce008c1bb1
 
       - type: picture-glance
-        image: /images/diningroom.jpg
+        image: /local/diningroom.JPG
         title: Diningroom
         entities:
           - input_boolean.diningroom_visible
@@ -91,7 +91,7 @@ views:
             - binary_sensor.altandorr
 
       - type: picture-glance
-        image: /images/hallway.jpg
+        image: /local/hallway.JPG
         title: Hallway
         entities:
           - input_boolean.hallway_visible
@@ -119,7 +119,7 @@ views:
             - binary_sensor.switch_158d00014a077d
           
       - type: picture-glance
-        image: /images/kitchen.JPG
+        image: /local/kitchen.JPG
         title: Kitchen
         entities:
           - light.kitchen_top
@@ -130,7 +130,7 @@ views:
           - counter.fridge_opening
 
       - type: picture-glance
-        image: /images/garden.jpg
+        image: /local/garden.JPG
         title: Garden
         entities:
           - switch.front_door_plug
@@ -148,7 +148,7 @@ views:
           - sensor.mailbox_deposits
 
       - type: picture-glance
-        image: /images/bedroom.jpg
+        image: /local/bedroom.JPG
         title: Bedroom
         entities:
           - input_boolean.bedroom_visible
@@ -179,21 +179,21 @@ views:
             - sensor.tv_time_bedroom_apple_tv
 
       - type: picture-glance
-        image: /images/amanda.jpg
+        image: /local/amanda.JPG
         title: Amanda
         entities:
           - light.tradfri_bulb_e14_ws_opal_400lm
           - light.tradfri_bulb_e14_ws_opal_400lm_2
 
       - type: picture-glance
-        image: /images/linnea.jpg
+        image: /local/linnea.JPG
         title: Linnea
         entities:
           - light.linnea_ceiling
           - light.linnea_heart
 
       - type: picture-glance
-        image: /images/upper_hallway.jpg
+        image: /local/upper_hallway.JPG
         title: Upper Hallway
         entities:
           - input_boolean.upper_hallway_visible

@@ -22,7 +22,7 @@ views:
           - device_tracker.tompasiphone
           - device_tracker.anitasiphonese
         state_filter:
-          - home
+          - 'home'
 
       - type: picture-glance
         image: /images/living_room.png
@@ -338,7 +338,7 @@ views:
         entities:
           - media_player.apple_tv_i_vardagsrum
         state_filter:
-          - 'playing'
+          - "playing"
         card:
           type: media-control
           entity: media_player.apple_tv_i_vardagsrum
@@ -347,7 +347,7 @@ views:
       #  entities:
       #    - input_boolean.mediaplayers_visible
       #  state_filter:
-      #    - 'on'
+      #    - - "on"
       #  card:
       #    type: media-control
       #    entity: media_player.apple_tv_i_sovrum
@@ -356,7 +356,7 @@ views:
         entities:
           - input_boolean.mediaplayers_visible
         state_filter:
-          - 'on'
+          - "on"
         card:
           type: media-control
           entity: media_player.living_room
@@ -365,7 +365,7 @@ views:
         entities:
           - input_boolean.mediaplayers_visible
         state_filter:
-          - 'on'
+          - "on"
         card:
           type: media-control
           entity: media_player.spotify

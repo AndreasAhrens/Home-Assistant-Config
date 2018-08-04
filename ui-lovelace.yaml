@@ -297,7 +297,7 @@ views:
           - input_boolean.tv_visible
           - input_boolean.internet_visible
           - input_boolean.vacation_mode
-          - input_boolean.mediaplayers_visible
+          #- input_boolean.mediaplayers_visible
       - type: conditional
         title: Links
         show_header_toggle: true

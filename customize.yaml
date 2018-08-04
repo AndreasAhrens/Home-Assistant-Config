@@ -293,36 +293,52 @@
   light.linnea_ceiling:
     icon: mdi:ceiling-light
   input_boolean.livingroom_visible:
+    friendly_name: Livingroom Visible
     icon: mdi:eye
   input_boolean.diningroom_visible:
+    friendly_name: Diningroom Visible
     icon: mdi:eye
   input_boolean.kitchen_visible:
+    friendly_name: Kitchen Visible
     icon: mdi:eye
   input_boolean.hallway_visible:
+    friendly_name: Hallway Visible
     icon: mdi:eye
   input_boolean.bathroom_visible:
+    friendly_name: Bathroom Visible
     icon: mdi:eye
   input_boolean.outside_visible:
+    friendly_name: Outside Visible
     icon: mdi:eye
   input_boolean.basement_visible:
+    friendly_name: Basement Visible
     icon: mdi:eye
   input_boolean.upper_hallway_visible:
+    friendly_name: Upper Hallway Visible
     icon: mdi:eye
   input_boolean.amanda_visible:
+    friendly_name: Amanda Visible
     icon: mdi:eye
   input_boolean.linnea_visible:
+    friendly_name: Linnea Visible
     icon: mdi:eye
   input_boolean.bedroom_visible:
+    friendly_name: Bedroom Visible
     icon: mdi:eye
   input_boolean.system_visible:
+    friendly_name: System Visible
     icon: mdi:eye
   input_boolean.links_visible:
+    friendly_name: Links Visible
     icon: mdi:link-variant
   input_boolean.tv_visible:
+    friendly_name: TV Visible
     icon: mdi:television
   input_boolean.internet_visible:
+    friendly_name: System Visible
     icon: mdi:web
   input_boolean.mediaplayers_visible:
+    friendly_name: Media Players Visible
     icon: mdi:play
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

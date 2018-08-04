@@ -33,3 +33,6 @@
 
   bedroom_visible:
     initial: off
+
+  system_visible:
+    initial: off

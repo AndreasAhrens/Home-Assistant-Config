@@ -161,9 +161,9 @@ views:
         entities:
           - sensor.kallare_mouse
           - sensor.uterum_mouse
-      - type: entities
+      - type: entity-filter
         title: Doors and windows
-        show_header_toggle: true
+        show_header_toggle: false
         entities:
           - binary_sensor.home_shell_closed
           - binary_sensor.altandorr
@@ -179,6 +179,11 @@ views:
           - binary_sensor.door_window_sensor_158d00016c7ccd
           - binary_sensor.door_window_sensor_158d00016c7bcd
           - binary_sensor.door_window_sensor_158d0001a1e712
+        state_filter:
+          - "on"
+        card:
+          type: glance
+    show_state: false
       - type: entities
         title: Motion sensors
         show_header_toggle: true
@@ -190,14 +195,36 @@ views:
           - binary_sensor.motion_sensor_158d0001656600
           - binary_sensor.motion_sensor_158d0001235a99
           - binary_sensor.motion_sensor_158d0001d665e2
+      - type: entity-filter
+        entities:
+          - media_player.apple_tv_i_vardagsrum
+        state_filter:
+          - 'playing'
+        card:
+          type: media-control
+          entity: media_player.apple_tv_i_vardagsrum
+
+      - type: entity-filter
+        entities:
+          - media_player.apple_tv_i_sovrum
+        state_filter:
+          - 'playing'
+        card:
+          type: media-control
+          entity: media_player.apple_tv_i_sovrum
+
+      - type: entity-filter
+        entities:
+          - media_player.living_room
+        state_filter:
+          - 'playing'
+        card:
+          type: media-control
+          entity: media_player.living_room
+
       - type: media-control
         entity: media_player.spotify
-      - type: media-control
-        entity: media_player.apple_tv_i_vardagsrum
-      - type: media-control
-        entity: media_player.apple_tv_i_sovrum
-      - type: media-control
-        entity: media_player.living_room
+
   - icon: mdi:weather-cloudy
     id: weather
     title: Weather

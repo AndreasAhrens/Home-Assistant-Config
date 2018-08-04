@@ -166,6 +166,8 @@
     friendly_name: Living Room Right Window
     device_class: opening
     icon: mdi:window-closed
+  switch.front_door_plug:
+    icon: mdi:spotlight-beam
   binary_sensor.wall_switch_both_158d000171d630:
     friendly_name: Living room switch both
   binary_sensor.wall_switch_left_158d000171d630:
@@ -304,6 +306,8 @@
   input_boolean.linnea_visible:
     icon: mdi:eye
   input_boolean.bedroom_visible:
+    icon: mdi:eye
+  input_boolean.system_visible:
     icon: mdi:eye
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

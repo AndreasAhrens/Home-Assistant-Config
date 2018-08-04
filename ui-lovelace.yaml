@@ -21,13 +21,17 @@ views:
         image: /images/living_room.png
         title: Living room
         entities:
+          - input_boolean.livingroom_visible
           - light.living_room_wall
           - light.living_room_ceiling
           - switch.plug_158d0001dd4fe7
           - light.tv_bench
           - switch.disco_light
           - vacuum.blitzwolf_vacuum
-      - type: entities
+      - type: conditional
+        conditions:
+          - entity: input_boolean.livingroom_visible
+           state: "on"
         title: Living room
         show_header_toggle: true
         entities:

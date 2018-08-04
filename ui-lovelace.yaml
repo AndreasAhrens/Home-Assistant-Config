@@ -82,13 +82,35 @@ views:
             - binary_sensor.motion_sensor_158d0001655ff2
             - binary_sensor.altandorr
 
-          
-      - type: entities
+      - type: picture-glance
+        image: /images/hallway.png
         title: Hallway
-        show_header_toggle: true
         entities:
+          - input_boolean.hallway_visible
           - switch.plug_158d0001dbf3b2
           - alarm_control_panel.hemgatan_alarm
+          - binary_sensor.door_window_sensor_158d00016ccebc
+          - binary_sensor.motion_sensor_158d0001655fde
+          - binary_sensor.entre
+      - type: conditional
+        title: Hallway
+        show_header_toggle: true
+        conditions:
+          - entity: input_boolean.hallway_visible
+            state: "on"
+        card:
+          type: entities
+          entities:
+            - switch.plug_158d0001dbf3b2
+            - alarm_control_panel.hemgatan_alarm
+            - binary_sensor.door_window_sensor_158d00016ccebc
+            - binary_sensor.kallardorr
+            - binary_sensor.motion_sensor_158d0001655fde
+            - binary_sensor.entre
+            - binary_sensor.door_window_sensor_158d00016ccebc
+            - binary_sensor.switch_158d00014a077d
+          
+
       - type: entities
         title: Kitchen
         show_header_toggle: true
@@ -142,7 +164,7 @@ views:
           - input_boolean.tv_visible
           - input_boolean.internet_visible
           - input_boolean.vacation_mode
-          
+
       - type: conditional
         title: Links
         show_header_toggle: false

@@ -25,7 +25,7 @@ views:
           - 'home'
 
       - type: picture-glance
-        image: /images/living_room.png
+        image: /local/living_room.jpg
         title: Living room
         entities:
           - input_boolean.livingroom_visible
@@ -68,7 +68,7 @@ views:
             - light.gateway_light_34ce008c1bb1
 
       - type: picture-glance
-        image: /images/diningroom.png
+        image: /images/diningroom.jpg
         title: Diningroom
         entities:
           - input_boolean.diningroom_visible
@@ -91,7 +91,7 @@ views:
             - binary_sensor.altandorr
 
       - type: picture-glance
-        image: /images/hallway.png
+        image: /images/hallway.jpg
         title: Hallway
         entities:
           - input_boolean.hallway_visible
@@ -119,7 +119,7 @@ views:
             - binary_sensor.switch_158d00014a077d
           
       - type: picture-glance
-        image: /images/kitchen.png
+        image: /images/kitchen.jpg
         title: Kitchen
         entities:
           - light.kitchen_top
@@ -130,7 +130,7 @@ views:
           - counter.fridge_opening
 
       - type: picture-glance
-        image: /images/garden.png
+        image: /images/garden.jpg
         title: Garden
         entities:
           - switch.front_door_plug
@@ -148,7 +148,7 @@ views:
           - sensor.mailbox_deposits
 
       - type: picture-glance
-        image: /images/bedroom.png
+        image: /images/bedroom.jpg
         title: Bedroom
         entities:
           - input_boolean.bedroom_visible
@@ -179,21 +179,21 @@ views:
             - sensor.tv_time_bedroom_apple_tv
 
       - type: picture-glance
-        image: /images/amanda.png
+        image: /images/amanda.jpg
         title: Amanda
         entities:
           - light.tradfri_bulb_e14_ws_opal_400lm
           - light.tradfri_bulb_e14_ws_opal_400lm_2
 
       - type: picture-glance
-        image: /images/linnea.png
+        image: /images/linnea.jpg
         title: Linnea
         entities:
           - light.linnea_ceiling
           - light.linnea_heart
 
       - type: picture-glance
-        image: /images/upper_hallway.png
+        image: /images/upper_hallway.jpg
         title: Upper Hallway
         entities:
           - input_boolean.upper_hallway_visible

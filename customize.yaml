@@ -320,5 +320,7 @@
     icon: mdi:television
   input_boolean.internet_visible:
     icon: mdi:web
+  input_boolean.mediaplayers_visible:
+    icon: mdi:play
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

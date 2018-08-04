@@ -45,3 +45,6 @@
 
   internet_visible:
     initial: off
+
+  mediaplayers_visible:
+    initial: off

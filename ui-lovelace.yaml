@@ -222,7 +222,7 @@ views:
           - binary_sensor.motion_sensor_158d0001656570
           - sensor.illumination_34ce008bfa2b
           - light.gateway_light_34ce008bfa2b
-          
+
       - type: entities
         title: Status
         show_header_toggle: true
@@ -231,7 +231,7 @@ views:
           - input_boolean.tv_visible
           - input_boolean.internet_visible
           - input_boolean.vacation_mode
-
+          - input_boolean.mediaplayers_visible
       - type: conditional
         title: Links
         show_header_toggle: true
@@ -345,24 +345,30 @@ views:
 
       - type: entity-filter
         entities:
-          - media_player.apple_tv_i_sovrum
+          - input_boolean.mediaplayers_visible
         state_filter:
-          - 'playing'
+          - 'on'
         card:
           type: media-control
           entity: media_player.apple_tv_i_sovrum
 
       - type: entity-filter
         entities:
-          - media_player.living_room
+          - input_boolean.mediaplayers_visible
         state_filter:
-          - 'playing'
+          - 'on'
         card:
           type: media-control
           entity: media_player.living_room
 
-      - type: media-control
-        entity: media_player.spotify
+      - type: entity-filter
+        entities:
+          - input_boolean.mediaplayers_visible
+        state_filter:
+          - 'on'
+        card:
+          type: media-control
+          entity: media_player.spotify
 
   - icon: mdi:weather-cloudy
     id: weather

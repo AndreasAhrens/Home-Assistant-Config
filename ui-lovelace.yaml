@@ -127,13 +127,6 @@ views:
           - sensor.dark_sky_temperature
           - sensor.uterum_temperature
 
-      - type: entities
-        title: Mailbox
-        show_header_toggle: true
-        entities:
-          - switch.mailbox_outside_light
-          - sensor.mailbox_deposits
-
       - type: picture-glance
         image: /local/bedroom.JPG
         title: Bedroom
@@ -209,6 +202,13 @@ views:
           - binary_sensor.motion_sensor_158d0001656570
           - sensor.illumination_34ce008bfa2b
           - light.gateway_light_34ce008bfa2b
+
+      - type: entities
+        title: Mailbox
+        show_header_toggle: true
+        entities:
+          - switch.mailbox_outside_light
+          - sensor.mailbox_deposits
           
       - type: entity-filter
         title: At home

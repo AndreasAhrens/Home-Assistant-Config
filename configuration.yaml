@@ -146,10 +146,8 @@ shell_command: !include shell_command.yaml
 switch: !include switches.yaml
 vacuum: !include vacuum.yaml
 counter: !include counter.yaml
+input_boolean: !include input_booleans.yaml
 
-input_boolean:
-  vacation_mode:
-    initial: off
 
 # Use MySQL database
 recorder:

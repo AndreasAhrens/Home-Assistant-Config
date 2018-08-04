@@ -1,0 +1,35 @@
+  vacation_mode:
+    initial: off
+
+  livingroom_visible:
+    initial: off
+
+  diningroom_visible:
+    initial: off
+
+  kitchen_visible:
+    initial: off
+
+  hallway_visible:
+    initial: off
+
+  bathroom_visible:
+    initial: off
+
+  outside_visible:
+    initial: off
+
+  basement_visible:
+    initial: off
+
+  upper_hallway_visible:
+    initial: off
+
+  amanda_visible:
+    initial: off
+
+  linnea_visible:
+    initial: off
+
+  bedroom_visible:
+    initial: off

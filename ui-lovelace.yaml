@@ -25,11 +25,11 @@ views:
           - light.living_room_wall
           - light.living_room_ceiling
           - switch.plug_158d0001dd4fe7
-          - light.tv_bench
-          - switch.disco_light
-          - vacuum.blitzwolf_vacuum
+          #- light.tv_bench
+          #- switch.disco_light
+          # - vacuum.blitzwolf_vacuum
           - binary_sensor.motion_sensor_158d0001656600
-          - sensor.vardagsrum_humidity
+          #- sensor.vardagsrum_humidity
           - sensor.vardagsrum_temperature
       - type: conditional
         title: Living room

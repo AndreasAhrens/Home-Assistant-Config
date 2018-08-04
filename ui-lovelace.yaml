@@ -26,6 +26,64 @@ views:
           #- sensor.vardagsrum_humidity
           - sensor.vardagsrum_temperature
 
+      #### Test temp glance ####
+      - type: picture-elements
+          image: /local/livingroom.JPG
+          elements:
+            - type: state-icon
+              entity: input_boolean.livingroom_visible
+              style:
+                top: 87%
+                left: 5%
+                color: white
+            - type: state-icon
+              entity: light.living_room_wall
+              style:
+                top: 86%
+                left: 14%
+                color: white
+            - type: state-icon
+              entity: light.living_room_ceiling
+              style:
+                top: 86%
+                left: 23%
+                color: white
+            - type: state-icon
+              entity: switch.plug_158d0001dd4fe7
+              style:
+                top: 86%
+                left: 32%
+                color: white
+​
+            ## temp
+            - type: icon
+              icon: mdi:hotel
+              entity: sensor.vardagsrum_temperature
+              tap_action: more-info
+              style:
+                top: 82%
+                left: 50%              
+                color: white
+            - type: state-label
+              entity: sensor.vardagsrum_temperature
+              style:
+                top: 95%
+                left: 50%
+                color: white
+​
+            - type: icon
+              icon: mdi:human-male
+              entity: binary_sensor.motion_sensor_158d0001656600
+              tap_action: more-info
+              style:
+                top: 82%
+                left: 64% 
+                color: white
+
+​
+
+      #########################
+
       - type: picture-glance
         image: /local/diningroom.JPG
         title: Diningroom
@@ -159,7 +217,7 @@ views:
             - binary_sensor.door_window_sensor_158d00016ccebc
             - binary_sensor.switch_158d00014a077d
 
-            
+
       - type: conditional
         title: Bedroom
         show_header_toggle: true

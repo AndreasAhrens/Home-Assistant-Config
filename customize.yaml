@@ -283,27 +283,27 @@
   light.tradfri_bulb_e14_ws_opal_400lm:
     friendly_name: Amanda Ceiling 2
 
-  livingroom_visible:
+  input_boolean.livingroom_visible:
     icon: mdi:eye
-  diningroom_visible:
+  input_boolean.diningroom_visible:
     icon: mdi:eye
-  kitchen_visible:
+  input_boolean.kitchen_visible:
     icon: mdi:eye
-  hallway_visible:
+  input_boolean.hallway_visible:
     icon: mdi:eye
-  bathroom_visible:
+  input_boolean.bathroom_visible:
     icon: mdi:eye
-  outside_visible:
+  input_boolean.outside_visible:
     icon: mdi:eye
-  basement_visible:
+  input_boolean.basement_visible:
     icon: mdi:eye
-  upper_hallway_visible:
+  input_boolean.upper_hallway_visible:
     icon: mdi:eye
-  amanda_visible:
+  input_boolean.amanda_visible:
     icon: mdi:eye
-  linnea_visible:
+  input_boolean.linnea_visible:
     icon: mdi:eye
-  bedroom_visible:
+  input_boolean.bedroom_visible:
     icon: mdi:eye
   ## Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

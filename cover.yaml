@@ -15,4 +15,11 @@
     state_open: "0"
     state_closed: "100"
     #value_template: '{{ value.x }}'
+    tilt_command_topic: '/inside/bedroom/cover/set'
+    tilt_status_topic: '/inside/bedroom/cover/percent'
+    tilt_min: 0
+    tilt_max: 100
+    tilt_closed_value: "100"
+    tilt_opened_value: "0"
+    #value_template: '{{ value.x }}'
 

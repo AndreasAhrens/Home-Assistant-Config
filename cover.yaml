@@ -1,14 +1,14 @@
   - platform: mqtt
-    state_topic: "/inside/bedroom/cover/"
-    command_topic: "/inside/bedroom/cover/set"
+    #state_topic: "/inside/bedroom/cover/"
+    #command_topic: "/inside/bedroom/cover/set"
     name: "Bedroom Rollers"
     qos: 0
     #retain: true
     payload_open: "0"
     payload_close: "100"
     payload_stop: "STOP"
-    state_open: "OPEN"
-    state_closed: "CLOSED"
+    #state_open: "OPEN"
+    #state_closed: "CLOSED"
     optimistic: false
     set_position_topic: "/inside/bedroom/cover/set"
     state_topic: "/inside/bedroom/cover/percent"

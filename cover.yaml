@@ -12,7 +12,7 @@
     optimistic: false
     set_position_topic: "/inside/bedroom/cover/set"
     state_topic: "/inside/bedroom/cover/percent"
-    state_open: 0
-    state_closed: 100
+    state_open: "0"
+    state_closed: "100"
     #value_template: '{{ value.x }}'
 

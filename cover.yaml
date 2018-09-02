@@ -19,7 +19,7 @@
     tilt_status_topic: '/inside/bedroom/cover/percent'
     tilt_min: 0
     tilt_max: 100
-    tilt_closed_value: "100"
-    tilt_opened_value: "0"
+    tilt_closed_value: 100
+    tilt_opened_value: 0
     #value_template: '{{ value.x }}'
 

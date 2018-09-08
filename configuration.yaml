@@ -26,6 +26,69 @@ history:
 sun:
 config:
 cloud:
+  alexa:
+    filter:
+      include_entities:
+        - light.living_room_ceiling
+        - switch.plug_158d0001dd4fe7
+        - light.tv_bench
+        - switch.Disco_Light
+        - sensor.vardagsrum_humidity
+        - sensor.vardagsrum_temperature
+        - binary_sensor.door_window_sensor_158d00015b60d7
+        - binary_sensor.door_window_sensor_158d00016c74c6
+        - binary_sensor.door_window_sensor_158d0001834f33
+        - binary_sensor.motion_sensor_158d0001656600
+        - sensor.illumination_34ce008c1bb1
+        - sensor.average_illumination
+        - switch.plug_158d0001de56ce
+        - switch.dining_room_aquarium
+        - binary_sensor.altandorr
+        - binary_sensor.motion_sensor_158d0001655ff2
+        - switch.plug_158d0001dbec4f
+        - switch.front_door_plug
+        - switch.plug_158d0001dbf3b2
+        - alarm_control_panel.hemgatan_alarm
+        - binary_sensor.entre
+        - binary_sensor.kallardorr
+        - binary_sensor.motion_sensor_158d0001655fde
+        - binary_sensor.switch_158d00014a077d
+        - binary_sensor.door_window_sensor_158d00016ccebc
+        - switch.plug_158d0001dbd0d2
+        - cover.bedroom_rollers
+        - binary_sensor.bedroom_movement
+        - binary_sensor.switch_158d0001a65312
+        - sensor.humidity_158d0001701075
+        - sensor.temperature_158d0001701075
+        - binary_sensor.door_window_sensor_158d00014d4149
+        - sensor.humidity_158d0001a1ffac
+        - sensor.temperature_158d0001a1ffac
+        - binary_sensor.door_window_sensor_158d00016c7bcd
+        - light.linnea_ceiling
+        - light.linnea_heart
+        - light.kitchen_top
+        - sensor.kok_temperature
+        - binary_sensor.door_window_sensor_158d00016c7536
+        - binary_sensor.motion_sensor_158d0001656584
+        - binary_sensor.door_window_sensor_158d00016c7ccd
+        - fan.xiaomi_air_purifier_2_upstairs
+        - sensor.purifier_upstairs_api
+        - sensor.purifier_upstairs_temperature
+        - sensor.purifier_upstairs_humidity
+        - sensor.ovanvaning_humidity
+        - sensor.ovanvaning_temperature
+        - binary_sensor.motion_sensor_158d0001656570
+        - sensor.illumination_34ce008bfa2b
+        - sensor.kallare_temperature
+        - sensor.uterum_temperature
+        - binary_sensor.motion_sensor_158d0001d665e2
+        - sensor.average_temperature
+        - sensor.dark_sky_temperature
+        - sensor.dark_sky_humidity
+        - switch.mailbox_inside_light
+        - switch.mailbox_outside_light
+        - light.tradfri_bulb_e14_ws_opal_400lm
+        - light.tradfri_bulb_e14_ws_opal_400lm_2
 ios:
 tts:
   platform: google

@@ -25,6 +25,7 @@ conversation:
 history:
 sun:
 config:
+cloud:
 ios:
 tts:
   platform: google

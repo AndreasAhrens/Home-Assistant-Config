@@ -329,7 +329,7 @@ views:
             - sensor.tv_time_livingroom_chromecast
 
       - type: conditional
-        title: TV
+        title: System
         show_header_toggle: true
         conditions:
           - entity: input_boolean.internet_visible
@@ -344,6 +344,7 @@ views:
             - sensor.hassbian_cert_expiry
             - script.update_config
             - sensor.server_power_usage
+            - automation.start_homekit
 
       
           

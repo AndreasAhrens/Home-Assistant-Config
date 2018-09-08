@@ -285,7 +285,7 @@ tts:
   platform: google
 
 http:
-  api_password: !secret http_password
+  #api_password: !secret http_password
   ssl_certificate: !secret ssl_cert
   ssl_key: !secret ssl_key
   base_url: !secret base_url

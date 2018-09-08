@@ -177,7 +177,7 @@ cloud:
       cover.bedroom_rollers:
         name: Bedroom rollers
         description: Roller covers in bedroom
-        display_categories: 
+        display_categories: OTHER
       binary_sensor.bedroom_movement:
         name: Bedroom movement
         description: Bedroom movement sensor

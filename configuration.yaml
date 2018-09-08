@@ -89,6 +89,197 @@ cloud:
         - switch.mailbox_outside_light
         - light.tradfri_bulb_e14_ws_opal_400lm
         - light.tradfri_bulb_e14_ws_opal_400lm_2
+    entity_config:
+      light.living_room_ceiling:
+        name: Livingroom Ceiling
+        description: The light in the livingroom
+        display_categories: LIGHT
+      switch.plug_158d0001dd4fe7:
+        name: Livingroom fan
+        description: The fan in the livingroom
+        display_categories: switch
+      binary_sensor.door_window_sensor_158d00015b60d7:
+        name: Living Room Left Window
+        description: Left window in the livingroom
+        display_categories: CONTACT_SENSOR
+      light.tv_bench:
+        name: TV Bench
+        description: TV bench in the livingroom
+        display_categories: LIGHT
+      switch.Disco_Light:
+        name: Disco Light
+        description: The livingroom disco light
+        display_categories: LIGHT
+      sensor.vardagsrum_temperature:
+        name: Livingroom temperature
+        description: Temperature in the livingroom
+        display_categories: TEMPERATURE_SENSOR
+      binary_sensor.door_window_sensor_158d00016c74c6:
+        name: Living Room Middle Window
+        description: Middle window in the livingroom
+        display_categories: CONTACT_SENSOR
+      binary_sensor.door_window_sensor_158d0001834f33:
+        name: Living Room Right Window
+        description: Right window in the livingroom
+        display_categories: CONTACT_SENSOR
+      binary_sensor.motion_sensor_158d0001656600:
+        name: Living Room Movement
+        description: Livingroom movement sensor
+        display_categories: MOTION_SENSOR
+      #switch.plug_158d0001de56ce:
+      #  name:
+      #  description:
+      #  display_categories:
+      switch.dining_room_aquarium:
+        name: Diningroom Aquarium
+        description: The Aquarium in the diningroom
+        display_categories: LIGHT
+      binary_sensor.altandorr:
+        name: Back door sensor
+        description: Door to outside room
+        display_categories: CONTACT_SENSOR
+      binary_sensor.motion_sensor_158d0001655ff2:
+        name: Dining Room Movement
+        description: Movement sensor in Diningroom
+        display_categories: MOTION_SENSOR
+      switch.plug_158d0001dbec4f:
+        name: Driveway light
+        description: Light for driveway
+        display_categories: LIGHT
+      switch.front_door_plug:
+        name: Front door light
+        description: Light at the front door
+        display_categories: LIGHT
+      switch.plug_158d0001dbf3b2:
+        name: Hallway stairs
+        description: Light in the stairs
+        display_categories: LIGHT
+      alarm_control_panel.hemgatan_alarm:
+        name: Alarm system
+        description: Hemgatan alarm system
+        display_categories: OTHER
+      binary_sensor.entre:
+        name: Front door sensor 1
+        description: Front door
+        display_categories: CONTACT_SENSOR
+      binary_sensor.motion_sensor_158d0001655fde:
+        name: Hallway movement
+        description: Movement sensor for hallway
+        display_categories: MOTION_SENSOR
+      binary_sensor.door_window_sensor_158d00016ccebc:
+        name: Basement door
+        description: Second basement door sensor
+        display_categories: CONTACT_SENSOR
+      switch.plug_158d0001dbd0d2:
+        name: Bedroom fan
+        description: Fan in the bedroom
+        display_categories: SMARTPLUG
+      cover.bedroom_rollers:
+        name: Bedroom rollers
+        description: Roller covers in bedroom
+        display_categories: 
+      binary_sensor.bedroom_movement:
+        name: Bedroom movement
+        description: Bedroom movement sensor
+        display_categories: MOTION_SENSOR
+      binary_sensor.switch_158d0001a65312:
+        name: Bedroom door switch
+        description: Switch at bedroom door
+        display_categories: SWITCH
+      sensor.temperature_158d0001701075:
+        name: Bedroom temperature
+        description: Bedroom temperature sensor
+        display_categories: TEMPERATURE_SENSOR
+      binary_sensor.door_window_sensor_158d00014d4149:
+        name: Bedroom Window
+        description: Bedroom window sensor
+        display_categories: CONTACT_SENSOR
+      sensor.temperature_158d0001a1ffac:
+        name: Bathroom temperature
+        description: Temperature in the bathroom
+        display_categories: TEMPERATURE_SENSOR
+      binary_sensor.door_window_sensor_158d00016c7bcd:
+        name: Bathroom door
+        description: Door in the bathroom
+        display_categories: CONTACT_SENSOR
+      light.linnea_ceiling:
+        name: Linnea Ceiling
+        description: Light in Linnea's room
+        display_categories: LIGHT
+      light.linnea_heart:
+        name: Linnea Heart
+        description: Heart light in Linnea's room
+        display_categories: LIGHT
+      light.kitchen_top:
+        name: Kitchen top
+        description: Light in the kitchen top
+        display_categories: LIGHT
+      sensor.kok_temperature:
+        name: Kitchen temperature
+        description: Kitchen temperature
+        display_categories: TEMPERATURE_SENSOR
+      binary_sensor.door_window_sensor_158d00016c7536:
+        name: Kitchen Window
+        description: Window in the kitchen
+        display_categories: CONTACT_SENSOR
+      binary_sensor.motion_sensor_158d0001656584:
+        name: Kitchen movement
+        description: Movement sensor in the kitchen
+        display_categories: MOTION_SENSOR
+      binary_sensor.door_window_sensor_158d00016c7ccd:
+        name: Fridge door
+        description: Fridge door contact sensor
+        display_categories: CONTACT_SENSOR
+      fan.xiaomi_air_purifier_2_upstairs:
+        name: Upstairs Air purifier
+        description: The air purifier in the upstairs hallway
+        display_categories: OTHEr
+      sensor.purifier_upstairs_temperature:
+        name: Upstairs hallway temperature
+        description: Upstairs hallway temperature
+        display_categories: TEMPERATURE_SENSOR
+      binary_sensor.motion_sensor_158d0001656570:
+        name: Upstairs hallway movement
+        description: Upstairs hallway movement sensor
+        display_categories: MOTION_SENSOR
+      sensor.kallare_temperature:
+        name: Basement temperature
+        description: Basement temperature sensor
+        display_categories: TEMPERATURE_SENSOR
+      sensor.uterum_temperature:
+        name: Outside room temperature
+        description: Temperature in outside room
+        display_categories: TEMPERATURE_SENSOR
+      binary_sensor.motion_sensor_158d0001d665e2:
+        name: Outside room movement
+        description: Movement in the outside room
+        display_categories: MOTION_SENSOR
+      sensor.average_temperature:
+        name: Average temperature
+        description: Average temperature in the home
+        display_categories: TEMPERATURE_SENSOR
+      sensor.dark_sky_temperature:
+        name: Outside temperature
+        description: Temperature outside
+        display_categories: TEMPERATURE_SENSOR
+      switch.mailbox_inside_light:
+        name: Mailbox inside
+        description: The light inside the mailbox
+        display_categories: LIGHT
+      switch.mailbox_outside_light:
+        name: Mailbox outside
+        description: The light outside the mailbox
+        display_categories: LIGHT
+      light.tradfri_bulb_e14_ws_opal_400lm:
+        name: Amanda light 1
+        description: First light in Amanda's room
+        display_categories: LIGHT
+      light.tradfri_bulb_e14_ws_opal_400lm_2:
+        name: Amanda light 2
+        description: Second light in Amanda's room
+        display_categories: LIGHT
+
+
 ios:
 tts:
   platform: google

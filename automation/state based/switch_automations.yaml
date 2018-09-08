@@ -331,7 +331,7 @@
 
   # When we change the input_number, set the ceiling group to that brightness as a percentage
   - id: 32F64A12-BCD0-4A34-A360-E519523CD5E9
-    alias: Set livingroom ceiling based on input_number
+    alias: Set livingroom wall based on input_number
     trigger:
       - platform: state
         entity_id: input_number.livingroom_switch_right_number

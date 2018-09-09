@@ -311,7 +311,7 @@ emulated_hue:
     - switch
     - fan
 homekit:
-  auto_start: true
+  auto_start: false
   port: 51825
   filter:
     include_entities:

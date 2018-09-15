@@ -1,9 +1,9 @@
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret
-  - platform: mpd
-    host: 192.168.1.68
-    port: 6600
+  #- platform: mpd
+  #  host: 192.168.1.68
+  #  port: 6600
   - platform: tts_bluetooth_speaker
     address: 68:37:E9:91:15:DD   # Required - for example, 00:2F:AD:12:0D:42
     volume: 0.45                   # Optional - default is 0.5

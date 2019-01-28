@@ -62,13 +62,15 @@
       - service: homeassistant.turn_on
         entity_id:
           - switch.plug_158d0001dbec4f
+          - switch.front_door_plug
       - service: script.speak_message
         data:
           message: 'Andreas is almost home, estimated time to arrival is {{ states.sensor.andreas_to_home.attributes.duration }}'
-      - delay: '00:10:00'
+      - delay: '00:20:00'
       - service: homeassistant.turn_off
         entity_id:
           - switch.plug_158d0001dbec4f
+          - switch.front_door_plug
 
   - id: EF56F107-0F1C-4487-94CB-6E0340FC7104
     alias: 'Andreas exiting Close to home '

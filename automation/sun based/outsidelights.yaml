@@ -7,13 +7,14 @@
         event: sunset
     # Optional time offset. This example is 45 minutes.
         offset: '-00:20:00'
-    condition:
-      - condition: time
-        before: '21:00:00'
+    #condition:
+    #  - condition: time
+    #    before: '21:00:00'
     action:
       - service: homeassistant.turn_on
         entity_id:
           - switch.garden_front_door
+          - switch.front_door_plug
 
 
 
@@ -31,33 +32,37 @@
       - service: homeassistant.turn_off
         entity_id:
           - switch.garden_front_door
+          - switch.front_door_plug
 
 
   ####### DRIVEWAY #######
-  #- alias: Turn on DRIVEWAY light at sunset
-  #  trigger:
-  #    - platform: sun
-  #  # Possible values: sunset, sunrise
-  #      event: sunset
-  #  # Optional time offset. This example is 45 minutes.
-  #      offset: '+00:40:00'
-  #  condition:
-  #    condition: time
-  #      before: '22:00:00'
-  #  action:
-  #    - service: homeassistant.turn_on
-  #      entity_id:
-  #        - switch.garden_driveway
+  - alias: Turn on DRIVEWAY light at sunset
+    trigger:
+      - platform: sun
+    # Possible values: sunset, sunrise
+        event: sunset
+    # Optional time offset. This example is 45 minutes.
+        offset: '-00:30:00'
+    #condition:
+    #  condition: time
+    #    before: '22:00:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - switch.garden_driveway
+          - switch.plug_158d0001dbec4f
 
 
   - id: 1CDC8162-CEBA-4711-995E-AA176DA65537
-    alias: Turn off DRIVEWAY light at sunrise
+    alias: Turn off DRIVEWAY light at sunrise OR 8:30 if not turned off
     trigger:
       - platform: sun
     # Possible values: sunset, sunrise
         event: sunrise
     # Optional time offset. This example is 45 minutes.
-        offset: '+00:00:00'
+        offset: '+00:30:00'
+      - platform: time
+        at: '08:30:00'
     action:
       - service: homeassistant.turn_off
         entity_id:

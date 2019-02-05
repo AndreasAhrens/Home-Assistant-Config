@@ -1,13 +1,15 @@
   ####### Front door #######
-  - id: 66B5BF61-0547-485F-B19D-5B78B2216A11
-    alias: Turn off front door light at 23:00
-    trigger:
-      - platform: time
-        at: '23:00:00'
-    action:
-      - service: homeassistant.turn_off
-        entity_id:
-          - switch.garden_front_door
+  # Disabled, I want the lights to be on all night.
+  #- id: 66B5BF61-0547-485F-B19D-5B78B2216A11
+  #  alias: Turn off front door light at 23:00
+  #  trigger:
+  #    - platform: time
+  #      at: '23:00:00'
+  #  action:
+  #    - service: homeassistant.turn_off
+  #      entity_id:
+  #        - switch.garden_front_door
+  #        - switch.front_door_plug
 
   - id: 257920D9-C168-4681-9B7F-C23065FD0718
     alias: Turn on front door light at 06:30
@@ -22,18 +24,19 @@
       - service: homeassistant.turn_on
         entity_id:
           - switch.garden_front_door
+          - switch.front_door_plug
 
   ####### driveway #######
 
-  - id: 2F21478D-7E4F-49E4-B643-271E151968C7
-    alias: Turn off DRIVEWAY light at 22:00
-    trigger:
-      - platform: time
-        at: '22:00:00'
-    action:
-      - service: homeassistant.turn_off
-        entity_id:
-          - switch.plug_158d0001dbec4f
+  #- id: 2F21478D-7E4F-49E4-B643-271E151968C7
+  #  alias: Turn off DRIVEWAY light at 22:00
+  #  trigger:
+  #    - platform: time
+  #      at: '22:00:00'
+  #  action:
+  #    - service: homeassistant.turn_off
+  #      entity_id:
+  #        - switch.plug_158d0001dbec4f
 
   - id: 6D3B8A22-11FC-4826-9F3F-2CBEB1881548
     alias: Turn on DRIVEWAY light at 07:00

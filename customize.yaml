@@ -340,5 +340,8 @@
   input_boolean.mediaplayers_visible:
     friendly_name: Media Players Visible
     icon: mdi:play
-  ## Note - add any new auto created groups and
+  light.tradfri_driver:
+    friendly_name: Wardrobe
+    icon: mdi:hanger
+  # Note - add any new auto created groups and
   ## especilly hue lights to avoid double entries.

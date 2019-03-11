@@ -57,12 +57,11 @@
   switch.amanda_ceiling:
     icon: mdi:spotlight-beam
   switch.bedroom_fan:
-    icon: mdi:fan
-    emulated_hue_hidden: true
-    homebridge_hidden: true
+    friendly_name: Bathroom light
+    icon: mdi:shower-head
   switch.plug_158d0001dbd0d2:
-    friendly_name: Bedroom Fan
-    icon: mdi:fan
+    friendly_name: Bathroom light
+    icon: mdi:shower-head
   switch.plug_158d0001dbec4f:
     friendly_name: Driveway light
     icon: mdi:car

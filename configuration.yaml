@@ -176,9 +176,9 @@ cloud:
         description: Second basement door sensor
         display_categories: CONTACT_SENSOR
       switch.plug_158d0001dbd0d2:
-        name: Bedroom fan
-        description: Fan in the bedroom
-        display_categories: SMARTPLUG
+        name: Bathroom light
+        description: Upstairs bathroom light
+        display_categories: LIGHT
       cover.bedroom_rollers:
         name: Bedroom rollers
         description: Roller covers in bedroom

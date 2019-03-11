@@ -146,6 +146,7 @@ views:
         title: Bedroom
         entities:
           - input_boolean.bedroom_visible
+          - light.tradfri_driver
           - light.her_bedside
           - light.his_bedside
           - switch.plug_158d0001dbd0d2
@@ -230,6 +231,7 @@ views:
           entities:
             - light.her_bedside
             - light.his_bedside
+            - light.tradfri_driver
             - switch.plug_158d0001dbd0d2
             - cover.bedroom_rollers
             - binary_sensor.bedroom_movement

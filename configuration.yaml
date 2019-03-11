@@ -30,6 +30,7 @@ cloud:
     filter:
       include_entities:
         - light.living_room_ceiling
+        - light.tradfri_driver
         - switch.plug_158d0001dd4fe7
         - light.tv_bench
         - switch.Disco_Light
@@ -93,6 +94,10 @@ cloud:
       light.living_room_ceiling:
         name: Livingroom Ceiling
         description: The light in the livingroom
+        display_categories: LIGHT
+      light.tradfri_driver: 
+        name: Wardrobe
+        description: Wardrobe light
         display_categories: LIGHT
       switch.plug_158d0001dd4fe7:
         name: Livingroom fan
@@ -316,6 +321,7 @@ homekit:
   filter:
     include_entities:
       - light.living_room_ceiling
+      - light.tradfri_driver
       - switch.plug_158d0001dd4fe7
       - light.tv_bench
       - switch.Disco_Light

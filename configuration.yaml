@@ -460,6 +460,13 @@ duckdns:
   domain: !secret duckurl
   access_token: !secret ducktoken
 
+logger:
+  default: info
+  logs:
+    homeassistant.components.device_tracker: critical
+    homeassistant.components.camera: critical
+    homeassistant.components.verisure: debug
+    
 # View all events in a logbook
 logbook:
   exclude:

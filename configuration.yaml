@@ -508,9 +508,9 @@ weather:
   - platform: yweather
 
 
-mailgun:
-  domain: andreasahrens.se
-  api_key: !secret mailgun_token
+#mailgun:
+#  domain: andreasahrens.se
+#  api_key: !secret mailgun_token
   #sandbox: False
 
 weblink:

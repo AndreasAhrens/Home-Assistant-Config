@@ -55,10 +55,10 @@
         entity_id: sensor.mailbox_hatch
         to: 'open'
     action:
-      - service: notify.Mailgun_Notifier
-        data:
-          title: 'Mailbox Hatch has been opened'
-          message: 'Mailbox Hatch has been opened'
+      #- service: notify.Mailgun_Notifier
+      #  data:
+      #    title: 'Mailbox Hatch has been opened'
+      #    message: 'Mailbox Hatch has been opened'
       - service: notify.ios_all_your_base_are_belong_to_us_2
         data:
           message: "Mailbox Hatch opened"

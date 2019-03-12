@@ -2,11 +2,11 @@
   # This is needed since the MQTT messages seem to time out and then 
   # I'm stuck with unknown statuses. We can't have that! Workaround.
     trigger:
-      - platform: time
+      - platform: time_pattern
         # Matches every hour at 27 minutes past whole
         minutes: 27
         seconds: 00
-      - platform: time
+      - platform: time_pattern
         # Matches every hour at 27 minutes past whole
         minutes: 57
         seconds: 00

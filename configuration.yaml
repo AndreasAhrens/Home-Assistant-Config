@@ -420,7 +420,7 @@ recorder:
     entities:
       - sensor.andreas_to_home
       - sensor.devv_to_home
-      - sensor.disk_use_
+      - sensor.disk_use
       - sensor.ram_free
       - sensor.ram_use
       - sensor.since_last_boot
@@ -477,7 +477,7 @@ logbook:
       - sensor.all_your_base_are_belong_to_us_2_battery_state
       - sensor.andreas_to_home
       - sensor.devv_to_home
-      - sensor.disk_use_
+      - sensor.disk_use
       - sensor.ram_free
       - sensor.ram_use
       - sensor.since_last_boot
@@ -511,7 +511,7 @@ weather:
 mailgun:
   domain: andreasahrens.se
   api_key: !secret mailgun_token
-  sandbox: False
+  #sandbox: False
 
 weblink:
   entities:
@@ -543,6 +543,9 @@ panel_iframe:
     title: 'Environment'
     icon: mdi:temperature-celsius
     url: 'http://192.168.1.25:3000/dashboard/db/environment?theme=light'
+
+speedtestdotnet:
+fastdotcom:
 
 ##############################
 ########### Zones ############

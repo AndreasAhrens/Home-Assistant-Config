@@ -1,35 +1,35 @@
   ## Plant based automations ##
 
-  - id: E66FE911-238A-40E2-AE7E-711DCC08394F
-    alias: Water if Heart plant humidity is too low
-    trigger:
-      - platform: time
-        minutes: 00
-        seconds: 00
-      - platform: time
-        minutes: 10
-        seconds: 00
-      - platform: time
-        minutes: 20
-        seconds: 00
-      - platform: time
-        minutes: 30
-        seconds: 00
-      - platform: time
-        minutes: 40
-        seconds: 00
-      - platform: time
-        minutes: 50
-        seconds: 00
-    condition:
-      condition: and
-      conditions:
-        - condition: numeric_state
-          entity_id: sensor.plant_watering_since_last_time
-          above: '3600' # 3600 seconds == 1 hour.
-        - condition: numeric_state
-          entity_id: sensor.heart_plant_moisture
-          below: '25'
-    action:
-      - service: script.turn_on
-        entity_id: script.plant_watering_script
+  #- id: E66FE911-238A-40E2-AE7E-711DCC08394F
+  #  alias: Water if Heart plant humidity is too low
+  #  trigger:
+  #    - platform: time_pattern
+  #      minutes: 00
+  #      seconds: 00
+  #    - platform: time_pattern
+  #      minutes: 10
+  #      seconds: 00
+  #    - platform: time_pattern
+  #      minutes: 20
+  #      seconds: 00
+  #    - platform: time_pattern
+  #      minutes: 30
+  #      seconds: 00
+  #    - platform: time_pattern
+  #      minutes: 40
+  #      seconds: 00
+  #    - platform: time_pattern
+  #      minutes: 50
+  #      seconds: 00
+  #  condition:
+  #    condition: and
+  #    conditions:
+  #      - condition: numeric_state
+  #        entity_id: sensor.plant_watering_since_last_time
+  #        above: '3600' # 3600 seconds == 1 hour.
+  #      - condition: numeric_state
+  #        entity_id: sensor.heart_plant_moisture
+  #        below: '25'
+  #  action:
+  #    - service: script.turn_on
+  #      entity_id: script.plant_watering_script

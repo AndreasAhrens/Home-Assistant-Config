@@ -1,7 +1,7 @@
   - id: A7F5480F-10CC-489A-A777-E7D2B35B9A5C
     alias: calculate time since last watering
     trigger:
-      - platform: time
+      - platform: time_pattern
         seconds: 00
     action:
       - service: script.turn_on

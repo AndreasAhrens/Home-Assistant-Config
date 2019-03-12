@@ -361,7 +361,7 @@
       - sensor.memory_use
       - sensor.memory_free
       - sensor.disk_use
-      - sensor.disk_free_
+      - sensor.disk_free
       - sensor.processor_use
       - sensor.ssl_cert_expiry
       - sensor.hassbian_cert_expiry

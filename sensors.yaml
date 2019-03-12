@@ -43,7 +43,7 @@
       - hourly_summary
       - cloud_cover
     units: si
-    update_interval:
+    scan_interval:
       minutes: 5
   - platform: season
     type: astronomical
@@ -92,11 +92,12 @@
   - platform: cpuspeed
   - platform: fastdotcom
   - platform: version
-  - platform: speedtest
-    monitored_conditions:
-      - ping
-      - download
-      - upload
+  
+  #- platform: speedtest
+  #  monitored_conditions:
+  #    - ping
+  #    - download
+  #    - upload
   - platform: mold_indicator
     indoor_temp_sensor: sensor.vardagsrum_temperature
     indoor_humidity_sensor: sensor.vardagsrum_humidity

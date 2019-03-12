@@ -1,14 +1,17 @@
   - 
     platform: flux_led
     devices:
-      192.168.1.34:
+      192.168.1.81:
         name: "TV Bench"
         mode: rgb
-      192.168.1.52:
+      192.168.1.106:
         name: "Kitchen Top"
         mode: rgb
-      192.168.1.45:
+      192.168.1.87:
         name: "Linnea Heart"
+        mode: rgb
+      192.168.1.110:
+        name: "Amanda under bed"
         mode: rgb
   - 
     platform: hue

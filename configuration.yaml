@@ -444,13 +444,13 @@ influxdb:
 
 #Xiaomi gateway
 xiaomi_aqara:
-  discovery_retry: 5
+  discovery_retry: 10
   gateways:
-    - mac: 34:CE:00:8C:1B:B1
+    - mac: 34CE008C1BB1
       key: !secret xiaomi_key
-    - mac: 34:CE:00:8B:FA:2B
+    - mac: 34CE008BFA2B
       key: !secret xiaomi_key2 
-    - mac: 78:11:DC:B2:28:44
+    - mac: 7811DCB22844
       key: !secret xiaomi_key3
 
 digital_ocean:

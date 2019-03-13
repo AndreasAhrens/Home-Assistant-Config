@@ -112,22 +112,22 @@
       service: homeassistant.turn_off
       entity_id: switch.plug_158d0001dbf3b2
 
-  - id: 01EE994F-E267-4424-99C9-7CD96B476179
-    alias: Turn on dining room cabinet and table light when movement in dining room and sun is down
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.motion_sensor_158d0001655ff2
-        from: 'off'
-        to: 'on'
-    condition:
-      condition: state
-      entity_id: sun.sun
-      state: below_horizon
-    action:
-      - service: homeassistant.turn_on
-        entity_id: switch.dining_room_cabinet
-      - service: homeassistant.turn_on
-        entity_id: switch.plug_158d0001de56ce
+  #- id: 01EE994F-E267-4424-99C9-7CD96B476179
+  #  alias: Turn on dining room cabinet and table light when movement in dining room and sun is down
+  #  trigger:
+  #    - platform: state
+  #      entity_id: binary_sensor.motion_sensor_158d0001655ff2
+  #      from: 'off'
+  #      to: 'on'
+  #  condition:
+  #    condition: state
+  #    entity_id: sun.sun
+  #    state: below_horizon
+  #  action:
+  #    - service: homeassistant.turn_on
+  #      entity_id: switch.dining_room_cabinet
+  #    - service: homeassistant.turn_on
+  #      entity_id: switch.plug_158d0001de56ce
 
 
   - id: 863EAD3C-32C5-4431-A560-D680A3949371

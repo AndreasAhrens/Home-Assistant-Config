@@ -90,9 +90,9 @@
         unit_of_measurement: 'rpm'
         value_template: "{{ states.fan.xiaomi_air_purifier_2_upstairs.attributes.motor_speed }}"
   - platform: cpuspeed
-  - platform: fastdotcom
+  #- platform: fastdotcom
   - platform: version
-  
+
   #- platform: speedtest
   #  monitored_conditions:
   #    - ping

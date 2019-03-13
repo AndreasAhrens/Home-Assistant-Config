@@ -130,19 +130,19 @@
   #      entity_id: switch.plug_158d0001de56ce
 
 
-  - id: 863EAD3C-32C5-4431-A560-D680A3949371
-    alias: Turn off dining room cabinet and table light 10 minutes after last movement
-    trigger:
-      platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001655ff2
-      to: 'off'
-      for:
-        minutes: 10
-    action:
-      - service: homeassistant.turn_off
-        entity_id: switch.dining_room_cabinet
-      - service: homeassistant.turn_off
-        entity_id: switch.plug_158d0001de56ce
+  #- id: 863EAD3C-32C5-4431-A560-D680A3949371
+  #  alias: Turn off dining room cabinet and table light 10 minutes after last movement
+  #  trigger:
+  #    platform: state
+  #    entity_id: binary_sensor.motion_sensor_158d0001655ff2
+  #    to: 'off'
+  #    for:
+  #      minutes: 10
+  #  action:
+  #    - service: homeassistant.turn_off
+  #      entity_id: switch.dining_room_cabinet
+  #    - service: homeassistant.turn_off
+  #      entity_id: switch.plug_158d0001de56ce
 
   - id: 0FDECB19-C960-41CD-8119-3A5657216230
     alias: Turn on kitchen top light when movement in kitchen and sun is down

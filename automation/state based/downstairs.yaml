@@ -188,6 +188,9 @@
         - condition: state
           entity_id: light.living_room_wall
           state: 'off'
+        - condition: state
+          entity_id: input_boolean.sleeping_downstairs
+          state: 'off'
     action:
       - service: light.turn_on
         entity_id: 
@@ -210,9 +213,14 @@
         entity_id: binary_sensor.door_window_sensor_158d0001d84f5f
         to: 'on'
     condition:
-      - condition: numeric_state
-        entity_id: sensor.illumination_34ce008c1bb1
-        below: 350
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.illumination_34ce008c1bb1
+          below: 350
+        - condition: state
+            entity_id: input_boolean.sleeping_downstairs
+            state: 'off'
     action:
       - service: light.turn_on
         entity_id: 

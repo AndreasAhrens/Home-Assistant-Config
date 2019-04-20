@@ -48,3 +48,8 @@
 
   mediaplayers_visible:
     initial: off
+
+  sleeping_downstairs:
+    initial: off
+
+     

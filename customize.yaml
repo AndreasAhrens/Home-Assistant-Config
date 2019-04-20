@@ -19,6 +19,8 @@
     icon: mdi:fish
     emulated_hue_hidden: true
     homebridge_hidden: true
+  input_boolean.sleeping_downstairs:
+    icon: mdi:sleep
   switch.dining_room_aquarium_2:
     icon: mdi:fish
   sensor.ovanvaning_humidity:

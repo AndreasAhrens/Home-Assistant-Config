@@ -29,6 +29,7 @@ cloud:
   alexa:
     filter:
       include_entities:
+        - input_boolean.sleeping_downstairs
         - light.living_room_ceiling
         - light.tradfri_driver
         - switch.plug_158d0001dd4fe7

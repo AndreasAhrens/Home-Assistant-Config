@@ -25,6 +25,7 @@ views:
           - binary_sensor.motion_sensor_158d0001656600
           #- sensor.vardagsrum_humidity
           - sensor.vardagsrum_temperature
+          - input_boolean.sleeping_downstairs
 
       #### Test temp glance ####
       #- type: picture-elements

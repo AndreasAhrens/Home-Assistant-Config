@@ -219,8 +219,8 @@
           entity_id: sensor.illumination_34ce008c1bb1
           below: 350
         - condition: state
-            entity_id: input_boolean.sleeping_downstairs
-            state: 'off'
+          entity_id: input_boolean.sleeping_downstairs
+          state: 'off'
     action:
       - service: light.turn_on
         entity_id: 

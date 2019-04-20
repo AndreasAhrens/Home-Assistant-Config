@@ -192,6 +192,9 @@ cloud:
         name: Bedroom door switch
         description: Switch at bedroom door
         display_categories: SWITCH
+      input_boolean.sleeping_downstairs: 
+        name: Sleeping downstairs
+        display_categories: SWITCH
       sensor.temperature_158d0001701075:
         name: Bedroom temperature
         description: Bedroom temperature sensor

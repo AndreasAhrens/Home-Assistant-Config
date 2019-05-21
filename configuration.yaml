@@ -291,7 +291,7 @@ cloud:
 
 ios:
 tts:
-  platform: google
+  platform: google_translate
 
 http:
   api_password: !secret http_password

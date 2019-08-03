@@ -1,0 +1,1051 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dis",
+				"display_categories"
+			],
+			[
+				"motion",
+				"MOTION_SENSOR"
+			],
+			[
+				"cont",
+				"CONTACT_SENSOR"
+			],
+			[
+				"moti",
+				"MOTION_SENSOR"
+			],
+			[
+				"temp",
+				"TEMPERATURE_SENSOR"
+			],
+			[
+				"tem",
+				"TEMPERATURE_SENSOR"
+			],
+			[
+				"inpu",
+				"input_boolean"
+			],
+			[
+				"con",
+				"conditions"
+			],
+			[
+				"hal",
+				"Hallway_small"
+			],
+			[
+				"ha",
+				"Hallway_small"
+			],
+			[
+				"hall",
+				"Hallway"
+			],
+			[
+				"config",
+				"config_path"
+			],
+			[
+				"tur",
+				"turn_on"
+			],
+			[
+				"data",
+				"data_template"
+			],
+			[
+				"tu",
+				"turn_on"
+			],
+			[
+				"input",
+				"input_text"
+			],
+			[
+				"pay",
+				"payload_turn_on"
+			],
+			[
+				"base",
+				"base_url"
+			],
+			[
+				"pro",
+				"prob_given_true"
+			],
+			[
+				"da",
+				"data_template"
+			],
+			[
+				"long",
+				"longitude"
+			],
+			[
+				"ent",
+				"entity_id"
+			],
+			[
+				"Automation_o",
+				"Automation_Other"
+			],
+			[
+				"Automation_",
+				"Automation_outside"
+			],
+			[
+				"auto",
+				"Automation_alarm"
+			],
+			[
+				"autom",
+				"Automation_downstairs"
+			],
+			[
+				"au",
+				"Automations"
+			],
+			[
+				"se",
+				"sequence"
+			],
+			[
+				"devi",
+				"device_tracker"
+			],
+			[
+				"bed",
+				"bedroom_fan"
+			],
+			[
+				"turn",
+				"turn_on"
+			],
+			[
+				"hoe",
+				"homeassistant"
+			],
+			[
+				"liv",
+				"living_room_fan"
+			],
+			[
+				"armed",
+				"armed_home"
+			],
+			[
+				"home",
+				"homeassistant"
+			],
+			[
+				"mailb",
+				"mailbox_hatch"
+			],
+			[
+				"living",
+				"Livingroom"
+			],
+			[
+				"stat",
+				"state_topic"
+			],
+			[
+				"upp",
+				"Upper_Hallway"
+			],
+			[
+				"ki",
+				"Kitchen"
+			],
+			[
+				"we",
+				"Weather"
+			],
+			[
+				"gar",
+				"Garden"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "mediaplayer.yaml",
+			"settings":
+			{
+				"buffer_size": 494,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nSublimeLinter\n-------------\n\n  SublimeLinter 4.10.0\n  ====================\n  \n  New setting: highlights.start_hidden\n  Enabling this setting will hide all highlights until you explicitly Toggle Highlights.\n  Thanks to @AndrewMast for this! 🎉 (See #1576)\n  \n  \n  Improved functionality of the disable_if_not_dependency setting.\n  \n  \n  Improved panel view:\n  - Tabular layout (automatic column widths)\n  - Files are sorted (yay!)\n  - Highlight error if the cursor is nearby (before the cursor had to be _on_ an error)\n  - New viewport markers indicate which errors are inside the current viewport\n  - Scrolls so that the current file is always at the top of the panel\n  - Improved scopes for syntax highlighting\n  - Long error messages now wrap\n  \n  \n  For linter plugin authors:\n  - New `LintMatch` to make esp. JSON reporters way more readable\n  - Support for `error_type` (aka severity), `code` (aka rule name), and `filename` in the regexes (and via `LintMatch` for JSON reporters)\n  - Severity is no longer restricted to 'warning/error', e.g. so you can report 'info' level feedback\n  - We claim the keys `end_line`, `end_col`, and `region`. They don't do anything right now, just don't use them for anything not obvious.\n  - A linter can report errors coming from multiple files. Thanks @mheinzler (#1528) 🚀!\n  \n  \n  Finally, a house keeping notice:\n  A year has passed, and we will begin to remove deprecated code.\n  Look for deprecation warnings in the Sublime Text console.\n  If you find any, let the plugin author know (or open a PR to fix it of course 😉)!\n",
+			"settings":
+			{
+				"buffer_size": 1617,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "groups.yaml",
+			"settings":
+			{
+				"buffer_size": 28466,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "automation/state based/downstairs.yaml",
+			"settings":
+			{
+				"buffer_size": 9194,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "configuration.yaml",
+			"settings":
+			{
+				"buffer_size": 19524,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "New Install Hassbian.md",
+			"settings":
+			{
+				"buffer_size": 9393,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sensors.yaml",
+			"settings":
+			{
+				"buffer_size": 9078,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "notify.yaml",
+			"settings":
+			{
+				"buffer_size": 245,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 179.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"qui",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"add",
+				"Git: Add All"
+			],
+			[
+				"pus",
+				"Git: Push"
+			],
+			[
+				"quic",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"quick",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"puah",
+				"Git: Pull Current Branch"
+			],
+			[
+				"qu",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"pu",
+				"Git: Push"
+			],
+			[
+				"puh",
+				"Git: Push"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"git qui",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pull",
+				"Git: Pull"
+			],
+			[
+				"comm",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"com",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"commi",
+				"Git: Commit"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git  com",
+				"Git: Commit"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git a",
+				"Git: Add All"
+			],
+			[
+				"git add ",
+				"Git: Add All"
+			],
+			[
+				"gid add",
+				"Git: Add Selected Hunk"
+			],
+			[
+				"git c",
+				"Git: Commit"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git ocm",
+				"Git: Commit"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git qu",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"gitadd",
+				"Git: Add All"
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"git ad d",
+				"Git: Add All"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			]
+		],
+		"width": 420.0
+	},
+	"console":
+	{
+		"height": 143.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/system",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/custom_components"
+	],
+	"file_history":
+	[
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/input_booleans.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/downstairs.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/ui-lovelace.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/configuration.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/customize.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/sensors.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/lights.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/system/certificate.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/outside.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/notify.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/groups.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/time based/repeat.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/system/mailbox.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/sun based/outsidelights.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/plants.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/scripts/pair_bluetooth.sh",
+		"/Users/andreasahrens/Downloads/KU10_2018 (1).xml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/time based/outsidelights.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/movement.yaml",
+		"/Users/andreasahrens/Library/Application Support/Steam/steamapps/common/Startup Company/StartupCompany.app/Contents/Resources/app/dest/game.min.js",
+		"/Users/andreasahrens/Downloads/ipbindmac_20180927.cfg",
+		"/Users/andreasahrens/Dropbox/docker/docker commands",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/upstairs.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/switch_automations.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/New Install Hassbian.md",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/mediaplayer.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/system.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/cover.yaml",
+		"/Users/andreasahrens/Dropbox/docker/dockyard/docker-compose.yaml ",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/scripts.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/binary_sensors.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/www/custom_ui/dark-sky-weather-card.js",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/www/custom_ui/dark-sky-weather-card.css",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/www/custom_ui/weather-card.css",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/www/custom_ui/weather-card.js",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/customize.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/scripts.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/automation/statebased.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/configuration.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/automations.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/groups.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/cameras.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/device_tracker.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/mediaplayer.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/alarm.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/media.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/input_select.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/input_number.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/fans.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/time based/upstairs.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/time based/downstairs.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/sun based/upstairs.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/sun based/downstairs.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/binary_sensors.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/notify.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-config-Braatehus/sensors.yaml",
+		"/Users/andreasahrens/Downloads/UTC--2017-12-27T07-44-50.191Z--1164d010815e1d7bf57917d36aa6b9a3657a5e1d",
+		"/Volumes/boot/wpa_supplicant.conf",
+		"/Volumes/boot/ssh",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/counter.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/README.md",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/shell_command.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/vacuum.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/camera.yaml",
+		"/Users/andreasahrens/Dropbox/Learning/Arduino/D1/.travis.yml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/.travis.yml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/input_text.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/switches.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation/state based/switches.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/scenes.yaml",
+		"/Users/andreasahrens/Dropbox/Learning/Arduino/D1/D1_Temp_sensor_MQTT_OLED/D1_Temp_sensor_MQTT_OLED.ino",
+		"/Users/andreasahrens/Dropbox/Learning/Arduino/D1/D1_Covers_Buttons_IR_DHT/D1_Covers_Buttons_IR_DHT.ino",
+		"/Users/andreasahrens/Dropbox/Learning/Arduino/D1/D1_motor_shield_MQTT/D1_motor_shield_MQTT.ino",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/plant.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/zones.yaml",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/bin/makegif.sh",
+		"/Users/andreasahrens/Dropbox/Learning/Think Bayes/thinkbayes.py",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/.gitignore",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/device_tracker.yaml",
+		"/Volumes/boot/timeout",
+		"/Users/andreasahrens/homeassistant/Home-Assistant-Config/custom_components/media_player/tts_bluetooth_speaker.py",
+		"/Users/andreasahrens/Dropbox/Learning/Arduino/D1/readme.md",
+		"/Users/andreasahrens/Library/Application Support/Sublime Text 3/Packages/User/markdown-readme",
+		"/Volumes/HomeAssistant/automation/sun based/outsidelights.yaml",
+		"/Volumes/HomeAssistant/secrets.yaml",
+		"/Volumes/HomeAssistant/zones.yaml",
+		"/Volumes/HomeAssistant/sensors.yaml",
+		"/Volumes/HomeAssistant/automation/state based/media.yaml",
+		"/Volumes/HomeAssistant/automation/state based/system.yaml",
+		"/Volumes/HomeAssistant/automation/state based/movement.yaml",
+		"/Volumes/HomeAssistant/groups.yaml",
+		"/Volumes/HomeAssistant/automation/state based/alarm.yaml",
+		"/Volumes/HomeAssistant/automation/time based/outsidelights.yaml",
+		"/Volumes/HomeAssistant/scenes.yaml",
+		"/Volumes/HomeAssistant/automation/state based/downstairs.yaml",
+		"/Volumes/HomeAssistant/configuration.yaml",
+		"/Volumes/HomeAssistant/plant.yaml",
+		"/Volumes/HomeAssistant/automations.yaml",
+		"/Volumes/HomeAssistant/scripts.yaml",
+		"/Volumes/HomeAssistant/automation/time based/upstairs.yaml",
+		"/Volumes/HomeAssistant/automation/state based/outside.yaml",
+		"/Volumes/HomeAssistant/device_tracker.yaml",
+		"/Volumes/HomeAssistant-1/automation/sun based/downstairs.yaml",
+		"/Volumes/HomeAssistant-1/scenes.yaml",
+		"/Volumes/HomeAssistant-1/scripts.yaml",
+		"/Volumes/HomeAssistant-1/automation/state based/alarm.yaml",
+		"/Volumes/HomeAssistant-1/automation/time based/upstairs.yaml",
+		"/Volumes/HomeAssistant-1/configuration.yaml",
+		"/Volumes/HomeAssistant-1/plant.yaml",
+		"/Volumes/HomeAssistant-1/groups.yaml",
+		"/Volumes/HomeAssistant-1/switches.yaml",
+		"/Volumes/HomeAssistant-1/automation/state based/media.yaml",
+		"/Volumes/HomeAssistant-1/sensors.yaml",
+		"/Volumes/HomeAssistant-1/automation/time based/downstairs.yaml",
+		"/Volumes/HomeAssistant-1/automation/state based/outside.yaml",
+		"/Volumes/HomeAssistant-1/secrets.yaml",
+		"/Volumes/HomeAssistant-1/lights.yaml",
+		"/Volumes/HomeAssistant-1/automation/time based/outsidelights.yaml",
+		"/Volumes/HomeAssistant-1/customize.yaml",
+		"/Volumes/HomeAssistant-1/automation/sun based/outsidelights.yaml",
+		"/Volumes/HomeAssistant-1/automation/sun based/upstairs.yaml",
+		"/Volumes/HomeAssistant-1/automation/system/certificate.yaml",
+		"/Volumes/HomeAssistant-1/automation.yaml",
+		"/Volumes/HomeAssistant-1/automation/state based/certificate.yaml",
+		"/Volumes/HomeAssistant-1/automation/system/mailbox.yaml",
+		"/Volumes/HomeAssistant/customize.yaml",
+		"/Volumes/HomeAssistant/automation.yaml",
+		"/Volumes/HomeAssistant-1/zones.yaml"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			"/Users/andreasahrens/homeassistant/Home-Assistant-Config",
+			"/Users/andreasahrens/homeassistant/Home-Assistant-Config/automation",
+			"/Users/andreasahrens/homeassistant/Home-Assistant-Config"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"chown",
+			"switch.plug_158d0001de56ce",
+			"logger",
+			"rgb",
+			"flux",
+			"xiaomi",
+			"mailgun",
+			"verisure",
+			"plex",
+			"fast",
+			"sensor.disk_use_",
+			"sensor.disk_free_",
+			"platform: time",
+			"mailgun",
+			"sensor.disk_use",
+			"upper_hallway_visible",
+			"upstairs",
+			"switch.plug_158d0001dbd0d2",
+			"switch.bedroom_fan",
+			"fan",
+			"home",
+			"his",
+			"bedside",
+			"bedroom"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "mediaplayer.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 494,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								174,
+								174
+							],
+							[
+								211,
+								211
+							],
+							[
+								289,
+								289
+							],
+							[
+								353,
+								353
+							]
+						],
+						"settings":
+						{
+							"SL.13.region_keys":
+							[
+							],
+							"SL.32.region_keys":
+							[
+							],
+							"SL.77.region_keys":
+							[
+							],
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1617,
+								1617
+							]
+						],
+						"settings":
+						{
+							"SL.14.region_keys":
+							[
+							],
+							"SL.36.region_keys":
+							[
+							],
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "groups.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28466,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.15.region_keys":
+							[
+							],
+							"SL.47.region_keys":
+							[
+							],
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "automation/state based/downstairs.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6803,
+								6770
+							]
+						],
+						"settings":
+						{
+							"SL.16.region_keys":
+							[
+							],
+							"SL.52.region_keys":
+							[
+							],
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3424.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "configuration.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19524,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11048,
+								11048
+							]
+						],
+						"settings":
+						{
+							"SL.17.region_keys":
+							[
+							],
+							"SL.56.region_keys":
+							[
+							],
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4506.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "New Install Hassbian.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3829,
+								3829
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+							],
+							"SL.23.region_keys":
+							[
+							],
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1307.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "sensors.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9078,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "notify.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 245,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+							],
+							"SL.19.region_keys":
+							[
+							],
+							"SL.33.region_keys":
+							[
+							],
+							"SL.91.region_keys":
+							[
+							],
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 114.0
+	},
+	"output.exec":
+	{
+		"height": 251.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 49.0
+	},
+	"pinned_build_system": "",
+	"project": "Hemgatan.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"push",
+				"scripts/pair_bluetooth.sh"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 278.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

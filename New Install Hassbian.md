@@ -4,7 +4,7 @@ This is a simple guide to setting up Home Assistant from scratch, with codes.
 ``` shell
 passwd
 
-raspbian-config
+raspi-config
 
 cd /home/homeassistant/.homeassistant/
 http://IP:8123/
@@ -64,6 +64,7 @@ sudo hassbian-config install tradfri && sudo hassbian-config install razberry
 While this is being installed:
 ``` shell
 touch secrets.yaml && sudo chmod 755 secrets.yaml && sudo chown andreas secrets.yaml && sudo nano secrets.yaml
+#touch secrets.yaml && sudo chmod 755 secrets.yaml && sudo chown homeassistant secrets.yaml && sudo nano secrets.yaml
 ```
 Enter secrets.yaml that has been saved from before
 ``` shell
@@ -93,9 +94,12 @@ sudo nano /boot/config.txt
 	core_freq=250
 sudo systemctl mask serial-getty@ttyAMA0.service
 sudo chgrp dialout /dev/ttyAMA0
+sudo usermod -a -G dialout homeassistant
+sudo usermod -a -G tty homeassistant
 sudo chmod g+rw /dev/ttyAMA0
 sudo systemctl disable z-way-server.service 
-wget -q -O - razberry.z-wave.me/install | sudo bash
+sudo reboot now
+#wget -q -O - razberry.z-wave.me/install | sudo bash
 ```
 #### Possibly:
 ``` shell
